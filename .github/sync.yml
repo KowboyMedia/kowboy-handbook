@@ -13,6 +13,10 @@ group:
         dest: .claude/hooks/context.sh
       - source: template/.claude/hooks/turn.sh
         dest: .claude/hooks/turn.sh
+      - source: template/.claude/hooks/format.sh
+        dest: .claude/hooks/format.sh
+      - source: template/.claude/hooks/stop.sh
+        dest: .claude/hooks/stop.sh
       - source: template/.claude/skills/
         dest: .claude/skills/
       - source: template/scripts/check-register.mjs

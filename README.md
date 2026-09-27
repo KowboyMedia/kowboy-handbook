@@ -3,7 +3,12 @@
 The one source of how agents work in every Kowboy repository, and the starting kit for a new one.
 
 - `AGENTS-shared.md`: the Kowboy-wide rules, and `PLAYBOOK.md` with its phase skills in `template/.claude/skills/`: the procedure per phase. Edit here only; the action below copies them out.
-- `template/`: what a repository needs to run the setup. A new project copies the whole folder to
+- `template/`: what a repository needs to run the setup: the phase skills, four hooks (memory at
+  session start, one reply-protocol line per turn, a formatter after every write, a stop that
+  refuses to end a turn with unsent saved work), `settings.json` with those hooks and the routine
+  commands allowed in advance, the four memory files, the register check and CODEOWNERS. A project
+  that has credentials to check adds its own `scripts/check-environment.mjs`; the session-start
+  hook runs it when it exists. A new project copies the whole folder to
   its root and fills in `AGENTS.md`. This repository is marked as a GitHub template, so "Use this
   template" does the copy.
 - `.github/sync.yml` and `.github/workflows/sync-shared.yml`: on every change to the shared file or
