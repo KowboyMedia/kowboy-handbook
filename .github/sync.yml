@@ -1,0 +1,16 @@
+# Which files reach which repositories. The action opens a change for approval in each one when a
+# listed file changes here. Add a repository by adding its line; remove it by deleting the line.
+group:
+  - files:
+      - source: AGENTS-shared.md
+        dest: AGENTS-shared.md
+      - source: PLAYBOOK.md
+        dest: PLAYBOOK.md
+      - source: template/.claude/hooks/
+        dest: .claude/hooks/
+      - source: template/.claude/skills/
+        dest: .claude/skills/
+      - source: template/scripts/check-register.mjs
+        dest: scripts/check-register.mjs
+    repos: |
+      KowboyMedia/kowboy-core
