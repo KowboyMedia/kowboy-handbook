@@ -9,6 +9,14 @@ The one source of how agents work in every Kowboy repository, and the starting k
 - `.github/sync.yml` and `.github/workflows/sync-shared.yml`: on every change to the shared file or
   the hooks, a change for approval is opened in every repository listed in `sync.yml`.
 
-Setup, once: create this repository from these files, mark it as a template in its settings, add a
-fine-grained token as the secret `SYNC_TOKEN` (repositories: the ones in `sync.yml`; permissions:
-Contents, Workflows and Pull requests read and write, Metadata read), and list the repositories.
+Setup, once: add a fine-grained token as the secret `SYNC_TOKEN` in this repository's settings
+(repositories: the ones in `sync.yml`; permissions: Contents, Workflows and Pull requests read and
+write, Metadata read). From then on a change saved here lands in every listed repository within a
+minute, into its staging branch where one exists. Until the token exists, an agent copies the files
+on request. Marking this repository as a template is optional: an agent copies `template/` anyway.
+
+Why a copy and not a link: Claude Code reads instructions only from files inside the repository it
+works in. Its `@import` takes a path in the repository or on the same machine, never a web address,
+and the AGENTS.md standard has no import at all. A hook could fetch the rules over the network at
+session start, but it could not deliver the skills and hooks as files, and a session's access is
+bound to its own repository, so the copy is the only way that works everywhere.

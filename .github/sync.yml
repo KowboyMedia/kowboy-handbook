@@ -1,16 +1,21 @@
-# Which files reach which repositories. The action opens a change for approval in each one when a
-# listed file changes here. Add a repository by adding its line; remove it by deleting the line.
+# Which files reach which repositories, and into which branch. On every change here the action
+# saves the files straight into that branch (no approval click per repository: the change was
+# approved here, where these files are protected). A repository with a staging branch receives
+# them there, so they reach live with its next release; one without receives them on main.
+# Add a repository by adding its line; remove it by deleting the line.
 group:
   - files:
       - source: AGENTS-shared.md
         dest: AGENTS-shared.md
       - source: PLAYBOOK.md
         dest: PLAYBOOK.md
-      - source: template/.claude/hooks/
-        dest: .claude/hooks/
+      - source: template/.claude/hooks/context.sh
+        dest: .claude/hooks/context.sh
+      - source: template/.claude/hooks/turn.sh
+        dest: .claude/hooks/turn.sh
       - source: template/.claude/skills/
         dest: .claude/skills/
       - source: template/scripts/check-register.mjs
         dest: scripts/check-register.mjs
     repos: |
-      KowboyMedia/kowboy-core
+      KowboyMedia/kowboy-core@staging

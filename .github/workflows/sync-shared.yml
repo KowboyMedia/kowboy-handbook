@@ -2,7 +2,7 @@ name: Sync shared agent files
 on:
   push:
     branches: [main]
-    paths: [AGENTS-shared.md, template/**, .github/sync.yml]
+    paths: [AGENTS-shared.md, PLAYBOOK.md, template/**, .github/sync.yml]
   workflow_dispatch:
 jobs:
   sync:
@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: BetaHuhn/repo-file-sync-action@v1
         with:
-          GH_PAT: ${{ secrets.SYNC_TOKEN }} # a token with contents, workflows and pull-request write on the target repositories
+          GH_PAT: ${{ secrets.SYNC_TOKEN }} # fine-grained token: Contents, Workflows and Pull requests read and write, Metadata read, on the repositories in sync.yml
+          SKIP_PR: true
           COMMIT_EACH_FILE: false
           COMMIT_PREFIX: 'Shared agent files:'
-          PR_LABELS: agents
