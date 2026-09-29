@@ -3,6 +3,8 @@
 # at the start of a session are followed less as the session grows long; one short line per turn
 # keeps them in view. Claude Code adds a UserPromptSubmit hook's output to the context.
 set -uo pipefail
+# When the repository carries its own copy of this hook, that copy runs and this one steps aside.
+[ -x "${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/turn.sh" ] && [ "${BASH_SOURCE[0]}" != "${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/turn.sh" ] && exit 0
 cd "${CLAUDE_PROJECT_DIR:-.}" || exit 0
 next=""
 if [ -f docs/open-questions.md ]; then

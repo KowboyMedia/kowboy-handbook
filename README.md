@@ -1,27 +1,45 @@
-# Kowboy agents
+# Kowboy handbook
 
-The one source of how agents work in every Kowboy repository, and the starting kit for a new one.
+How agents work at Kowboy, in one place: the rules that hold in every session
+(`plugins/kowboy-handbook/KOWBOY-HANDBOOK.md`), the playbook of phases (`PLAYBOOK.md` and one
+skill per phase), the hooks that enforce them, and the starting kit for a repository's own files
+(`template/`). Edit here only.
 
-- `AGENTS-shared.md`: the Kowboy-wide rules, and `PLAYBOOK.md` with its phase skills in `template/.claude/skills/`: the procedure per phase. Edit here only; the action below copies them out.
-- `template/`: what a repository needs to run the setup: the phase skills, four hooks (memory at
-  session start, one reply-protocol line per turn, a formatter after every write, a stop that
-  refuses to end a turn with unsent saved work), `settings.json` with those hooks and the routine
-  commands allowed in advance, the four memory files, the register check and CODEOWNERS. A project
-  that has credentials to check adds its own `scripts/check-environment.mjs`; the session-start
-  hook runs it when it exists. A new project copies the whole folder to
-  its root and fills in `AGENTS.md`. This repository is marked as a GitHub template, so "Use this
-  template" does the copy.
-- `.github/sync.yml` and `.github/workflows/sync-shared.yml`: on every change to the shared file or
-  the hooks, a change for approval is opened in every repository listed in `sync.yml`.
+## Two ways it reaches a session
 
-Setup, once: add a fine-grained token as the secret `SYNC_TOKEN` in this repository's settings
-(repositories: the ones in `sync.yml`; permissions: Contents, Workflows and Pull requests read and
-write, Metadata read). From then on a change saved here lands in every listed repository within a
-minute, into its staging branch where one exists. Until the token exists, an agent copies the files
-on request. Marking this repository as a template is optional: an agent copies `template/` anyway.
+1. **As a plugin on your Claude account (recommended).** In claude.ai open Customize > Plugins,
+   add this repository (`KowboyMedia/kowboy-handbook`) as a marketplace and install
+   `kowboy-handbook`. From then on every session you start, in the browser, in Cowork or in the
+   terminal, on any repository including a customer's, carries the handbook, the playbook, the
+   skills and the hooks; nothing is copied into the repository. An organization Owner can set it to
+   "Installed by default" or "Required" for every member, which makes it the team's way of working.
+   The repository itself still gets its own files the first time an agent works in it (`CLAUDE.md`,
+   `AGENTS.md`, the four memory files, `settings.json`, `CODEOWNERS`): the `start` skill copies them
+   from the plugin's `template/` folder.
+2. **As a copy in the repository.** For a repository read by agents other than Claude, or where
+   the plugin is not on, `.github/sync.yml` lists the repositories that receive a copy of the
+   handbook, the playbook, the skills and the hooks whenever they change here; the copy is
+   versioned with the code and imported by the repository's `CLAUDE.md`. The plugin steps aside in a
+   repository that carries a copy, so nothing loads twice.
 
-Why a copy and not a link: Claude Code reads instructions only from files inside the repository it
-works in. Its `@import` takes a path in the repository or on the same machine, never a web address,
-and the AGENTS.md standard has no import at all. A hook could fetch the rules over the network at
-session start, but it could not deliver the skills and hooks as files, and a session's access is
-bound to its own repository, so the copy is the only way that works everywhere.
+Setup for the copy, once: add a fine-grained token as the secret `SYNC_TOKEN` in this repository's
+settings (repositories: the ones in `sync.yml`; permissions: Contents read and write, Metadata
+read). Until it exists, an agent copies the files on request.
+
+Why a copy and not a link: Claude Code reads instructions only from files in the repository it
+works in, from the plugins on the account, or from server-managed settings. Its `@import` takes a
+path in the repository, never a web address, and the AGENTS.md standard has no import at all.
+
+## Layout
+
+```
+.claude-plugin/marketplace.json     lists the plugin, so the repository can be added as a marketplace
+plugins/kowboy-handbook/            the plugin
+  .claude-plugin/plugin.json        its manifest
+  KOWBOY-HANDBOOK.md                the rules that hold all the time
+  PLAYBOOK.md                       the phases and when each applies
+  skills/<phase>/SKILL.md           one skill per phase
+  hooks/                            session start (handbook + memory), one line per turn, format after every write, no turn ends with unsent saved work
+  template/                         the starting kit for a repository: CLAUDE.md, AGENTS.md skeleton, docs/ memory files, settings.json, CODEOWNERS, register check
+.github/sync.yml                    the copy path: which repositories receive which files
+```
