@@ -7,15 +7,20 @@ skill per phase), the hooks that enforce them, and the starting kit for a reposi
 
 ## Two ways it reaches a session
 
-1. **As a plugin on your Claude account (recommended).** In claude.ai open Customize > Plugins,
-   add this repository (`KowboyMedia/kowboy-handbook`) as a marketplace and install
-   `kowboy-handbook`. From then on every session you start, in the browser, in Cowork or in the
-   terminal, on any repository including a customer's, carries the handbook, the playbook, the
-   skills and the hooks; nothing is copied into the repository. An organization Owner can set it to
-   "Installed by default" or "Required" for every member, which makes it the team's way of working.
-   The repository itself still gets its own files the first time an agent works in it (`CLAUDE.md`,
-   `AGENTS.md`, the four memory files, `settings.json`, `CODEOWNERS`): the `start` skill copies them
-   from the plugin's `template/` folder.
+1. **As a plugin on your Claude account (recommended).** Once, in claude.ai: open Customize,
+   then Plugins, choose to add a marketplace from GitHub and paste `KowboyMedia/kowboy-handbook`
+   (this repository is private, so the account's GitHub connection must include it; if the add is
+   refused, grant the Claude GitHub app access to this repository under Settings, Connectors,
+   GitHub, and add again). Then install the plugin named `kowboy-handbook` from that marketplace.
+   From then on every session you start, in the browser, in Cowork or in the terminal, on any
+   repository including a customer's, carries the handbook, the playbook, the skills and the
+   hooks; nothing is copied into the repository. An organization Owner can set it to "Installed by
+   default" or "Required" for every member, which makes it the team's way of working.
+   A repository still gets its own files once: open a session on it and say "set up this repo".
+   The `start` skill copies `CLAUDE.md`, `AGENTS.md`, the four memory files under `docs/`,
+   `.claude/settings.json`, `.github/CODEOWNERS` and the register check from the plugin's
+   `template/` folder, fills `AGENTS.md` with what is true in that repository, and goes on to the
+   discovery round.
 2. **As a copy in the repository.** For a repository read by agents other than Claude, or where
    the plugin is not on, `.github/sync.yml` lists the repositories that receive a copy of the
    handbook, the playbook, the skills and the hooks whenever they change here; the copy is
