@@ -9,12 +9,12 @@ two. This file is protected, and changes need approval.
 <One or two sentences: what the project does and who uses it. Delete this section if the README
 already says it.>
 
-| Document                                         | Role                                                                   |
-| ------------------------------------------------ | ---------------------------------------------------------------------- |
-| [docs/decisions.md](docs/decisions.md)           | One line per structural decision. Append only.                         |
-| [docs/open-questions.md](docs/open-questions.md) | The register of questions to Patric; its header says the next number.  |
+| Document                                         | Role                                                                              |
+| ------------------------------------------------ | --------------------------------------------------------------------------------- |
+| [docs/decisions.md](docs/decisions.md)           | One line per structural decision. Append only.                                    |
+| [docs/open-questions.md](docs/open-questions.md) | The register of questions to Patric; its header says the next number.             |
 | [docs/next-steps.md](docs/next-steps.md)         | The order of work. "Resume next steps" means: do the first item that is not done. |
-| [docs/known-bugs.md](docs/known-bugs.md)         | What is wrong and known, with what fixing it takes.                    |
+| [docs/known-bugs.md](docs/known-bugs.md)         | What is wrong and known, with what fixing it takes.                               |
 
 Components and their tags: `[handbook]` (the agent setup itself), <one tag per part of this project>.
 

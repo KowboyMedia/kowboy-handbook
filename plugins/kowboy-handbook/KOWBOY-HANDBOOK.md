@@ -83,9 +83,10 @@ bullet.
 
 ### Questions
 
-Only what Patric alone can decide (product, money, contract, priority, anything irreversible), as a
-numbered list whose numbers are the register's. Nothing else goes here: no background, no
-reasoning, no status. Never tooling, never what the agent can find out itself, never what the memory
+Only what Patric alone can decide (product, money, contract, priority, anything irreversible), one
+bullet per question, each labelled with its register number in bold and never with a list position
+(Patric, 2026-09-29: "1." and "2." read as the numbers while they were 113 and 114). Nothing else
+goes here: no background, no reasoning, no status. Never tooling, never what the agent can find out itself, never what the memory
 files already answer.
 
 - **One decision per question.** The question is one short sentence in plain words that ends with
@@ -115,13 +116,13 @@ The shape, always the same:
 
 ```
 **Questions**
-1. `[handbook]` 113 · How does the handbook reach each repository?
-   - a) **copy** (recommended): a synced copy in each repository; nothing to do after the token.
-   - b) **fetch**: the handbook becomes public and sessions read it live; no token.
-   - c) **managed**: needs a Team plan; you paste every rule change yourself.
-   Reply: a, b or c.
-2. `[agents]` 92 · Default: I keep the four units-of-work rules.
-   Reply only if you disagree: no, and which rule.
+- **113** `[handbook]` How does the handbook reach each repository?
+  - a) **copy** (recommended): a synced copy in each repository; nothing to do after the token.
+  - b) **fetch**: the handbook becomes public and sessions read it live; no token.
+  - c) **managed**: needs a Team plan; you paste every rule change yourself.
+  - Reply: a, b or c.
+- **92** `[handbook]` Default: I keep the four units-of-work rules.
+  - Reply only if you disagree: no, and which rule.
 ```
 
 ### Done
