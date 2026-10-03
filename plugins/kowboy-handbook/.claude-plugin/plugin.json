@@ -1,9 +1,0 @@
-{
-  "name": "kowboy-handbook",
-  "displayName": "Kowboy handbook",
-  "version": "1.0.0",
-  "description": "How agents work at Kowboy: the rules that hold in every session, the playbook of phases, the hooks that enforce them, and the starting kit for a repository's memory files.",
-  "author": { "name": "Kowboy Media", "email": "patric@kowboy.se" },
-  "keywords": ["handbook", "playbook", "workflow"],
-  "hooks": "./hooks/hooks.json"
-}
