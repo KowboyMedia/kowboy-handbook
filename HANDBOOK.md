@@ -303,6 +303,27 @@ built on and believed.
   data it collected and stored (tables, columns, files). Everything in that inventory that nothing
   else uses is deleted in the same change; what stays is named with the thing that still uses it.
   Half a deletion leaves code nobody runs and data nobody reads.
+- **Every text in the product is written for the person who reads it** (2026-10-06, after an admin
+  area's health checks and alerts made sense only to the engineer who wrote them). A text is
+  anything the product shows a person: a page, a label, a button, a status, a health check, an
+  alert, a mail, an error. Text that code puts together (from a template, a check or an event) is
+  held to the same rule and read whole, with real data, before it ships, because that is where
+  most bad text comes from. Every text passes these checks:
+  - **What happened, what it means, what to do.** It says what happened, what that means for the
+    reader's business (its customers, its websites, its visitors) and what to do next, in that
+    order. When there is nothing to do, it says so.
+  - **Things by the names the reader knows.** It names a customer by its name, a website by its
+    address and an office or a person by name, and it calls each thing by the same word
+    everywhere. Never a code name, a key, an internal id, a table, a function, an event type or a
+    check's name. When the reader needs an id, it follows the name and says whose id it is ("the
+    Harbour office, the CRM's id 3011").
+  - **A link to every thing named.** Each thing that has a page in the product links to that page,
+    and a problem links to the page where it is fixed.
+  - **Whole sentences in the reader's words.** A number sits in the sentence and agrees with it
+    ("one site has", "three sites have"), never "site(s)". No arrows, slashes, dashes or brackets
+    standing in for words, and no term the reader would have to ask about.
+  - **The cold reader test.** A person who knows the business but not the code reads the text
+    once, understands what happened and knows what to do next without asking anyone.
 - **Tests are the acceptance.** If something can't be tested automatically, raise it as a design
   problem. Never add a manual step. Never make a test pass by editing its expected output.
 - **Never invent a business rule or a contract field.** A rule or field nobody wrote down is a
@@ -526,6 +547,8 @@ requirement, never taste. Check, in this order, reporting only failures, each wi
 7. **Security**: secrets, injection, an endpoint without authentication, personal data in logs.
 8. **Failure modes**: bad input, timeout, partial failure: what happens, and is it visible.
 9. **Truth**: README, user-facing text, `docs/next-steps.md` and `docs/decisions.md` updated.
+10. **Plain words**: every new or changed text a user reads, read whole with real data, passes
+    the checks of "Every text in the product is written for the person who reads it".
 
 Output: at most ten lines, each `[component] what is wrong · why it matters · the fix`. "No
 findings" is a complete answer.
