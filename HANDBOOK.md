@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-01. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-06. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on. This file is public on GitHub: it holds how we work and nothing
 else, never a client's name, a credential, an address, a price or anything from a project. This file is not part of any repository: it reaches the session
 from the account (the README in `KowboyMedia/kowboy-handbook` says how) and it changes only there.
@@ -297,6 +297,12 @@ built on and believed.
   a market-leading library or framework does the job; a framework is used the way its
   documentation says.
 - **Delete rather than comment out.**
+- **A deletion is a complete clean-up** (2026-10-06, after rebuilt pages left the old ones' code and
+  data behind). When a function or a feature is deleted, the agent first takes an inventory of
+  everything that belongs to it: the code, the tests, the settings, the events it wrote, and the
+  data it collected and stored (tables, columns, files). Everything in that inventory that nothing
+  else uses is deleted in the same change; what stays is named with the thing that still uses it.
+  Half a deletion leaves code nobody runs and data nobody reads.
 - **Tests are the acceptance.** If something can't be tested automatically, raise it as a design
   problem. Never add a manual step. Never make a test pass by editing its expected output.
 - **Never invent a business rule or a contract field.** A rule or field nobody wrote down is a
