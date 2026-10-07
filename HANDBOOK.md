@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-06. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-07. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on. This file is public on GitHub: it holds how we work and nothing
 else, never a client's name, a credential, an address, a price or anything from a project. This file is not part of any repository: it reaches the session
 from the account (the README in `KowboyMedia/kowboy-handbook` says how) and it changes only there.
@@ -25,6 +25,9 @@ instead of you figuring out these things").
   (the discover phase), brings them in rounds of at most five, each with its options, its
   consequence and a recommended answer, and writes the plan from the answers. "Say ok to take
   every recommendation" is always one of the ways to answer a round.
+- **A clear winner is noted, not raised** (the owner, 2026-10-07): "When you feel you need to ask
+  a selection between different options, weigh both options and if one is a clear winner based on
+  the project or instructions, just note it, dont raise it."
 - **Look two items ahead.** Before building an item, the agent names the decisions the next two
   items will need and brings them now, so no session stops on a question that could have been
   asked earlier.
