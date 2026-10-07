@@ -286,8 +286,15 @@ built on and believed.
   shape, a technology, a vendor) is a Decide made in the architecture phase: at most three
   options, one clause of consequence each, the smaller recommended, and a `docs/decisions.md`
   line that names the options rejected and the condition to revisit.
-- **Simple beats clever.** When two designs work, the one with less code wins. Nothing is built
-  for a need that doesn't exist yet.
+- **Simple beats clever, and the agent looks for better** (the owner, 2026-10-07: picking the
+  simplest of the options at hand "does not condone the agent to try to actively find a better
+  solution"). When two designs work, the one with less code wins, and nothing is built for a need
+  that doesn't exist yet. Before choosing, the agent searches for a better option than the ones it
+  already has: how market-leading products and libraries solve the same problem, whether
+  something that already exists can do the job, and whether the need can be met by removing
+  something instead of adding. The search fits the choice: a short look for one that is easy to
+  undo, a proper study for one that later work builds on. When the choice gets a
+  `docs/decisions.md` line, the line also names where the agent looked and what it found.
 - **Market-leading solutions and patterns first** (2026-09-20; a production strategy, not a
   preference). For anything a widely used library, framework or established pattern already does
   well, use it rather than build it; reinventing is the exception and needs a stated reason.
