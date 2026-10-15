@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-07. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-15. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on. This file is public on GitHub: it holds how we work and nothing
 else, never a client's name, a credential, an address, a price or anything from a project. This file is not part of any repository: it reaches the session
 from the account (the README in `KowboyMedia/kowboy-handbook` says how) and it changes only there.
@@ -238,6 +238,11 @@ Stop and ask the person who gave you the task, and don't improvise, when a task 
 - a change to how agents work (this handbook, a repository's `AGENTS.md` or `CLAUDE.md`, the
   environment, hooks, plugins), or any change that reaches more than the repository being worked
   on (2026-09-29)
+
+**A live site is read-only for an agent.** On a live site an agent only views public pages.
+Anything that sends data, starts a job, or changes hosting, firewall or site settings is raised as
+a question first, even as a test (2026-10-15, after an agent sent test requests to a live site's
+update and background-job addresses to see how its new firewall answered).
 
 **A closed gate is not a note.** When something on this list is needed and nobody is there to
 answer, build only what does not depend on it, leave the gap visibly empty, and put the question
