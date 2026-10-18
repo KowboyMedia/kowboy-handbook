@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-15. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-18. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on. This file is public on GitHub: it holds how we work and nothing
 else, never a client's name, a credential, an address, a price or anything from a project. This file is not part of any repository: it reaches the session
 from the account (the README in `KowboyMedia/kowboy-handbook` says how) and it changes only there.
@@ -243,6 +243,12 @@ Stop and ask the person who gave you the task, and don't improvise, when a task 
 Anything that sends data, starts a job, or changes hosting, firewall or site settings is raised as
 a question first, even as a test (2026-10-15, after an agent sent test requests to a live site's
 update and background-job addresses to see how its new firewall answered).
+
+**No deleting stored data without the owner's explicit yes.** Deleting a database, a table, a
+bucket, a backup, or a server or app that holds data, when that loses data kept nowhere else, waits
+for the owner's approval of that very deletion, asked before it is done. This holds even when the
+deletion follows from a change the owner asked for, such as a rename or a move (2026-10-18, after
+an agent deleted a database to rename it; it held only test counts, but the owner saw the risk).
 
 **A closed gate is not a note.** When something on this list is needed and nobody is there to
 answer, build only what does not depend on it, leave the gap visibly empty, and put the question
