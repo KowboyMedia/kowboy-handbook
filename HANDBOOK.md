@@ -101,10 +101,14 @@ itself, never what the memory files already answer.
 - **One decision per question.** The question is one short sentence in plain words that ends with
   a question mark and holds no options and no reasoning (2026-09-29: three options folded into one
   sentence could not be read as a question).
-- **The options under it, lettered a), b), c), one per line, at most three.** Each starts with
-  its letter, then the answer word in bold, then one short consequence in the owner's words; the
-  recommended option comes first and is marked "(recommended)" (2026-09-29). A yes/no question
-  whose outcomes are obvious needs no option lines.
+- **The options under it, lettered a), b), c), one per line, at most three, always in letter
+  order from the top.** Each starts with its letter, then the answer word in bold, then one short
+  consequence in the owner's words. The recommended option is marked "(recommended)"; in options
+  the agent letters itself it comes first, so it is a) (2026-09-29). Options already lettered (the
+  owner's own, or a register entry's) keep their letters and their order, and the mark goes on
+  whichever is recommended. Anything listed per option, such as what each answer leads to, keeps
+  the same letter order (2026-10-19: b listed above a reads as a to anyone who goes by position).
+  A yes/no question whose outcomes are obvious needs no option lines.
 - **The last line says how to reply, with the exact letters or words**: "Reply: a, b or c." An
   open answer (a name, a paste) says exactly what to paste and where to find it.
 - **A Default** is asked the same way, its question starting with "Default:" and stating what the
