@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-18. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-19. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on. This file is public on GitHub: it holds how we work and nothing
 else, never a client's name, a credential, an address, a price or anything from a project. This file is not part of any repository: it reaches the session
 from the account (the README in `KowboyMedia/kowboy-handbook` says how) and it changes only there.
@@ -173,12 +173,12 @@ Every repository we work in for more than a session keeps four files under `docs
 decision made in one conversation reaches every later one, and they are kept current in the same
 change as the work. They hold only what is about that repository.
 
-| File                     | Holds                                                                                                                                                                                                                                                                                                                                    |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `docs/open-questions.md` | The register: every question asked of the owner about this repository, numbered for good, tagged with its part, naming what is blocked and the smaller option. Its header says the next number. An answered question gets its line in `decisions.md` and leaves.                                                                        |
+| File                     | Holds                                                                                                                                                                                                                                                                                                                                              |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `docs/open-questions.md` | The register: every question asked of the owner about this repository, numbered for good, tagged with its part, naming what is blocked and the smaller option. Its header says the next number. An answered question gets its line in `decisions.md` and leaves.                                                                                   |
 | `docs/decisions.md`      | One line per structural decision: date, decision, reference. Append only; a changed decision is a new line that says what it supersedes, never an edit. A decision made under a constraint names it ("no Sentry, because Core is one instance · revisit if a second instance appears"), and the agent raises it again when the constraint changes. |
-| `docs/next-steps.md`     | The order of work, opening with "Where to pick up". "Resume next steps" means: read it, do the first item that is not done, keep it current.                                                                                                                                                                                            |
-| `docs/known-bugs.md`     | What is wrong and known, numbered for good: what happens, why, what fixing it takes. Not a question: nobody has to decide anything, someone has to do it.                                                                                                                                                                              |
+| `docs/next-steps.md`     | The order of work, opening with "Where to pick up". "Resume next steps" means: read it, do the first item that is not done, keep it current.                                                                                                                                                                                                       |
+| `docs/known-bugs.md`     | What is wrong and known, numbered for good: what happens, why, what fixing it takes. Not a question: nobody has to decide anything, someone has to do it.                                                                                                                                                                                          |
 
 A repository that lacks one of them gets it, in this shape, the first time it is needed: a title,
 one sentence on what the file holds, and for the register the line "Next number: 1".
@@ -373,17 +373,17 @@ built on and believed.
 The rules above hold all the time. Each phase below says what to read, what to produce and what
 must be true at the end. Every phase ends with the memory current.
 
-| Phase               | When                                                                                                                                                              |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Start a repository  | a repository is new, or lacks a strategy, acceptance criteria or the four memory files                                                                             |
-| Discover            | at the start of a project, before a feature larger than one item, whenever the owner describes a wish                                                             |
-| Plan an item        | before any change that is more than one sentence, touches a protected path or spans components                                                                    |
+| Phase               | When                                                                                                                                                                      |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Start a repository  | a repository is new, or lacks a strategy, acceptance criteria or the four memory files                                                                                    |
+| Discover            | at the start of a project, before a feature larger than one item, whenever the owner describes a wish                                                                     |
+| Plan an item        | before any change that is more than one sentence, touches a protected path or spans components                                                                            |
 | Design              | a change creates or restyles something people look at, in a repository with a `DESIGN.md`; a change inside the existing pattern, text, a known form or a bug fix skips it |
-| Decide architecture | before a choice that later work builds on: a boundary, a data shape, a technology, a vendor, hosting                                                              |
-| Build               | while writing code, tests and docs for a planned item                                                                                                             |
-| Review              | before anything is reported done, as a second agent with no memory of building it                                                                                 |
-| Release and operate | when the owner says "release", when a health check goes red, when something is wrong in production                                                                |
-| Status              | when the owner says "status"                                                                                                                                      |
+| Decide architecture | before a choice that later work builds on: a boundary, a data shape, a technology, a vendor, hosting                                                                      |
+| Build               | while writing code, tests and docs for a planned item                                                                                                                     |
+| Review              | before anything is reported done, as a second agent with no memory of building it                                                                                         |
+| Release and operate | when the owner says "release", when a health check goes red, when something is wrong in production                                                                        |
+| Status              | when the owner says "status"                                                                                                                                              |
 
 ### Start a repository
 
@@ -506,6 +506,19 @@ above "taste", and for a new look the owner has picked a candidate.
 Few, boring, explicit decisions that outlive the session that made them, each undoable where it
 can be.
 
+- **The aim, repeated back first.** Before designing a core feature, the agent repeats back in a
+  few lines what the owner means, in the owner's terms and at the scale the owner stated, and
+  designs only after the owner's yes (2026-10-19: a search was designed twice on a misreading of
+  its aim).
+- **Designed for the stated goal, never for today's data.** A design starts from the scale and
+  openness its goal states, not from the size of today's data or what today's code makes easy. An
+  assumption on volume, scope or limits is written at the top of the design, and one that changes
+  the architecture is a Decide. Today's size may decide what is built first, never what the design
+  can do (2026-10-19: "like me asking you to design a car, and you design a tractor").
+- **Checked against the owner's words before the owner sees it.** A fresh agent given only the
+  owner's words and the design checks that it delivers what was asked, at the scale asked, and
+  names the assumption that would break it; what it finds is fixed before the design is shown
+  (2026-10-19).
 - **Boundaries first.** Name the components and the interface between each pair; a component knows
   nothing beyond its interfaces; each interface is a protected path.
 - **Market-leading and boring**, the way the documentation says; a deviation is written down with
