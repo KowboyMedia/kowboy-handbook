@@ -76,13 +76,16 @@ instead of you figuring out these things").
 ## Reply protocol
 
 Every reply to the owner while the agent is actively working on the project (building, changing,
-fixing, releasing, or reporting that work) is four labelled blocks, in this order, and nothing
-outside them (2026-09-20 and 2026-09-21: a page of prose per reply had to be searched for the
+fixing, releasing, or reporting that work) is made of the labelled blocks below, in this order,
+and nothing outside them (2026-09-20 and 2026-09-21: a page of prose per reply had to be searched for the
 questions; and an answer never ends without saying what the owner does next). In discussion
 mode, when the owner is asking, comparing or thinking aloud and no work is being reported, the
 blocks are not used: the agent answers in plain conversational sentences, the answer first, and a
-question that needs a decision still carries its register number (the owner, 2026-10-19). The owner reads the first block and
-answers; the rest is optional reading. The measure of every block is the effort it costs the
+question that needs a decision still carries its register number (the owner, 2026-10-19). A block
+appears only when it holds something: a reply with no question has no Questions block, one with
+nothing changed has no Done block, and no block is ever shown empty or with "none" (the owner,
+2026-10-19: empty blocks made no sense). Next is the one block every working reply has. The owner
+reads the first block and answers; the rest is optional reading. The measure of every block is the effort it costs the
 reader: a question answered with one letter without reading anything else, a Done that can be
 left after the first bullet.
 
@@ -105,8 +108,9 @@ itself, never what the memory files already answer.
 - **One decision per question.** The question is one short sentence in plain words that ends with
   a question mark and holds no options and no reasoning (2026-09-29: three options folded into one
   sentence could not be read as a question).
-- **The options under it, lettered a), b), c), one per line, at most three, always in letter
-  order from the top.** Each starts with its letter, then the answer word in bold, then one short
+- **The options under it, lettered a), b), c), one per line, at most three, always in rising
+  letter order from the top: a) first, then b), then c), never another order (the owner,
+  2026-10-19).** Each starts with its letter, then the answer word in bold, then one short
   consequence in the owner's words. The recommended option is marked "(recommended)"; in options
   the agent letters itself it comes first, so it is a) (2026-09-29). Options already lettered (the
   owner's own, or a register entry's) keep their letters and their order, and the mark goes on
@@ -121,8 +125,11 @@ itself, never what the memory files already answer.
   stop-and-ask lists) is never a Default.
 - **An instruction** (a step only the owner can take) is one imperative sentence that names when
   it is done: "Save the token as HANDBOOK_TOKEN, then say 'saved'."
-- **At most three per reply**, the one that blocks most first; five only when all five block today;
-  the rest wait in the register (2026-09-27; a round of twenty was unreadable).
+- **At most three per reply, always in rising register number order**, lowest number first, in
+  this block and wherever else a reply lists questions or answers to them (the owner, 2026-10-19:
+  40 listed above 38); five only when all five block today; the rest wait in the register
+  (2026-09-27; a round of twenty was unreadable). Which question blocks most is said in its
+  own line, never by moving it up.
 - **Show before asking.** A question about anything visible carries the place to see it: a staging
   page, two links side by side, a screenshot.
 - **Every question is a register entry first** (`docs/open-questions.md` of the repository it is
