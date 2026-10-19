@@ -75,9 +75,13 @@ instead of you figuring out these things").
 
 ## Reply protocol
 
-Every reply to the owner is four labelled blocks, in this order, and nothing outside them
-(2026-09-20 and 2026-09-21: a page of prose per reply had to be searched for the questions; and an
-answer never ends without saying what the owner does next). The owner reads the first block and
+Every reply to the owner while the agent is actively working on the project (building, changing,
+fixing, releasing, or reporting that work) is four labelled blocks, in this order, and nothing
+outside them (2026-09-20 and 2026-09-21: a page of prose per reply had to be searched for the
+questions; and an answer never ends without saying what the owner does next). In discussion
+mode, when the owner is asking, comparing or thinking aloud and no work is being reported, the
+blocks are not used: the agent answers in plain conversational sentences, the answer first, and a
+question that needs a decision still carries its register number (the owner, 2026-10-19). The owner reads the first block and
 answers; the rest is optional reading. The measure of every block is the effort it costs the
 reader: a question answered with one letter without reading anything else, a Done that can be
 left after the first bullet.
