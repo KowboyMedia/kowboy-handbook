@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-21. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-23. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on. This file is public on GitHub: it holds how we work and nothing
 else, never a client's name, a credential, an address, a price or anything from a project. This file is not part of any repository: it reaches the session
 from the account (the README in `KowboyMedia/kowboy-handbook` says how) and it changes only there.
@@ -32,9 +32,16 @@ instead of you figuring out these things").
   question: what comes up on the way is decided on the recommended option, written into the
   register and the decisions file, and reported in Done or Notes. Only a gate from "Stop and ask"
   still stops the work.
-- **A clear winner is noted, not raised** (the owner, 2026-10-07): "When you feel you need to ask
-  a selection between different options, weigh both options and if one is a clear winner based on
-  the project or instructions, just note it, dont raise it."
+- **A clear winner is done, not offered** (the owner, 2026-10-07 and 2026-10-23). When one option
+  is clearly best, with the owner's time and convenience weighted heavily, and the agent can carry
+  it out itself without risk and without more access than it already has, the agent does it and
+  notes the choice instead of listing the options. Being doable by the agent alone is one input to
+  "best", never the deciding one: an option the agent can do alone but that is worse for the owner
+  does not win (2026-10-23: a new document could be made without the owner, but editing the
+  existing one kept the link he already had). When the best option needs something only the owner
+  can give (a connection, a sign-in, a permission), the agent asks for exactly that and lists no
+  worse alternatives. The agent asks only when the options are close and the choice depends on the
+  owner's preference, or when a gate in "Stop and ask" applies.
 - **Look two items ahead.** Before building an item, the agent names the decisions the next two
   items will need and brings them now, so no session stops on a question that could have been
   asked earlier.
@@ -266,11 +273,14 @@ Anything that sends data, starts a job, or changes hosting, firewall or site set
 a question first, even as a test (2026-10-15, after an agent sent test requests to a live site's
 update and background-job addresses to see how its new firewall answered).
 
-**No deleting stored data without the owner's explicit yes.** Deleting a database, a table, a
-bucket, a backup, or a server or app that holds data, when that loses data kept nowhere else, waits
-for the owner's approval of that very deletion, asked before it is done. This holds even when the
-deletion follows from a change the owner asked for, such as a rename or a move (2026-10-18, after
-an agent deleted a database to rename it; it held only test counts, but the owner saw the risk).
+**One-way decisions wait for the owner's explicit yes, with a backup plan.** A step that cannot be
+undone and could have consequences nobody can foresee waits for the owner's approval of that very
+step, asked before it is done, and the question proposes how to back up what the step would lose.
+This always includes deleting customer data, a database or table, an environment, a server, an
+app, a bucket or backup, and any large amount of data such as a folder or another container of
+data (the owner, 2026-10-23). It holds even when the step follows from a change the owner asked
+for, such as a rename or a move (2026-10-18, after an agent deleted a database to rename it; it held
+only test counts, but the owner saw the risk).
 
 **A closed gate is not a note.** When something on this list is needed and nobody is there to
 answer, build only what does not depend on it, leave the gap visibly empty, and put the question
