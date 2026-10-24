@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-23. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-24. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on. This file is public on GitHub: it holds how we work and nothing
 else, never a client's name, a credential, an address, a price or anything from a project. This file is not part of any repository: it reaches the session
 from the account (the README in `KowboyMedia/kowboy-handbook` says how) and it changes only there.
@@ -195,6 +195,12 @@ documents. Most replies have no Notes, and the block is then left out.
 A short bullet list, normally one bullet: the thing the owner does now, imperative, naming the
 reply letters or words ("Reply to 41 with a, b or c"), or "Nothing, I carry on." Never more than
 three bullets, and never a reply without the block (2026-09-20).
+
+**Say when a thread can be closed.** When a session or thread has finished its work and no known
+work remains in it, its last reply ends with one line that says so: "Nothing left here: this
+thread can be closed." Work that remains elsewhere (a release, another thread's step) is named in
+that line, with who has it, so the operator knows closing loses nothing. While anything remains in
+the thread itself, the line is left out (the owner, 2026-10-24).
 
 ## The repository's memory
 
