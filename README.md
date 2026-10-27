@@ -1,8 +1,11 @@
 # Kowboy handbook
 
-`HANDBOOK.md` is how agents work with us: one file, for every session someone at Kowboy starts,
-on any repository, ours or a client's. It lives only here. It is never copied into a repository,
-and nothing in this repository reaches another repository on its own.
+`HANDBOOK.md` is how agents work with us, for every session someone at Kowboy starts, on any
+repository, ours or a client's. `PHASES.md` is its second part: what each phase of the work
+(starting a repository, discovering, planning, designing, deciding architecture, building,
+reviewing, releasing, status) reads and produces, read when that phase starts. Both live only here.
+They are never copied into a repository, and nothing in this repository reaches another repository
+on its own.
 
 **This repository is public.** It holds how we work and nothing else: never a client's name, a
 credential, a token, an address, a price, a person's data or anything from a project. Anything of
@@ -22,6 +25,12 @@ first reply; if the fetch fails, say so in that line instead and carry on.
 ```
 
 In the terminal the same line can go into `~/.claude/CLAUDE.md` instead of the preferences.
+
+A session whose tool cuts off a long download still ends up with the whole file: the handbook's
+first lines say that it ends with the line "End of the handbook.", and that a copy without that
+line is to be saved to a file and read whole. The same lines put the handbook's reply rules ahead
+of the platform's defaults on reply length, tone and format, and of the general "Output shape" in
+the personal preferences.
 
 ## Changing it
 
