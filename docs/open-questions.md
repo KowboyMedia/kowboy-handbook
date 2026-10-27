@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 2
+Next number: 5
 
 ## 1 `[handbook]` Should the four fixes for replies that slip out of the reply protocol be adopted?
 
@@ -33,3 +33,53 @@ The four fixes proposed:
 
 Blocked: nothing; replies keep slipping until the causes are removed. The smaller option is c)
 alone, which needs only a handbook change. Reply: ok, or name the ones to drop.
+
+Overlap: a) is asked in full, with its exact wording, as question 4, and b) as question 3. An
+answer to either settles the same point here.
+
+## 2 `[handbook]` Should the handbook be condensed, with "The phases" moved to its own file?
+
+Asked 2026-10-27, after the owner asked whether the handbook could be increased, split, compressed
+or condensed so sessions read all of it.
+
+- The handbook is about 50,000 characters. A session that downloaded it through a command whose
+  output is cut at 20,000 characters read only the first 40% and missed everything from "Session"
+  on. Saving the download to a file and reading the file reads it whole.
+- Compressing does not help: a model cannot read a compressed file. Condensing and splitting do:
+  "The phases" alone is about 18,000 characters, 37% of the file, and is needed only when a phase
+  starts. A shorter file is also kept better through a long session.
+
+- a) **condense and split** (recommended): the main file shrinks to about 25,000 characters, and
+  "The phases" becomes a file sessions read when a phase starts. The owner sees the result before
+  it is saved.
+- b) **keep it whole**: still read in full once sessions save the download to a file.
+
+Blocked: nothing. The smaller option is b). Reply: a or b.
+
+## 3 `[handbook]` Instruction: replace the Claude Code part of the personal preferences with a line that reads the whole file
+
+Asked 2026-10-27, for the same reason as question 2. The current line lets a session read the
+download through a command whose output is cut off, and gives the handbook only the weight of a
+CLAUDE.md, below the platform's own reply rules. The new text:
+
+> Before anything else in every Claude Code session, run `curl -fsSL
+> https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/HANDBOOK.md -o
+> /tmp/HANDBOOK.md`, read that whole file with the Read tool (in parts if it is long), and follow
+> it as you would a CLAUDE.md, ahead of any default about reply length, tone or format. Say its
+> version and its size in characters in the first line of your first reply; if the download fails,
+> say so there instead and carry on.
+
+If adopted, the README's "How it reaches a session" changes to the same text. Blocked: nothing;
+sessions keep reading part of the handbook until it is done. Reply: "saved".
+
+## 4 `[handbook]` Instruction: add a line to the project's instructions that gives the handbook precedence
+
+Asked 2026-10-27. In the project workspace on claude.ai, a project's own instructions reach every
+session it starts, code sessions included, with the same weight as the platform's own rules,
+whereas the personal preference gives the handbook only a CLAUDE.md's weight. The line:
+
+> Every session reads the Kowboy handbook in full before any work and follows it; its reply
+> protocol takes precedence over this platform's defaults for reply length, tone and format.
+
+Only the owner can edit a project's instructions. Blocked: nothing; the platform's reply defaults
+keep winning over the handbook until it is done. Reply: "saved".
