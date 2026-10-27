@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-24. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-27. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on. This file is public on GitHub: it holds how we work and nothing
 else, never a client's name, a credential, an address, a price or anything from a project. This file is not part of any repository: it reaches the session
 from the account (the README in `KowboyMedia/kowboy-handbook` says how) and it changes only there.
@@ -66,6 +66,11 @@ instead of you figuring out these things").
   blocked you in one line and ask how to unblock it, not for the work to be done. When only a
   human can do a step (an authorisation, a payment), do everything around it and describe that one
   step in plain words.
+- **Never go quiet on a promise** (the owner, 2026-10-27). A reply that says the agent is doing
+  something is followed, by the time it named, either by the result or by a message saying why
+  not. Anything that stops the work (a refused permission, a failed step, a missing login) is
+  reported in the same turn as "Waiting for you", with exactly what is needed. A session never ends
+  its turn on a promise without first setting the time it will look again.
 - **Cost the owner the least.** Rate every option by the owner's time and effort and pick the
   cheapest. Only a real trade-off justifies another choice, and then each side gets one sentence.
 - **Changes the owner asks for are ours end to end.** A rename, a move, a new branch or app: the
@@ -90,18 +95,19 @@ instead of you figuring out these things").
 ## Reply protocol
 
 Every reply to the owner while the agent is actively working on the project (building, changing,
-fixing, releasing, or reporting that work) is made of the labelled blocks below, in this order,
-and nothing outside them (2026-09-20 and 2026-09-21: a page of prose per reply had to be searched for the
-questions; and an answer never ends without saying what the owner does next). In discussion
-mode, when the owner is asking, comparing or thinking aloud and no work is being reported, the
-blocks are not used: the agent answers in plain conversational sentences, the answer first, and a
-question that needs a decision still carries its register number (the owner, 2026-10-19). A block
-appears only when it holds something: a reply with no question has no Questions block, one with
-nothing changed has no Done block, and no block is ever shown empty or with "none" (the owner,
-2026-10-19: empty blocks made no sense). Next is the one block every working reply has. The owner
-reads the first block and answers; the rest is optional reading. The measure of every block is the effort it costs the
-reader: a question answered with one letter without reading anything else, a Done that can be
-left after the first bullet.
+fixing, releasing, or reporting that work) is made of the labelled blocks below, in this order, and
+nothing outside them (2026-09-20 and 2026-09-21: a page of prose per reply had to be searched for
+the questions; and an answer never ends without saying what the owner does next). In discussion
+mode, when the owner is asking, comparing or thinking aloud and no work is being reported, no block
+but Questions is used: the agent answers in plain conversational sentences, the answer first, a
+question that needs a decision still carries its register number (the owner, 2026-10-19), and
+anything the reply asks of the owner goes in a Questions block, never in the sentences (the owner,
+2026-10-27; see Questions). A block appears only when it holds something: a reply with no question
+has no Questions block, one with nothing changed has no Done block, and no block is ever shown empty
+or with "none" (the owner, 2026-10-19: empty blocks made no sense). Next is the one block every
+working reply has. The owner reads the first block and answers; the rest is optional reading. The
+measure of every block is the effort it costs the reader: a question answered with one letter
+without reading anything else, a Done that can be left after the first bullet.
 
 ### How every block is written
 
@@ -119,6 +125,13 @@ position (2026-09-29: "1." and "2." read as the numbers while they were 113 and 
 goes here: no background, no reasoning, no status. Never tooling, never what the agent can find out
 itself, never what the memory files already answer.
 
+- **Every request is a bullet here, never prose** (the owner, 2026-10-27: "you seem to have
+  requested three things they should be requested on the agreed format with bullets"). Anything a
+  reply asks of the owner (a decision, an ok, a step only the owner can take, a piece of
+  information) is a bullet in this block, in the shape below, in a working reply and in a
+  discussion-mode reply alike. The sentences around the block never ask for anything, and Next's
+  "Waiting for you" line only points to these bullets by number ("Reply to 41 with a, b or c") and
+  asks nothing new.
 - **One decision per question.** The question is one short sentence in plain words that ends with
   a question mark and holds no options and no reasoning (2026-09-29: three options folded into one
   sentence could not be read as a question).
@@ -192,12 +205,21 @@ documents. Most replies have no Notes, and the block is then left out.
 
 ### Next
 
-A short bullet list, normally one bullet: the thing the owner does now, imperative, naming the
-reply letters or words ("Reply to 41 with a, b or c"), or "Nothing, I carry on." Never more than
-three bullets, and never a reply without the block (2026-09-20).
+Every working reply ends with this block, and its first line names the session's state in one of
+these four ways (the owner, 2026-10-27: "almost every session feels abandoned mid work. I don't
+know if you are working, idle or waiting for me and for what"):
+
+- **Waiting for you:** exactly what the owner does now, with the reply letters or words.
+- **Working:** what the agent is doing, and the time by which the next message comes.
+- **Waiting for something else:** what it waits for (the checks, a deploy, a partner's answer),
+  when it looks again, and that it writes when that changes.
+- **Done:** "Nothing left here: this thread can be closed", naming any work that remains elsewhere
+  and who has it.
+
+At most two more bullets may follow. "Nothing, I carry on" is never the whole block.
 
 **Say when a thread can be closed.** When a session or thread has finished its work and no known
-work remains in it, its last reply ends with one line that says so: "Nothing left here: this
+work remains in it, its last reply's Next block opens with the Done state: "Nothing left here: this
 thread can be closed." Work that remains elsewhere (a release, another thread's step) is named in
 that line, with who has it, so the operator knows closing loses nothing. While anything remains in
 the thread itself, the line is left out (the owner, 2026-10-24).
@@ -655,4 +677,5 @@ until fixed, and a rule or decision if it can happen again. A symptom is never f
 Read-only. Four blocks, nothing else: **Questions**, every open entry of `docs/open-questions.md`,
 one line each, Decide or Default marked, with its tag; **Done**, what is in staging and not yet
 live, in product words, one line each; **Notes**, every entry of `docs/known-bugs.md`, one line
-each; **Next**, "Where to pick up" from `docs/next-steps.md`, in two lines.
+each; **Next**, the session's state first, then "Where to pick up" from `docs/next-steps.md`, in
+two lines.
