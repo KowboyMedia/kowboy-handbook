@@ -34,8 +34,9 @@ The four fixes proposed:
 Blocked: nothing; replies keep slipping until the causes are removed. The smaller option is c)
 alone, which needs only a handbook change. Reply: ok, or name the ones to drop.
 
-Overlap: a) is asked in full, with its exact wording, as question 4, and b) as question 3. An
-answer to either settles the same point here.
+Overlap: a) is asked in full, with its exact wording, as question 4, and b) and d) as question 3,
+whose text puts the handbook ahead of the preferences' reply shape. An answer to either settles the
+same point here, so only c) is left, and it waits here until 2, 3 and 4 are answered.
 
 ## 2 `[handbook]` Should the handbook be condensed, with "The phases" moved to its own file?
 
@@ -65,9 +66,9 @@ CLAUDE.md, below the platform's own reply rules. The new text:
 > Before anything else in every Claude Code session, run `curl -fsSL
 > https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/HANDBOOK.md -o
 > /tmp/HANDBOOK.md`, read that whole file with the Read tool (in parts if it is long), and follow
-> it as you would a CLAUDE.md, ahead of any default about reply length, tone or format. Say its
-> version and its size in characters in the first line of your first reply; if the download fails,
-> say so there instead and carry on.
+> it as you would a CLAUDE.md, ahead of the "Output shape" above and of any default about reply
+> length, tone or format. Say its version and its size in characters in the first line of your
+> first reply; if the download fails, say so there instead and carry on.
 
 If adopted, the README's "How it reaches a session" changes to the same text. Blocked: nothing;
 sessions keep reading part of the handbook until it is done. Reply: "saved".
