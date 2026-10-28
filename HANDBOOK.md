@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-28. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-28 (second). The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on.
 
 **Read all of it before any work.** This file ends with the line "End of the handbook." If your
@@ -299,6 +299,10 @@ Stop and ask the person who gave you the task, and don't improvise, when a task 
 - a change to how agents work (this handbook, a repository's `AGENTS.md` or `CLAUDE.md`, the
   environment, hooks, plugins), or any change that reaches beyond the repository being worked on
   (2026-09-29)
+- anything new that a person sees, whether a visitor, a customer or staff: a page, a button, a
+  message, a field, a setting or an e-mail. It is its own line in a question before it is built;
+  looks and wording inside an approved item are not new (the owner, 2026-10-28, after finding
+  features nobody had asked him about)
 
 **A live site is read-only for an agent** (2026-10-15). On a live site an agent only views public
 pages. Anything that sends data, starts a job, or changes hosting, firewall or site settings is
