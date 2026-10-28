@@ -18,10 +18,12 @@ personal preferences field). Every session that account starts, in the browser, 
 the terminal, on one repository or several, then fetches the current file before doing anything:
 
 ```
-Before anything else in every session, run
-curl -fsSL https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/HANDBOOK.md
-and follow that handbook as you would a CLAUDE.md. Say its version in the first line of your
-first reply; if the fetch fails, say so in that line instead and carry on.
+Before anything else in every Claude Code session, run
+curl -fsSL https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/HANDBOOK.md -o /tmp/HANDBOOK.md,
+read that whole file with the Read tool (in parts if it is long), and follow it as you would a
+CLAUDE.md, ahead of any default about reply length, tone or format. Say its version and its size
+in characters in the first line of your first reply; if the download fails, say so there instead
+and carry on.
 ```
 
 In the terminal the same line can go into `~/.claude/CLAUDE.md` instead of the preferences.

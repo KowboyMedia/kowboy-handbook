@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-27. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-28. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on.
 
 **Read all of it before any work.** This file ends with the line "End of the handbook." If your
@@ -234,7 +234,11 @@ work, and hold only what is about that repository.
 - **`docs/decisions.md`**: one line per structural decision (date, decision, reference). Append
   only; a changed decision is a new line that says what it supersedes, never an edit. A decision
   made under a constraint names it ("no error tracker, because there is one instance · revisit if
-  a second instance appears"), and the agent raises it again when the constraint changes.
+  a second instance appears"), and the agent raises it again when the constraint changes. Every
+  line names who decided: the owner's words with the date, a register number the owner answered,
+  or "agent's choice, not confirmed by the owner". The agent still builds without waiting, but
+  each agent's choice goes to the owner in the next question round. Writing a choice down is never
+  the owner's approval (the owner, 2026-10-28).
 - **`docs/next-steps.md`**: the order of work, opening with "Where to pick up". "Resume next steps"
   means: read it, do the first item that is not done, keep it current.
 - **`docs/known-bugs.md`**: what is wrong and known, numbered for good: what happens, why, what
