@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-28 (second). The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-28 (third). The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on.
 
 **Read all of it before any work.** This file ends with the line "End of the handbook." If your
@@ -137,10 +137,15 @@ tooling, never what the agent can find out itself, never what the memory files a
   "2." read as the numbers while they were 113 and 114). Every question is an entry in the
   register (`docs/open-questions.md` of the repository it is about): chat carries the number and
   the answers, the register carries the reasoning, and the owner answers by number in any
-  conversation. Numbers are never reused. A session may give a question its number in chat first
-  and write it into the register with its next saved change (the owner, 2026-10-27). An ask that
-  only describes a situation cannot be answered: it belongs in Notes, with a question after it if
-  one is needed (2026-09-23).
+  conversation. Numbers are never reused. **A number is the question's only once it is saved**
+  (the owner, 2026-10-28, after sessions working side by side kept taking the same numbers): the
+  session writes the entry under the register's next number in a copy of the newest state of the
+  branch every session combines its work into (staging, where a repository has one) and saves only
+  that change there. When another session saved first, the save is refused, and the session takes
+  the newer register and the number after. The number is named in chat only after that save, made
+  with the repository's own command for it where there is one. An ask that only describes a
+  situation cannot be answered: it belongs in Notes, with a question after it if one is needed
+  (2026-09-23).
 - **One decision per question.** The question is one short sentence in plain words that ends with
   a question mark and holds no options and no reasoning (2026-09-29).
 - **The options under it, lettered a), b), c), one per line, at most three, always in rising
@@ -334,8 +339,9 @@ on and believed.
   register. Then save the work so it has reached GitHub, and report in the reply protocol. A turn
   never ends with saved work that has not been sent.
 - **Sessions running side by side** each save their own work, and the work is combined into
-  staging. When two sessions take the same register number, both meanings stand and the register
-  counts on (2026-09-23); duplicates are reported when the work is combined.
+  staging. A register number is saved before it is named (Questions above), so two sessions do
+  not take the same one; a number that still turns up twice is reported when the work is combined,
+  keeps its first question, and the later one takes the next number.
 
 ## Units of work
 
