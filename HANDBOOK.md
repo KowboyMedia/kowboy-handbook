@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-28 (third). The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-29. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on.
 
 **Read all of it before any work.** This file ends with the line "End of the handbook." If your
@@ -348,6 +348,11 @@ on and believed.
 - **One item per session.** A session takes one item of `docs/next-steps.md`, marks it "in
   progress" there with the date, and ends with the item done or handed back with what was learned.
   Two sessions never work the same item; a new session takes the first unmarked one.
+- **New feature, new thread** (the owner, 2026-10-29). Start a new thread for every new feature or
+  ask, even when an existing thread touches the same area. Send work to an existing thread only to
+  fix or change something that thread just delivered or is building right now, because that thread
+  already has the context. A clean context keeps answers focused, and separate threads keep
+  questions, costs and results apart.
 - **Plan before building** when a change touches more than a few files, a protected path or the
   contract: the plan (what changes, what is tested, what is a Decide) goes into the item first, and
   code starts after it. A change that fits in one sentence skips the plan.
