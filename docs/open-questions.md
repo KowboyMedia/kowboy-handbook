@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 11
+Next number: 12
 
 ## 5 `[handbook]` Should the handbook be restructured as the audit proposes, with no rule changed?
 
@@ -13,7 +13,7 @@ handbook's own terms are undefined; four rules can apply to one situation with n
 the main file is growing about 800 characters a day, so the condense of 27 October will be needed
 again by December.
 
-- a) **yes, all of it** (recommended): a core `HANDBOOK.md` of at most 18,000 characters (who
+- a) **yes, all of it** (recommended): a core `HANDBOOK.md` of at most 16,000 characters (who
   decides, reply protocol with an example of every block, memory, stop and ask, session, units of
   work, a glossary, a precedence list); build-time rules move under Build and Review in
   `PHASES.md`; the history moves to a new `docs/decisions.md` here; a fresh agent checks rule by
@@ -47,7 +47,8 @@ breaks its end line or loses a rule reaches every session at once, and two versi
 day read the same.
 
 - a) **yes** (recommended): on every proposed change, automatic checks that the end line is
-  present, each file is under its size budget (core 18,000, phases 20,000 characters), the version
+  present, each file is under its size budget (core 16,000 characters and under 200 lines, phases
+  20,000 characters), the version
   changed and is unique (a date with a letter, 2026-10-30a), the formatting is clean, and no
   address or e-mail slipped in; a `CHANGELOG.md`; and a checklist on each proposed change that
   names the correction or question behind it.
@@ -100,3 +101,23 @@ this session wrote 5 to 10 on its own branch for that reason.
 
 Blocked: every numbered question from a claude.ai session, including these. The smaller option is
 a). Reply: a or b.
+
+## 11 `[handbook]` Should the handbook's core reach sessions at the level of a `CLAUDE.md` instead of as a downloaded file?
+
+Asked 2026-10-30 (audit finding A1 and "Delivery mechanisms", checked against the platform's
+documentation). A downloaded file is ordinary conversation and is dropped at the first compaction
+of a long session; a `CLAUDE.md` is re-sent with every request and put back after compaction. The
+path used today (a line in the personal preferences) is not documented anywhere and works by
+chance. The core must be at most 16,000 characters for either channel below (question 5).
+
+- a) **yes, through the organisation's managed settings** (recommended): the owner looks once
+  whether "Managed settings" shows under Organization settings, Claude Code, on claude.ai; if it
+  does, the agent prepares the core and the owner pastes it there, once per handbook version, and
+  it reaches every terminal, desktop, web and cloud session (not Cowork). If the page is not
+  there, b) follows without another question.
+- b) **yes, through each project's instructions**: the agent prepares the core and the owner
+  pastes it into each claude.ai project that starts sessions, once per project and per version.
+- c) **no**: the downloaded file stays the only channel, and the rules are lost in long sessions.
+
+Blocked: nothing today; long sessions keep losing the rules. The smaller option is b). Reply: a, b
+or c.
