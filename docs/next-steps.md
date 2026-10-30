@@ -10,17 +10,18 @@ audit behind them is `docs/audit-2026-10-30.md`.
 
 ## Items
 
-1. `[handbook]` Restructure: a core under 20,000 characters, build-time rules into `PHASES.md`,
-   the history into `docs/decisions.md`, a glossary, the two settling lines. One session. Waits on
-   question 5.
+1. `[handbook]` Restructure: a core under 24,000 characters with every anti-drift rule in it,
+   the procedure into `PHASES.md`, the history into `docs/decisions.md`, a glossary, the two
+   settling lines. One session. Waits on question 5.
 2. `[handbook]` Delivery: the replacement preference text for the owner to paste; the core
    prepared for the channel chosen. One session, plus the owner's paste. Waits on 6 and 11.
 3. `[handbook]` Automatic checks on every proposed change, a date-with-letter version, a
    `CHANGELOG.md`, a proposed-change checklist. One session. Waits on 7.
 4. `[handbook]` The corrections lists and the monthly handbook session, with the size budget. A
    rule, then one session a month. Waits on 8.
-5. `[handbook]` Ten scripted prompts with the reply shape each must produce, run in a fresh session
-   after each handbook change. One session. Optional; follows item 1.
+5. `[handbook]` Ten scripted prompts, half on the reply shape and half on drift (a tempting
+   feature, a library, a home-made layer, a duplicate code path, a live site), run in a fresh
+   session after each handbook change. One session. Optional; follows item 1.
 6. `[handbook]` The rule on connected services and client data, and the numbering rule. One
    session. Waits on 9 and 10.
 

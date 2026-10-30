@@ -13,16 +13,19 @@ characters) before any work; history sits inside the rules; the handbook's own t
 undefined; and the main file is growing about 800 characters a day, so the condense of 27 October
 will be needed again by December.
 
-- a) **yes, all of it** (recommended): a core of at most 20,000 characters, the rest moved, nothing
-  lost.
-  - The core keeps what holds in every reply: who decides, working with the owner, the reply
-    protocol with an example of every block, memory, stop and ask, session, units of work; it
-    gains a glossary and the two lines that settle C1 and C2.
-  - The build-time rules (5,738 characters) and the index of phases move into `PHASES.md`; the
-    history (about 2,500 characters) moves to a new `docs/decisions.md` here, one line per rule.
-  - The arithmetic in the audit's step 1 lands at about 24,000, and a wording pass that changes no
-    rule brings it under 20,000 and 200 lines. A fresh agent checks rule by rule that nothing was
-    lost, and the owner reads the result before it is saved.
+- a) **yes, all of it** (recommended): a core of at most 24,000 characters, the procedure moved,
+  no rule lost.
+  - The core keeps every rule that must be in the agent's head: who decides, working with the
+    owner, the reply protocol with an example of every block, memory, stop and ask, the anti-drift
+    rules (simple beats clever, market-leading first, one code path, readable code, never invent a
+    rule), session, units of work; it gains a glossary and the two lines that settle C1 and C2.
+  - The procedure (the checklist for product texts, the deletion inventory, "Checks", "Definition
+    of done", the index of phases; about 4,200 characters) moves into `PHASES.md`, where the
+    Review phase enforces it; the history (about 2,500 characters) moves to a new
+    `docs/decisions.md` here, one line per rule.
+  - The arithmetic in the audit's step 1 lands at about 26,600, and a wording pass that changes no
+    rule brings it to about 22,000. A fresh agent checks rule by rule that nothing was lost, and
+    the owner reads the result before it is saved.
 - b) **history out and glossary in only**: the file lands near 31,000 characters and keeps growing
   at the same rate.
 - c) **leave it**: nothing changes.
@@ -53,8 +56,8 @@ one day are told apart only by a suffix typed by hand.
 
 - a) **yes** (recommended): every proposed change is checked before it is combined, and the
   history is readable.
-  - The checks: the end line is present; the core is under 20,000 characters and 200 lines and
-    the phases under 24,000; the version changed and is unique (a date with a letter,
+  - The checks: the end line is present; the core and the phases are each under 24,000
+    characters; the version changed and is unique (a date with a letter,
     2026-10-30a); the formatting is clean; no address or e-mail slipped in.
   - A `CHANGELOG.md`, and a short checklist on each proposed change naming the correction or
     question behind it and, for a condense, the "no rule lost" check.
@@ -126,7 +129,7 @@ line in the personal preferences, is documented nowhere and works by chance.
     Code, on claude.ai. If it does, the agent prepares the core and the owner pastes it there. If
     the page is not there, b) follows without another question.
 - b) **yes, through each project's instructions**: one paste per claude.ai project and per
-  version, and the core must be condensed to 16,000 characters first.
+  version, and the core must first be cut to 16,000 characters, which cuts rules.
 - c) **no**: the downloaded file stays the only channel, and the rules are lost in long sessions.
 
 Blocked: nothing today; long sessions keep losing the rules. The smaller option is b). Reply: a, b
