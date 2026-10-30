@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-29. The way of working for every Claude Code session someone at Kowboy starts,
+Version 2026-10-30. The way of working for every Claude Code session someone at Kowboy starts,
 whichever repository it is on.
 
 **Read all of it before any work.** This file ends with the line "End of the handbook." If your
@@ -251,6 +251,16 @@ work, and hold only what is about that repository.
 
 A repository that lacks one of them gets it the first time it is needed: a title, one sentence on
 what the file holds, and for the register the line "Next number: 1".
+
+**Cold pickup** (the owner, 2026-10-30). Every project must be safe to patch and deploy by someone
+who has only Claude Code and access to its repository. Anything that work depends on (deploy
+steps, server and app names, safety limits, "never do this" rules, scripts, and the names of
+required secrets) lives in the repository, never only in a personal project, personal agent memory,
+chat history or a shared folder. Secret values stay in the platform's secret store and are never
+written down. Project memory and chats may hold working notes, but when a note becomes something
+the next person needs, move it into the repository in the same session. General working rules
+belong in this handbook and are not copied into repositories; a repository may assume the handbook
+is available but must not need it to be patched and deployed safely.
 
 ## Several repositories in one session
 
