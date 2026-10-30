@@ -11,18 +11,19 @@ audit behind them is `docs/audit-2026-10-30.md`.
 ## Items
 
 1. `[handbook]` Restructure: a core under 24,000 characters with every anti-drift rule in it,
-   the procedure into `PHASES.md`, the history into `docs/decisions.md`, a glossary, the two
-   settling lines. One session. Waits on question 5.
+   the ask-or-go test, the procedure into `PHASES.md`, the history into `docs/decisions.md`, a
+   glossary, the two settling lines, the wording pass. One session. Waits on questions 5 and 13.
 2. `[handbook]` Delivery: the replacement preference text for the owner to paste; the core
    prepared for the channel chosen. One session, plus the owner's paste. Waits on 6 and 11.
-3. `[handbook]` Automatic checks on every proposed change, a date-with-letter version, a
+3. `[handbook]` The deny list for one-way actions, delivered with the core. One session, plus the
+   owner's paste. Waits on 12.
+4. `[handbook]` Automatic checks on every proposed change, a date-with-letter version, a
    `CHANGELOG.md`, a proposed-change checklist. One session. Waits on 7.
-4. `[handbook]` The corrections lists and the monthly handbook session, with the size budget. A
+5. `[handbook]` The corrections lists and the monthly handbook session, with the size budget. A
    rule, then one session a month. Waits on 8.
-5. `[handbook]` Ten scripted prompts, half on the reply shape and half on drift (a tempting
-   feature, a library, a home-made layer, a duplicate code path, a live site), run in a fresh
+6. `[handbook]` Twelve scripted prompts on reply shape, drift and ask-or-go, run in a fresh
    session after each handbook change. One session. Optional; follows item 1.
-6. `[handbook]` The rule on connected services and client data, and the numbering rule. One
+7. `[handbook]` The rule on connected services and client data, and the numbering rule. One
    session. Waits on 9 and 10.
 
 ## Later

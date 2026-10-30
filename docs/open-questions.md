@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 12
+Next number: 14
 
 ## 5 `[handbook]` Should the handbook be restructured as the audit proposes, with no rule changed?
 
@@ -23,9 +23,10 @@ will be needed again by December.
     of done", the index of phases; about 4,200 characters) moves into `PHASES.md`, where the
     Review phase enforces it; the history (about 2,500 characters) moves to a new
     `docs/decisions.md` here, one line per rule.
-  - The arithmetic in the audit's step 1 lands at about 26,600, and a wording pass that changes no
-    rule brings it to about 22,000. A fresh agent checks rule by rule that nothing was lost, and
-    the owner reads the result before it is saved.
+  - The arithmetic in the audit's step 1 lands at about 26,600, and the wording pass (one rule
+    per line, imperative, no justification in the core, no abbreviations, examples kept) brings
+    it to about 18,000 to 20,000. A fresh agent checks rule by rule that nothing was lost, and the
+    owner reads the result before it is saved.
 - b) **history out and glossary in only**: the file lands near 31,000 characters and keeps growing
   at the same rate.
 - c) **leave it**: nothing changes.
@@ -134,3 +135,41 @@ line in the personal preferences, is documented nowhere and works by chance.
 
 Blocked: nothing today; long sessions keep losing the rules. The smaller option is b). Reply: a, b
 or c.
+
+## 12 `[handbook]` Should one-way actions be refused by the platform's permission settings, not only by a rule?
+
+Asked 2026-10-30 (audit finding F4; the owner: an agent deleted a complete database, no damage
+done). A rule is guidance that the agent must remember hours into a session; the platform
+documents that only its permission settings enforce. A refused command makes the agent stop and
+ask by itself.
+
+- a) **yes, through managed settings** (recommended): one deny list for both accounts, reaching
+  every session, pasted once where question 11's core goes.
+  - The list names the destructive commands: deleting data, databases, tables, environments,
+    servers, apps or backups; forced overwrites of saved work; hosting and firewall changes. If
+    the managed-settings page is not there, b) follows without another question.
+- b) **yes, in each of our own repositories' settings**: the same list, kept in every repository
+  we own; a client's repository gets it only with the client's word.
+- c) **no**: the rule of 18 and 23 October stays the only guard.
+
+Blocked: nothing today; the next one-way step rests on memory. The smaller option is b). Reply: a,
+b or c.
+
+## 13 `[handbook]` Should the ten rules on when to ask be replaced by one "Ask or go" test?
+
+Asked 2026-10-30 (audit findings F1 to F3, F5; the owner: "too much noise and too little
+autonomy"). The draft test is in the audit under "F. When to ask and when to go": three questions
+in order (can the agent alone undo it; is it on the gate list; does more than one option meet the
+requirements), three outcomes (Go, Default, Ask), and two lines that make a one-option question a
+slip and the evaluation mandatory before any question.
+
+- a) **yes** (recommended): the test replaces the ten rules and keeps their content; nothing
+  becomes allowed that is not allowed today.
+  - About 1,000 characters in place of about 5,000. Over-asking is corrected like acting without
+    asking, so the agent's safe move is no longer to ask.
+- b) **add the test, keep the rules**: the test on top; the file grows and the ten rules still
+  compete with it.
+- c) **no**: the ten rules stay as they are.
+
+Blocked: step 1 of the strategy, which writes the test into the core. The smaller option is b).
+Reply: a, b or c.
