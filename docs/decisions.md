@@ -178,3 +178,8 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   under the rule above (question 7 was tooling); not confirmed by the owner.
 - 2026-10-31 · The owner's cloud environment carries the setup script and is selected in each
   project (register 16) · the owner, 2026-10-31: "16 pasted".
+- 2026-10-31 · A connected service is read only; a write through it only when the item names it
+  beforehand; a client's data never leaves the client's own systems · the owner, question 9 a),
+  2026-10-31.
+- 2026-10-31 · No memory for first corrections and no monthly tidy of the handbook; as today ·
+  the owner, question 8 c), 2026-10-31.

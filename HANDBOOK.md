@@ -79,6 +79,10 @@ Before a step, three questions in order.
   asking what the agent could have decided is corrected like acting without asking.
 - At a one-way step, at a close call and in the round before the work, the advisor answers Go,
   Default or Ask with one line why; the agent follows it or asks.
+- A connected service (mail, files, chat, a shop, accounting) is read only. A write through it
+  (sending, changing, moving) happens only when the item names it beforehand, and a client's data
+  never leaves the client's own systems: never into another service, a chat or a document outside
+  the project.
 - A gate is never a Default. Being doable by the agent alone is one input to "best", never the
   deciding one. When the best option needs something only the owner can give (a connection, a
   sign-in, a permission), ask for exactly that and list no worse alternatives.
