@@ -53,11 +53,12 @@ script's text (a version comment) rebuilds it at once. The platform documents th
 loads the file a setup script writes to `~/.claude/CLAUDE.md`, and that `raw.githubusercontent.com`
 is reachable at the default network setting.
 
-**The terminal on a developer's machine.** Once per machine, the block in
-`docs/setup-new-account.md`: it saves the handbook as `~/.claude/kowboy-handbook.md`, adds one
-import line to `~/.claude/CLAUDE.md` (which keeps whatever it already holds), and adds a
-session-start hook that refreshes the file. Cowork on the machine skips imports that point outside
-the session's folder, so there the handbook comes only from the preferences line.
+**The terminal on a developer's machine.** Once per machine, the two steps in
+`docs/setup-new-account.md`: save the handbook as `~/.claude/kowboy-handbook.md` with one
+download, and add the line `@~/.claude/kowboy-handbook.md` to `~/.claude/CLAUDE.md`, which keeps
+whatever it already holds. The download is run again when the handbook changes. Cowork on the
+machine skips imports that point outside the session's folder, so there the handbook comes only
+from the preferences line.
 
 What the documentation says and does not say: re-sending after
 compaction is documented for a repository's own `CLAUDE.md` and not stated for the personal one;

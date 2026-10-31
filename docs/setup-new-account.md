@@ -23,29 +23,22 @@ Done. From the next session on, the handbook is also loaded as your personal ins
 
 ## 2. Your Mac (terminal)
 
-Open Terminal, paste this whole block, press Enter:
+1. Open Terminal, paste this line, press Enter. It saves the handbook as its own file:
 
 ```bash
-mkdir -p ~/.claude \
-&& curl -fsSL https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/HANDBOOK.md -o ~/.claude/kowboy-handbook.md \
-&& { grep -qs '@~/.claude/kowboy-handbook.md' ~/.claude/CLAUDE.md || printf '\n@~/.claude/kowboy-handbook.md\n' >> ~/.claude/CLAUDE.md; } \
-&& python3 - <<'PY'
-import json, os
-p = os.path.expanduser("~/.claude/settings.json")
-d = json.load(open(p)) if os.path.exists(p) else {}
-hook = {"hooks": [{"type": "command", "command": "curl -fsSL https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/HANDBOOK.md -o ~/.claude/kowboy-handbook.md"}]}
-d.setdefault("hooks", {}).setdefault("SessionStart", [])
-if not any("kowboy-handbook" in json.dumps(h) for h in d["hooks"]["SessionStart"]):
-    d["hooks"]["SessionStart"].append(hook)
-json.dump(d, open(p, "w"), indent=2)
-print("done")
-PY
+mkdir -p ~/.claude && curl -fsSL https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/HANDBOOK.md -o ~/.claude/kowboy-handbook.md
 ```
 
-It saves the handbook as its own file, `~/.claude/kowboy-handbook.md`, adds one line to your
-`~/.claude/CLAUDE.md` that includes it (everything already in that file stays as it is), and adds
-a refresh at the start of every terminal session. If the Mac asks to install "command line
-developer tools", accept and run the block again.
+2. Open the file `~/.claude/CLAUDE.md` (create it if it does not exist) and add this line at the
+   end; everything already in the file stays:
+
+```
+@~/.claude/kowboy-handbook.md
+```
+
+That is all. The saved file is the copy that survives long sessions; the Claude Code line in your
+instructions still brings the newest text at every session start. When Patric says the handbook
+changed, run the line in step 1 again.
 
 One limit: Cowork on the Mac skips included files, so there the handbook comes only from the
 Claude Code line in your instructions, as before.
