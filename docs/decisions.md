@@ -130,3 +130,17 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   and the examples added about 5,000 characters of new content after that figure was set, and no
   rule was cut to meet it. The budget going forward is question 8's to set · agent's choice, not
   confirmed by the owner.
+- 2026-10-31 · The core reaches sessions as the personal `CLAUDE.md` of every machine and cloud
+  environment, written by one download: a three-line setup script on the owner's cloud
+  environment (selected in each project), and on each developer's machine a one-time download
+  plus a session-start hook that refreshes it. The preferences line stays. Supersedes the
+  managed-settings channel (question 11 a), which needs an organisation; the account is a Max plan
+  without one · the owner, 2026-10-31: "There is no organization, I use max 20 and it does not
+  exist in team configuration. Find another solution." Channel chosen on the platform's
+  documentation (cloud-environments: a setup script that writes `~/.claude/CLAUDE.md` is loaded as
+  user instructions; memory: user-scope files load in the terminal; Cowork skips outside imports,
+  so the copy is the whole file) · agent's choice on the facts, not separately confirmed.
+- 2026-10-31 · Not covered by any documented channel: a project thread applies no settings from a
+  repository or a machine, so the deny list for one-way actions (question 12) reaches the terminal
+  and single-repository cloud sessions only; in project threads the rule and the advisor are the
+  guard · agent's finding, from the platform's documentation.

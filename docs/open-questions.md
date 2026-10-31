@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 16
+Next number: 18
 
 ## 7 `[handbook]` Should the repository get automatic checks and a change log?
 
@@ -52,3 +52,16 @@ chat, shops, accounting) and nothing says what an agent may do through them.
 - b) **no**: each repository's `AGENTS.md` says it, if at all.
 
 Blocked: nothing today. The smaller option is b). Reply: a or b.
+
+## 16 `[handbook]` Instruction: put the three-line setup script from the README into your cloud environment, select that environment in each project, then say "pasted".
+
+Asked 2026-10-31 (item 2). The script places the handbook as the personal `CLAUDE.md` of every
+cloud session and project thread, which the platform re-sends with every request. Where: claude.ai,
+Claude Code, Environments, the environment's setup script; then in each project, Project settings,
+Environment. The script is in the README under "How it reaches a session".
+
+## 17 `[handbook]` Instruction: run the one-line download from the README on your machine and your colleague's, add the session-start hook, then say "installed".
+
+Asked 2026-10-31 (item 2). It places the handbook as the personal `CLAUDE.md` for the terminal and
+Cowork, refreshed at every terminal session start. Both lines are in the README under "The terminal
+and Cowork on a developer's machine".

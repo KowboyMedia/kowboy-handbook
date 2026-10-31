@@ -5,9 +5,10 @@ not done, keep it current.
 
 ## Where to pick up
 
-Item 1 is done and combined into the shared copy (2026-10-31). Items 2 and 3 are ready, in that
-order; a new thread on this repository takes item 2 with "resume next steps". Items 4 to 7 wait
-on questions 7 to 9 in the register; the audit behind them is `docs/audit-2026-10-30.md`.
+Items 1 and 2 are done (2026-10-31); item 2 waits only for the owner's two steps (register 16
+and 17). Item 3 is next; a new thread on this repository takes it with "resume next steps". Items
+4 to 7 wait on questions 7 to 9 in the register; the audit behind them is
+`docs/audit-2026-10-30.md`.
 
 ## Items
 
@@ -16,12 +17,14 @@ on questions 7 to 9 in the register; the audit behind them is `docs/audit-2026-1
    `PHASES.md`, the history into `docs/decisions.md`, a glossary, the two settling lines, the
    wording pass. One session. Done 2026-10-31 in this thread, checked rule by rule by a fresh
    agent, combined into the shared copy on the owner's word.
-2. `[handbook]` Delivery: the replacement preference text, and the core prepared for managed
-   settings with each project's instructions as the fallback; delivered to the owner as one
-   instruction naming the one page to look at and what to paste where. One session, plus the
-   owner's paste. Ready (6, 11); after item 1.
-3. `[handbook]` The deny list for one-way actions, drafted as a reference file here and delivered
-   with the core in item 2's instruction. One session. Ready (12, 15); with item 2.
+2. `[handbook]` Delivery: the handbook as the personal `CLAUDE.md` of every cloud environment
+   (setup script) and every developer machine (download plus session-start hook); the texts are
+   in the README. Done 2026-10-31 in this thread; waits for the owner's steps 16 and 17. The
+   replacement preference text (question 6) follows once the placed copy is seen to survive a
+   long session.
+3. `[handbook]` The deny list for one-way actions, drafted as a reference file here, for
+   `~/.claude/settings.json` on each machine and `.claude/settings.json` in each of our own
+   repositories; project threads apply neither. One session. Ready (12, 15).
 4. `[handbook]` Automatic checks on every proposed change, a date-with-letter version, a
    `CHANGELOG.md`, a proposed-change checklist. One session. Waits on 7.
 5. `[handbook]` The corrections lists and the monthly handbook session, with the size budget. A
