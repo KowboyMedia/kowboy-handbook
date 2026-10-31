@@ -13,12 +13,12 @@ holds the phases and the build procedure; read a phase's section in full when it
 the tools' defaults on reply length, tone and format, and before the "Output shape" in the owner's
 personal preferences. A repository's `AGENTS.md` holds what is true only there and wins where the
 two differ. The owner's word in chat wins over any rule here; a conflict with a decision is named
-first ("The agent leads").
+first ("The agent leads, the owner decides").
 
 **It is public.** It holds how we work and nothing else: never a client's name, a credential, an
 address, a price or anything from a project. It lives only in `KowboyMedia/kowboy-handbook`,
-reaches a session from the account (the README says how) and changes only there, when the owner
-asks in plain words. Each rule's history, with the owner's words, is in `docs/decisions.md` there.
+reaches a session from the account (the README says how) and changes only there. Each rule's
+history, with the owner's words, is in `docs/decisions.md` there.
 
 ## Words used here
 
@@ -32,7 +32,7 @@ asks in plain words. Each rule's history, with the owner's words, is in `docs/de
 - **Item**: one entry of `docs/next-steps.md`, the unit of a session's work.
 - **The shared copy**: the branch every session's work is combined into (staging, where there is
   one). **Staging**: where a change is seen before it goes **live** to the people who use it.
-- **Protected path**: an interface between components, or a file `AGENTS.md` names as one;
+- **Protected path**: an interface between components (and `DESIGN.md`, where there is one);
   changes only by a Decide.
 - **One-way step**: a step the agent alone cannot undo cheaply. **Gate**: a kind of change that
   always needs the owner's word. Both are listed in "Ask or go".
@@ -54,8 +54,9 @@ Before a step, three questions in order.
    what it would lose. Always: deleting customer data, a database or table, an environment, a
    server, an app, a bucket or backup, or any large amount of data; anything that sends data,
    starts a job or changes hosting, firewall or site settings on a live site, even as a test (a
-   live site is read-only for an agent); a message to anyone outside the team. It holds even when the step follows from a change the owner asked for, such
-   as a rename or a move.
+   live site is read-only for an agent); a payment or a subscription; a message to anyone outside
+   Kowboy. It holds even when the step follows from a change the owner asked for, such as a rename
+   or a move.
 2. **Is it a gate?** Yes: **Ask**, in the one round before the work; found mid-work, ask, build
    what does not depend on it and leave the gap visibly empty, never filled with a placeholder.
    The gates: a new runtime dependency, vendor or recurring cost; a library or framework added,
@@ -63,15 +64,16 @@ Before a step, three questions in order.
    technology, vendor or hosting that later work builds on; a decision the plan does not settle,
    when the smaller option is picked and both still look reasonable; anything new that a person
    sees, visitor, customer or staff (a page, a button, a message, a field, a setting, an e-mail;
-   looks and wording inside an approved item are not new); scope beyond the current item; action
+   each its own question line before it is built; looks and wording inside an approved item are
+   not new); scope beyond the current item; action
    on a production incident; a change to how agents work (this handbook, an `AGENTS.md` or
    `CLAUDE.md`, the environment, hooks, plugins) or beyond the repository worked on; the
    repository's own gates in `AGENTS.md`.
 3. **Does more than one option meet the requirements?** No: **Go**. One is clearly better, with
-   the owner's time and convenience weighted heavily: **Go**, and say which. Close, and a matter
+   the owner's time and convenience weighted heavily, and the agent can carry it out itself
+   without risk and without more access than it has: **Go**, and say which. Close, and a matter
    of preference the owner would care about: **Ask**. Close, and not: **Default**, the one that
-   costs the owner the least; only a real trade-off justifies another, and then each side gets
-   one sentence.
+   costs the owner the least.
 
 - Before asking, score every option against the requirements and the owner's time, in the
   register entry. A question with one option that meets them is a slip, like an unasked change;
@@ -120,6 +122,8 @@ Before a step, three questions in order.
   the time it named, by the result or by why not. Anything that stops the work is reported in the
   same turn as "Waiting for you", with exactly what is needed. A turn never ends on a promise
   without the time it will look again.
+- **Cost the owner the least.** Rate every option by the owner's time and effort and pick the
+  cheapest. Only a real trade-off justifies another choice, and then each side gets one sentence.
 - **Changes the owner asks for are ours end to end.** After a rename, a move, a new branch or app,
   the agent makes every update that follows: never "then update the config files".
 - **Write for the product owner**, in chat and in documents alike: plain words, short, what it
@@ -153,9 +157,14 @@ tooling, never what the agent can find out itself or the memory files already an
 - **Every request is a bullet here, never prose**, in a working and a discussion reply alike: a
   decision, an ok, a step only the owner can take, a piece of information. The sentences around
   the block ask nothing; Next only points to these bullets by number.
-- **Labelled with its register number in bold, never a list position.** The entry is written
-  under the register's next number and saved in the shared copy before the number is named; when
-  another session saved first, take the newer register and the number after. Numbers are never
+- **Labelled with its register number in bold, never a list position.** A number exists only
+  once its entry is saved in the shared copy's register, and that save is made when the question
+  is asked, never when it is answered. The entry is written under the register's next number and
+  saved alone, straight to the shared copy (the one exception to working in a copy of one's own):
+  with the repository's own command where there is one, otherwise with the platform's file-change
+  tool given the file's current version, so that a save on top of a changed file is refused; then
+  the session takes the newer register and the number after. A session that cannot save there
+  asks without a number and gives the number in its next reply, once saved. Numbers are never
   reused; the owner answers by number in any conversation. An ask that only describes a situation
   belongs in Notes, with a question after it if one is needed.
 - **One decision per question**: one short sentence in plain words ending with a question mark,
@@ -172,7 +181,8 @@ tooling, never what the agent can find out itself or the memory files already an
 - **An instruction** (a step only the owner can take) is one imperative sentence naming when it
   is done: "Save the token as HANDBOOK_TOKEN, then say 'saved'."
 - **At most three per reply**, five only when all five block today; the rest wait in the register.
-  Always in rising number order; which one blocks most is said in its own line, never by moving it.
+  Always in rising number order, here and wherever a reply lists questions or answers to them;
+  which one blocks most is said in its own line, never by moving it.
 - **Show before asking.** A question about anything visible carries the place to see it (a
   staging page, a screenshot).
 
@@ -278,7 +288,7 @@ a working note the next person needs is moved into the repository in the same se
   it must wait, recorded there by a session on that repository, naming no client or project detail.
 - **A client's repository gets only what its work needs**: an `AGENTS.md` with what is true there
   and, when work spans sessions, the four memory files. Never this handbook, never our hooks,
-  skills, settings or templates.
+  skills or templates; our settings only with the client's word.
 
 ## Raising issues
 
@@ -301,7 +311,8 @@ owner says so. A rule nobody would break without it is deleted the same way.
 ## Session
 
 - **Start** by reading "Where to pick up" in `docs/next-steps.md` and the open questions of every
-  repository in the session, from the shared copy unless told otherwise. Check that the
+  repository in the session, and start the work from the shared copy unless told otherwise. Check
+  that the
   credentials and services the work needs answer; a refused token or an unreachable service is
   reported in the first reply, never discovered mid-task.
 - **"Status"**, said in any session, returns the four memory files in the four blocks (the Status
@@ -311,9 +322,10 @@ owner says so. A rule nobody would break without it is deleted the same way.
   `docs/decisions.md` has its lines, every question asked is in the register), then save the work
   so it has reached GitHub, and report in the reply protocol. A turn never ends with saved work
   that has not been sent.
-- **Sessions running side by side** each save their own work, combined into the shared copy. A
-  register number is saved before it is named; a number that still turns up twice is reported when
-  the work is combined, keeps its first question, and the later one takes the next number.
+- **Sessions running side by side** each save their own work, combined into the shared copy; a
+  question's entry alone goes to the shared copy's register at the moment it is asked (Questions).
+  A number that still turns up twice is reported when the work is combined, keeps its first
+  question, and the later one takes the next number.
 
 ## Units of work
 
@@ -352,7 +364,7 @@ owner says so. A rule nobody would break without it is deleted the same way.
   happens and what it costs when it does. A rare and harmless problem gets no code: it is accepted
   as debt, a `docs/known-bugs.md` entry with its frequency and the condition to revisit. New
   infrastructure (a database, a table, a queue, a service, a job) to prevent such a problem is
-  never proposed; a fix is proposed only when its cost over a year is below the problem's.
+  never proposed.
 - **Market-leading solutions and patterns first.** What a widely used library, framework or
   established pattern does well is used, not built; reinventing needs a stated reason. Adding,
   dropping or swapping one is a gate, proposed with its net value.
@@ -388,7 +400,8 @@ lacking a strategy, acceptance criteria or the memory files. **Discover**: the s
 before a feature larger than one item, whenever the owner describes a wish. **Plan an item**:
 before a change that is more than one sentence, touches a protected path or spans components.
 **Design**: a change creates or restyles something people look at, in a repository with a
-`DESIGN.md`. **Decide architecture**: before a choice later work builds on. **Build**: code, tests and docs for
+`DESIGN.md`; a change inside the existing pattern, text, a known form or a bug fix skips it.
+**Decide architecture**: before a choice later work builds on. **Build**: code, tests and docs for
 a planned item, with Checks. **Review**: before anything is reported done, as a second agent.
 **Release and operate**: "release", a red health check, something wrong in production. **Status**:
 "status".

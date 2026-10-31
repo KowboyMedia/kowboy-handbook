@@ -2,8 +2,9 @@
 
 Version 2026-10-31. The second part of the Kowboy handbook: what each phase reads, produces and
 must make true, and the build procedure (Checks, the deletion inventory, the checks for product
-texts). `HANDBOOK.md`, next to this file, says when each phase starts, and its rules hold all the
-time. Read the phase's section in full when it starts. Every phase ends with the memory current.
+texts). `HANDBOOK.md`, next to this file, says when each phase starts, and its rules hold all
+the time. Read the phase's section in full when it starts. Every phase ends with the memory
+current.
 
 **Make sure your copy is whole.** This file ends with the line "End of the phases." If your copy
 does not, or a tool shortened it anywhere, it was cut off: save it to a file with
@@ -16,7 +17,7 @@ From the first session on, every later session finds the same things in the same
 first thing the owner decides is the plan, not a detail.
 
 1. **The files.** `AGENTS.md` with only what is true here: the components and their tags, the
-   commands an agent cannot guess, the hard blocks, the repository's own stop-and-ask items and
+   commands an agent cannot guess, the hard blocks, the repository's own gates and
    definition of done, and "Design: none" or `DESIGN.md`. The four memory files under `docs/`.
 2. **The inputs.** What the owner has (a concept, a spec, reference sites, existing data, old
    documents) goes under `docs/inputs/`, unchanged.

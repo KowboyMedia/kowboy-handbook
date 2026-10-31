@@ -52,22 +52,3 @@ chat, shops, accounting) and nothing says what an agent may do through them.
 - b) **no**: each repository's `AGENTS.md` says it, if at all.
 
 Blocked: nothing today. The smaller option is b). Reply: a or b.
-
-## 10 `[handbook]` How does a question get its number when the session cannot save to the shared copy?
-
-Asked 2026-10-30 (audit finding C3). The rule of 28 October gives a question its number only once
-it is saved to the shared copy that every session's work is combined into. A session started on
-claude.ai works in a copy of its own, combined into the shared copy later, and is told never to
-save anywhere else, so it cannot meet the rule; this session wrote 5 to 11 in its own copy for
-that reason.
-
-- a) **saved in the session's own copy, then named** (recommended): a duplicate is resolved when
-  the work is combined, by the clause the handbook already has.
-  - The session takes the number from the newest register it can see and saves the entry in its
-    own copy before naming the number in chat. When two sessions took the same number, the first
-    question keeps it and the later one takes the next, as the handbook already says.
-- b) **keep the rule**: a session that cannot save to the shared copy asks without a number and
-  names it in a later reply, once its work is combined.
-
-Blocked: every numbered question from a claude.ai session, including these. The smaller option is
-a). Reply: a or b.

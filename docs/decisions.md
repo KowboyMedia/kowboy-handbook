@@ -113,3 +113,20 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   test; the procedure (Checks, the deletion inventory, the checks for product texts) is in Build
   in `PHASES.md`; the history is in this file; terms are explained under "Words used here" · item
   1, decided by question 5 a).
+- 2026-10-31 · A question's number exists only once its entry is saved in the shared copy's
+  register, and that save is made when the question is asked, never when it is answered: the
+  entry alone goes straight to the shared copy, with the repository's own command or the
+  platform's file-change tool given the file's current version, so a stale save is refused and
+  the session takes the next number; a session that cannot save there asks without a number.
+  Supersedes question 10's recommendation (a number saved on the session's own copy), which
+  reserves nothing for other sessions · the owner, 2026-10-31: "Multiple threads working on a
+  project repeatedly ask questions with the same numbers before I have time to reply ... Make sure
+  they write down the question with number somewhere as they are asked, not as they are answered."
+- 2026-10-31 · The Review phase gets check 11, "Proportion": a fix for a rare and harmless problem
+  is reported as disproportionate, whatever its quality · agent's choice, the enforcement half of
+  the proportional-fix rule; not confirmed by the owner.
+- 2026-10-31 · The restructured core landed at 26,534 characters, above the 24,000 named for
+  question 5 a): the test, the advisor, the proportional-fix rule, the numbering rule, the glossary
+  and the examples added about 5,000 characters of new content after that figure was set, and no
+  rule was cut to meet it. The budget going forward is question 8's to set · agent's choice, not
+  confirmed by the owner.
