@@ -1,9 +1,9 @@
 # Kowboy handbook - the phases
 
-Version 2026-10-27. The second part of the Kowboy handbook: what each phase reads, produces and
-must make true. `HANDBOOK.md`, next to this file, says when each phase starts, and its rules hold
-all the time. Read the phase's section in full when it starts. Every phase ends with the memory
-current.
+Version 2026-10-31. The second part of the Kowboy handbook: what each phase reads, produces and
+must make true, and the build procedure (Checks, the deletion inventory, the checks for product
+texts). `HANDBOOK.md`, next to this file, says when each phase starts, and its rules hold all the
+time. Read the phase's section in full when it starts. Every phase ends with the memory current.
 
 **Make sure your copy is whole.** This file ends with the line "End of the phases." If your copy
 does not, or a tool shortened it anywhere, it was cut off: save it to a file with
@@ -35,6 +35,15 @@ first thing the owner decides is the plan, not a detail.
    converged branch; `acceptance/criteria.json` mapping every `AC n` to a named test and a script
    that writes `acceptance/report.md` from a real run. The order of work goes into
    `docs/next-steps.md` with "Where to pick up" on top.
+7. **Cold pickup.** Every project must be safe to patch and deploy by someone who has only
+   Claude Code and access to its repository. Anything the work depends on (deploy steps, server
+   and app names, safety limits, "never do this" rules, scripts, the names of required secrets)
+   lives in the repository, never only in a personal project, agent memory, chat history or a
+   shared folder. Secret values stay in the platform's secret store and are never written down.
+   When a working note becomes something the next person needs, move it into the repository in
+   the same session. General rules belong in the handbook, not copied into repositories; a
+   repository may assume the handbook is available but must not need it to be patched and
+   deployed safely.
 
 Done when a new session told only "resume next steps" starts on the right item, a red check
 blocks, and the acceptance report lists every criterion with its test or "no test yet".
@@ -133,17 +142,15 @@ can be.
 
 - **The aim, repeated back first.** Before designing a core feature, the agent repeats back in a
   few lines what the owner means, in the owner's terms and at the scale the owner stated, and
-  designs only after the owner's yes (2026-10-19: a search was designed twice on a misreading of
-  its aim).
+  designs only after the owner's yes.
 - **Designed for the stated goal, never for today's data.** A design starts from the scale and
   openness its goal states, not from the size of today's data or what today's code makes easy. An
   assumption on volume, scope or limits is written at the top of the design, and one that changes
   the architecture is a Decide. Today's size may decide what is built first, never what the design
-  can do (2026-10-19: "like me asking you to design a car, and you design a tractor").
+  can do.
 - **Checked against the owner's words before the owner sees it.** A fresh agent given only the
   owner's words and the design checks that it delivers what was asked, at the scale asked, and
-  names the assumption that would break it; what it finds is fixed before the design is shown
-  (2026-10-19).
+  names the assumption that would break it; what it finds is fixed before the design is shown.
 - **Boundaries first.** Name the components and the interface between each pair; a component knows
   nothing beyond its interfaces; each interface is a protected path.
 - **Market-leading and boring**, the way the documentation says; a deviation is written down with
@@ -182,6 +189,32 @@ expects, leaving the repository cleaner than it was found.
   edited to pass; nothing is skipped.
 - **Save often**, with a message that says what changed for the product. **Two failed fixes end
   the attempt.**
+- **Checks.** The repository's `AGENTS.md` lists the checks that block merge or deploy; they are
+  the only ones, and adding one needs approval. Everything else is a warning: reported, never
+  blocking. Leave every file you touch free of warnings, formatted the way the repository formats.
+- **A deletion is a complete clean-up.** Before a function or a feature is deleted, take an
+  inventory of everything that belongs to it: the code, the tests, the settings, the events it
+  wrote, and the data it stored (tables, columns, files). Everything in it that nothing else uses
+  is deleted in the same change; what stays is named with the thing that still uses it.
+- **Every text in the product is written for the person who reads it.** A text is anything the
+  product shows a person: a page, a label, a button, a status, a health check, an alert, a mail,
+  an error. Text that code puts together (from a template, a check or an event) is held to the
+  same rule and read whole, with real data, before it ships. Every text passes these checks:
+  - **What happened, what it means, what to do.** It says what happened, what that means for the
+    reader's business (its customers, its websites, its visitors) and what to do next, in that
+    order. When there is nothing to do, it says so.
+  - **Things by the names the reader knows.** It names a customer by its name, a website by its
+    address and an office or a person by name, and calls each thing by the same word everywhere.
+    Never a code name, a key, an internal id, a table, a function, an event type or a check's
+    name. When the reader needs an id, it follows the name and says whose id it is ("the Harbour
+    office, the CRM's id 3011").
+  - **A link to every thing named.** Each thing that has a page in the product links to that
+    page, and a problem links to the page where it is fixed.
+  - **Whole sentences in the reader's words.** A number agrees with its sentence ("one site has",
+    "three sites have"), never "site(s)". No arrows, slashes, dashes or brackets standing in for
+    words, and no term the reader would have to ask about.
+  - **The cold reader test.** A person who knows the business but not the code reads the text
+    once, understands what happened and knows what to do next without asking anyone.
 
 Done when the named test passes, the enforced checks are green, touched files have no warnings,
 the README and every text a user reads tell the truth, the item says what remains, and each
@@ -207,7 +240,9 @@ requirement, never taste. Check, in this order, reporting only failures, each wi
 8. **Failure modes**: bad input, timeout, partial failure: what happens, and is it visible.
 9. **Truth**: README, user-facing text, `docs/next-steps.md` and `docs/decisions.md` updated.
 10. **Plain words**: every new or changed text a user reads, read whole with real data, passes
-    the checks of "Every text in the product is written for the person who reads it".
+    the checks of "Every text in the product is written for the person who reads it" (Build).
+11. **Proportion**: a fix for a rare and harmless problem, or new infrastructure to prevent one,
+    is "disproportionate, accept as debt in `docs/known-bugs.md`", whatever its quality.
 
 Output: at most ten lines, each `[component] what is wrong · why it matters · the fix`. "No
 findings" is a complete answer.

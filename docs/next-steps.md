@@ -14,7 +14,8 @@ the register; the audit behind them is `docs/audit-2026-10-30.md`.
 1. `[handbook]` Restructure: a core under 24,000 characters with every anti-drift rule in it,
    the ask-or-go test with the advisor line and the over-asking slip, the procedure into
    `PHASES.md`, the history into `docs/decisions.md`, a glossary, the two settling lines, the
-   wording pass. One session. Ready (5 a, 13 a, 14).
+   wording pass. One session. In progress 2026-10-31, this thread: written, fresh-agent check
+   running, the owner reads before it is combined.
 2. `[handbook]` Delivery: the replacement preference text, and the core prepared for managed
    settings with each project's instructions as the fallback; delivered to the owner as one
    instruction naming the one page to look at and what to paste where. One session, plus the

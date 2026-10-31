@@ -1,8 +1,70 @@
 # Decisions
 
-One line per structural decision about the handbook: date, the decision, who decided. Append
-only; a changed decision is a new line that says what it supersedes. Until the restructure moves
-the history here, the rules' own history stays inside `HANDBOOK.md`.
+One line per rule or structural decision about the handbook: date, the decision, who decided.
+Append only; a changed decision is a new line that says what it supersedes. The lines up to
+2026-10-30 are the history that sat inside the rules until the restructure of 2026-10-31.
+
+- 2026-09-19 and 2026-09-20 · Write for the product owner: plain words, no git words, every term
+  explained; a rule, not a preference · the owner.
+- 2026-09-20 · Tooling inside the work is the agent's call, never asked · the owner.
+- 2026-09-20 · Market-leading solutions and patterns first: a production strategy, not a
+  preference · the owner.
+- 2026-09-20 · A library or framework added, dropped or swapped, or a departure from an approved
+  proposal: pause, propose with the net value, wait · the owner.
+- 2026-09-20 and 2026-09-21 · The reply protocol of labelled blocks: questions had to be searched
+  for in a page of prose · the owner.
+- 2026-09-23 · An ask that only describes a situation cannot be answered; it belongs in Notes with
+  a question after it · the owner.
+- 2026-09-27 · "I feel I am guiding you instead of you figuring out these things": the agent is
+  the architect and product lead; the owner only makes decisions · the owner.
+- 2026-09-27 · A Default: silence is the answer; asked before the work · the owner.
+- 2026-09-27 · At most three questions per reply, five only when all five block today · the owner.
+- 2026-09-27 · Done lines carry the undo word; the agent keeps the means to undo · the owner.
+- 2026-09-27 · Twice is a rule · the owner.
+- 2026-09-27 · A fresh pair of eyes before the owner's (definition of done) · the owner.
+- 2026-09-29 · A question gets an answer, not a change · the owner.
+- 2026-09-29 · Bullets, not paragraphs · the owner.
+- 2026-09-29 · Questions are labelled with their register number, never a list position: "1."
+  and "2." read as the numbers while they were 113 and 114 · the owner.
+- 2026-09-29 · One decision per question, no options or reasoning in it; the agent's recommended
+  option comes first, as a) · the owner.
+- 2026-09-29 · Each repository's files hold only what is about that repository · the owner.
+- 2026-09-29 · A change to how agents work, or beyond the repository worked on, is a gate · the
+  owner.
+- 2026-10-06 · A deletion is a complete clean-up · the owner.
+- 2026-10-06 · Every text in the product is written for the person who reads it · the owner.
+- 2026-10-07 · A clear winner is noted, not raised; picking the simplest option at hand "does not
+  condone the agent to try to actively find a better solution": the agent looks for better · the
+  owner.
+- 2026-10-15 · A live site is read-only for an agent · the owner.
+- 2026-10-18 · No deleting stored data that is kept nowhere else without the owner's explicit yes,
+  even when it follows from an asked-for change · the owner.
+- 2026-10-19 · Options in rising letter order from the top; questions in rising number order;
+  blocks only when they hold something; discussion mode: plain answers, Questions block only · the
+  owner.
+- 2026-10-19 · Decide architecture: repeat the aim back first (a search was designed twice on a
+  misreading of its aim); design for the stated goal, never today's data ("like me asking you to
+  design a car, and you design a tractor"); a fresh check against the owner's words · the owner.
+- 2026-10-21 · One question round, then execution: "If there are options with critical
+  differences, ask the questions first. Then execute without asking more questions" · the owner.
+- 2026-10-23 · A clear winner is done, not offered; being doable by the agent alone is one input
+  to "best", never the deciding one (editing the existing document kept the link the owner already
+  had); one-way decisions need an explicit yes and a backup plan · the owner.
+- 2026-10-24 · A finished thread's last reply says it can be closed · the owner.
+- 2026-10-27 · Never go quiet on a promise; every reply names the session's state ("almost every
+  session feels abandoned mid work. I don't know if you are working, idle or waiting for me and
+  for what"); every request to the owner is a Questions bullet ("you seem to have requested three
+  things they should be requested on the agreed format with bullets"); the handbook's reply
+  protocol comes before the preferences' "Output shape"; every session reads all of it; the phases
+  move to `PHASES.md` · the owner.
+- 2026-10-28 · Every `decisions.md` line names who decided; writing a choice down is never the
+  owner's approval · the owner.
+- 2026-10-28 · Anything new that a person sees is asked before it is built, after the owner found
+  features nobody had asked him about · the owner.
+- 2026-10-28 · A number is the question's only once it is saved, after sessions working side by
+  side kept taking the same numbers · the owner.
+- 2026-10-29 · New feature, new thread · the owner.
+- 2026-10-30 · Cold pickup · the owner.
 
 - 2026-10-31 · The handbook is restructured with no rule changed: a core under 24,000 characters,
   aiming for 20,000, with every anti-drift rule in it and the ask-or-go test; the procedure moves
@@ -41,3 +103,13 @@ the history here, the rules' own history stays inside `HANDBOOK.md`.
   instructions. Both need only steps the owner alone can take, so they come back as one
   instruction with the texts ready, in item 2, not as questions · agent's choice on the owner's
   correction above; not separately confirmed.
+- 2026-10-31 · A fix is proportional to its problem: a rare and harmless problem is accepted as
+  debt in `docs/known-bugs.md` with its frequency and the condition to revisit, and new
+  infrastructure to prevent it is never proposed · the owner, 2026-10-31: "Sometimes I get a
+  suggestion to add a solution to an issue which can happen maybe once or twice over the course of
+  a year and have no real consequence, and the agent wants to add a database to keep track of a
+  state to prevent it."
+- 2026-10-31 · The restructure is done: the core holds every always-on rule and the ask-or-go
+  test; the procedure (Checks, the deletion inventory, the checks for product texts) is in Build
+  in `PHASES.md`; the history is in this file; terms are explained under "Words used here" · item
+  1, decided by question 5 a).
