@@ -5,21 +5,6 @@ recorded in the handbook's history with the change it led to, and leaves this fi
 
 Next number: 16
 
-## 6 `[handbook]` Should the personal preferences stop describing a reply shape of their own?
-
-Asked 2026-10-30 (audit findings A1, A2). The preferences' "Output shape" (answer on line one,
-minimal bullets) and the handbook's blocks contradict each other in every reply; the sessions' own
-analysis of 27 October named this the first cause of replies slipping out of the protocol, and the
-fix was withdrawn for an assertion inside the handbook, which the platform does not enforce.
-
-- a) **yes** (recommended): the handbook becomes the only reply shape.
-  - The agent writes the replacement preference text: the Claude Code line, and a two-line reply
-    rule that points to the handbook. The owner pastes it on each account that starts sessions.
-- b) **no**: both shapes stay, and the handbook keeps claiming precedence in its first lines.
-
-Blocked: nothing; replies keep slipping while both shapes compete. The smaller option is b).
-Reply: a or b.
-
 ## 7 `[handbook]` Should the repository get automatic checks and a change log?
 
 Asked 2026-10-30 (audit findings A3, D1, D3, D4). Nothing checks a save: one that cuts the file
@@ -86,54 +71,3 @@ that reason.
 
 Blocked: every numbered question from a claude.ai session, including these. The smaller option is
 a). Reply: a or b.
-
-## 11 `[handbook]` Should the handbook's core reach sessions at the level of a `CLAUDE.md` instead of as a downloaded file?
-
-Asked 2026-10-30 (audit finding A1 and "Delivery mechanisms", checked against the platform's
-documentation). A downloaded file is ordinary conversation and is dropped at the first compaction
-of a long session (the platform summarising older parts of the conversation to make room); a
-`CLAUDE.md` is re-sent with every request and put back after compaction. The path used today, a
-line in the personal preferences, is documented nowhere and works by chance.
-
-- a) **yes, through the organisation's managed settings** (recommended): one paste by the owner
-  per handbook version reaches every terminal, desktop, web and cloud session (not Cowork).
-  - The owner looks once whether "Managed settings" shows under Organization settings, Claude
-    Code, on claude.ai. If it does, the agent prepares the core and the owner pastes it there. If
-    the page is not there, b) follows without another question.
-- b) **yes, through each project's instructions**: one paste per claude.ai project and per
-  version, and the core must first be cut to 16,000 characters, which cuts rules.
-- c) **no**: the downloaded file stays the only channel, and the rules are lost in long sessions.
-
-Blocked: nothing today; long sessions keep losing the rules. The smaller option is b). Reply: a, b
-or c.
-
-## 14 `[handbook]` Should a second agent advise on ask-or-go at the close calls?
-
-Asked 2026-10-31, from the owner's idea. An agent asked to evaluate its options can pick, where
-the same agent in the middle of the work cannot (the owner, 2026-10-30). A second agent with no
-memory of the work would get only the owner's words for the item, the step or the options, the
-test and the decisions file, and answer Go, Default or Ask with one line why. The gain comes from
-the fresh context and from evaluating instead of acting; a stronger model than the session's
-helps only where the session runs on a smaller one.
-
-- a) **yes, at three moments** (recommended): before any one-way step, when the test lands on
-  "close", and in the question round before the work, to strike options that do not meet the
-  requirements.
-  - One line in the test. The strongest model the account offers; a few thousand tokens a call.
-    It cuts noise and catches boldness at planning time; it cannot refuse a command, which stays
-    the deny list's job.
-- b) **yes, before every question only**: cheaper; one-way steps rest on the test and the deny
-  list.
-- c) **no**: the agent applies the test alone.
-
-Blocked: nothing; item 1 writes the test either way and adds the line if a) or b) is chosen. The
-smaller option is b). Reply: a, b or c.
-
-## 15 `[handbook]` Default: the deny list for one-way actions is kept as a reference file in this repository, next to the audit.
-
-Asked 2026-10-31, after question 12 (the list is configuration, not handbook text). A reference
-file holds only command patterns, nothing secret, so it can be public; it lets both accounts paste
-the same list and lets every repository we own copy the same one. The alternative is a paste kept
-only in the settings, with no single source.
-
-- Reply only if you disagree: no, and where it should live instead.

@@ -22,3 +22,22 @@ the history here, the rules' own history stays inside `HANDBOOK.md`.
   "rulebook and permissions if possible, but that's outside of the scope of the handbook". Where
   the list is kept so that both accounts paste the same one (a reference file in this repository,
   next to the audit): agent's choice, not confirmed by the owner; asked as Default 15, 2026-10-31.
+- 2026-10-31 · Over-asking is a slip, corrected like acting without asking; a question with one
+  option that meets the requirements is not asked, and tooling is never asked. Provenance: the
+  agent asked question 14 (one viable option) and Default 15 (where a configuration file lives)
+  right after drafting the test · the owner, 2026-10-31: "you are currently asking me a question
+  of the kind we are trying to eliminate" and "i dont even know what this means, pick the best
+  option". This is the second correction of over-asking (the first, 2026-10-30: "too much noise
+  and too little autonomy"), so it is a rule and goes into the core with the test.
+- 2026-10-31 · A second agent advises on ask-or-go at three moments: before a one-way step, at a
+  close call, and in the question round before the work; one line in the test · agent's choice on
+  the recommendation of question 14, on the owner's correction above; not separately confirmed.
+- 2026-10-31 · The deny list for one-way actions is kept as a reference file in this repository
+  next to the audit, so both accounts and every repository we own paste the same one · agent's
+  choice (Default 15), the owner: "pick the best option".
+- 2026-10-31 · Questions 6 and 11 are taken on their recommendation: the personal preferences
+  stop describing a reply shape of their own, and the core is delivered through the
+  organisation's managed settings if the page exists, otherwise through each project's
+  instructions. Both need only steps the owner alone can take, so they come back as one
+  instruction with the texts ready, in item 2, not as questions · agent's choice on the owner's
+  correction above; not separately confirmed.
