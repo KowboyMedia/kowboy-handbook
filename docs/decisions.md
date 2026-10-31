@@ -144,3 +144,16 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   repository or a machine, so the deny list for one-way actions (question 12) reaches the terminal
   and single-repository cloud sessions only; in project threads the rule and the advisor are the
   guard · agent's finding, from the platform's documentation.
+- 2026-10-31 · The copy that survives compaction is refreshed by the cloud environment's setup
+  script (on rebuild, at most about a week behind) and by a session-start hook on each machine;
+  no session writes its own instruction file. The platform's safety check refused the variant
+  where the handbook makes each session overwrite its personal instruction file, and that refusal
+  is respected rather than worked around · agent's choice; the owner, 2026-10-31: "you can decide
+  which option is best and has the least compromise day to day development".
+- 2026-10-31 · Rejected: a copy of the handbook saved into each repository at every session start
+  and read through the repository's instruction file. It would put the handbook into every
+  repository (the rule of 3 October keeps it out, and a client's repository gets none of it),
+  make every session produce a save and sessions side by side collide on that file, and it is the
+  same pattern the platform refused. Its one merit, that a repository's own instruction file is
+  documented to be restored after compaction, does not outweigh that · agent's choice on the
+  owner's idea, 2026-10-31.
