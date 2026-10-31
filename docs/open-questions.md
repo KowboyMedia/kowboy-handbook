@@ -3,36 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 14
-
-## 5 `[handbook]` Should the handbook be restructured as the audit proposes, with no rule changed?
-
-Asked 2026-10-30, from `docs/audit-2026-10-30.md` (findings A4, B1 to B5, C1 to C6). The two files
-hold 124 rules and cost about 12,000 tokens (a token is the unit a model reads, roughly four
-characters) before any work; history sits inside the rules; the handbook's own terms are
-undefined; and the main file is growing about 800 characters a day, so the condense of 27 October
-will be needed again by December.
-
-- a) **yes, all of it** (recommended): a core of at most 24,000 characters, the procedure moved,
-  no rule lost.
-  - The core keeps every rule that must be in the agent's head: who decides, working with the
-    owner, the reply protocol with an example of every block, memory, stop and ask, the anti-drift
-    rules (simple beats clever, market-leading first, one code path, readable code, never invent a
-    rule), session, units of work; it gains a glossary and the two lines that settle C1 and C2.
-  - The procedure (the checklist for product texts, the deletion inventory, "Checks", "Definition
-    of done", the index of phases; about 4,200 characters) moves into `PHASES.md`, where the
-    Review phase enforces it; the history (about 2,500 characters) moves to a new
-    `docs/decisions.md` here, one line per rule.
-  - The arithmetic in the audit's step 1 lands at about 26,600, and the wording pass (one rule
-    per line, imperative, no justification in the core, no abbreviations, examples kept) brings
-    it to about 18,000 to 20,000. A fresh agent checks rule by rule that nothing was lost, and the
-    owner reads the result before it is saved.
-- b) **history out and glossary in only**: the file lands near 31,000 characters and keeps growing
-  at the same rate.
-- c) **leave it**: nothing changes.
-
-Blocked: steps 2 to 5 of the strategy build on the core and the glossary. The smaller option is b).
-Reply: a, b or c.
+Next number: 15
 
 ## 6 `[handbook]` Should the personal preferences stop describing a reply shape of their own?
 
@@ -136,40 +107,24 @@ line in the personal preferences, is documented nowhere and works by chance.
 Blocked: nothing today; long sessions keep losing the rules. The smaller option is b). Reply: a, b
 or c.
 
-## 12 `[handbook]` Should one-way actions be refused by the platform's permission settings, not only by a rule?
+## 14 `[handbook]` Should a second agent advise on ask-or-go at the close calls?
 
-Asked 2026-10-30 (audit finding F4; the owner: an agent deleted a complete database, no damage
-done). A rule is guidance that the agent must remember hours into a session; the platform
-documents that only its permission settings enforce. A refused command makes the agent stop and
-ask by itself.
+Asked 2026-10-31, from the owner's idea. An agent asked to evaluate its options can pick, where
+the same agent in the middle of the work cannot (the owner, 2026-10-30). A second agent with no
+memory of the work would get only the owner's words for the item, the step or the options, the
+test and the decisions file, and answer Go, Default or Ask with one line why. The gain comes from
+the fresh context and from evaluating instead of acting; a stronger model than the session's
+helps only where the session runs on a smaller one.
 
-- a) **yes, through managed settings** (recommended): one deny list for both accounts, reaching
-  every session, pasted once where question 11's core goes.
-  - The list names the destructive commands: deleting data, databases, tables, environments,
-    servers, apps or backups; forced overwrites of saved work; hosting and firewall changes. If
-    the managed-settings page is not there, b) follows without another question.
-- b) **yes, in each of our own repositories' settings**: the same list, kept in every repository
-  we own; a client's repository gets it only with the client's word.
-- c) **no**: the rule of 18 and 23 October stays the only guard.
+- a) **yes, at three moments** (recommended): before any one-way step, when the test lands on
+  "close", and in the question round before the work, to strike options that do not meet the
+  requirements.
+  - One line in the test. The strongest model the account offers; a few thousand tokens a call.
+    It cuts noise and catches boldness at planning time; it cannot refuse a command, which stays
+    the deny list's job.
+- b) **yes, before every question only**: cheaper; one-way steps rest on the test and the deny
+  list.
+- c) **no**: the agent applies the test alone.
 
-Blocked: nothing today; the next one-way step rests on memory. The smaller option is b). Reply: a,
-b or c.
-
-## 13 `[handbook]` Should the ten rules on when to ask be replaced by one "Ask or go" test?
-
-Asked 2026-10-30 (audit findings F1 to F3, F5; the owner: "too much noise and too little
-autonomy"). The draft test is in the audit under "F. When to ask and when to go": three questions
-in order (can the agent alone undo it; is it on the gate list; does more than one option meet the
-requirements), three outcomes (Go, Default, Ask), and two lines that make a one-option question a
-slip and the evaluation mandatory before any question.
-
-- a) **yes** (recommended): the test replaces the ten rules and keeps their content; nothing
-  becomes allowed that is not allowed today.
-  - About 1,000 characters in place of about 5,000. Over-asking is corrected like acting without
-    asking, so the agent's safe move is no longer to ask.
-- b) **add the test, keep the rules**: the test on top; the file grows and the ten rules still
-  compete with it.
-- c) **no**: the ten rules stay as they are.
-
-Blocked: step 1 of the strategy, which writes the test into the core. The smaller option is b).
-Reply: a, b or c.
+Blocked: nothing; item 1 writes the test either way and adds the line if a) or b) is chosen. The
+smaller option is b). Reply: a, b or c.
