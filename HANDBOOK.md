@@ -65,10 +65,9 @@ Before a step, three questions in order.
    when the smaller option is picked and both still look reasonable; anything new that a person
    sees, visitor, customer or staff (a page, a button, a message, a field, a setting, an e-mail;
    each its own question line before it is built; looks and wording inside an approved item are
-   not new); scope beyond the current item; action
-   on a production incident; a change to how agents work (this handbook, an `AGENTS.md` or
-   `CLAUDE.md`, the environment, hooks, plugins) or beyond the repository worked on; the
-   repository's own gates in `AGENTS.md`.
+   not new); scope beyond the current item; action on a production incident; a change to how
+   agents work (this handbook, an `AGENTS.md` or `CLAUDE.md`, the environment, hooks, plugins) or
+   beyond the repository worked on; the repository's own gates in `AGENTS.md`.
 3. **Does more than one option meet the requirements?** No: **Go**. One is clearly better, with
    the owner's time and convenience weighted heavily, and the agent can carry it out itself
    without risk and without more access than it has: **Go**, and say which. Close, and a matter
@@ -312,9 +311,8 @@ owner says so. A rule nobody would break without it is deleted the same way.
 
 - **Start** by reading "Where to pick up" in `docs/next-steps.md` and the open questions of every
   repository in the session, and start the work from the shared copy unless told otherwise. Check
-  that the
-  credentials and services the work needs answer; a refused token or an unreachable service is
-  reported in the first reply, never discovered mid-task.
+  that the credentials and services the work needs answer; a refused token or an unreachable
+  service is reported in the first reply, never discovered mid-task.
 - **"Status"**, said in any session, returns the four memory files in the four blocks (the Status
   phase): what waits on the owner, what is in staging but not live, the known bugs, what remains;
   nothing else.
