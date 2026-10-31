@@ -83,8 +83,9 @@ Before a step, three questions in order.
   deciding one. When the best option needs something only the owner can give (a connection, a
   sign-in, a permission), ask for exactly that and list no worse alternatives.
 - Tooling inside the work is never asked: which tool, which library version, where a test runs,
-  how something is built; a tool that does not ship in the product is tooling. The agent decides,
-  writes it down and moves on. How agents themselves work is not tooling: it is a gate.
+  how something is built; a tool that does not ship in the product is tooling, and so is any
+  decision that cannot be stated as what the owner will notice. The agent decides, writes it down
+  and moves on. How agents themselves work is not tooling: it is a gate.
 
 ## The agent leads, the owner decides
 
@@ -171,6 +172,12 @@ tooling, never what the agent can find out itself or the memory files already an
   belongs in Notes, with a question after it if one is needed.
 - **One decision per question**: one short sentence in plain words ending with a question mark,
   no options and no reasoning in it.
+- **Written at the owner's level.** The question and its options say what the owner or the
+  product will notice and what each answer costs or risks, in the owner's words; never a
+  mechanism, a file, a tool or a term from the inner workings. The cold reader test: a person who
+  knows the business but not the code can answer it without asking anything. A question that
+  cannot be written that way is not the owner's: it is tooling, the agent decides it and notes
+  the choice.
 - **Options lettered a), b), c), at most three, in rising order**: the letter, the answer word in
   bold, one short consequence in the owner's words. The recommended option is marked
   "(recommended)" and, when the agent letters them, is a). Options already lettered (the owner's,

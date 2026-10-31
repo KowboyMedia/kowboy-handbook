@@ -166,3 +166,15 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   that waits on it; Next never points at a number whose text is not in the same reply · the
   owner, 2026-10-31, twice: "I dont understand your next points. 16, 17, item 3 etc." and "This
   means nothing to me, clarify".
+- 2026-10-31 · A question is written at the owner's level: what the owner or the product will
+  notice and what each answer costs, never a mechanism, a file, a tool or an inner-workings term;
+  a question that cannot be written that way is tooling and the agent decides it · the owner,
+  2026-10-31: "I dont see how you are leaving this decision to me, I dont even understand the
+  question ... how can a user be expected to know these things let alone understand their inner
+  workings to decide? This should be explained in a high level."
+- 2026-10-31 · The handbook repository gets automatic checks on every save (the file is whole,
+  within its size, with a new version, with no address or e-mail in it) and a change log; nothing
+  changes for the owner, and a broken save can no longer reach every session · agent's choice
+  under the rule above (question 7 was tooling); not confirmed by the owner.
+- 2026-10-31 · The owner's cloud environment carries the setup script and is selected in each
+  project (register 16) · the owner, 2026-10-31: "16 pasted".

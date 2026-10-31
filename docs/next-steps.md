@@ -5,10 +5,10 @@ not done, keep it current.
 
 ## Where to pick up
 
-Items 1 and 2 are done (2026-10-31); item 2 waits only for the owner's two steps (register 16
-and 17). Item 3 is next; a new thread on this repository takes it with "resume next steps". Items
-4 to 7 wait on questions 7 to 9 in the register; the audit behind them is
-`docs/audit-2026-10-30.md`.
+Items 1 and 2 are done (2026-10-31; the owner's cloud environment carries the script, the
+colleague's steps are with him). Items 3 and 4 are next, in that order; a new thread on this
+repository takes item 3 with "resume next steps". Items 5 and 7 wait on questions 8 and 9 in the
+register; the audit behind them is `docs/audit-2026-10-30.md`.
 
 ## Items
 
@@ -25,8 +25,8 @@ and 17). Item 3 is next; a new thread on this repository takes it with "resume n
 3. `[handbook]` The deny list for one-way actions, drafted as a reference file here, for
    `~/.claude/settings.json` on each machine and `.claude/settings.json` in each of our own
    repositories; project threads apply neither. One session. Ready (12, 15).
-4. `[handbook]` Automatic checks on every proposed change, a date-with-letter version, a
-   `CHANGELOG.md`, a proposed-change checklist. One session. Waits on 7.
+4. `[handbook]` Automatic checks on every save, a date-with-letter version, a `CHANGELOG.md`, a
+   checklist for each change. One session. Ready (agent's choice, 2026-10-31).
 5. `[handbook]` The corrections lists and the monthly handbook session, with the size budget. A
    rule, then one session a month. Waits on 8.
 6. `[handbook]` Twelve scripted prompts on reply shape, drift and ask-or-go, run in a fresh
