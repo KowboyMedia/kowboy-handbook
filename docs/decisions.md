@@ -157,3 +157,8 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   same pattern the platform refused. Its one merit, that a repository's own instruction file is
   documented to be restored after compaction, does not outweigh that · agent's choice on the
   owner's idea, 2026-10-31.
+- 2026-10-31 · Steps the owner must take are handed over as a numbered list of actions, one per
+  line, in order, naming where to click or what to paste, with no story and no reasoning; the
+  agent does all it can first · the owner, 2026-10-31: "I used to get messy instructions as a
+  regular text ... do bullet point lists when I need to execute things. You dont need to carry me
+  through the journey, you do work and tell me what I need to do in low cognitive manner".

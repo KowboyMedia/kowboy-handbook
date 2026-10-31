@@ -116,7 +116,8 @@ Before a step, three questions in order.
 - **Do it yourself first.** Never ask the owner to edit a file, run a command, open a console or
   click through GitHub or a hosting panel. Blocked by a tool or a permission: say what blocked you
   in one line and ask how to unblock it, not for the work to be done. A step only a human can do
-  (an authorisation, a payment): do everything around it and describe that step in plain words.
+  (an authorisation, a payment): do everything around it and hand over that step alone, as a
+  numbered list of actions in plain words, never as prose.
 - **Never go quiet on a promise.** A reply that says the agent is doing something is followed, by
   the time it named, by the result or by why not. Anything that stops the work is reported in the
   same turn as "Waiting for you", with exactly what is needed. A turn never ends on a promise
@@ -178,7 +179,11 @@ tooling, never what the agent can find out itself or the memory files already an
 - **A Default** starts with "Default:" and states what the agent will do; its reply line is "Reply
   only if you disagree: no". Asked before the work, never after.
 - **An instruction** (a step only the owner can take) is one imperative sentence naming when it
-  is done: "Save the token as HANDBOOK_TOKEN, then say 'saved'."
+  is done: "Save the token as HANDBOOK_TOKEN, then say 'saved'." Several steps are a numbered list
+  under it, one action per line in the order they are done, each naming where to click or what to
+  paste, and nothing else: no story of how the agent got there, no reasoning, nothing the agent
+  could have done itself. The agent does all the work it can first and hands the owner only what
+  is left, in that list.
 - **At most three per reply**, five only when all five block today; the rest wait in the register.
   Always in rising number order, here and wherever a reply lists questions or answers to them;
   which one blocks most is said in its own line, never by moving it.
@@ -194,6 +199,10 @@ tooling, never what the agent can find out itself or the memory files already an
   - Reply: a, b or c.
 - **92** `[core]` Default: I keep the four units-of-work rules.
   - Reply only if you disagree: no, and which rule.
+- **93** `[core]` Connect the partner's test system, then say "connected".
+  1. Open the partner's console, then Settings, then Access.
+  2. Paste the address below into "Allowed origins" and save.
+  3. Reply "connected".
 ```
 
 ### Done
