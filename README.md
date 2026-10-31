@@ -53,22 +53,13 @@ script's text (a version comment) rebuilds it at once. The platform documents th
 loads the file a setup script writes to `~/.claude/CLAUDE.md`, and that `raw.githubusercontent.com`
 is reachable at the default network setting.
 
-**The terminal and Cowork on a developer's machine.** Once per machine:
+**The terminal on a developer's machine.** Once per machine, the block in
+`docs/setup-new-account.md`: it saves the handbook as `~/.claude/kowboy-handbook.md`, adds one
+import line to `~/.claude/CLAUDE.md` (which keeps whatever it already holds), and adds a
+session-start hook that refreshes the file. Cowork on the machine skips imports that point outside
+the session's folder, so there the handbook comes only from the preferences line.
 
-```
-mkdir -p ~/.claude && curl -fsSL https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/HANDBOOK.md -o ~/.claude/CLAUDE.md
-```
-
-and a session-start hook in `~/.claude/settings.json` that runs the same download, so every
-terminal session refreshes the copy for the next one (Cowork reads the copy; it does not run the
-hook):
-
-```json
-{"hooks":{"SessionStart":[{"hooks":[{"type":"command","command":"curl -fsSL https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/HANDBOOK.md -o ~/.claude/CLAUDE.md"}]}]}}
-```
-
-The copy is the whole handbook, not an import of a local clone, because Cowork skips imports that
-point outside the session's folder. What the documentation says and does not say: re-sending after
+What the documentation says and does not say: re-sending after
 compaction is documented for a repository's own `CLAUDE.md` and not stated for the personal one;
 the first long session shows it. A deny list of destructive commands (see `docs/decisions.md`)
 reaches the terminal through `~/.claude/settings.json` and a single-repository cloud session
