@@ -162,3 +162,7 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   agent does all it can first · the owner, 2026-10-31: "I used to get messy instructions as a
   regular text ... do bullet point lists when I need to execute things. You dont need to carry me
   through the journey, you do work and tell me what I need to do in low cognitive manner".
+- 2026-10-31 · A question still waiting from an earlier reply is repeated in full in any reply
+  that waits on it; Next never points at a number whose text is not in the same reply · the
+  owner, 2026-10-31, twice: "I dont understand your next points. 16, 17, item 3 etc." and "This
+  means nothing to me, clarify".

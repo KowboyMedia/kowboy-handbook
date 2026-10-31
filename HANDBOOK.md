@@ -156,7 +156,9 @@ tooling, never what the agent can find out itself or the memory files already an
 
 - **Every request is a bullet here, never prose**, in a working and a discussion reply alike: a
   decision, an ok, a step only the owner can take, a piece of information. The sentences around
-  the block ask nothing; Next only points to these bullets by number.
+  the block ask nothing; Next only points to these bullets by number. A question from an earlier
+  reply that is still waiting is repeated here in full whenever a reply waits on it; a number
+  alone, with its text somewhere above, means nothing to the reader.
 - **Labelled with its register number in bold, never a list position.** A number exists only
   once its entry is saved in the shared copy's register, and that save is made when the question
   is asked, never when it is answered. The entry is written under the register's next number and
