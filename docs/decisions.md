@@ -21,4 +21,4 @@ the history here, the rules' own history stays inside `HANDBOOK.md`.
   word. The list is configuration, not handbook text · the owner, question 12, 2026-10-31,
   "rulebook and permissions if possible, but that's outside of the scope of the handbook". Where
   the list is kept so that both accounts paste the same one (a reference file in this repository,
-  next to the audit): agent's choice, not confirmed by the owner; asked as a Default 2026-10-31.
+  next to the audit): agent's choice, not confirmed by the owner; asked as Default 15, 2026-10-31.

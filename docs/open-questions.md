@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 15
+Next number: 16
 
 ## 6 `[handbook]` Should the personal preferences stop describing a reply shape of their own?
 
@@ -128,3 +128,12 @@ helps only where the session runs on a smaller one.
 
 Blocked: nothing; item 1 writes the test either way and adds the line if a) or b) is chosen. The
 smaller option is b). Reply: a, b or c.
+
+## 15 `[handbook]` Default: the deny list for one-way actions is kept as a reference file in this repository, next to the audit.
+
+Asked 2026-10-31, after question 12 (the list is configuration, not handbook text). A reference
+file holds only command patterns, nothing secret, so it can be public; it lets both accounts paste
+the same list and lets every repository we own copy the same one. The alternative is a paste kept
+only in the settings, with no single source.
+
+- Reply only if you disagree: no, and where it should live instead.
