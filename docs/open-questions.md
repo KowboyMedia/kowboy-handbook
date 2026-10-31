@@ -31,8 +31,8 @@ connected services and nothing says what an agent may do through them.
 
 Blocked: nothing today. The smaller option is a). Reply: a or b.
 
-## 17 `[handbook]` Instruction: run the one-line download from the README on your machine and your colleague's, add the session-start hook, then say "installed".
+## 17 `[handbook]` Instruction: when your colleague has done the two steps he got on Slack, say "installed".
 
-Asked 2026-10-31 (item 2). It places the handbook as the personal `CLAUDE.md` for the terminal and
-Cowork, refreshed at every terminal session start. Both lines are in the README under "The terminal
-and Cowork on a developer's machine".
+Asked 2026-10-31 (item 2). The steps place the handbook on his cloud environment and his Mac;
+they are in `docs/setup-new-account.md` and were sent to him on Slack on 2026-10-31. Nothing for
+you to do but pass on his word.
