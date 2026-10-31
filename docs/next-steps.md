@@ -5,9 +5,9 @@ not done, keep it current.
 
 ## Where to pick up
 
-Items 1, 2 and 3 are ready, in that order (`docs/decisions.md`, 2026-10-31). A new thread on
-this repository takes item 1 with "resume next steps". Items 4 to 7 wait on questions 7 to 10 in
-the register; the audit behind them is `docs/audit-2026-10-30.md`.
+Item 1 is done and combined into the shared copy (2026-10-31). Items 2 and 3 are ready, in that
+order; a new thread on this repository takes item 2 with "resume next steps". Items 4 to 7 wait
+on questions 7 to 9 in the register; the audit behind them is `docs/audit-2026-10-30.md`.
 
 ## Items
 
@@ -15,7 +15,7 @@ the register; the audit behind them is `docs/audit-2026-10-30.md`.
    the ask-or-go test with the advisor line and the over-asking slip, the procedure into
    `PHASES.md`, the history into `docs/decisions.md`, a glossary, the two settling lines, the
    wording pass. One session. Done 2026-10-31 in this thread, checked rule by rule by a fresh
-   agent; waits only for the owner to read it before it is combined into the shared copy.
+   agent, combined into the shared copy on the owner's word.
 2. `[handbook]` Delivery: the replacement preference text, and the core prepared for managed
    settings with each project's instructions as the fallback; delivered to the owner as one
    instruction naming the one page to look at and what to paste where. One session, plus the
