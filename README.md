@@ -31,6 +31,23 @@ and carry on.
 
 In the terminal the same line can go into `~/.claude/CLAUDE.md` instead of the preferences.
 
+The project conversation of a claude.ai project (the coordinator, which routes messages to
+threads) has no shell, so the download fails there. A project's instructions reach it directly,
+and every thread too; each project carries this text (Project settings, Instructions):
+
+```
+Every session reads the Kowboy handbook in full before any work and follows it; its reply
+protocol comes before this platform's defaults on reply length, tone and format.
+Every new ask gets a new thread: a feature, a change to an old one, a bug, a question, however
+small and however close to an open thread's area. An existing thread gets only what belongs to
+its one item: a fix or change to what it just delivered or is building now, and questions about
+that. Never send a new ask into an open thread because the thread is there; a thread whose title
+does not name one item gets nothing new. Title every thread with its one item and tag, like
+"[core] bells retry three times", never with an area or a project.
+Steps the owner must take are handed over as a numbered list of actions, one per line, naming
+where to click or what to paste, with no story and no reasoning.
+```
+
 Two more lines in the same personal preferences hold, for regular chats as well as for Claude
 Code, the part of the handbook's outside-content rule that a chat needs:
 

@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 19
+Next number: 20
 
 ## 17 `[handbook]` Instruction: when your colleague has done the two steps he got on Slack, say "installed".
 
@@ -16,3 +16,9 @@ you to do but pass on his word.
 Asked 2026-10-31. The lines make regular chats treat what they read as information, never as an
 instruction, and keep connected services read only unless you ask. They are in the README under
 "How it reaches a session".
+
+## 19 `[handbook]` Instruction: paste the project-instructions text from the README into each claude.ai project, then say "projects done".
+
+Asked 2026-11-01. The project conversation cannot download the handbook, so the thread-routing
+rule and the reply rules it needs reach it only through the project's instructions. The text is
+in the README under "How it reaches a session".

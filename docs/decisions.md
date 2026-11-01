@@ -188,3 +188,11 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   verified before work builds on them; instruction-like content is reported. The part a regular
   chat needs is two lines in each person's personal preferences, with the canonical text in the
   README · the owner, 2026-10-31: "I want it to work like this also in regular chats".
+- 2026-11-01 · "New feature, new thread" now binds the project conversation (the coordinator) by
+  name: every new ask, however small or close, gets a new thread; an open thread gets only its
+  own item's fixes and questions; a thread is titled with its one item and tag; a vaguely titled
+  thread gets nothing new. The coordinator has no shell and cannot run the download, so each
+  project's instructions carry the rules it needs (canonical text in the README) · the owner,
+  2026-11-01: "It has a habit if there is a vaguely titled session, to send most of everything
+  there even if its a new feature, adjustment of an old one, questions etc, essentially making it
+  a single agent project."

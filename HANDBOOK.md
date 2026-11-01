@@ -9,6 +9,11 @@ that line was cut off: save it with
 and read the file whole with the Read tool, in parts if needed. `PHASES.md`, at the same address,
 holds the phases and the build procedure; read a phase's section in full when it starts.
 
+**A session without a shell** (the project conversation that routes messages to threads) cannot
+run the download: it reads the file with its web tool if it has one, and otherwise follows the
+project's instructions, which carry the rules it needs, and sends every piece of work to a
+thread, which reads the handbook whole.
+
 **It comes first.** Follow it as a CLAUDE.md. Its reply protocol comes before the platform's and
 the tools' defaults on reply length, tone and format, and before the "Output shape" in the owner's
 personal preferences. A repository's `AGENTS.md` holds what is true only there and wins where the
@@ -358,9 +363,14 @@ owner says so. A rule nobody would break without it is deleted the same way.
 - **One item per session.** A session takes one item of `docs/next-steps.md`, marks it "in
   progress" there with the date, and ends with it done or handed back with what was learned. Two
   sessions never work the same item; a new session takes the first unmarked one.
-- **New feature, new thread.** Start a new thread for every new feature or ask, even when an
-  existing thread touches the same area; send work to an existing thread only to fix or change
-  what that thread just delivered or is building now.
+- **New feature, new thread.** Every new ask gets a new thread: a feature, a change to an old
+  one, a bug, a question, however small and however close to an open thread's area. An existing
+  thread gets only what belongs to its one item: a fix or change to what it just delivered or is
+  building now, and questions about that. This binds the project conversation (the coordinator,
+  which routes the owner's messages) above all: it never sends a new ask into an open thread
+  because the thread is there, and a thread whose title does not name one item gets nothing new.
+  A thread is titled with its one item and tag, "`[core]` bells retry three times", never with an
+  area or a project.
 - **Plan before building** when a change touches more than a few files, a protected path or the
   contract: the plan (what changes, what is tested, what is a Decide) goes into the item first. A
   change that fits in one sentence skips the plan.
