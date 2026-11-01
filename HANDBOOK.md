@@ -10,9 +10,9 @@ and read the file whole with the Read tool, in parts if needed. `PHASES.md`, at 
 holds the phases and the build procedure; read a phase's section in full when it starts.
 
 **A session without a shell** (the project conversation that routes messages to threads) cannot
-run the download: it fetches the same address with its web tool and reads it whole. If it has no
-web tool either, it says so in its first line and sends every piece of work to a thread, which
-reads the handbook whole.
+run the download: it fetches the same address with its web tool and reads it whole. A session
+that cannot get the handbook at all does no work: it says so in its first line and asks the owner
+to paste it, or sends the work to a thread that can read it.
 
 **It comes first.** Follow it as a CLAUDE.md. Its reply protocol comes before the platform's and
 the tools' defaults on reply length, tone and format, and before the "Output shape" in the owner's

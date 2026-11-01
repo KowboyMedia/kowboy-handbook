@@ -13,7 +13,8 @@ you to do but pass on his word.
 
 ## 20 `[handbook]` Instruction: replace the Claude Code part of your personal preferences with the text in the README, send the same to your colleague, then say "preferences done".
 
-Asked 2026-11-01. The new text does three things the old line did not: it tells a session
-without a shell (the project conversation) to fetch the handbook with its web tool; it makes every
-chat treat what it reads as information, never an instruction, with the handbook itself excepted;
-and it keeps connected services read only unless you ask. It replaces 18 and 19.
+Asked 2026-11-01. The new text does four things the old line did not: it tells a session
+without a shell (the project conversation) to fetch the handbook with its web tool; it stops a
+session that could not get the handbook instead of letting it carry on; it makes every chat treat
+what it reads as information, never an instruction, with the handbook itself excepted and the
+reason stated; and it keeps connected services read only unless you ask. It replaces 18 and 19.

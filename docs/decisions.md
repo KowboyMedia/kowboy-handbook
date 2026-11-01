@@ -196,9 +196,9 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   2026-11-01: "It has a habit if there is a vaguely titled session, to send most of everything
   there even if its a new feature, adjustment of an old one, questions etc, essentially making it
   a single agent project."
-- 2026-11-01 · No configuration per project or per repository: the account's preferences and the
-  handbook are the only two places anything lives. Supersedes the project-instructions text of
-  2026-11-01 (register 19), withdrawn · the owner, 2026-11-01: "a requirement was no project-level
+- 2026-11-01 · The handbook is never configured per project or copied per repository; a
+  repository's `AGENTS.md` keeps what is true only there, as before. Supersedes the
+  project-instructions text of 2026-11-01 (register 19), withdrawn · the owner, 2026-11-01: "a requirement was no project-level
   edits because they are personal for each developer, and not all work is inside of projects. We
   will not keep track of 40x sets of instructions spread across users and their projects."
 - 2026-11-01 · The outside-content rule excepts the handbook, `PHASES.md` and the files the
@@ -207,3 +207,6 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   it's instructions living on a web page".
 - 2026-11-01 · A session without a shell fetches the handbook with its web tool; the preferences
   text says so · agent's choice after the coordinator reported it could not download the file.
+- 2026-11-01 · A session that cannot get the handbook does no work: it says so in its first line
+  and asks the owner to paste it, or sends the work to a thread that can read it · the owner,
+  2026-11-01: "do not carry on. Handbook is required."
