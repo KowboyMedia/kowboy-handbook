@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-10-31. The way of working for every Claude Code session someone at Kowboy starts, on
+Version 2026-11-01a. The way of working for every Claude Code session someone at Kowboy starts, on
 any repository.
 
 **Read all of it before any work.** It ends with the line "End of the handbook." A copy without

@@ -210,3 +210,14 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-01 · A session that cannot get the handbook does no work: it says so in its first line
   and asks the owner to paste it, or sends the work to a thread that can read it · the owner,
   2026-11-01: "do not carry on. Handbook is required."
+- 2026-11-01 · The handbook's content stays; the problem is delivery: two copies per session and
+  the handbook treated as optional · the owner, 2026-11-01, answering 21: "The problem is not the
+  contents of the handbook but: 2x handbooks (repo + project); handbook is selectively obeyed /
+  optional". Evidence: the copy in the owner's environment is the version of 2026-10-31 13:22,
+  three changes behind the live one, with the same version label.
+- 2026-11-01 · One copy per session, the newest, binding: the environment's setup script places
+  the handbook as the personal `CLAUDE.md` (with a date line to change for a rebuild); the
+  preferences make each session check it against the live version, download only when it is
+  missing or older, follow the newer one, name the version and its source in the first line, and
+  do no work without it. Every saved change to the handbook gets a new version label (a date and
+  a letter) · agent's choice on the owner's two problems; not separately confirmed.
