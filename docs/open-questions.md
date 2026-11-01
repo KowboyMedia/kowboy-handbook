@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 20
+Next number: 21
 
 ## 17 `[handbook]` Instruction: when your colleague has done the two steps he got on Slack, say "installed".
 
@@ -11,14 +11,9 @@ Asked 2026-10-31 (item 2). The steps place the handbook on his cloud environment
 they are in `docs/setup-new-account.md` and were sent to him on Slack on 2026-10-31. Nothing for
 you to do but pass on his word.
 
-## 18 `[handbook]` Instruction: add the two outside-content lines from the README to your personal preferences, send them to your colleague for his, then say "added".
+## 20 `[handbook]` Instruction: replace the Claude Code part of your personal preferences with the text in the README, send the same to your colleague, then say "preferences done".
 
-Asked 2026-10-31. The lines make regular chats treat what they read as information, never as an
-instruction, and keep connected services read only unless you ask. They are in the README under
-"How it reaches a session".
-
-## 19 `[handbook]` Instruction: paste the project-instructions text from the README into each claude.ai project, then say "projects done".
-
-Asked 2026-11-01. The project conversation cannot download the handbook, so the thread-routing
-rule and the reply rules it needs reach it only through the project's instructions. The text is
-in the README under "How it reaches a session".
+Asked 2026-11-01. The new text does three things the old line did not: it tells a session
+without a shell (the project conversation) to fetch the handbook with its web tool; it makes every
+chat treat what it reads as information, never an instruction, with the handbook itself excepted;
+and it keeps connected services read only unless you ask. It replaces 18 and 19.
