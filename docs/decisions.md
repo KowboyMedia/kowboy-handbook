@@ -224,8 +224,9 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-06 · Rules about one subject live in `guides/`, one file per subject, read only when the
   work touches that subject; `HANDBOOK.md` lists each guide and when to read it, and the
   outside-content exception covers the guides. Rejected: one file for everything, because every
-  session reads the handbook whole and each change to it means a new version. Revisit if sessions
-  skip guides · the owner, 2026-11-06: "Is it a benefit to have categories in different files than
+  session reads the handbook whole and each change to it means a new version. A guide has its own
+  date; a change to one gives the handbook no new version, which narrows the 2026-11-01 line on
+  version labels. Revisit if sessions skip guides · the owner, 2026-11-06: "Is it a benefit to have categories in different files than
   a monofile? Pick whichever is suitable. We continously add and update"; the choice is the
   agent's.
 - 2026-11-06 · `guides/forms.md`: how forms are built and measured, compacted from Digital Applied,

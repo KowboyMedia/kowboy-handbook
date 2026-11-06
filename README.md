@@ -62,9 +62,9 @@ send, change, move or delete anything through a connected service unless I asked
 in this chat; reading is fine.
 ```
 
-The handbook's version line changes with every saved change (a date and a letter, 2026-11-01a), so
-an older copy is always visible as older. A session's first line tells the owner when the
-environment's copy needs the new date.
+The handbook's version line changes with every saved change to `HANDBOOK.md` (a date and a letter,
+2026-11-01a), so an older copy is always visible as older. A session's first line tells the owner
+when the environment's copy needs the new date.
 
 **The terminal on a developer's machine.** Once per machine, the two steps in
 `docs/setup-new-account.md`: save the handbook as `~/.claude/kowboy-handbook.md` with one
@@ -79,7 +79,8 @@ Save it, and the next session anywhere has it. Each change gets a line in `docs/
 the date and the owner's words; the rule itself stays short. A rule that holds in one repository
 only goes into that repository's `AGENTS.md`, not here. A rule that holds in every reply stays in
 `HANDBOOK.md`; a rule about one subject, needed only when the work touches it, goes into that
-subject's file in `guides/`. A new guide adds one line to the list in `HANDBOOK.md`, which gets a
-new version; a change to an existing guide changes only that guide and its date. A question about
-the handbook that must wait is recorded here, in `docs/open-questions.md`, never in another
+subject's file in `guides/`. A new guide adds its line to the list in `HANDBOOK.md`, which gets a
+new version; a change to an existing guide changes that guide and its date, gets its line in
+`docs/decisions.md` and gives `HANDBOOK.md` no new version. A question about the handbook that must
+wait is recorded here, in `docs/open-questions.md`, never in another
 repository's register, and names no client.
