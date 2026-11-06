@@ -221,3 +221,15 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   missing or older, follow the newer one, name the version and its source in the first line, and
   do no work without it. Every saved change to the handbook gets a new version label (a date and
   a letter) · agent's choice on the owner's two problems; not separately confirmed.
+- 2026-11-06 · Rules about one subject live in `guides/`, one file per subject, read only when the
+  work touches that subject; `HANDBOOK.md` lists each guide and when to read it, and the
+  outside-content exception covers the guides. Rejected: one file for everything, because every
+  session reads the handbook whole and each change to it means a new version. Revisit if sessions
+  skip guides · the owner, 2026-11-06: "Is it a benefit to have categories in different files than
+  a monofile? Pick whichever is suitable. We continously add and update"; the choice is the
+  agent's.
+- 2026-11-06 · `guides/forms.md`: how forms are built and measured, compacted from Digital Applied,
+  Form Conversion Rate Benchmarks 2026, with its figures marked as directional · the owner,
+  2026-11-06: "Add this into our handbook repo".
+- 2026-11-06 · Every public-facing form has bot protection of some form · the owner, 2026-11-06:
+  "All public facing forms should have bot protection of some form".
