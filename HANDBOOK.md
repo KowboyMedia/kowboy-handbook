@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-11-01a. The way of working for every Claude Code session someone at Kowboy starts, on
+Version 2026-11-08a. The way of working for every Claude Code session someone at Kowboy starts, on
 any repository.
 
 **Read all of it before any work.** It ends with the line "End of the handbook." A copy without
@@ -177,16 +177,21 @@ tooling, never what the agent can find out itself or the memory files already an
   the block ask nothing; Next only points to these bullets by number. A question from an earlier
   reply that is still waiting is repeated here in full whenever a reply waits on it; a number
   alone, with its text somewhere above, means nothing to the reader.
-- **Labelled with its register number in bold, never a list position.** A number exists only
-  once its entry is saved in the shared copy's register, and that save is made when the question
-  is asked, never when it is answered. The entry is written under the register's next number and
+- **Labelled with its number in bold, never a list position.** Where there is a register, the
+  entry is saved in the shared copy's register when the question is asked, never when it is
+  answered. The entry is written under the register's next number and
   saved alone, straight to the shared copy (the one exception to working in a copy of one's own):
   with the repository's own command where there is one, otherwise with the platform's file-change
   tool given the file's current version, so that a save on top of a changed file is refused; then
-  the session takes the newer register and the number after. A session that cannot save there
-  asks without a number and gives the number in its next reply, once saved. Numbers are never
-  reused; the owner answers by number in any conversation. An ask that only describes a situation
-  belongs in Notes, with a question after it if one is needed.
+  the session takes the newer register and the number after. **Every question is numbered in
+  series, whether or not it can be saved.** A session that cannot save to the register now uses
+  the next number it read there, saves the entry at the first chance and, if that number was
+  taken meanwhile, takes the next free one and says which number became which in its next reply.
+  A session with no register at all keeps its own series in the thread, from 1, never reused
+  there, and the owner answers in that thread; when the questions move into a register they take
+  its numbers, and the reply says which number became which. Numbers are never reused; the owner
+  answers by number in any conversation. An ask that only describes a situation belongs in Notes,
+  with a question after it if one is needed.
 - **One decision per question**: one short sentence in plain words ending with a question mark,
   no options and no reasoning in it.
 - **Written at the owner's level.** The question and its options say what the owner or the

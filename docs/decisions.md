@@ -221,3 +221,13 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   missing or older, follow the newer one, name the version and its source in the first line, and
   do no work without it. Every saved change to the handbook gets a new version label (a date and
   a letter) · agent's choice on the owner's two problems; not separately confirmed.
+- 2026-11-08 · Every question to the owner is numbered in series, whether or not it can be saved
+  in a register: a session that cannot save now uses the register's next number and renumbers
+  openly if it was taken; a session with no register keeps its own series in the thread, from 1,
+  and maps it to register numbers when the questions move into one. Supersedes "a session that
+  cannot save there asks without a number" (Questions). Options weighed: one series for all
+  registerless threads in a private repository (rejected: every session would need access to it)
+  and numbers per reply (rejected: list positions are forbidden); revisit if the owner answers
+  registerless questions outside their thread · the owner, 2026-11-08: "Ändra handboken, frågor
+  ska numreras alltid i serie, oavsett om de kan sparas i ett arkiv eller ej"; the mechanism is
+  the agent's choice, not confirmed by the owner.
