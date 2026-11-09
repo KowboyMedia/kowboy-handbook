@@ -231,3 +231,28 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   registerless questions outside their thread · the owner, 2026-11-08: "Ändra handboken, frågor
   ska numreras alltid i serie, oavsett om de kan sparas i ett arkiv eller ej"; the mechanism is
   the agent's choice, not confirmed by the owner.
+- 2026-11-09 · Every cloud environment starts the same way, from this repository alone: its setup
+  script is two lines that run `setup/environment.sh` (falling back to the plain handbook download,
+  never stopping a session). That places the handbook as the personal `CLAUDE.md` and two session
+  steps: at every start, resume and compaction the copy is checked against the live handbook, and
+  on every message the owner sends a card of about 1,000 characters (reply blocks, questions,
+  ask-or-go) is added. The handbook stays the source; the card says it summarises and that the
+  handbook wins. Supersedes the setup-script and preferences texts of 2026-11-01 (register 22,
+  withdrawn) · the owner, question 24, 2026-11-09: "Du vet kraven och önskemålen fatta ett
+  beslut", taken as a), the recommendation. Evidence for it: three of four sessions on 2026-11-08
+  did not follow the handbook (the owner); the environment's copy was a week behind the live one;
+  the "Default" environment had no setup script and so no handbook; the preferences still carried
+  a reply format of their own. Where the agent looked: the platform's own fix for its Slack
+  sessions, a reminder injected on every message; nested test sessions in this container.
+- 2026-11-09 · Found in testing, so built around: instruction files are read before the start step
+  runs, and start-step output beyond about 2 KB is moved to a file. So the start step never prints
+  the handbook: when the copy differs from the live one it replaces the copy (for compaction and
+  the next start) and tells the agent to read the live one whole from a local file, naming source
+  and checksum; reading that file is allowed in the settings it writes. Rejected: printing the
+  handbook through the step (cut off at about 2 KB). Revisit if the platform documents a way to
+  load an instruction file from an address · agent's choice, not confirmed by the owner.
+- 2026-11-09 · The preferences text shrinks to what must hold everywhere: the handbook is binding,
+  its reply protocol replaces any reply format in the preferences, fetch it if no copy is present,
+  name the version in the first line, no work without it; the outside-content lines stay · agent's
+  choice under question 24, not confirmed by the owner.
+

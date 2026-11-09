@@ -31,8 +31,18 @@ item 3 with "resume next steps". The audit behind them is `docs/audit-2026-10-30
 6. `[handbook]` Twelve scripted prompts on reply shape, drift and ask-or-go, run in a fresh
    session after each handbook change. One session. Optional; follows item 1.
 7. `[handbook]` Done 2026-10-31: the connected-services rule is in the core (question 9 a).
+8. `[handbook]` Every cloud environment starts from this repository: the newest handbook at every
+   start, a reminder card on every message (question 24 a). Built and tested 2026-11-09 in the
+   thread "Handboken följs inte tillräckligt"; waits for the owner's "live" (25), then the
+   approval card for "Core, Plugin and WordPress". Afterwards: one fresh session per environment
+   confirms the version line and the card.
 
 ## Later
+
+- `[handbook]` The same start steps on a developer's Mac (the terminal), merged into the
+  machine's own settings.
+- `[handbook]` Item 4's checks also confirm that `setup/reminder.md` changes whenever the reply
+  protocol does.
 
 - `[handbook]` A session budget (time, helper agents, cost) before a session stops and reports
   (audit E2).

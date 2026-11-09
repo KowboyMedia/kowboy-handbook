@@ -3,44 +3,32 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 25
-
-## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
-
-Asked 2026-11-01. Replaces 17, 20 and 21. The steps and both texts are in
-`docs/setup-new-account.md`, parts 0 and 1. The colleague gets the same steps on Slack when the
-owner says so.
+Next number: 27
 
 ## 23 `[handbook]` Should the handbook say that your answer to a question goes back only to the thread that asked it, and is never passed to another thread unless that thread owns the subject?
 
 Asked 2026-11-01. A coordinator in a project committed to this rule; the handbook has the thread
 rule and the plain-words rule but not this one. Reply: yes or no.
 
-## 24 `[handbook]` Should every cloud session, whatever its environment, fetch the newest handbook itself when it starts and get a short reminder of the reply shape with every message you send?
+## 25 `[handbook]` Instruction: change your preferences and add the start lines to your two other environments, then reply "live".
 
-Asked 2026-11-08. Replaces 22 if answered a) or b). The owner reports that three of four sessions
-today did not follow the handbook. Found in this session: the environment's copy was 2026-11-01a
-while the live one is 2026-11-08a (the script has no date line, so the copy waits for a rebuild);
-the "Default" environment has no setup script, so a session there has no handbook file at all and
-depends on the preferences line alone; the personal preferences are still the older text with an
-"Output shape" of their own, which competes with the reply protocol; the handbook is about 30,000
-characters and nothing restates it during a long conversation. The platform itself fixes the same
-drift for its Slack sessions with a reminder injected on every message.
+Asked 2026-11-09. Follows 24 a). The texts are in `docs/setup-new-account.md`, parts 0 and 1.
+"Live" lets the agent combine the start files into the shared copy and send the approval card for
+the environment "Core, Plugin and WordPress", the only one a session can change itself. The lines
+work before "live" too: until then they fall back to today's plain download.
 
-Rejected without asking: a copy in each repository's `AGENTS.md` (decided against on 2026-10-31
-and 2026-11-01; it would not load more strongly than the personal `CLAUDE.md` it already is, and a
-client's repository gets none of the handbook).
+## 26 `[handbook]` When one option clearly meets your stated requirements best, should the agent decide changes to how agents work itself and only report what it chose?
 
-- a) Fetch at start and a reminder on every message (recommended). Each environment's setup
-  script becomes one line that runs a start file kept in this repository; the start file sets a
-  session-start step that loads the live handbook (also after compaction) and a per-message step
-  that adds a short card (reply blocks, ask-or-go) kept here too. One source, no lag, drift held
-  in long conversations. Owner's cost: approve one card for this environment, paste one line into
-  the two others, once. Not yet tested whether the platform caps what a start step may add; if it
-  does, the handbook stays as the instruction file and only the card goes through the step.
-- b) Fetch at start only. Removes the lag and the missing copy in "Default"; long conversations
-  still drift. Same owner cost.
-- c) As now. No cost; the failures go on.
+Asked 2026-11-09, under "Twice is a rule": the owner corrected the same thing again ("you can
+decide which option is best and has the least compromise day to day development", 2026-10-31;
+"pick the best option", 2026-10-31; "Du vet kraven och önskemålen fatta ett beslut", 2026-11-09).
+The rule it would add to "Ask or go", gate list: a change to how agents work is decided by the
+agent when one option clearly meets the owner's stated requirements best, and reported in Done
+with its undo; it is asked only when the options are close in a way the owner would notice, or
+when it is one-way.
 
-Reply: a, b or c.
+- a) Yes, except one-way steps (recommended). Fewer questions; each choice is still shown in Done
+  and can be undone.
+- b) No, as today. Every such change is asked first.
 
+Reply: a or b.
