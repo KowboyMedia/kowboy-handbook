@@ -7,7 +7,8 @@ not done, keep it current.
 
 Items 1, 2 and 7 are done (2026-10-31; the owner's cloud environment carries the script, the
 colleague's steps are with him; the connected-services rule is in the core). Item 5 is dropped
-(question 8 c). Items 3 and 4 are next, in that order; a new thread on this repository takes
+(question 8 c). Item 8 is in progress (2026-11-09): built and tested, it waits for the owner's "live" (25).
+Items 3 and 4 are next, in that order; a new thread on this repository takes
 item 3 with "resume next steps". The audit behind them is `docs/audit-2026-10-30.md`.
 
 ## Items
@@ -31,10 +32,10 @@ item 3 with "resume next steps". The audit behind them is `docs/audit-2026-10-30
 6. `[handbook]` Twelve scripted prompts on reply shape, drift and ask-or-go, run in a fresh
    session after each handbook change. One session. Optional; follows item 1.
 7. `[handbook]` Done 2026-10-31: the connected-services rule is in the core (question 9 a).
-8. `[handbook]` Every cloud environment starts from this repository: the newest handbook at every
+8. `[handbook]` In progress 2026-11-09. Every cloud environment starts from this repository: the newest handbook at every
    start, a reminder card on every message (question 24 a). Built and tested 2026-11-09 in the
    thread "Handboken följs inte tillräckligt"; waits for the owner's "live" (25), then the
-   approval card for "Core, Plugin and WordPress". Afterwards: one fresh session per environment
+   approval card for the owner's current environment. Afterwards: one fresh session per environment
    confirms the version line and the card.
 
 ## Later

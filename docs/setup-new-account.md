@@ -6,8 +6,8 @@ every session work from one copy of the handbook, the newest, and treat it as bi
 ## 0. Your preferences (claude.ai)
 
 1. Open claude.ai, then Settings, then Profile, then the personal preferences field.
-2. Delete everything from the first line that starts "Claude Code-only instructions" to the end
-   of the field, if there is such a line.
+2. Delete the Kowboy paragraphs, if there are any: from the first line that starts "Claude
+   Code-only instructions" to the line that ends "reading is fine." Everything else stays.
 3. Paste this at the end and save:
 
 ```
@@ -32,7 +32,8 @@ in this chat; reading is fine.
 
 1. Open claude.ai, then Claude Code, then Environments. Open the environment you use, or create
    one.
-2. In its setup script, paste these two lines at the end (anything already there stays) and save:
+2. In its setup script, delete any earlier Kowboy lines (the ones that mention the Kowboy handbook
+   or download HANDBOOK.md), paste these two lines at the end, and save; everything else stays:
 
 ```
 # Kowboy handbook: the newest handbook, the reminder and the session steps, from the handbook repository
@@ -42,7 +43,9 @@ curl -fsSL https://raw.githubusercontent.com/KowboyMedia/kowboy-handbook/main/se
 3. Do the same in every other environment you start sessions in.
 4. In every project you start threads from: Project settings, Environment, choose one of them.
 
-Nothing needs changing when the handbook changes: every session checks the live one when it starts.
+Nothing needs changing when the handbook or its reminder changes: every session checks the live
+ones when it starts. A change to the start steps themselves reaches an environment when it is next
+rebuilt.
 
 ## 2. Your Mac (terminal)
 

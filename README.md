@@ -41,7 +41,9 @@ platform's place for standing rules, restored after compaction) and registers tw
   1,000 characters (the reply blocks, questions, ask-or-go). The card summarises the handbook and
   says that the handbook wins; a change to the reply protocol changes the card in the same save.
 
-A failure in any of this never stops a session from starting.
+A failure in any of this never stops a session from starting. The handbook and the card are
+checked live at every start; a change to the start steps themselves reaches an environment when it
+is next rebuilt.
 
 **The personal preferences** (claude.ai: Settings, Profile, the personal preferences field) reach
 every session on every device, also where there is no environment (the project conversation). They

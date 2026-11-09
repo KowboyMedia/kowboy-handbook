@@ -253,6 +253,7 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   load an instruction file from an address · agent's choice, not confirmed by the owner.
 - 2026-11-09 · The preferences text shrinks to what must hold everywhere: the handbook is binding,
   its reply protocol replaces any reply format in the preferences, fetch it if no copy is present,
-  name the version in the first line, no work without it; the outside-content lines stay · agent's
-  choice under question 24, not confirmed by the owner.
+  name the version in the first line, no work without it; the outside-content lines stay. Option
+  a) of question 24 named "new text in the preferences" as part of its cost; the wording is the
+  agent's, and the owner sees it whole when pasting it (25) · agent's choice under question 24.
 

@@ -14,7 +14,7 @@ rule and the plain-words rule but not this one. Reply: yes or no.
 
 Asked 2026-11-09. Follows 24 a). The texts are in `docs/setup-new-account.md`, parts 0 and 1.
 "Live" lets the agent combine the start files into the shared copy and send the approval card for
-the environment "Core, Plugin and WordPress", the only one a session can change itself. The lines
+the owner's current environment, the only one a session can change itself. The lines
 work before "live" too: until then they fall back to today's plain download.
 
 ## 26 `[handbook]` When one option clearly meets your stated requirements best, should the agent decide changes to how agents work itself and only report what it chose?
