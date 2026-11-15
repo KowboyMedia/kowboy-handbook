@@ -369,4 +369,16 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   they are stored: too much friction for two or three developers · the owner, question 38,
   2026-11-15: "38 no need". Whether the keys still leave the building sessions (36, "yes") is
   asked again as 41.
+- 2026-11-15 · The model for every product repository: the agent has no access to production;
+  the code holds no access to production; the staging branch publishes to staging by itself
+  with staging keys kept as secrets on GitHub; the live branch publishes to production with
+  production keys kept as secrets on GitHub, only after review and approval. Answers 41 with
+  yes · the owner, 2026-11-15: "Agent: no production access. Code: no production access. Github
+  actions, staging branch: permissions to staging environment through secret keys, allowed to
+  deploy automatically to staging. Github actions, live branch: permissions to production
+  through secret keys, allowed to deploy after PR review/approval to production". Not yet a
+  line of the handbook.
+- 2026-11-15 · The production keys leave the environment the building sessions run in; the
+  agent lists them, the owner corrects the list and approves the removal · the owner, question
+  42, 2026-11-15: "42 yes".
 

@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 42
+Next number: 44
 
 ## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
 
@@ -22,11 +22,9 @@ Asked 2026-11-15, on the owner's yes to 39. Only the owner can change the reposi
 The steps are in the thread of 2026-11-15. Not known: whether the owner can approve a change an
 agent prepared under his own account; the first change after the protection shows it.
 
-## 41 `[handbook]` Should the keys to live sites and servers still be taken out of the sessions that build, without the extra approval step?
+## 43 `[handbook]` Which of the keys in the building environment reach live systems and are to be removed from it?
 
-Asked 2026-11-15. The owner answered 36 with yes and then 38 with "no need [...] too much
-friction with the only protection beein a malicios developer". The risk is not a malicious
-person: it is an agent that makes a mistake while it holds a key that can delete live systems.
-Without the extra approval step the cost is about an hour of the owner's time, once, and none
-from day to day. The smaller option: no, the keys stay where they are. Reply: yes or no.
+Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent's guess for each
+is in the thread of that day and not here, because this repository is public. The owner corrects
+the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
