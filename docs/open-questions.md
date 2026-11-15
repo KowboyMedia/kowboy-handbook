@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 29
+Next number: 30
 
 ## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
 
@@ -37,3 +37,13 @@ Asked 2026-11-15. Blocks item 8 from being done and item 9 from starting on the 
 owner reads layer 1 (the twelve rules, shown in the chat) before it is live, as promised with
 24. What changed in meaning besides the sorting is listed in `docs/decisions.md` under
 2026-11-15. Reply: yes, or the number of the rule and the change.
+
+## 29 `[handbook]` Should a one-page map of each repository's parts, read at the start of every session, become its own item after the package?
+
+Asked 2026-11-15. The owner expects an architecture page as part of the pattern. Today the parts
+of a product, how they connect and what must not change without the owner are written inside
+the plan document (`docs/strategy.md`), which a session doing a small change never has to read,
+so it can break rule 6 without knowing. The item would move that map to one short page named in
+`AGENTS.md`, moved and not copied, and change `PHASES.md` to match. The smaller option: no.
+Reply: yes or no.
+

@@ -225,6 +225,8 @@ for the register "Next number: 1".
   and the owner answers in that thread; when the questions move into a register they take its
   numbers, and the reply says which number became which. Numbers are never reused; the owner
   answers by number in any conversation.
+- **Lean.** `AGENTS.md`, the strategy and these four files hold only what a session needs and
+  cannot read from the code. What is done, answered or no longer true leaves in the same change.
 
 **Cold pickup.** Every project must be safe to patch and deploy by someone who has only Claude
 Code and access to its repository: anything the work depends on lives in the repository (the list

@@ -282,4 +282,11 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-15 · Sessions that build should stop holding the keys to live sites and servers; an
   item finds out which keys can be limited or moved to a setting used only for a release · the
   owner, question 26, 2026-11-15: "yes".
+- 2026-11-15 · The files a session works from (`AGENTS.md`, the strategy, the four memory files)
+  are kept lean: only what a session needs and cannot read from the code, and what is done,
+  answered or no longer true leaves in the same change. The question log (numbered, saved when
+  the question is asked) and simple code were already rules and stay required in layer 2 · the
+  owner, 2026-11-15: "I also want to have the question log (numbered, created upon asking, not
+  upon receiving answering), and software should be built using best agentic practice [...]
+  while they MUST be lean. Code should be simple."
 
