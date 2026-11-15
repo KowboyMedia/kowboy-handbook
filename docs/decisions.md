@@ -344,4 +344,12 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   real work.
 - 2026-11-15 · A study of published practice looks for rules the handbook lacks · the owner,
   question 32, 2026-11-15: "32 yes".
+- 2026-11-15 · The study of published practice is in `docs/research-guardrails-2026-11-15.md`,
+  run by the owner as deep research (question 35). Its main finding: what prevents harm has to be
+  enforced by the platform, and written rules cover how the work is done; every incident it
+  reviews came from reach, not from a missing instruction · the owner, 2026-11-15: "35 added".
+- 2026-11-15 · The measure for every rule and every question in the handbook: reliability, in
+  code and in work, and high throughput · the owner, 2026-11-15: "The main goal is reliability
+  (in code ans work) and high throughoutput. Mistakes, accidents, drift and excessive
+  comms/cognitive load on the operator cost throughoutput." Not yet a line of the handbook.
 
