@@ -389,4 +389,11 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   agents or for code; staging publishes by itself, production only after review and approval;
   the keys are kept as secrets on GitHub. Quiz on version 2026-11-15f: two agents, 28 of 28
   each · the owner, question 44, 2026-11-15: "44 yes".
+- 2026-11-15 · The reply shape is bottom line first: one line with the state and what the owner
+  must do, then Questions, Done and, rarely, Notes; the bullets, the numbers and the lettered
+  options stay. Options rejected: the four blocks with limits (still four headings to read) and
+  one digest per item (a wrong turn shows late). The Next block is gone; its state is the first
+  line. Layer 3 from 7,064 to 2,876 characters, the handbook 28,355. In the working copy as
+  version 2026-11-15g until the owner's yes (question 46) · the owner, question 45 a),
+  2026-11-15: "45 a. But from the old i want the bullets, numbers, options as letters."
 

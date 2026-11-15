@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-11-15f. For every Claude Code session someone at Kowboy starts, on any repository.
+Version 2026-11-15g. For every Claude Code session someone at Kowboy starts, on any repository.
 
 Read all of it before any work. It ends with the line "End of the handbook."; if your copy does
 not, save it again with
@@ -249,12 +249,12 @@ owner says so. A rule nobody would break without it is deleted the same way.
   that the credentials and services the work needs answer; a refused token or an unreachable
   service is reported in the first reply, never discovered mid-task. Keys to live systems the
   item does not need are named there too ("Security").
-- **"Status"**, said in any session, returns the four memory files in the four blocks (the Status
+- **"Status"**, said in any session, returns the four memory files in the reply shape (the Status
   phase): what waits on the owner, what is in staging but not live, the known bugs, what remains;
   nothing else.
 - **Finish** every piece of work with the memory current (`docs/next-steps.md` says what remains,
   `docs/decisions.md` has its lines, every question asked is in the register), then save the work
-  so it has reached GitHub, and report in the reply protocol. A turn never ends with saved work
+  so it has reached GitHub, and report in the reply shape. A turn never ends with saved work
   that has not been sent.
 - **Sessions running side by side** each save their own work, combined into the shared copy; a
   question's entry alone goes to the shared copy's register at the moment it is asked ("Taking a
@@ -368,136 +368,52 @@ What layers 1 and 2 require stays in any shape: a question is still asked, work 
 
 ### Writing
 
-- **Write for the product owner**, in chat and in documents alike: plain words, short, what it
-  means for the product, complete sentences, every term explained the first time. Short comes from
-  cutting, never from dropping words. No git, infrastructure or configuration words unless asked
-  for: never "branch", "merge", "commit", "push", "pull request", "rebase" or "conflict"; say
-  "saved", "combined with the other session's work", "in staging" or "live". Another person
-  chatting with an agent may get the technical words.
+- **Write for the product owner**, in chat and in documents alike: plain words, short, complete
+  sentences, every term explained the first time. Short comes from cutting, never from dropping
+  words. No git, infrastructure or configuration words unless asked for: say "saved", "in
+  staging" or "live". Another person chatting with an agent may get the technical words.
+- **Bullets, not paragraphs.** One idea per bullet, the component tag first, in backticks.
 
-### Reply protocol
+### Reply shape
 
-Every reply to the owner while working on the project (building, changing, fixing, releasing or
-reporting that work) is made of the labelled blocks below, in this order, and nothing outside
-them. In discussion mode (the owner asking, comparing or thinking aloud, no work reported) the
-answer comes first in plain sentences, and the only block is Questions, holding anything the reply
-asks of the owner. A block appears only when it holds something, never empty, never "none". Next
-is the one block every working reply has. The measure of every block is the reader's effort: the
-owner reads the first block and answers, the rest is optional.
+Bottom line first. A reply has up to four parts, in this order, and nothing else. In a
+discussion (the owner asking or thinking aloud, no work reported) the answer comes first in plain
+sentences, then Questions if anything is asked.
 
-- **Bullets, not paragraphs.** One idea per bullet, details in sub-bullets, never a longer line.
-- **The component tag first, in backticks.**
-- **Plain words**, complete sentences, every term explained the first time.
-
-#### Questions
-
-Only what the owner alone can decide (product, money, contract, priority, anything irreversible)
-and the steps and answers only the owner can give. No background, reasoning or status; never
-tooling, never what the agent can find out itself or the memory files already answer.
-
-- **Every request is a bullet here, never prose**, in a working and a discussion reply alike: a
-  decision, an ok, a step only the owner can take, a piece of information. The sentences around
-  the block ask nothing; Next only points to these bullets by number. A question from an earlier
-  reply that is still waiting is repeated here in full whenever a reply waits on it; a number
-  alone, with its text somewhere above, means nothing to the reader.
-- **Labelled with its number in bold, never a list position**: the number it took under "Taking
-  a number" (layer 2). An ask that only describes a situation belongs in Notes, with a question
-  after it if one is needed.
-- **One decision per question**: one short sentence in plain words ending with a question mark,
-  no options and no reasoning in it.
-- **Written at the owner's level.** The question and its options say what the owner or the
-  product will notice and what each answer costs or risks, in the owner's words; never a
-  mechanism, a file, a tool or a term from the inner workings. The cold reader test: a person who
-  knows the business but not the code can answer it without asking anything. A question that
-  cannot be written that way is not the owner's: it is tooling, the agent decides it and notes
-  the choice.
-- **Options lettered a), b), c), at most three, in rising order**: the letter, the answer word in
-  bold, one short consequence in the owner's words. The recommended option is marked
-  "(recommended)" and, when the agent letters them, is a). Options already lettered (the owner's,
-  a register entry's) keep their letters and order, as does anything listed per option. A yes/no
-  question with obvious outcomes needs no option lines.
-- **The last line says how to reply, with the exact letters or words.** An open answer says
-  exactly what to paste and where to find it.
-- **A Default** starts with "Default:" and states what the agent will do; its reply line is "Reply
-  only if you disagree: no". Asked before the work, never after.
-- **An instruction** (a step only the owner can take) is one imperative sentence naming when it
-  is done: "Save the token as HANDBOOK_TOKEN, then say 'saved'." Several steps are a numbered list
-  under it, one action per line in the order they are done, each naming where to click or what to
-  paste, and nothing else: no story of how the agent got there, no reasoning, nothing the agent
-  could have done itself. The agent does all the work it can first and hands the owner only what
-  is left, in that list.
-- **At most three per reply**, five only when all five block today; the rest wait in the register.
-  Always in rising number order, here and wherever a reply lists questions or answers to them;
-  which one blocks most is said in its own line, never by moving it.
-- **Show before asking.** A question about anything visible carries the place to see it (a
-  staging page, a screenshot).
+1. **The first line: the state, and what the owner must do.** One of: "Waiting for you:" with
+   what is needed; "Working:" with what and the time of the next message; "Waiting for something
+   else:" with what and when the agent looks again; "Done:" when the thread can be closed.
+2. **Questions**: only what the owner alone can decide, and steps only the owner can take.
+   - Each is a bullet with its number in bold ("Taking a number", layer 2), never a list position.
+   - One decision per question, one short sentence ending with a question mark, written so that
+     a person who knows the business but not the code can answer it. A question that cannot be
+     written that way is tooling: the agent decides it.
+   - Options are lettered a), b), c), at most three: the answer word in bold and one consequence
+     in the owner's words. The agent's choice is a) and is marked "(default)".
+   - The last line says how to reply, with the exact letters or words. "ok" takes every default.
+   - A step for the owner is one sentence saying when it is done, then a numbered list of
+     actions, one per line, each naming where to click or what to paste.
+   - At most three per reply, in rising number order. A question still waiting is repeated in
+     full. Anything visible comes with the place to see it.
+3. **Done**: at most three bullets. What changed, in the owner's words; how it was verified; the
+   undo word where something people use changed.
+4. **Notes**: only what changes a decision the owner has to make now. Most replies have none.
+   Everything else stays in the repository.
 
 ```
+Waiting for you: one decision. Retry is built and in staging.
+
 **Questions**
 - **41** `[core]` How should a bell that fails three times be handled?
-  - a) **retry later** (recommended): it is tried again after an hour; nothing is lost.
+  - a) **retry later** (default): it is tried again after an hour; nothing is lost.
   - b) **drop**: it is logged and forgotten; simplest.
   - c) **alert**: someone is told at once; needs a place to send the alert.
-  - Reply: a, b or c.
-- **92** `[core]` Default: I keep the four units-of-work rules.
-  - Reply only if you disagree: no, and which rule.
-- **93** `[core]` Connect the partner's test system, then say "connected".
-  1. Open the partner's console, then Settings, then Access.
-  2. Paste the address below into "Allowed origins" and save.
-  3. Reply "connected".
-```
+  - Reply: ok, b or c.
 
-#### Done
-
-What changed for the product, one bullet each, the most important first: the tag, a verb, what it
-means in the owner's words. Sub-bullets: how it was verified and, where something people use
-changed, the undo word. Never process, files or reasoning.
-
-```
 **Done**
 - `[core]` Bells now retry three times before giving up.
   - Verified: tests green; not yet against the real partner system.
   - Undo: say "undo 12".
-```
-
-#### Notes
-
-Only what changes a decision the owner has to make now or soon, one bullet each, tag first,
-details in sub-bullets. A Note never asks; if an answer is needed, it becomes a question. Most
-replies have no Notes.
-
-```
-**Notes**
-- `[core]` The partner's test system is down until Monday; bells cannot be verified against it
-  before then.
-```
-
-#### Next
-
-Every working reply ends with it; its first line names the session's state:
-
-- **Waiting for you:** exactly what the owner does now, with the reply letters or words.
-- **Working:** what the agent is doing, and the time by which the next message comes.
-- **Waiting for something else:** what it waits for, when it looks again, and that it writes when
-  that changes.
-- **Done:** "Nothing left here: this thread can be closed", naming any work that remains elsewhere
-  and who has it. Only when the thread's work is finished and nothing known remains in it.
-
-At most two more bullets. "Nothing, I carry on" is never the whole block.
-
-```
-**Next**
-- **Working:** `[core]` running the bell tests on staging; next message by 14:30.
-```
-
-A discussion reply, whole:
-
-```
-Yes: the search already covers the archive. What it lacks is a date filter, which is one item.
-
-**Questions**
-- **43** `[core]` Should the date filter be the next item?
-  - Reply: yes or no.
 ```
 
 End of the handbook.

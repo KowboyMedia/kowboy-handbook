@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 46
+Next number: 48
 
 ## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
 
@@ -28,21 +28,26 @@ Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
-## 45 `[handbook]` Which shape should a reply to the owner have?
+## 46 `[handbook]` Should the new reply shape go live?
 
-Asked 2026-11-15. The owner asked for a shape more efficient than the four blocks, three
-suggestions and one recommendation. The measure is the owner's goal: reliability and
-throughput, with as little reading and as few messages as possible.
+Asked 2026-11-15. Bottom line first, with the bullets, the numbers and the lettered options kept
+(the owner, 45 a). The third layer shrinks from 7,064 to 2,876 characters; the text and its
+example are shown in the chat. In the working copy as version 2026-11-15g. Reply: yes, or the
+change.
 
-- a) **bottom line first** (recommended): the first line says the state and what is needed;
-  decisions follow, each with a default that "ok" takes; what was done in at most three lines;
-  everything else stays in the repository.
-- b) **the four blocks, with limits**: as today, with a state line on top and a cap on each
-  block.
-- c) **one digest per item**: silence while the work runs, except when a rule stops it; one
-  report at the end.
+## 47 `[handbook]` Which rules for writing code should be added?
 
-Scored (reading per reply · messages per item · risk that something is missed): a) least · as
-today · low; b) less than today · as today · lowest; c) low · fewest · highest, a wrong turn
-shows late. The smaller option: b). Reply: a, b or c.
+Asked 2026-11-15. The owner asked for the fifty most meaningful rules for building software with
+agents, rated for how we work, and the best recommended. Of the fifty, the handbook already has
+most of the top ones; five rate high and are missing: check, do not guess, how a library or a
+system behaves; see the thing work in staging before "done", not only its tests; reproduce a
+bug with a failing test before fixing it; every save leaves the product working; follow what
+the code already does.
+
+- a) **all five** (recommended): five lines in the required layer.
+- b) **the first three**: the ones that prevent wrong results; the last two prevent mess.
+- c) **none**: the handbook stays as it is.
+
+Scored (mistakes prevented · lines added · the owner's time): a) most · five · none; b) most of
+them · three · none; c) none · none · none. The smaller option: c). Reply: a, b or c.
 
