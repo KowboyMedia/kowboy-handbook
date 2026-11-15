@@ -1,6 +1,6 @@
 # Kowboy handbook - the phases
 
-Version 2026-10-31. The second part of the Kowboy handbook: what each phase reads, produces and
+Version 2026-11-15. The second part of the Kowboy handbook: what each phase reads, produces and
 must make true, and the build procedure (Checks, the deletion inventory, the checks for product
 texts). `HANDBOOK.md`, next to this file, says when each phase starts, and its rules hold all
 the time. Read the phase's section in full when it starts. Every phase ends with the memory
@@ -242,8 +242,6 @@ requirement, never taste. Check, in this order, reporting only failures, each wi
 9. **Truth**: README, user-facing text, `docs/next-steps.md` and `docs/decisions.md` updated.
 10. **Plain words**: every new or changed text a user reads, read whole with real data, passes
     the checks of "Every text in the product is written for the person who reads it" (Build).
-11. **Proportion**: a fix for a rare and harmless problem, or new infrastructure to prevent one,
-    is "disproportionate, accept as debt in `docs/known-bugs.md`", whatever its quality.
 
 Output: at most ten lines, each `[component] what is wrong · why it matters · the fix`. "No
 findings" is a complete answer.

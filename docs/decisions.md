@@ -301,4 +301,26 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   went back to the gates, where it stood, out of rule 2; and the sentence that a one-way step is
   asked even when it follows from a change the owner asked for is back in "Ask or go". The
   fourth is the `AGENTS.md` change in meaning, which waits for the owner (question 28).
+- 2026-11-15 · The preferences layer may be changed by a person for themselves, in chat or in
+  their own saved preferences, only when stated explicitly or confirmed when asked; never
+  inferred, and never for another person. Supersedes, for layer 3, the line of 2026-10-27 that
+  put the reply protocol before the saved preferences · the owner, question 27 b), 2026-11-15:
+  "only explicitly or after confirmation, not inferred without confimation. These overrides are
+  personal, not cross operator."
+- 2026-11-15 · The twelve rules in their inherited wording are withdrawn (question 28): the owner
+  stopped reading at the rate of red flags. Layer 1 is rewritten from the principle of each
+  rule: ten rules of one sentence, no list and no exception inside a rule, examples below them
+  marked as never the whole list, and "unsure whether a rule applies? It applies". The opening
+  is cut to four short paragraphs. Tested on two fresh agents given only layer 1 and sixteen
+  situations taken from the corrections in this file (eleven that must stop, five that must
+  go): 32 of 32 as intended. The test is a quiz, not an agent under the pull of real work · the
+  owner, question 30, 2026-11-15: "The intro to the Handbook feels to complicated"; "4 gives a
+  list of examples [...] It looks like an exclusive list to me"; "Redflag rate too high, I
+  stopped. Assess, if true, find a better method."; "30 yes".
+- 2026-11-15 · Rules that agents added themselves are removed, the principles of the owner's
+  preferences kept: the advisor (2026-10-31, "not separately confirmed") and check 11 of the
+  Review phase (2026-10-31, "not confirmed by the owner") are gone. This file stays the
+  decision history, apart from the handbook · the owner, 2026-11-15: "Include a decision history
+  of some sort, separately [...] suspect things were added by agents themselves ironically,
+  remove those." In the working copy until the owner's yes (question 31).
 

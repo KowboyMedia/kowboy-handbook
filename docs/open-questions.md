@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 30
+Next number: 32
 
 ## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
 
@@ -16,28 +16,6 @@ owner says so.
 Asked 2026-11-01. A coordinator in a project committed to this rule; the handbook has the thread
 rule and the plain-words rule but not this one. Reply: yes or no.
 
-## 27 `[handbook]` What may change the preferences layer for a person?
-
-Asked 2026-11-15. The owner, answering 24: "The third layer is preferences, which can be
-optional/overridden". Two readings; the working copy holds a), which changes no earlier decision.
-
-- a) **what they say in chat** (recommended): as today; replies keep one shape for everyone
-  unless a person asks otherwise in the conversation.
-- b) **also their saved preferences**: each person's saved text can replace the reply format;
-  the owner's own saved "Output shape" would then replace the reply blocks in his sessions, and
-  the decision of 2026-10-27 (the reply protocol comes before it) is reversed.
-
-Scored (one reply shape across people · no earlier decision reversed · the owner's time):
-a) yes · yes · none; b) no · no · a preferences text to keep tidy per person. The smaller
-option: a). Reply: a or b.
-
-## 28 `[handbook]` Should the three-layer handbook go live as it stands in the working copy?
-
-Asked 2026-11-15. Blocks item 8 from being done and item 9 from starting on the new text. The
-owner reads layer 1 (the twelve rules, shown in the chat) before it is live, as promised with
-24. What changed in meaning besides the sorting is listed in `docs/decisions.md` under
-2026-11-15. Reply: yes, or the number of the rule and the change.
-
 ## 29 `[handbook]` Should a one-page map of each repository's parts, read at the start of every session, become its own item after the package?
 
 Asked 2026-11-15. The owner expects an architecture page as part of the pattern. Today the parts
@@ -49,4 +27,12 @@ session comes to read a repository's `AGENTS.md` at all: the platform's document
 2026-11-15, says the terminal reads it only when no `CLAUDE.md` is present, and does not say
 whether cloud sessions read it; the handbook's "Start" does not tell a session to. The smaller
 option: no. Reply: yes or no.
+
+## 31 `[handbook]` Should the ten rules, the short opening and the two removals go live?
+
+Asked 2026-11-15. The ten rules are shown in the chat with their test score. Removed as added
+by agents and never confirmed by the owner: the advisor, and check 11 of the Review phase. Kept,
+although an agent wrote the mechanism, because each carries out something the owner asked for:
+how a session without a register numbers its questions, and the automatic comparison of copies.
+Reply: yes, or the number of the rule and the change.
 

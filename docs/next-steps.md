@@ -6,7 +6,9 @@ not done, keep it current.
 ## Where to pick up
 
 Item 8 (the three layers) is in progress in a thread of 2026-11-15: sorted and checked in that
-thread's working copy, waiting for the owner to read layer 1 (question 28) before it is live.
+thread's working copy, layer 1 rewritten as ten rules from their principles; waiting for the owner's yes
+(question 31) before it is live. Still to do in item 8: the small preferences of layer 3 cut
+down to their principles.
 Item 9 (the Kowboy package) is next and takes a new thread on this repository with "resume next
 steps", once item 8 is live. Items 1, 2 and 7 are done; 5 is dropped; 3 and 6 are taken over by
 item 9; item 4 follows item 9. The audit behind items 1 to 7 is `docs/audit-2026-10-30.md`.
