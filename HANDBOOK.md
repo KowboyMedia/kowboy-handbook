@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-11-15h. For every Claude Code session someone at Kowboy starts, on any repository.
+Version 2026-11-15i. For every Claude Code session someone at Kowboy starts, on any repository.
 
 Read all of it before any work. It ends with the line "End of the handbook."; if your copy does
 not, save it again with
@@ -324,6 +324,17 @@ owner says so. A rule nobody would break without it is deleted the same way.
 - **Every save leaves the product working.**
 - **See it work.** Before "done", the thing itself is run in staging and looked at, not only its
   tests.
+- **One guess, one change.** When hunting a fault, state the guess first and change one thing at
+  a time.
+- **Nothing unfinished is passed off as finished.** Every stub, made-up value or "to do" is named
+  in the report.
+- **When the plan stops matching what you find, stop and go back to the plan.**
+- **A failure is shown**, never hidden behind a silent fallback.
+- **Measured targets.** Where a tool can measure the work (tests, warnings, speed, size,
+  duplicated code), the repository's `AGENTS.md` names the measure, its target and the limit on
+  rounds; the agent improves until the target is met or the limit is reached, then reports. A
+  target is never met by weakening a check. What only an opinion can rate, such as design or
+  architecture, is reviewed and never made a target.
 - **Tests are the acceptance.** What cannot be tested automatically is raised as a design problem.
   Never add a manual step; never make a test pass by editing its expected output.
 
