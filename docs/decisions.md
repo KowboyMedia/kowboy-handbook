@@ -327,4 +327,21 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   removals is live · the owner, question 31, 2026-11-15: "31 yes".
 - 2026-11-15 · A one-page map of each repository's parts, read at the start of every session,
   becomes its own item after the package · the owner, question 29, 2026-11-15: "29 Yes".
+- 2026-11-15 · The advisor is back, as it stood. Removing it was wrong: this file recorded it as
+  an agent's choice, and the owner says it was his suggestion. Supersedes the removal recorded
+  above under this date; check 11 of the Review phase stays removed. It also goes into the
+  package as something that runs by itself (question 33) · the owner, 2026-11-15: "33 yes, and
+  the advisor was suggested by me."
+- 2026-11-15 · A quiz is kept in `tests/`: 25 hard situations and, apart from them, a key with
+  how to run it; it is run on two agents with no part in the change after every change to the
+  handbook, and the score goes into the change's line here · the owner, 2026-11-15: "Actually
+  create a test quiz set we can run after any update." First run, version 2026-11-15c: two
+  agents with the whole handbook, 24 of 25 each; an agent in the advisor's place, with layer 1
+  and "Ask or go" only, 23 of 25. All three stopped at situation 4 where the key says go
+  (question 34); the advisor also stopped at 16, which rests on a section it is not given. No
+  agent went where the key says stop, so on this quiz the advisor had nothing to catch and
+  added one wrong stop. A quiz cannot show what the advisor does for an agent in the middle of
+  real work.
+- 2026-11-15 · A study of published practice looks for rules the handbook lacks · the owner,
+  question 32, 2026-11-15: "32 yes".
 
