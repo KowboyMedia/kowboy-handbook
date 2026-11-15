@@ -1,9 +1,11 @@
 # Kowboy handbook: the phases
 
-Version 2026-11-15j. Read a phase's section when that phase starts. It ends with "End of the
+Version 2026-11-15k. Read a phase's section when that phase starts. It ends with "End of the
 phases."
 
 ## Start a repository
+
+When: a repository is new, or lacks a strategy, acceptance criteria or the memory files.
 
 - `AGENTS.md` with only what is true there: the parts of the product and their tags, the
   commands an agent cannot guess, the repository's own rules and checks, and "Design: none" or
@@ -22,6 +24,8 @@ phases."
 
 ## Discover
 
+When: a project starts, a feature is larger than one item, or the owner describes a wish.
+
 - Read everything given. Ask nothing yet.
 - List the features: each in one sentence of value to the user, marked now or later, and what
   is out.
@@ -35,6 +39,8 @@ phases."
 
 ## Plan an item
 
+When: a change is more than one sentence, or touches more than one part or a connection.
+
 - Read the item, the strategy parts it touches, the decisions and the acceptance criteria.
 - Bring the decisions this item and the next two need, now.
 - Anything visible is agreed before it is built: a reference, a sketch or a staging page, and
@@ -46,6 +52,9 @@ phases."
 - Size it to one session and mark it "in progress" with the date.
 
 ## Design
+
+When: something people look at is created or restyled. Never in a repository whose `AGENTS.md`
+says "Design: none".
 
 - Size first. None (existing patterns): build, one picture on desktop and one on mobile,
   compare with a neighbouring page. Light (inside a pattern, adding something): build against
@@ -59,9 +68,11 @@ phases."
 
 ## Decide architecture
 
+When: before a choice later work builds on.
+
 - Repeat the owner's aim back first; design only after the owner's yes.
 - Design for the goal and scale the owner stated, never for today's data. Assumptions are
-  written at the top.
+  written at the top, and one that changes the design is the owner's decision.
 - A fresh agent checks the design against the owner's words before the owner sees it.
 - Name the parts and the connections first. A part knows nothing beyond its connections.
 - Boring and widely used, with as few moving parts as possible: nothing without a need that
@@ -74,6 +85,8 @@ phases."
 - Record the decision, the options rejected and the condition to revisit.
 
 ## Build
+
+When: a planned item is built.
 
 - Order: the connection (types, schema), the failing test, the code, the documents; all in the
   same change.
@@ -92,6 +105,8 @@ phases."
 
 ## Review
 
+When: before anything is reported done.
+
 A second agent with no part in the work. Report only failures, each with its fix, in at most ten
 lines. In this order:
 
@@ -109,15 +124,19 @@ lines. In this order:
 
 ## Release and operate
 
+When: the owner says "release", a health check is red, or something is wrong in
+production.
+
 1. Every check is green on staging.
 2. Say what changes for the people who use it, in their words.
 3. The owner says "release". Nothing goes live before.
-4. Publish, watch the health check until it is green, keep the previous version ready and say
-   in one line how it comes back.
+4. The approved publish runs by itself, as "Security" says. Watch the health check until it is
+   green, keep the previous version ready and say in one line how it comes back.
 5. Write the release into `docs/decisions.md`.
 
-The first go-live adds: the address and its certificates answer; a restore was rehearsed; the
-alerts were seen firing once; who is told, and in which words, is written beforehand.
+The first go-live adds: the address and its certificates answer; backups run and a restore was
+rehearsed; the alerts were seen firing once; the undo is known; personal data and keys are only
+where the design says; who is told, and in which words, is written beforehand.
 
 When something is wrong in production: every action there is the owner's decision. First make
 it safe, then find the cause, then fix it through staging. The cause goes into
@@ -125,7 +144,9 @@ it safe, then find the cause, then fix it through staging. The cause goes into
 
 ## Status
 
-Read-only. The reply shape, nothing else: the first line is the session's state and "Where to
+When: the owner says "status".
+
+Read-only. The reply shape, without its limits on length, and nothing else: the first line is the session's state and "Where to
 pick up" from `docs/next-steps.md`; **Questions**, every open entry of `docs/open-questions.md`,
 one line each; **Done**, what is in staging and not yet live, one line each; **Notes**, every
 entry of `docs/known-bugs.md`, one line each.

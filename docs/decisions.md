@@ -417,4 +417,13 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   (question 50) · the owner, question 48, 2026-11-15: "Size must go down. From my point of view,
   we have only 10-12 rules, a comms format. That would feel like max 4k. Layer 2 cut: yes, and
   the other stuff too."
+- 2026-11-15 · `PHASES.md` is cut to its principles as well, 19,805 to 8,000 characters, and the
+  three pages together are 18,600 (49,900 that morning). A second agent with no part in the work
+  compared them with the original text: 11 rules of conduct had lost their principle, 3 lines
+  said something new, 6 pairs could not both be obeyed and 5 references led nowhere. All were
+  corrected in the working copy, version 2026-11-15k, except that a repository's `AGENTS.md`
+  never switches off a rule, which the owner decided with question 31. Quiz after the
+  corrections: two agents, 28 of 28 each · the owner, 2026-11-15: "Why stop half way and block
+  yourself from working autonomously, when you don't have to? It is better to fron load all
+  required questions unless new appear."
 

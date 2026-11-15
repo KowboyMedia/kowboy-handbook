@@ -30,10 +30,11 @@ the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
 ## 50 `[handbook]` Should the small handbook go live?
 
-Asked 2026-11-15. Replaces 46. In the working copy as version 2026-11-15j: `HANDBOOK.md` with
-the ten rules and the reply shape, 2,931 characters; `WORK.md`, new, with what each rule covers
-and everything of the old required layer cut down to its principles, 6,537 characters, read
-before any work in a repository; `PHASES.md` not yet cut. Quiz: two agents, 28 of 28 each. Not
-done: no second agent has compared the new pages with the old text line by line, and the quiz
-covers the rules, not every detail of the old layer. Reply: yes, or the change.
-
+Asked 2026-11-15. Replaces 46. In the working copy as version 2026-11-15k: `HANDBOOK.md`, the
+ten rules and the reply shape, 3,247 characters; `WORK.md`, new, read before any work in a
+repository, 7,340; `PHASES.md`, cut to its principles, 8,000. Together 18,600, from 49,900.
+Checked: a second agent with no part in the work compared the three pages with the original
+text and found 25 points; all were corrected except one that the owner had already decided
+(a repository's own rules file cannot switch off a rule). Quiz after the corrections: two
+agents, 28 of 28 each. Not checked: the corrections themselves were not read by a second agent.
+Reply: yes, or the change.
