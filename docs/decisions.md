@@ -244,11 +244,13 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   (question 28).
 - 2026-11-15 · Layer 1 names the one-way steps and the gates of "Ask or go", the
   connected-services rule, the outside-content rule, "never invent a business rule" and the
-  fresh pair of eyes as twelve numbered rules. Only the owner's own word lifts one, for the step
-  it names; an agent's choice lifts nothing. A repository's `AGENTS.md` may add rules and never
-  removes one (before: `AGENTS.md` "wins where the two differ", now only over layers 2 and 3) ·
-  follows from question 24 a), "absolute rules that beat everything else"; shown to the owner
-  before it is live (question 28).
+  fresh pair of eyes as twelve numbered rules, in the words they had. Only the owner's own word
+  lifts one; an agent's choice lifts nothing. Two things changed in meaning: a repository's
+  `AGENTS.md` may add rules and never removes one (before: `AGENTS.md` "wins where the two
+  differ", now only over layers 2 and 3), and an `AGENTS.md` is written or changed without
+  asking only where the handbook or `PHASES.md` tells the agent to · follows from question 24
+  a), "absolute rules that beat everything else"; shown to the owner before it is live
+  (question 28).
 - 2026-11-15 · The handbook is never changed implicitly or as an agent's choice: only in a
   session on its own repository, on the owner's explicit word for that change (rule 8) · the
   owner, 2026-11-15: "The handbook must not be allowed to be edited implicitly".
@@ -258,10 +260,13 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   holds one its item does not need names it in the first reply as a warning to the operator,
   never a block · the owner, question 26, 2026-11-15: "yes, it should be in the handbook as
   security, but as a warning to the operator, not a block". "The operator", the owner's word, is
-  the person in the chat of a session: the owner or a colleague.
-- 2026-11-15 · How a question takes its number moves from the reply protocol to "The
-  repository's memory" (layer 2), so it stays required when a person changes the preferences ·
-  part of question 24.
+  the person in the chat of a session.
+- 2026-11-15 · Layer 3 holds only the shape and the wording of a reply. What is conduct stays
+  required in layer 2: how a question takes its number, never going quiet on a promise, keeping
+  the means to undo (now line 5 of the definition of done) and writing the reasoning in full in
+  the register. A second agent with no part in the work compared the draft with the live text
+  rule by rule; where it found the draft stricter, wider or weaker than the live wording, the
+  live wording was put back · part of question 24.
 - 2026-11-15 · The rules reach every session and are enforced through one Kowboy package (a
   plugin) that each person adds once to their account: it repeats the rules at every message,
   stops the dangerous actions by itself, sends back a reply that lacks its state or its
