@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-11-15g. For every Claude Code session someone at Kowboy starts, on any repository.
+Version 2026-11-15h. For every Claude Code session someone at Kowboy starts, on any repository.
 
 Read all of it before any work. It ends with the line "End of the handbook."; if your copy does
 not, save it again with
@@ -22,7 +22,8 @@ and the history of every rule is in `docs/decisions.md` there.
 - **The owner**: the strategist and product owner; chat is the owner's only interface.
 - **The operator**: the person in the chat of a session.
 - **Decide**: a question only the owner can answer, asked in the Questions block. **Default**: a
-  Decide the agent answers itself and states before the work; silence approves.
+  choice the agent makes itself and states before the work; the owner can change it. It is not a
+  question and is never counted as an answer.
 - **The register**: `docs/open-questions.md` of a repository: every question asked of the owner
   about it, numbered for good.
 - **Component tag**: the part of the product a line is about, first and in backticks: `[core]`,
@@ -316,6 +317,13 @@ owner says so. A rule nobody would break without it is deleted the same way.
 - **Every text in the product is written for the person who reads it**: what happened, what it
   means, what to do; things by the names the reader knows, and linked; whole sentences in the
   reader's words; read whole with real data before it ships. The checks are in Build.
+- **Check, never guess.** How a library, a service or a system behaves is read from its
+  documentation or its code before it is used.
+- **Follow what the code already does**: its names, its patterns, its structure.
+- **A bug is reproduced first.** A failing test shows the bug before the fix is written.
+- **Every save leaves the product working.**
+- **See it work.** Before "done", the thing itself is run in staging and looked at, not only its
+  tests.
 - **Tests are the acceptance.** What cannot be tested automatically is raised as a design problem.
   Never add a manual step; never make a test pass by editing its expected output.
 
@@ -376,15 +384,19 @@ What layers 1 and 2 require stays in any shape: a question is still asked, work 
 
 ### Reply shape
 
-Bottom line first. A reply has up to four parts, in this order, and nothing else. In a
-discussion (the owner asking or thinking aloud, no work reported) the answer comes first in plain
-sentences, then Questions if anything is asked.
+Bottom line first. A reply has up to four parts, in this order, and nothing else. Every reply
+starts with the first line, so the owner always knows whether the agent is working, waiting for
+the owner or waiting for something else. In a discussion (the owner asking or thinking aloud, no
+work reported) the answer follows it in plain sentences, then Questions if anything is asked.
 
 1. **The first line: the state, and what the owner must do.** One of: "Waiting for you:" with
    what is needed; "Working:" with what and the time of the next message; "Waiting for something
-   else:" with what and when the agent looks again; "Done:" when the thread can be closed.
+   else:" with what and when the agent looks again; "Done:" when the thread can be closed. While
+   a question waits, the line names its number.
 2. **Questions**: only what the owner alone can decide, and steps only the owner can take.
    - Each is a bullet with its number in bold ("Taking a number", layer 2), never a list position.
+   - A question is answered only by the owner's explicit words: never by silence, and never
+     inferred from something else the owner said.
    - One decision per question, one short sentence ending with a question mark, written so that
      a person who knows the business but not the code can answer it. A question that cannot be
      written that way is tooling: the agent decides it.

@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 48
+Next number: 50
 
 ## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
 
@@ -28,26 +28,28 @@ Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
-## 46 `[handbook]` Should the new reply shape go live?
+## 46 `[handbook]` Should the working copy go live: the new reply shape, the owner's two notes on questions and state, and the five code rules?
 
-Asked 2026-11-15. Bottom line first, with the bullets, the numbers and the lettered options kept
-(the owner, 45 a). The third layer shrinks from 7,064 to 2,876 characters; the text and its
-example are shown in the chat. In the working copy as version 2026-11-15g. Reply: yes, or the
-change.
+Asked 2026-11-15, widened the same day. The owner's notes: "a question can never be implicitly
+answered", questions keep their permanent numbers, and every reply says whether the agent is
+working, waiting for the owner or waiting for something else. For that reason "silence
+approves" is gone from the meaning of a Default. The five rules of 47 are in the working copy;
+the owner called them "super good" and did not say to add them, so this question asks.
+Version 2026-11-15h. Reply: yes, or the change.
 
-## 47 `[handbook]` Which rules for writing code should be added?
+## 48 `[handbook]` Should the required layer be cut down by the same method as the ten rules?
 
-Asked 2026-11-15. The owner asked for the fifty most meaningful rules for building software with
-agents, rated for how we work, and the best recommended. Of the fifty, the handbook already has
-most of the top ones; five rate high and are missing: check, do not guess, how a library or a
-system behaves; see the thing work in staging before "done", not only its tests; reproduce a
-bug with a failing test before fixing it; every save leaves the product working; follow what
-the code already does.
+Asked 2026-11-15. The owner: "Why is the handbook so long". Of 28,900 characters, the ten rules
+are 2,300 and the reply shape 3,100; the required layer is about 21,000, moved as it stood and
+never cut, and `PHASES.md` adds 19,000. The platform's guidance is under 200 lines; the handbook
+has about 430. Each part would be rewritten from its principle with the quiz as the guard. The
+smaller option: no. Reply: yes or no.
 
-- a) **all five** (recommended): five lines in the required layer.
-- b) **the first three**: the ones that prevent wrong results; the last two prevent mess.
-- c) **none**: the handbook stays as it is.
+## 49 `[handbook]` Should measured quality targets become an item of their own?
 
-Scored (mistakes prevented · lines added · the owner's time): a) most · five · none; b) most of
-them · three · none; c) none · none · none. The smaller option: c). Reply: a, b or c.
+Asked 2026-11-15. The owner's idea: rate what is produced by a fixed measure and improve until a
+goal is reached. Possible and useful where a tool measures (tests, warnings, speed, size,
+duplicated code); not for design or architecture, where only an opinion exists. The risk is an
+agent improving the number and not the work. The item would set the measures and targets per
+repository and a limit on rounds. The smaller option: no. Reply: yes or no.
 
