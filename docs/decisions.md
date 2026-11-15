@@ -352,4 +352,10 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   code and in work, and high throughput · the owner, 2026-11-15: "The main goal is reliability
   (in code ans work) and high throughoutput. Mistakes, accidents, drift and excessive
   comms/cognitive load on the operator cost throughoutput." Not yet a line of the handbook.
+- 2026-11-15 · The wording and looks an approved thing needs in order to work are approved with
+  it; the sentence the rewrite of layer 1 had dropped is back in rule 3's example line. Asking it
+  was itself over-asking: the rule was the owner's already, and putting it back was the agent's
+  to do and report · the owner, question 34 a), 2026-11-15: "34 a obviously, this question is a
+  great example of how we can't work ironically." Quiz on version 2026-11-15d: two agents, 25 of
+  25 each.
 

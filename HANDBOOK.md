@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-11-15c. For every Claude Code session someone at Kowboy starts, on any repository.
+Version 2026-11-15d. For every Claude Code session someone at Kowboy starts, on any repository.
 
 Read all of it before any work. It ends with the line "End of the handbook."; if your copy does
 not, save it again with
@@ -65,7 +65,8 @@ Examples, to show the kind of thing each rule means. They are never the whole li
    also when the step follows from a change the owner asked for.
 2. Sending, starting or changing anything on a live site, even as a test. Nothing goes live
    before the owner says "release".
-3. A page, a button, a field, a setting, a message, an e-mail. Each is its own question.
+3. A page, a button, a field, a setting, a message, an e-mail. Each is its own question. The
+   wording and looks an approved thing needs in order to work are approved with it.
 4. A library, a framework, a vendor, a recurring cost, a data shape, an interface between
    components, the hosting, an approved proposal. What does not ship in the product is tooling.
 5. A feature, a refactoring or a fix beyond the item. It becomes a question or a "Later" item.
