@@ -358,4 +358,15 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   to do and report · the owner, question 34 a), 2026-11-15: "34 a obviously, this question is a
   great example of how we can't work ironically." Quiz on version 2026-11-15d: two agents, 25 of
   25 each.
+- 2026-11-15 · The handbook gets two written rules from the research: a check is reported as
+  done only if it was run in that session, and what was skipped is said; a key that was found
+  and not given for the item is never used. To be added with the next change and its quiz run ·
+  the owner, question 37, 2026-11-15: "37 yes".
+- 2026-11-15 · The handbook's live copy is to be protected like the product repositories, so a
+  change reaches it only after the owner's click (found: saves went straight into it) · the
+  owner, question 39, 2026-11-15: "39 yes". Waits for the owner's steps (40).
+- 2026-11-15 · No extra approval step in front of the live keys on GitHub and no check of how
+  they are stored: too much friction for two or three developers · the owner, question 38,
+  2026-11-15: "38 no need". Whether the keys still leave the building sessions (36, "yes") is
+  asked again as 41.
 

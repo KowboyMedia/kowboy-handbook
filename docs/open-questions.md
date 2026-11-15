@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 38
+Next number: 42
 
 ## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
 
@@ -16,18 +16,17 @@ owner says so.
 Asked 2026-11-01. A coordinator in a project committed to this rule; the handbook has the thread
 rule and the plain-words rule but not this one. Reply: yes or no.
 
-## 36 `[handbook]` Should limiting what a session can reach come before the package?
+## 40 `[handbook]` Instruction: protect the handbook's live copy on GitHub so that a change reaches it only after the owner's click; then say "protected".
 
-Asked 2026-11-15. The research the owner brought (`docs/research-guardrails-2026-11-15.md`)
-finds that in every published incident the cause was reach (a key with too much access, live
-systems reachable from building, a mode that runs commands unasked) and never a missing
-instruction. That is item 10, now last in the order of work. It needs steps only the owner can
-take (new keys with less access). The smaller option: no, the order stays. Reply: yes or no.
+Asked 2026-11-15, on the owner's yes to 39. Only the owner can change the repository's settings.
+The steps are in the thread of 2026-11-15. Not known: whether the owner can approve a change an
+agent prepared under his own account; the first change after the protection shows it.
 
-## 37 `[handbook]` Should the handbook get two written rules from the research?
+## 41 `[handbook]` Should the keys to live sites and servers still be taken out of the sessions that build, without the extra approval step?
 
-Asked 2026-11-15. Both are in the research and not in the handbook: report a check as done only
-if it was run in this session, and say plainly what was skipped; never use a key or an access
-that was found and not given for the item. The third candidate, never working round a check, is
-already rule 10. The smaller option: no. Reply: yes or no.
+Asked 2026-11-15. The owner answered 36 with yes and then 38 with "no need [...] too much
+friction with the only protection beein a malicios developer". The risk is not a malicious
+person: it is an agent that makes a mistake while it holds a key that can delete live systems.
+Without the extra approval step the cost is about an hour of the owner's time, once, and none
+from day to day. The smaller option: no, the keys stay where they are. Reply: yes or no.
 
