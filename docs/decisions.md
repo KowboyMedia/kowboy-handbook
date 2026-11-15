@@ -426,4 +426,16 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   corrections: two agents, 28 of 28 each · the owner, 2026-11-15: "Why stop half way and block
   yourself from working autonomously, when you don't have to? It is better to fron load all
   required questions unless new appear."
+- 2026-11-15 · After the owner's audit of the draft: rule 2 is "Never change production"
+  (staging, which clients are sometimes shown, is not covered); rule 4 names what the product
+  depends on and how its parts fit together; technical terms are allowed at a high level; "ok
+  takes every default" is gone, each question is answered by itself; no limit on the number of
+  questions, all are asked in one round; `WORK.md` is rewritten as "if this, then that", by
+  situation; `next-steps.md` is named as the to-do list, a bug to be fixed becomes an item
+  there, and a finished item's reply says what is next. Quiz on version 2026-11-15l: two agents,
+  one of them set to the cheaper model, 28 of 28 each · the owner, 2026-11-15: "Technical words
+  are forbidden, which I don't like. We are technicians. However it should be on a high level.";
+  "Ok takes every default is in conflict with the rule agains implicitly inferring an answer.";
+  "Don't limit questions to 3 or 5"; "It is formulated very illogically [...] a clear if this
+  condition then behave like this".
 
