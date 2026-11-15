@@ -323,4 +323,8 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   decision history, apart from the handbook · the owner, 2026-11-15: "Include a decision history
   of some sort, separately [...] suspect things were added by agents themselves ironically,
   remove those." In the working copy until the owner's yes (question 31).
+- 2026-11-15 · The three-layer handbook with the ten rules, the short opening and the two
+  removals is live · the owner, question 31, 2026-11-15: "31 yes".
+- 2026-11-15 · A one-page map of each repository's parts, read at the start of every session,
+  becomes its own item after the package · the owner, question 29, 2026-11-15: "29 Yes".
 

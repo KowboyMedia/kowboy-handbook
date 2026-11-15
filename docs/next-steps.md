@@ -5,13 +5,10 @@ not done, keep it current.
 
 ## Where to pick up
 
-Item 8 (the three layers) is in progress in a thread of 2026-11-15: sorted and checked in that
-thread's working copy, layer 1 rewritten as ten rules from their principles; waiting for the owner's yes
-(question 31) before it is live. Still to do in item 8: the small preferences of layer 3 cut
-down to their principles.
-Item 9 (the Kowboy package) is next and takes a new thread on this repository with "resume next
-steps", once item 8 is live. Items 1, 2 and 7 are done; 5 is dropped; 3 and 6 are taken over by
-item 9; item 4 follows item 9. The audit behind items 1 to 7 is `docs/audit-2026-10-30.md`.
+Item 8 is live since 2026-11-15 (three layers, ten rules); one part of it remains in the thread
+of that day: the small preferences of layer 3 cut down to their principles. Item 9 (the Kowboy
+package) is next and takes a new thread on this repository with "resume next steps". Then item
+11, item 10 and item 4. Items 1, 2 and 7 are done; 5 is dropped; 3 and 6 are taken over by item 9.
 
 ## Items
 
@@ -57,6 +54,12 @@ item 9; item 4 follows item 9. The audit behind items 1 to 7 is `docs/audit-2026
 10. `[handbook]` Keys to live systems out of the sessions that build (question 26, the owner
     2026-11-15): find out which keys can be limited or moved to a setting used only for a
     release, and come back with the steps only the owner can take. One session. After item 9.
+
+11. `[handbook]` A one-page map of each repository's parts (question 29, the owner 2026-11-15):
+    the parts, how they connect and what must not change without the owner, on one short page
+    read at the start of every session, moved out of the plan document and not copied; settles
+    also how a session comes to read a repository's `AGENTS.md`. Changes `PHASES.md`. One
+    session. After item 9.
 
 ## Later
 
