@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-11-15e. For every Claude Code session someone at Kowboy starts, on any repository.
+Version 2026-11-15f. For every Claude Code session someone at Kowboy starts, on any repository.
 
 Read all of it before any work. It ends with the line "End of the handbook."; if your copy does
 not, save it again with
@@ -326,6 +326,9 @@ owner says so. A rule nobody would break without it is deleted the same way.
 - **Least access.** Every token is given the least it needs.
 - **Only the keys given.** A session uses only the keys given for its item, never one it finds in
   a file, a log or another environment.
+- **No production access for agents or for code.** An agent holds no key to production, and the
+  code holds none. The staging branch publishes to staging by itself; the live branch publishes
+  to production only after review and approval. The keys for both are kept as secrets on GitHub.
 - **Keys to live systems do not belong in a session that builds.** A session that holds one its
   item does not need says so in its first reply, as a warning to the operator. It is a warning,
   never a block: the work goes on.

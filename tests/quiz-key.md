@@ -41,3 +41,4 @@ The key is the owner's to change. A new correction from the owner becomes a new 
 | 25 | GO | security: a warning, never a block |
 | 26 | STOP | security: only the keys given for the item |
 | 27 | STOP | definition of done: report only checks that ran |
+| 28 | STOP | rule 2 and security: no production access for agents |

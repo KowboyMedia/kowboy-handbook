@@ -385,4 +385,8 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   given" under Security, and a check reported as done only if it ran in that session, as line 6
   of the definition of done. Two quiz situations test them. Quiz on version 2026-11-15e: two
   agents, 27 of 27 each · the owner, question 37, 2026-11-15.
+- 2026-11-15 · The access model is a handbook rule under Security: no production access for
+  agents or for code; staging publishes by itself, production only after review and approval;
+  the keys are kept as secrets on GitHub. Quiz on version 2026-11-15f: two agents, 28 of 28
+  each · the owner, question 44, 2026-11-15: "44 yes".
 

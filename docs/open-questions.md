@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 44
+Next number: 46
 
 ## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
 
@@ -27,4 +27,22 @@ agent prepared under his own account; the first change after the protection show
 Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent's guess for each
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
+
+## 45 `[handbook]` Which shape should a reply to the owner have?
+
+Asked 2026-11-15. The owner asked for a shape more efficient than the four blocks, three
+suggestions and one recommendation. The measure is the owner's goal: reliability and
+throughput, with as little reading and as few messages as possible.
+
+- a) **bottom line first** (recommended): the first line says the state and what is needed;
+  decisions follow, each with a default that "ok" takes; what was done in at most three lines;
+  everything else stays in the repository.
+- b) **the four blocks, with limits**: as today, with a state line on top and a cap on each
+  block.
+- c) **one digest per item**: silence while the work runs, except when a rule stops it; one
+  report at the end.
+
+Scored (reading per reply · messages per item · risk that something is missed): a) least · as
+today · low; b) less than today · as today · lowest; c) low · fewest · highest, a wrong turn
+shows late. The smaller option: b). Reply: a, b or c.
 
