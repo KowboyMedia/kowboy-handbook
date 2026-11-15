@@ -1,6 +1,6 @@
 # Kowboy handbook - how agents work with us
 
-Version 2026-11-15d. For every Claude Code session someone at Kowboy starts, on any repository.
+Version 2026-11-15e. For every Claude Code session someone at Kowboy starts, on any repository.
 
 Read all of it before any work. It ends with the line "End of the handbook."; if your copy does
 not, save it again with
@@ -324,6 +324,8 @@ owner says so. A rule nobody would break without it is deleted the same way.
 - **Secrets stay in the platform's secret store.** A secret's value is never written in code, a
   log, a chat or a document; a repository holds only the names of the secrets it needs.
 - **Least access.** Every token is given the least it needs.
+- **Only the keys given.** A session uses only the keys given for its item, never one it finds in
+  a file, a log or another environment.
 - **Keys to live systems do not belong in a session that builds.** A session that holds one its
   item does not need says so in its first reply, as a warning to the operator. It is a warning,
   never a block: the work goes on.
@@ -339,6 +341,7 @@ owner says so. A rule nobody would break without it is deleted the same way.
 3. A `docs/decisions.md` line exists for any structural choice, and `docs/next-steps.md` is current.
 4. The repository's own definition of done, in its `AGENTS.md`, is met.
 5. Where something people use changed, the agent keeps the means to undo it.
+6. A check is reported as done only if it ran in this session; what was skipped is said.
 
 ### The phases
 

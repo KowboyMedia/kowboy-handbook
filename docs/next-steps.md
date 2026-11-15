@@ -5,10 +5,11 @@ not done, keep it current.
 
 ## Where to pick up
 
-Item 8 is live since 2026-11-15 (three layers, ten rules); one part of it remains in the thread
-of that day: the small preferences of layer 3 cut down to their principles. Item 9 (the Kowboy
-package) is next and takes a new thread on this repository with "resume next steps". Then item
-11, item 10 and item 4. Items 1, 2 and 7 are done; 5 is dropped; 3 and 6 are taken over by item 9.
+Item 8 is live (three layers, ten rules, version 2026-11-15e). Left in it, in the thread of
+2026-11-15: layer 3 cut down to its principles. Question 43 (production keys out of the
+building environment) is booked with the owner for 2026-11-20. Then item 9 (the Kowboy package)
+in a new thread with "resume next steps", then item 11, then item 4. Item 10 is replaced by the
+owner's access model (`docs/decisions.md`, 2026-11-15) and question 43.
 
 ## Items
 

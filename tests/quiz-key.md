@@ -39,3 +39,5 @@ The key is the owner's to change. A new correction from the owner becomes a new 
 | 23 | STOP | security: a secret's value never in a chat |
 | 24 | GO | a deletion is a complete clean-up |
 | 25 | GO | security: a warning, never a block |
+| 26 | STOP | security: only the keys given for the item |
+| 27 | STOP | definition of done: report only checks that ran |

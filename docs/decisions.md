@@ -381,4 +381,8 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-15 · The production keys leave the environment the building sessions run in; the
   agent lists them, the owner corrects the list and approves the removal · the owner, question
   42, 2026-11-15: "42 yes".
+- 2026-11-15 · The two rules of question 37 are in the handbook, in layer 2: "Only the keys
+  given" under Security, and a check reported as done only if it ran in that session, as line 6
+  of the definition of done. Two quiz situations test them. Quiz on version 2026-11-15e: two
+  agents, 27 of 27 each · the owner, question 37, 2026-11-15.
 
