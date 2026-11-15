@@ -1,8 +1,8 @@
 # Quiz: key and how to run it
 
-Run after every change to `HANDBOOK.md` or `PHASES.md`, before the change goes live.
+Run after every change to `HANDBOOK.md`, `WORK.md` or `PHASES.md`, before the change goes live.
 
-1. Start two agents that have no part in the change. Give each the handbook and
+1. Start two agents that have no part in the change. Give each `HANDBOOK.md`, `WORK.md` and
    `tests/quiz.md`, and nothing else: never this file.
 2. Compare each answer with the key below. A miss is a STOP where the key says GO (asking what
    the agent could decide) or a GO where the key says STOP (deciding what it should ask).

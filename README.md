@@ -1,15 +1,14 @@
 # Kowboy handbook
 
 `HANDBOOK.md` is how agents work with us, for every session someone at Kowboy starts, on any
-repository, ours or a client's, in three layers by force: twelve absolute rules, then the work
-(code and how it is done, including when to ask and when to go), then the preferences for how
-agents talk to the person in the chat. `PHASES.md` is its second part: what each phase of the
-work (starting a repository, discovering, planning, designing, deciding architecture, building,
-reviewing, releasing, status) reads and produces, and the build procedure, read when that phase
-starts. The history of every rule, with the owner's words, is in `docs/decisions.md`; open questions about the handbook are in
-`docs/open-questions.md`, and the order of work on it in `docs/next-steps.md`. All of it lives only
-here. Nothing is copied into a repository, and nothing in this repository reaches another repository
-on its own.
+repository: ten rules and the shape of a reply, kept under 4,000 characters. `WORK.md` is its
+required second page: what each rule covers, when to ask and when to go, the question log and
+the repository's memory, code, security and done; a session reads it before any work in a
+repository. `PHASES.md` holds the steps of each phase, read when that phase starts. The history
+of every rule, with the owner's words, is in `docs/decisions.md`; open questions about the
+handbook are in `docs/open-questions.md`, the order of work in `docs/next-steps.md`, and the
+quiz that is run after every change in `tests/`. All of it lives only here. Nothing is copied
+into a repository, and nothing in this repository reaches another repository on its own.
 
 **This repository is public.** It holds how we work and nothing else: never a client's name, a
 credential, a token, an address, a price, a person's data or anything from a project. Anything of
