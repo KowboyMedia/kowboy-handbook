@@ -44,6 +44,9 @@ Asked 2026-11-15. The owner expects an architecture page as part of the pattern.
 of a product, how they connect and what must not change without the owner are written inside
 the plan document (`docs/strategy.md`), which a session doing a small change never has to read,
 so it can break rule 6 without knowing. The item would move that map to one short page named in
-`AGENTS.md`, moved and not copied, and change `PHASES.md` to match. The smaller option: no.
-Reply: yes or no.
+`AGENTS.md`, moved and not copied, and change `PHASES.md` to match. It would also settle how a
+session comes to read a repository's `AGENTS.md` at all: the platform's documentation, read
+2026-11-15, says the terminal reads it only when no `CLAUDE.md` is present, and does not say
+whether cloud sessions read it; the handbook's "Start" does not tell a session to. The smaller
+option: no. Reply: yes or no.
 

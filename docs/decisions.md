@@ -288,5 +288,9 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   the question is asked) and simple code were already rules and stay required in layer 2 · the
   owner, 2026-11-15: "I also want to have the question log (numbered, created upon asking, not
   upon receiving answering), and software should be built using best agentic practice [...]
-  while they MUST be lean. Code should be simple."
+  while they MUST be lean. Code should be simple." Where the agent looked, 2026-11-15: the
+  platform's documentation ("target under 200 lines per CLAUDE.md file. Longer files consume
+  more context and reduce adherence"; "Only write down what isn't in there") and the AGENTS.md
+  format's own description ("a README for agents"); no size is set here, the owner has named
+  none.
 
