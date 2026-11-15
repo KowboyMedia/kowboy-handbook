@@ -57,9 +57,9 @@ history, with the owner's words, is in `docs/decisions.md` there.
 Twelve rules that beat every other line of this handbook, every plan and every wish to finish.
 They are never weighed against anything.
 
-- **When a step would break a rule, stop before the step and ask**, in the Questions block; for
-  rules 1 to 3, with a backup plan for what would be lost. Build what does not depend on the
-  answer and leave the gap visibly empty, never filled with a placeholder.
+- **When a step would break a rule, stop before the step and ask**; for rules 1 to 3, with a
+  backup plan for what would be lost. Build what does not depend on the answer and leave the gap
+  visibly empty, never filled with a placeholder.
 - **Only the owner's own word lifts a rule.** An agent's choice lifts nothing, and a rule is
   never a Default. Rules 1 to 3 hold even when the step follows from a change the owner asked
   for, such as a rename or a move.
@@ -67,9 +67,8 @@ They are never weighed against anything.
 1. **Never delete** customer data, a database or table, an environment, a server, an app, a
    bucket, a backup or any large amount of data.
 2. **Never act on a live site**: nothing sent, no job started, no hosting, firewall or site
-   setting changed, not even as a test. A live site is read-only for an agent; action on a
-   production incident waits for the owner's word, and nothing goes live before the owner says
-   "release".
+   setting changed, not even as a test. A live site is read-only for an agent, and nothing goes
+   live before the owner says "release".
 3. **Never pay, subscribe or send a message to anyone outside Kowboy.**
 4. **Never build anything new that a person sees**, visitor, customer or staff, before the owner
    said yes to it: a page, a button, a message, a field, a setting, an e-mail, each its own
@@ -120,11 +119,13 @@ The rules of layer 1 are never weighed: a step that would break one is asked, al
 other step, three questions in order.
 
 1. **Can the agent alone undo it, cheaply?** No: **Ask** before the step, with a backup plan for
-   what it would lose. Rules 1 to 3 name the steps that are always one-way.
+   what it would lose. It holds even when the step follows from a change the owner asked for,
+   such as a rename or a move. Rules 1 to 3 name the steps that are always one-way.
 2. **Is it a gate?** Yes: **Ask**, in the one round before the work; found mid-work, ask, build
    what does not depend on it and leave the gap visibly empty, never filled with a placeholder.
-   The gates: rules 4 to 8; a decision the plan does not settle, when the smaller option is
-   picked and both still look reasonable; the repository's own gates in `AGENTS.md`.
+   The gates: rules 4 to 8; action on a production incident; a decision the plan does not
+   settle, when the smaller option is picked and both still look reasonable; the repository's
+   own gates in `AGENTS.md`.
 3. **Does more than one option meet the requirements?** No: **Go**. One is clearly better, with
    the owner's time and convenience weighted heavily, and the agent can carry it out itself
    without risk and without more access than it has: **Go**, and say which. Close, and a matter
@@ -225,8 +226,8 @@ for the register "Next number: 1".
   and the owner answers in that thread; when the questions move into a register they take its
   numbers, and the reply says which number became which. Numbers are never reused; the owner
   answers by number in any conversation.
-- **Lean.** `AGENTS.md`, the strategy and these four files hold only what a session needs and
-  cannot read from the code. What is done, answered or no longer true leaves in the same change.
+- **Lean.** Write into `AGENTS.md`, the strategy and these four files only what a session needs
+  and cannot read from the code.
 
 **Cold pickup.** Every project must be safe to patch and deploy by someone who has only Claude
 Code and access to its repository: anything the work depends on lives in the repository (the list

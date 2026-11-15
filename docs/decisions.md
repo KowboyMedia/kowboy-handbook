@@ -282,15 +282,23 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-15 · Sessions that build should stop holding the keys to live sites and servers; an
   item finds out which keys can be limited or moved to a setting used only for a release · the
   owner, question 26, 2026-11-15: "yes".
-- 2026-11-15 · The files a session works from (`AGENTS.md`, the strategy, the four memory files)
-  are kept lean: only what a session needs and cannot read from the code, and what is done,
-  answered or no longer true leaves in the same change. The question log (numbered, saved when
-  the question is asked) and simple code were already rules and stay required in layer 2 · the
-  owner, 2026-11-15: "I also want to have the question log (numbered, created upon asking, not
-  upon receiving answering), and software should be built using best agentic practice [...]
-  while they MUST be lean. Code should be simple." Where the agent looked, 2026-11-15: the
+- 2026-11-15 · The files a session works from are kept lean: into `AGENTS.md`, the strategy and
+  the four memory files goes only what a session needs and cannot read from the code. The line
+  says what is written, and gives no leave to cut: `docs/decisions.md` stays append only and an
+  `AGENTS.md` changes as rule 8 says. The question log (numbered, saved when the question is
+  asked) and simple code were already rules and stay required in layer 2 · the owner,
+  2026-11-15: "I also want to have the question log (numbered, created upon asking, not upon
+  receiving answering), and software should be built using best agentic practice (you mentioned
+  architecture.md and similar, I assume they are part of a pattern), while they MUST be lean.
+  Code should be simple." Where the agent looked, 2026-11-15: the
   platform's documentation ("target under 200 lines per CLAUDE.md file. Longer files consume
   more context and reduce adherence"; "Only write down what isn't in there") and the AGENTS.md
   format's own description ("a README for agents"); no size is set here, the owner has named
   none.
+- 2026-11-15 · A second pass by another agent with no part in the work found the sixteen
+  findings of the first check corrected and four new points. Three were corrected: the lean line
+  could be read as leave to cut decisions and rules files; "action on a production incident"
+  went back to the gates, where it stood, out of rule 2; and the sentence that a one-way step is
+  asked even when it follows from a change the owner asked for is back in "Ask or go". The
+  fourth is the `AGENTS.md` change in meaning, which waits for the owner (question 28).
 
