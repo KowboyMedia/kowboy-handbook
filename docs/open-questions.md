@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 50
+Next number: 51
 
 ## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
 
@@ -28,28 +28,12 @@ Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
-## 46 `[handbook]` Should the working copy go live: the new reply shape, the owner's two notes on questions and state, and the five code rules?
+## 50 `[handbook]` Should the small handbook go live?
 
-Asked 2026-11-15, widened the same day. The owner's notes: "a question can never be implicitly
-answered", questions keep their permanent numbers, and every reply says whether the agent is
-working, waiting for the owner or waiting for something else. For that reason "silence
-approves" is gone from the meaning of a Default. The five rules of 47 are in the working copy;
-the owner called them "super good" and did not say to add them, so this question asks.
-Version 2026-11-15h. Reply: yes, or the change.
-
-## 48 `[handbook]` Should the required layer be cut down by the same method as the ten rules?
-
-Asked 2026-11-15. The owner: "Why is the handbook so long". Of 28,900 characters, the ten rules
-are 2,300 and the reply shape 3,100; the required layer is about 21,000, moved as it stood and
-never cut, and `PHASES.md` adds 19,000. The platform's guidance is under 200 lines; the handbook
-has about 430. Each part would be rewritten from its principle with the quiz as the guard. The
-smaller option: no. Reply: yes or no.
-
-## 49 `[handbook]` Should measured quality targets become an item of their own?
-
-Asked 2026-11-15. The owner's idea: rate what is produced by a fixed measure and improve until a
-goal is reached. Possible and useful where a tool measures (tests, warnings, speed, size,
-duplicated code); not for design or architecture, where only an opinion exists. The risk is an
-agent improving the number and not the work. The item would set the measures and targets per
-repository and a limit on rounds. The smaller option: no. Reply: yes or no.
+Asked 2026-11-15. Replaces 46. In the working copy as version 2026-11-15j: `HANDBOOK.md` with
+the ten rules and the reply shape, 2,931 characters; `WORK.md`, new, with what each rule covers
+and everything of the old required layer cut down to its principles, 6,537 characters, read
+before any work in a repository; `PHASES.md` not yet cut. Quiz: two agents, 28 of 28 each. Not
+done: no second agent has compared the new pages with the old text line by line, and the quiz
+covers the rules, not every detail of the old layer. Reply: yes, or the change.
 

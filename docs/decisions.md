@@ -396,4 +396,25 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   line. Layer 3 from 7,064 to 2,876 characters, the handbook 28,355. In the working copy as
   version 2026-11-15g until the owner's yes (question 46) · the owner, question 45 a),
   2026-11-15: "45 a. But from the old i want the bullets, numbers, options as letters."
+- 2026-11-15 · A question is answered only by the owner's explicit words, never by silence and
+  never inferred; a default is the agent's own stated choice and never an answer; every reply
+  starts with the session's state · the owner, 2026-11-15: "a question can never be implicitly
+  answered. It happened a few times by mistake. Questions also need the permanent numbering."
+- 2026-11-15 · Nine code rules added from the agent's rated list of fifty: check, never guess;
+  see it work; reproduce a bug first; every save leaves the product working; follow what the
+  code does; one guess, one change; nothing unfinished passed off as finished; back to the plan
+  when it stops matching; a failure is shown · the owner, 2026-11-15: "The new rules: keep 1-5
+  and 6,7,9,10."
+- 2026-11-15 · No measured targets in the handbook; the rule written the same day is removed ·
+  the owner, question 49, 2026-11-15: "I changed my mind, we are not chasing arbitrary numbers
+  without any prior explicit intent, remove the test things." The quiz in `tests/` is kept as
+  the owner asked for it; it is the owner's to drop.
+- 2026-11-15 · The handbook is cut to what the owner sees it as: the rules and the reply shape.
+  `HANDBOOK.md` is 2,931 characters (30,116 that morning). The required layer is rewritten from
+  its principles into `WORK.md`, 6,537 characters (21,100 before), read before any work in a
+  repository; "Words used here", the layer headings and the long opening are gone. `PHASES.md`,
+  19,577 characters, is next. In the working copy as version 2026-11-15j until the owner's yes
+  (question 50) · the owner, question 48, 2026-11-15: "Size must go down. From my point of view,
+  we have only 10-12 rules, a comms format. That would feel like max 4k. Layer 2 cut: yes, and
+  the other stuff too."
 
