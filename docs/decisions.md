@@ -231,3 +231,50 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   registerless questions outside their thread · the owner, 2026-11-08: "Ändra handboken, frågor
   ska numreras alltid i serie, oavsett om de kan sparas i ett arkiv eller ej"; the mechanism is
   the agent's choice, not confirmed by the owner.
+- 2026-11-15 · The handbook is sorted into three layers by force: layer 1, twelve absolute rules
+  that beat everything else; layer 2, the work (code and how the work is done), required; layer
+  3, preferences (how agents talk to the operator), the default in every reply. Every rule is
+  moved as it stands; the lines below name what changed in meaning. Options rejected: tidy in
+  place (smallest gain) and a rewrite from the owner's decisions alone (the whole text to
+  re-read, a high risk of a lost rule). Reviewed on the live text first: 30,116 characters, 77
+  bold rules of equal weight, the stops in two sentences of 573 and 1,002 characters, 31% of the
+  text on reply format, nothing enforced · the owner, question 24, 2026-11-15: "I imagine switch
+  laters so the second layer is about code, still required. The third layer is preferences,
+  which can be optional/overridden". In the working copy until the owner has read layer 1
+  (question 28).
+- 2026-11-15 · Layer 1 names the one-way steps and the gates of "Ask or go", the
+  connected-services rule, the outside-content rule, "never invent a business rule" and the
+  fresh pair of eyes as twelve numbered rules. Only the owner's own word lifts one, for the step
+  it names; an agent's choice lifts nothing. A repository's `AGENTS.md` may add rules and never
+  removes one (before: `AGENTS.md` "wins where the two differ", now only over layers 2 and 3) ·
+  follows from question 24 a), "absolute rules that beat everything else"; shown to the owner
+  before it is live (question 28).
+- 2026-11-15 · The handbook is never changed implicitly or as an agent's choice: only in a
+  session on its own repository, on the owner's explicit word for that change (rule 8) · the
+  owner, 2026-11-15: "The handbook must not be allowed to be edited implicitly".
+- 2026-11-15 · "Security" is a section of the core: secrets stay in the platform's secret store,
+  every token gets the least it needs (both were already rules, in `PHASES.md` and "Cold
+  pickup"), and keys to live systems do not belong in a session that builds: a session that
+  holds one its item does not need names it in the first reply as a warning to the operator,
+  never a block · the owner, question 26, 2026-11-15: "yes, it should be in the handbook as
+  security, but as a warning to the operator, not a block". "The operator", the owner's word, is
+  the person in the chat of a session: the owner or a colleague.
+- 2026-11-15 · How a question takes its number moves from the reply protocol to "The
+  repository's memory" (layer 2), so it stays required when a person changes the preferences ·
+  part of question 24.
+- 2026-11-15 · The rules reach every session and are enforced through one Kowboy package (a
+  plugin) that each person adds once to their account: it repeats the rules at every message,
+  stops the dangerous actions by itself, sends back a reply that lacks its state or its
+  questions, and updates from this repository. Options rejected: today's download in three texts
+  (still only text) and a Team plan (a recurring cost, both accounts moved). Proven in a cloud
+  session on 2026-11-15: a package enabled on the account is loaded there and its check ran
+  before an action. From the platform's documentation, read 2026-11-15: a package is added to an
+  account by uploading it or by adding its repository as a marketplace, and an added repository
+  can sync automatically; no plan limit is stated; a personal settings file is not read in cloud
+  sessions; a repository's settings do not load in project threads. Revisit if the owner's plan
+  does not offer adding a package. Takes over the deny list as a reference file (2026-10-31) and
+  the scripted prompts (item 6) · the owner, question 25 a), 2026-11-15.
+- 2026-11-15 · Sessions that build should stop holding the keys to live sites and servers; an
+  item finds out which keys can be limited or moved to a setting used only for a release · the
+  owner, question 26, 2026-11-15: "yes".
+
