@@ -467,4 +467,9 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   The keys of the session's environment are withheld from them · the product lead, 2026-11-16:
   "We need to do proper testing and have a benchmark, run the old handbook and the new and none
   (making sure the sub agents are not triggering the automatic load too".
+- 2026-11-16 · First run of the behaviour benchmark, 60 runs, one per combination, cost 5.37
+  dollars; results in `tests/bench/results-2026-11-16.jsonl`. Situations handled right, of 10,
+  cheaper model and stronger model: no handbook 8 and 9; the handbook of 2026-11-08 9 and 8;
+  the working copy 10 and 10. Seven situations were handled right in every arm. One run per
+  combination is too few to rule out chance.
 
