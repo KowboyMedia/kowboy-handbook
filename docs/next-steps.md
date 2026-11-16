@@ -5,20 +5,11 @@ not done, keep it current.
 
 ## Where to pick up
 
-Item 9, the Kowboy package, is released (2026-11-16), installs from GitHub and is added to the
-operator's account (57). The fresh-session check (2026-11-16, second thread): the handbook arrived
-at the start and the rules at every message; the hold for `ssh -V` reached the operator as a permission
-prompt in auto mode (59); a reply without its state was sent back; the handbook download is out
-of "Worksuite 2.0" too (60). The installed copy is version 2026-11-16h, synced 14:38:58 UTC, 30 seconds before
-2026-11-16i reached main: until it updates, sessions still get the removed second-correction rule.
-Version 2026-11-16k is live (2026-11-16): nine rules, the new reply format, the phases
-back as a workflow. The installed copy on the account was still 2026-11-16h at the end of that
-thread; its sync for cloud sessions is not documented. Next: a fresh thread with "resume next steps" checks the version
-the package delivers at its start (becomes a question if still h); if it is current, item 9 is
-done. The
-preferences stay as they are for now. The benchmark in `tests/bench/` is not run until the
-operator says so (2026-11-16). The key clean-up (question 43) is booked with the product lead
-for 2026-11-20. After item 9: item 11 (the one-page map of each repository), then item 4.
+The handbook is finished (2026-11-16, question 70). One check remains: a fresh thread with
+"resume next steps" reads the version line the Kowboy plugin gives it at the start. If it says
+2026-11-16k, item 9 is done and so is this list. If it is older, the plugin on the account has
+not refreshed from GitHub: tell the operator to remove and re-add it in claude.ai (Customize,
+Plugins). Keys (item 10, question 43, booked 2026-11-20) are a separate security task.
 
 ## Items
 
@@ -36,7 +27,7 @@ for 2026-11-20. After item 9: item 11 (the one-page map of each repository), the
    `~/.claude/settings.json` on each machine and `.claude/settings.json` in each of our own
    repositories; project threads apply neither. Taken over by item 9 (question 25 a),
    2026-11-15): the package carries the blocks.
-4. `[handbook]` Automatic checks on every save, a date-with-letter version, a `CHANGELOG.md`, a
+4. `[handbook]` Dropped (question 70 a), 2026-11-16). Automatic checks on every save, a date-with-letter version, a `CHANGELOG.md`, a
    checklist for each change. One session. Ready (agent's choice, 2026-10-31).
 5. `[handbook]` Dropped (question 8 c, 2026-10-31): no corrections lists, no monthly session.
 6. `[handbook]` Twelve scripted prompts on reply shape, drift and ask-or-go, run in a fresh
@@ -95,13 +86,15 @@ for 2026-11-20. After item 9: item 11 (the one-page map of each repository), the
     2026-11-15): find out which keys can be limited or moved to a setting used only for a
     release, and come back with the steps only the owner can take. One session. After item 9.
 
-11. `[handbook]` A one-page map of each repository's parts (question 29, the owner 2026-11-15):
+11. `[handbook]` Dropped (question 70 a), 2026-11-16). A one-page map of each repository's parts (question 29, the owner 2026-11-15):
     the parts, how they connect and what must not change without the owner, on one short page
     read at the start of every session, moved out of the plan document and not copied; settles
     also how a session comes to read a repository's `AGENTS.md`. Changes `PHASES.md`. One
     session. After item 9.
 
 ## Later
+
+Dropped (question 70 a), 2026-11-16).
 
 - `[handbook]` A session budget (time, helper agents, cost) before a session stops and reports
   (audit E2).

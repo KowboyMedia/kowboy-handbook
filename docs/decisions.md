@@ -659,3 +659,6 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   2026-11-16k, live. Quiz 28 of 28 each; package tests 20 of 20 · the operator, 2026-11-16: "I
   asked before about noise during conversations, please solve that. Also solve the output
   format as requested".
+- 2026-11-16 · The handbook is finished: only the check that the plugin on the account delivers
+  the current version remains; items 4 and 11 and the "Later" list are dropped; keys (item 10,
+  question 43) become a separate security task · the operator, question 70, 2026-11-16: "70 a".
