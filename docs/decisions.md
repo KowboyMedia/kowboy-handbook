@@ -593,3 +593,10 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   accounts; the handbook's three pages are unchanged; tests green (23) and the platform's plugin
   check passed before the release · the operator, question 56, 2026-11-16: "Answer and then
   release".
+- 2026-11-16 · The rule "the operator corrects the same thing a second time: write the rule into
+  the repository's `AGENTS.md` at once" is removed from `WORK.md`, with its exception under rule
+  6, so writing an `AGENTS.md` after a correction is now a rule-6 step that needs the operator's
+  word. The `AGENTS.md` this session wrote under it (replies as short as the operator's example)
+  is deleted, and question 58 is withdrawn. Quiz key 16 turns from GO to STOP. Version
+  2026-11-16i · the operator, 2026-11-16: "Remove that rule from the handbook, remove your
+  resulting addition."

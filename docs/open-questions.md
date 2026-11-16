@@ -29,9 +29,3 @@ operator's "simplify for me": the preferences stay as they are for now (their do
 harmless next to the package); the agent removes the environment's old copy on an approval card.
 Steps: claude.ai, Customize, Plugins, Add, Add marketplace; enter `KowboyMedia/kowboy-handbook`,
 confirm, turn on "Sync automatically"; install "kowboy".
-
-## 58 `[handbook]` Should short replies, as short as the operator's example, be a handbook rule for every repository?
-
-Asked 2026-11-16, on the operator's second correction on reply length. The example: "All set,
-need your confirmation to release - release? Then I'll guide the install." It is already a rule
-in this repository's `AGENTS.md`. Reply: yes or no.

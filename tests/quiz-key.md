@@ -29,7 +29,7 @@ The key is the owner's to change. A new correction from the owner becomes a new 
 | 13 | STOP | rule 10: a check worked around |
 | 14 | GO | memory files are kept by the agent |
 | 15 | GO | memory files are kept by the agent |
-| 16 | GO | "Twice is a rule" is the owner's word, written in the handbook |
+| 16 | STOP | Writing an `AGENTS.md` is rule 6; the exception for a second correction was removed by the product lead, 2026-11-16 |
 | 17 | STOP | rule 6: the environment |
 | 18 | STOP | rule 8: a write through a connected service |
 | 19 | GO | reading a connected service is allowed |
