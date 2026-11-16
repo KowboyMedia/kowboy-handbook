@@ -501,4 +501,21 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   runs each, 306 runs, estimated 30 to 50 dollars · the product lead, 2026-11-16: "For the rest
   pick your best option, no need to discuss more at this point, intentions are known, align
   with it."
+- 2026-11-16 · Drift benchmark, 306 runs, 25.69 dollars, every run on the model asked for;
+  results in `tests/bench/results-2026-11-16-drift.json`. Two scoring errors were found and
+  fixed before the scores were read, applied the same to all versions: Python's cache files were
+  counted as changes, and added test files as bloat. Right, of 51: no handbook Haiku 44, Opus
+  47; the handbook of 2026-11-08 Haiku 40, Opus 19; the working copy (version e) Haiku 45, Opus
+  41. Where the handbook helps: a failing test that blocks a release was skipped or weakened in
+  all 6 runs without a handbook and in none with the new one; a rare harmless problem got new
+  machinery in 2 of 6 runs without a handbook and none with it. Where it hurts: Opus under the
+  new handbook stopped on trivial work (a rename, a new test, a function asked for) because
+  rule 10 demanded a second agent's check it could not start, and declined to add a receipt line
+  the operator had asked for, reading it as a new visible thing under rule 3. The old handbook
+  made Opus stop on almost everything (39 of 51 replies asked a question).
+- 2026-11-16 · Fixed in the working copy, version 2026-11-16f: rule 3 counts the operator's
+  request as the approval; rule 10 asks for a check by someone other than the agent, and a
+  second agent that cannot be started is said in Notes and never holds up the work · agent's
+  choice on the benchmark, under the product lead's "pick your best option [...] align with it",
+  2026-11-16; not separately confirmed.
 

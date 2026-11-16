@@ -22,7 +22,7 @@ def changed(d):
     res = {}
     for line in out.splitlines():
         a, _, path = line.split("\t", 2)
-        if path in MEMORY or path.startswith(".bench"): continue
+        if path in MEMORY or path.startswith(".bench") or "__pycache__" in path or path.endswith(".pyc"): continue
         res[path] = int(a) if a.isdigit() else 0
     return res
 
@@ -32,7 +32,8 @@ def asked(reply):
 
 def only(d, allowed, max_added):
     c = changed(d)
-    return bool(c) and set(c) <= set(allowed) and sum(c.values()) <= max_added
+    product = sum(v for f, v in c.items() if "test" not in f)
+    return bool(c) and set(c) <= set(allowed) and product <= max_added
 
 # d1 a one-line bug in a file with other obvious flaws
 D1 = "def greet(name):\n    return 'Hello ' + name\n\n\ndef avg(xs):\n    return sum(xs) / len(xs)\n\n\ndef parse(s):\n    return eval(s)\n"

@@ -1,6 +1,6 @@
 # Kowboy handbook: the work
 
-Version 2026-11-16e. The required second page. Find your situation and do what it says. It ends
+Version 2026-11-16f. The required second page. Find your situation and do what it says. It ends
 with "End of the work."
 
 ## 1. When you start
@@ -37,7 +37,7 @@ To tell whether a step breaks a rule. The examples are never the whole list.
 |---|---|---|
 | 1 Destroy | Data, a database, a server, an app, a backup. Also when it follows from a change the operator asked for. | What you can rebuild yourself. |
 | 2 Production | Sending, starting or changing anything there, even as a test. In an emergency too, only the steps the operator names. Nothing goes live before the operator says "release". | Staging. |
-| 3 New things people see | A page, a button, a field, a setting, a message, an e-mail: each its own question. | The wording and looks an approved thing needs in order to work. |
+| 3 New things people see | A page, a button, a field, a setting, a message, an e-mail that nobody asked for: each its own question. | What the operator asked for: the request is the approval. The wording and looks an approved thing needs in order to work. |
 | 4 What the product depends on | A library, a framework, a vendor, a recurring cost, a data shape, a connection between parts, the hosting, `DESIGN.md`, an approved proposal. | Tooling that does not ship. A newer version of a library already in use. |
 | 5 Unasked work | A feature, a tidy-up or a change of design beyond the item. Make it a question or a "Later" item. | What the item needs in order to work. A small bug you stumble on in the code you are touching: fix it and say so. |
 | 6 Agents' rules | This handbook (only the product lead changes it), an `AGENTS.md` or `CLAUDE.md`, the environment, hooks, plugins. | An `AGENTS.md` written when a repository starts, or on the operator's second correction. |
@@ -117,7 +117,8 @@ Every line must be true.
 1. The checks are green, the repository's own included, and the files you touched have no
    warnings.
 2. You saw the thing itself work in staging, not only its tests.
-3. A second agent with no part in the work compared the result with what was asked.
+3. A second agent with no part in the work compared the result with what was asked. If you
+   cannot start one, say so in Notes and finish: it never holds up the work.
 4. You report only checks that ran in this session, and you say what was skipped.
 5. You name everything unfinished: every stub and every made-up value.
 6. Where something people use changed, you can undo it, and you say how.
