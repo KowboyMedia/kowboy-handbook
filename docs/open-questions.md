@@ -27,16 +27,3 @@ agent prepared under his own account; the first change after the protection show
 Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent's guess for each
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
-
-## 55 `[handbook]` Instruction: look whether your plan lets you add our own package; then reply with what you see.
-
-Asked 2026-11-16. The first step of item 9: nothing is built before the answer (question 25).
-From the platform's documentation, read 2026-11-16: a package is added under Customize, Plugins,
-Add, either as "Add marketplace" (it then updates from this repository by itself) or as "Upload
-plugin" (each update uploaded again by each person); which plans may add their own is not
-stated. Steps: open claude.ai, then Customize, then Plugins; click Add and look at the menu.
-- a) **both**: "Add marketplace" and "Upload plugin" are there; the package is built and updates
-  by itself.
-- b) **upload only**: the package is built; every change means each person uploads it again.
-- c) **none**: back to the operator before anything is built.
-- Reply: a, b or c.
