@@ -206,45 +206,16 @@ class Guard(unittest.TestCase):
                 self.assertFalse(held(tool))
 
 
-class Reply(unittest.TestCase):
-    def check(self, text, active=False):
-        return run("reply", {"last_assistant_message": text, "stop_hook_active": active})
+class OutsideARepository(unittest.TestCase):
+    def test_every_entry_is_silent_outside_a_repository(self):
+        with tempfile.TemporaryDirectory() as folder:
+            self.assertIsNone(run("rules", {"cwd": folder}))
+            self.assertIsNone(run("session-start", {"cwd": folder}, "HANDBOOK.md"))
+            self.assertFalse(held("Bash", Path(folder), command="ssh -V"))
+            self.assertFalse(held("mcp__Gmail__send_message", Path(folder)))
 
-    def test_a_reply_with_its_status_passes(self):
-        self.assertIsNone(self.check("- **Status:** Working, building the guard."))
-        self.assertIsNone(self.check("Status: Done\n- Next: item 11."))
-
-    def test_a_reply_without_its_status_is_sent_back(self):
-        for text in ("Here is what I did.\n\n- Built the guard.", "Status: thinking about it"):
-            with self.subTest(text=text):
-                out = self.check(text)
-                self.assertEqual(out["decision"], "block")
-                self.assertIn("Status: Waiting for you", out["reason"])
-
-    def test_waiting_without_a_numbered_question_is_sent_back(self):
-        out = self.check("- Status: Waiting for you\n- Should I go on?")
-        self.assertEqual(out["decision"], "block")
-        self.assertIn("64:", out["reason"])
-
-    def test_waiting_with_a_numbered_question_passes(self):
-        text = "- Status: Waiting for you, 64\n- 64: Merge into main?\n  - a) yes (recommended)\n  - b) no"
-        self.assertIsNone(self.check(text))
-        self.assertIsNone(self.check(text.replace("- 64:", "- **64:**")))
-        self.assertIsNone(self.check(text.replace("- 64:", "- **64**:")))
-
-    def test_the_older_first_line_still_passes(self):
-        self.assertIsNone(self.check("Working: the guard."))
-        self.assertIsNone(self.check("Waiting for you: **64**\n- **64**: Merge?"))
-
-    def test_a_bold_number_without_colon_is_not_a_question(self):
-        out = self.check("- Status: Waiting for you\n- **64** Merge?")
-        self.assertEqual(out["decision"], "block")
-
-    def test_odd_input_is_ignored(self):
-        self.assertIsNone(run("reply", {"last_assistant_message": 5}))
-
-    def test_a_reply_is_sent_back_only_once(self):
-        self.assertIsNone(self.check("No status here.", active=True))
+    def test_the_same_action_is_held_in_a_repository(self):
+        self.assertTrue(held("Bash", command="ssh -V"))
 
 
 class Phases(unittest.TestCase):

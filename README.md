@@ -17,8 +17,8 @@ that kind belongs in the project's own repository, which is private.
 ## How it reaches a session
 
 Through the Kowboy package, a Claude Code plugin kept in this repository (`.claude-plugin/`,
-`hooks/`, `skills/`). Each person adds it once to their claude.ai account, and it then
-updates by itself from this repository. In every session it:
+`hooks/`, `skills/`). Each person adds it once to their claude.ai account. It acts only in
+a session on a git repository and stays silent anywhere else, such as a plain chat. There it:
 
 - gives `HANDBOOK.md` and `WORK.md` whole at the start and after the session's memory is
   compacted;
@@ -28,8 +28,6 @@ updates by itself from this repository. In every session it:
   dropping a database, logging in to a server or deploying, writing to a server or through a
   connected service, sending mail, starting agents as separate programs, editing agents' rule
   files, and here the handbook and the package themselves;
-- sends a reply back once when it lacks its status line, or waits for the operator without a
-  numbered question;
 - loads each phase of `PHASES.md` as a skill when that phase starts.
 
 The hold is a net, not a wall: it reads commands as text and can miss one, such as a deletion

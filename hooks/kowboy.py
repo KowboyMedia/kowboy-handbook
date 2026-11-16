@@ -5,10 +5,9 @@
                               gives the session that page whole
     kowboy.py rules           repeats the rules at every message
     kowboy.py guard           holds a dangerous action for the operator's yes
-    kowboy.py reply           sends back a reply without its status line, or one
-                              that waits for the operator without a numbered question
 
-Each reads the event as JSON on stdin and answers as JSON on stdout. The pages
+Each reads the event as JSON on stdin and answers as JSON on stdout, and only in a
+session on a git repository: anywhere else, such as a plain chat, it stays silent. The pages
 are read from this repository itself, so no copy of them exists.
 """
 
@@ -382,53 +381,15 @@ def guard(event):
     )
 
 
-# --- reply ------------------------------------------------------------------
+# --- where ------------------------------------------------------------------
 
-STATES = ("Working", "Waiting for you", "Waiting for something else", "Done")
-
-
-def first_line(text):
-    for line in text.splitlines():
-        line = re.sub(r"^[\s#>*_\-]+", "", line).replace("**", "").replace("__", "").strip()
-        if line:
-            return line
-    return ""
-
-
-def status(text):
-    """The state after 'Status:' on the first line, or None."""
-    line = first_line(text)
-    match = re.match(r"Status:\s*(.*)", line)
-    rest = match.group(1) if match else line
-    return next((s for s in sorted(STATES, key=len, reverse=True) if rest.startswith(s)), None)
-
-
-def numbers(text):
-    """Question numbers: a line that starts with a number and a colon, as '64: Merge?'."""
-    return set(re.findall(r"(?m)^[\s>*_\-]*(?:\*\*)?(\d+)(?:\*\*)?:", text))
-
-
-def reply(event):
-    if not isinstance(event, dict) or event.get("stop_hook_active"):
-        return
-    text = event.get("last_assistant_message")
-    if not isinstance(text, str) or not text.strip():
-        return
-    state = status(text)
-    if state is None:
-        reason = (
-            "Start the reply with the status line: 'Status: Working', 'Status: Waiting for "
-            "you', 'Status: Waiting for something else' or 'Status: Done' (HANDBOOK.md, How to "
-            "reply)."
-        )
-    elif state == "Waiting for you" and not numbers(text):
-        reason = (
-            "A reply that waits for the operator asks numbered questions, each written with "
-            "its number from the question log and a colon, as '64: Merge into main?'."
-        )
-    else:
-        return
-    print(json.dumps({"decision": "block", "reason": "Kowboy package: " + reason}))
+def in_repository(event):
+    """True when the session works in a git repository: the package acts only there."""
+    try:
+        folder = Path(event.get("cwd") or os.getcwd()).resolve()
+    except (OSError, TypeError, ValueError):
+        return False
+    return any((p / ".git").exists() for p in (folder, *folder.parents))
 
 
 if __name__ == "__main__":
@@ -440,7 +401,9 @@ if __name__ == "__main__":
     if not isinstance(incoming, dict):
         incoming = {"unreadable": incoming}
     entry = sys.argv[1]
+    if not in_repository(incoming):
+        sys.exit(0)
     if entry == "session-start":
         session_start(sys.argv[2])
     else:
-        {"rules": rules, "guard": guard, "reply": reply}[entry](incoming)
+        {"rules": rules, "guard": guard}[entry](incoming)

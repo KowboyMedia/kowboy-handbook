@@ -8,8 +8,9 @@ not done, keep it current.
 The handbook is finished (2026-11-16, question 70). One check remains: a fresh thread with
 "resume next steps" reads the version line the Kowboy plugin gives it at the start. If it says
 2026-11-16k, item 9 is done and so is this list. If it is older, the plugin on the account has
-not refreshed from GitHub: tell the operator to remove and re-add it in claude.ai (Customize,
-Plugins). Keys (item 10, question 43, booked 2026-11-20) are a separate security task.
+not refreshed from GitHub. Until it is current the old copy disturbs plain chats, so the operator
+turned it off or removes it (claude.ai, Customize, Plugins) and adds it again for the fresh copy;
+re-adding is untested as a refresh. Keys (item 10, question 43, booked 2026-11-20) are a separate security task.
 
 ## Items
 

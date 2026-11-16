@@ -662,3 +662,8 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-16 · The handbook is finished: only the check that the plugin on the account delivers
   the current version remains; items 4 and 11 and the "Later" list are dropped; keys (item 10,
   question 43) become a separate security task · the operator, question 70, 2026-11-16: "70 a".
+- 2026-11-16 · The package acts only in a session on a git repository and is silent elsewhere
+  (plain chat got permission prompts, the handbook and replies sent back); the reply check is
+  removed. Package tests 14 of 14 · the operator, 2026-11-16: "I get shit popups and idiot
+  discussions from normal usage, i can't even have an artefact created"; earlier "please solve
+  that" (the noise).
