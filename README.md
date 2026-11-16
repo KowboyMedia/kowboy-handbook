@@ -23,4 +23,11 @@ From then on, the project picks up every change to `main` here once a day, at 04
 
 ## Change the handbook
 
-Change the files on a branch, run `bash kowboy-handbook-sync.sh . .` and `bash tests/kowboy-handbook-sync.test.sh`, then merge into `main`. Every project then picks the change up within a day, without review.
+Change the files on a branch, run `bash kowboy-handbook-sync.sh . .`, and open a pull request. The tests run on it; a merge into `main` needs them green and one review. Every project then picks the change up within a day, without further review.
+
+## What the sync changes in a project
+
+- `AGENTS.md`: only the text between `<!-- kowboy-handbook:start -->` and `<!-- kowboy-handbook:end -->`. The first time, that block is added on top. Everything else in the file is kept.
+- `CLAUDE.md`: adds the line `@AGENTS.md` on top if it is missing. Everything else is kept.
+- `kowboy-handbook-phases/`: replaced as a whole. Do not keep your own files in it.
+- Nothing else.

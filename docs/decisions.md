@@ -9,3 +9,10 @@
 - **Sync (operator, answer 4b):** changes land in projects automatically, without review. A daily workflow in each project commits straight to its default branch. Rejected: git submodules (often not fetched by agents' clones) and fetching at session start (works only in tools with hooks).
 - **Sync security:** the workflow runs the script fetched from the handbook in a job that cannot push, and a second job copies only the three handbook paths and pushes. Rejected: one job, where whoever can push to the handbook could push code to every project. Revisit if GitHub lets a workflow limit a token to certain files.
 - **Details decided by the agent:** files prefixed `kowboy-handbook-`; one version line, `2026-11-16m`, on every file; the default branch is `main`, not `master`; GitHub's own checkout step and plain `git` instead of a third-party action (rule 4); a one-line `CLAUDE.md` with `@AGENTS.md`, since it is not confirmed that Claude Code reads `AGENTS.md` by itself.
+
+## 2026-11-16: second round
+
+- **5b:** the Status bullet does not name the current phase; the output format stays as it is.
+- **6a:** this repository runs the tests on every pull request and every change to `main` (`.github/workflows/kowboy-handbook-tests.yml`).
+- **8a:** `main` is protected: a merge needs a pull request with one approving review and the check "kowboy-handbook-tests" green. Admins can still merge without the review, so a sole operator is never locked out. Revisit when a second person can review.
+- **Release (7a):** `claude/handbook-restructure` merged into `main` through a pull request with the tests green. It reaches a project at its next daily sync, once that project has the workflow. Undo: revert the merge on `main`; projects follow at their next sync.

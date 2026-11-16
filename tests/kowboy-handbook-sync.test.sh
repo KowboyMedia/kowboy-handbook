@@ -206,6 +206,17 @@ test_16_marker_with_trailing_spaces_is_found() {
     || fail 16 "a second block was added"
 }
 
+test_17_other_project_files_are_untouched() {
+  local hb p before; hb=$(handbook_copy); p=$(mktemp -d)
+  mkdir -p "$p/src" "$p/docs"
+  printf 'readme\n' > "$p/README.md"; printf 'code\n' > "$p/src/app.js"; printf 'notes\n' > "$p/docs/agents.md"
+  before=$(cd "$p" && find . -type f ! -name AGENTS.md ! -name CLAUDE.md ! -path './kowboy-handbook-phases/*' -exec sha256sum {} + | sort)
+  bash "$sync" "$hb" "$p" >/dev/null || { fail 17 "sync exited non-zero"; return; }
+  [ "$before" = "$(cd "$p" && find . -type f ! -name AGENTS.md ! -name CLAUDE.md ! -path './kowboy-handbook-phases/*' -exec sha256sum {} + | sort)" ] \
+    && pass "17 files other than AGENTS.md, CLAUDE.md and kowboy-handbook-phases/ are untouched" \
+    || fail 17 "another project file changed"
+}
+
 test_1_new_project_gets_agents_md
 test_2_existing_agents_md_is_kept
 test_3_second_run_changes_nothing
@@ -222,5 +233,6 @@ test_13_claude_md_linked_to_agents_md
 test_14_no_trailing_newline_is_stable
 test_15_handbook_synced_onto_itself_keeps_phases
 test_16_marker_with_trailing_spaces_is_found
+test_17_other_project_files_are_untouched
 
 [ "$failed" = 0 ] && echo "all passed" || { echo "some failed"; exit 1; }

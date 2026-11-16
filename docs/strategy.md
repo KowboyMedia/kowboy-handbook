@@ -54,9 +54,9 @@ Each is a test in `tests/kowboy-handbook-sync.test.sh` with the same number.
 14. `AGENTS.md` without a final newline is stable from the first run.
 15. Syncing the handbook onto itself keeps its phase files.
 16. Markers with trailing spaces are still found, so no second block is added.
+17. Files other than `AGENTS.md`, `CLAUDE.md` and `kowboy-handbook-phases/` are untouched.
 
 ## Out of scope
 
 - Hooks, branch protection and repository settings in projects: set by the operator.
-- An automatic check in this repository that runs the tests on every change: proposed, not made (rule 5).
 - Agents that cannot read files from the repository.

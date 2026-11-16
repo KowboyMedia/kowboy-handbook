@@ -84,7 +84,7 @@ When: every session, from the first message to the last.
 ## This repository
 
 - Parts: the handbook text (`kowboy-handbook-rules.md`, `kowboy-handbook-output.md`, `kowboy-handbook-phases.md`, `kowboy-handbook-phases/`) and the sync (`kowboy-handbook-sync.sh`, `kowboy-handbook-sync.yml`). The block above is generated from the handbook text.
-- Blocking check: `bash tests/kowboy-handbook-sync.test.sh` passes.
+- Blocking check: `bash tests/kowboy-handbook-sync.test.sh` passes. It runs on every pull request, and `main` accepts a merge only with it green and one review.
 - After any change to the handbook text, run `bash kowboy-handbook-sync.sh . .` so the block above stays current.
 - Every project copies `main` within a day, unreviewed, so a merge into `main` is a release to all of them.
 - The handbook text is the rules agents work by (rule 5): change it only on the operator's explicit approval.
