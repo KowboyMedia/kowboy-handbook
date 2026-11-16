@@ -1,6 +1,6 @@
 # Kowboy handbook: phase "Release and operate"
 
-Version 2026-11-16o.
+Version 2026-11-16p.
 
 ## Release and operate
 

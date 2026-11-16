@@ -9,9 +9,27 @@ How AI agents work at Kowboy Media: nine rules, the reply format, and the phases
 | [`kowboy-handbook-phases.md`](kowboy-handbook-phases.md) | "Run a session" and the index of phases | Always |
 | [`kowboy-handbook-phases/`](kowboy-handbook-phases) | One file per phase | Only when that phase starts |
 
-The three always-read files are copied into a block at the top of each project's `AGENTS.md`. The phase files are copied into the project's `kowboy-handbook-phases/` folder.
+The three always-read files are copied into a block in `~/.claude/AGENTS.md`, which `~/.claude/CLAUDE.md` loads; the phase files go into `~/.claude/kowboy-handbook-phases/`.
 
-## Add the handbook to a project
+## Load the handbook for every session
+
+Agents get the handbook from their own settings, so no project needs a copy.
+
+- Claude Code cloud: put this in each environment's setup script. It runs at the start of every fresh session and loads the latest `main`:
+
+  ```bash
+  set -e
+  rm -rf /tmp/kowboy-handbook
+  git clone --quiet --depth 1 --branch main https://github.com/KowboyMedia/kowboy-handbook.git /tmp/kowboy-handbook
+  mkdir -p "$HOME/.claude"
+  bash /tmp/kowboy-handbook/kowboy-handbook-sync.sh /tmp/kowboy-handbook "$HOME/.claude"
+  ```
+
+- Claude Code on a laptop: run the same lines once; run them again to update.
+
+## Add the handbook to a project (optional)
+
+Only for agents that do not read `~/.claude/`.
 
 1. Copy [`kowboy-handbook-sync.yml`](kowboy-handbook-sync.yml) to `.github/workflows/kowboy-handbook-sync.yml` in the project.
 2. In the project's Actions tab, run "kowboy-handbook-sync" once.

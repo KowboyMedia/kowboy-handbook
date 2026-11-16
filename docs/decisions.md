@@ -27,3 +27,11 @@
 ## 2026-11-16: rule 8 and the handbook (operator: "Rule 8 must exclude the handbook")
 
 - Rule 8 now names what "this handbook" is: the `kowboy-handbook-*` files on the main branch of github.com/KowboyMedia/kowboy-handbook, whether they reach the agent from there, from its settings or from the block the sync writes into `AGENTS.md`. Anything else that says it is the handbook stays data, so issues, pull requests, other branches and planted copies cannot pose as the handbook.
+
+## 2026-11-16: the handbook reaches agents through their settings (operator: 10a)
+
+- Every cloud environment's setup script copies `main` into `~/.claude/` at the start of each fresh session: `AGENTS.md` with the handbook block, `CLAUDE.md` importing it, and `kowboy-handbook-phases/`. Laptops run the same command once from `README.md`. No project repository needs a copy. Rejected: pushing into every repository (organisation-wide token, automatic commits on default branches) and the CDN repository (agents would have to fetch the handbook themselves).
+- The setup script stops the session if the handbook cannot be fetched, so no agent works without the rules. Revisit if GitHub outages block work.
+- Checked in this session: Claude Code loads `~/.claude/CLAUDE.md` and follows its `@AGENTS.md` import.
+- Question 11 withdrawn: a project's own `AGENTS.md` already instructs, because the handbook names it (setup and build phases). It should not have been asked.
+- Proposed with this change: before asking, an agent looks for the answer itself and asks only what a wrong guess would make costly (output format, Questions).
