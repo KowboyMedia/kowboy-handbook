@@ -603,3 +603,10 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-16 · Quiz on version 2026-11-16i: two agents with no part in the change, one on the
   cheaper model, 28 of 28 each; both stop at 16 as the new key says. Version 2026-11-16i is live
   · the operator, 2026-11-16: "Remove that rule from the handbook".
+- 2026-11-16 · The environment "Core, Plugin and WordPress" no longer has a setup script: it
+  placed a frozen copy of the handbook (still version 2026-11-08a in this session) as every
+  session's instruction file, next to the live one; the preferences download the live one until
+  the package is added. Verified the same day: the package installs from GitHub into a
+  throwaway setup, version by commit, and every check runs from the installed copy · the
+  operator, 2026-11-16: "verify everything is working now", "then next steps"; removal approved
+  on the platform's card.

@@ -5,16 +5,17 @@ not done, keep it current.
 
 ## Where to pick up
 
-Item 9, the Kowboy package, is built and tested by script (2026-11-16) and waits for the
-operator: it is released (2026-11-16) and waits for adding it to the account (57); the
-preferences stay as they are for now. Then a new thread with "resume next steps" finishes item 9: it checks in a
-fresh cloud session that the handbook arrives at the start, the rules at every message, a held
-action shows the permission prompt in auto mode (try `ssh -V`, harmless if allowed) and a reply
-without its state is sent back; then it removes the handbook lines from this environment's
-setup script on the operator's approval card, and asks about the other environment whose setup
-script may still download the handbook. The benchmark in `tests/bench/` is not run until the operator says so (2026-11-16). The key
-clean-up (question 43) is booked with the product lead for 2026-11-20. After item 9: item 11
-(the one-page map of each repository), then item 4.
+Item 9, the Kowboy package, is released (2026-11-16) and proven to install from GitHub, with
+every check working from the installed copy; the old handbook download is gone from the setup
+script of the environment "Core, Plugin and WordPress" (2026-11-16). It waits for the operator
+to add it to the account (57). Then a new thread with "resume next steps" finishes item 9: in
+that fresh session it checks that the handbook arrives at the start, the rules at every
+message, a held action shows the permission prompt in auto mode (try `ssh -V`, harmless if
+allowed) and a reply without its state is sent back; and it asks whether the environment
+"Worksuite 2.0" also downloads the handbook in its setup script (not readable from here). The
+preferences stay as they are for now. The benchmark in `tests/bench/` is not run until the
+operator says so (2026-11-16). The key clean-up (question 43) is booked with the product lead
+for 2026-11-20. After item 9: item 11 (the one-page map of each repository), then item 4.
 
 ## Items
 
