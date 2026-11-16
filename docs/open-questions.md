@@ -27,14 +27,3 @@ agent prepared under his own account; the first change after the protection show
 Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent's guess for each
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
-
-## 50 `[handbook]` Should the small handbook go live?
-
-Asked 2026-11-15. Replaces 46. In the working copy, now version 2026-11-16a after the owner's audit notes: `HANDBOOK.md`, the
-ten rules and the reply shape, 3,247 characters; `WORK.md`, new, read before any work in a
-repository, 7,340; `PHASES.md`, cut to its principles, 8,000. Together 18,600, from 49,900.
-Checked: a second agent with no part in the work compared the three pages with the original
-text and found 25 points; all were corrected except one that the owner had already decided
-(a repository's own rules file cannot switch off a rule). Quiz after the corrections: two
-agents, 28 of 28 each. Not checked: the corrections themselves were not read by a second agent.
-Reply: yes, or the change.

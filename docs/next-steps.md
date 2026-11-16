@@ -5,11 +5,10 @@ not done, keep it current.
 
 ## Where to pick up
 
-Item 8 is live (three layers, ten rules, version 2026-11-15e). Left in it, in the thread of
-2026-11-15: layer 3 cut down to its principles. Question 43 (production keys out of the
-building environment) is booked with the owner for 2026-11-20. Then item 9 (the Kowboy package)
-in a new thread with "resume next steps", then item 11, then item 4. Item 10 is replaced by the
-owner's access model (`docs/decisions.md`, 2026-11-15) and question 43.
+Item 8 is done: the handbook is live as three pages, version 2026-11-16h (2026-11-16). The key
+clean-up (question 43) is booked with the product lead for 2026-11-20. Next is item 9, the
+Kowboy package, in a new thread with "resume next steps"; it includes running the benchmark in
+`tests/bench/` on every change. Then item 11 (the one-page map of each repository) and item 4.
 
 ## Items
 

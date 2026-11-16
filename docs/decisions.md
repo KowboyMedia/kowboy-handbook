@@ -536,4 +536,10 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   Not yet run through the benchmark. Working copy, version 2026-11-16g · agent's choice under
   the product lead's "pick your best option [...] align with it", 2026-11-16; not separately
   confirmed.
+- 2026-11-16 · Rule 10 reads "Never weaken a check to make it pass, and never say a check passed
+  unless it ran and passed." · the product lead, 2026-11-16: "'Never report a check that did not
+  run' sounds backwards, if a check didnt run i would assume its a bad thing."
+- 2026-11-16 · The handbook goes live as version 2026-11-16h: `HANDBOOK.md` (the rules page),
+  `WORK.md` and `PHASES.md` · the product lead, question 50, 2026-11-16: "Yes go live now,
+  unless the above needs adjustment".
 
