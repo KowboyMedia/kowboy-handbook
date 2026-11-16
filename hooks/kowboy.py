@@ -397,16 +397,15 @@ def first_line(text):
 
 def status(text):
     """The state after 'Status:' on the first line, or None."""
-    match = re.match(r"Status:\s*(.*)", first_line(text))
-    if not match:
-        return None
-    rest = match.group(1)
+    line = first_line(text)
+    match = re.match(r"Status:\s*(.*)", line)
+    rest = match.group(1) if match else line
     return next((s for s in sorted(STATES, key=len, reverse=True) if rest.startswith(s)), None)
 
 
 def numbers(text):
     """Question numbers: a line that starts with a number and a colon, as '64: Merge?'."""
-    return set(re.findall(r"(?m)^[\s>*_\-]*(?:\*\*)?(\d+):", text))
+    return set(re.findall(r"(?m)^[\s>*_\-]*(?:\*\*)?(\d+)(?:\*\*)?:", text))
 
 
 def reply(event):

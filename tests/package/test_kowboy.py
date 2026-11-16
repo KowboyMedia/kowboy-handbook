@@ -215,8 +215,7 @@ class Reply(unittest.TestCase):
         self.assertIsNone(self.check("Status: Done\n- Next: item 11."))
 
     def test_a_reply_without_its_status_is_sent_back(self):
-        for text in ("Here is what I did.\n\n- Built the guard.", "Working: the guard.",
-                     "Status: thinking about it"):
+        for text in ("Here is what I did.\n\n- Built the guard.", "Status: thinking about it"):
             with self.subTest(text=text):
                 out = self.check(text)
                 self.assertEqual(out["decision"], "block")
@@ -231,6 +230,11 @@ class Reply(unittest.TestCase):
         text = "- Status: Waiting for you, 64\n- 64: Merge into main?\n  - a) yes (recommended)\n  - b) no"
         self.assertIsNone(self.check(text))
         self.assertIsNone(self.check(text.replace("- 64:", "- **64:**")))
+        self.assertIsNone(self.check(text.replace("- 64:", "- **64**:")))
+
+    def test_the_older_first_line_still_passes(self):
+        self.assertIsNone(self.check("Working: the guard."))
+        self.assertIsNone(self.check("Waiting for you: **64**\n- **64**: Merge?"))
 
     def test_a_bold_number_without_colon_is_not_a_question(self):
         out = self.check("- Status: Waiting for you\n- **64** Merge?")

@@ -1,6 +1,6 @@
 # Kowboy handbook: the work
 
-Version 2026-11-16j. The required second page. Find your situation and do what it says. It ends
+Version 2026-11-16k. The required second page. Find your situation and do what it says. It ends
 with "End of the work."
 
 ## 1. When you start

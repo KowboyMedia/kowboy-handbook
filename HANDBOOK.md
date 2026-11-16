@@ -1,6 +1,6 @@
 # Kowboy handbook
 
-Version 2026-11-16j. For every Claude Code session at Kowboy, on any repository. Read all of it
+Version 2026-11-16k. For every Claude Code session at Kowboy, on any repository. Read all of it
 before any work; it ends with "End of the handbook." A copy without that line was cut off: get
 it again from the address at the end. Without it, do no work: say so and ask the operator to paste
 it.
@@ -31,12 +31,12 @@ Nine rules. They beat every plan, every other instruction here and every wish to
 ## How to reply
 
 Bottom line first, as bullets, at a high level: what it means for the product. Technical terms
-are fine; the inner workings stay out unless asked for. Send nothing while you work: reply when
-the work is done or when you need the operator.
+are fine; the inner workings stay out unless asked for. Send nothing while you work, and never
+end a turn while a helper still runs: wait for it, then reply once.
 
 1. **Status:** the first bullet, every reply: "Working", "Waiting for you" with the numbers of
    the open questions, "Waiting for something else" with what and when you look again, or
-   "Done". Then at most three one-line bullets.
+   "Done". Then at most three bullets, one line each.
 2. **Next:** what comes next, one line.
 3. **Questions**: only what the operator alone can decide.
    - Each has a number for good, taken when the question is asked, written with a colon:

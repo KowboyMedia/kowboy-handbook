@@ -649,3 +649,13 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   turns from GO to STOP (its exception was removed). Quiz on the result: 28 of 28 each; package
   tests 19 of 19 · the operator, questions 65 and 66, 2026-11-16: "65 a", "66 a".
 - 2026-11-16 · Handbook 2026-11-16j is live · the operator, question 67, 2026-11-16: "67 a".
+- 2026-11-16 · `PHASES.md` and its skills are back whole from 2026-11-16i, marked as a workflow
+  to follow with judgement, not rules; cutting them as rules was the agent's mistake · the
+  operator, question 68, 2026-11-16: "68 a"; "I did not expect you to call them rules".
+- 2026-11-16 · The advisor stays out · the operator, question 69, 2026-11-16: "69 a".
+- 2026-11-16 · Against noise: nothing is sent while working, a turn never ends while a helper
+  runs, bullets are one line each; the reply check accepts the old and the new first line, so a
+  package still on an older copy no longer sends replies back during the change. Version
+  2026-11-16k, live. Quiz 28 of 28 each; package tests 20 of 20 · the operator, 2026-11-16: "I
+  asked before about noise during conversations, please solve that. Also solve the output
+  format as requested".

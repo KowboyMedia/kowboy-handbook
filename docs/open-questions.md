@@ -22,12 +22,3 @@ the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
 
 
-## 68 `[handbook]` Should `PHASES.md` and its skills come back whole from version 2026-11-16i, marked as a workflow to follow with judgement rather than rules?
-
-Asked 2026-11-16. The operator did not mean the phases to be cut as rules ("more guidelines in a
-workflow"). Reply: a) restore whole; b) restore and trim later; c) leave as is.
-
-## 69 `[handbook]` Should the advisor come back as a helper an agent may call, never forced before every question?
-
-Asked 2026-11-16. Its only measurement (quiz, decisions line 342) showed it caught nothing and
-added one wrong stop. Reply: a) leave it out; b) bring it back optional.
