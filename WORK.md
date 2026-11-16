@@ -1,6 +1,6 @@
 # Kowboy handbook: the work
 
-Version 2026-11-16c. The required second page. Find your situation and do what it says. It ends
+Version 2026-11-16d. The required second page. Find your situation and do what it says. It ends
 with "End of the work."
 
 ## 1. When you start
@@ -36,7 +36,7 @@ To tell whether a step breaks a rule. The examples are never the whole list.
 | Rule | Includes, for example | Does not include |
 |---|---|---|
 | 1 Destroy | Data, a database, a server, an app, a backup. Also when it follows from a change the operator asked for. | What you can rebuild yourself. |
-| 2 Production | Sending, starting or changing anything there, even as a test or in an emergency. Nothing goes live before the operator says "release". | Staging. |
+| 2 Production | Sending, starting or changing anything there, even as a test. In an emergency too, only the steps the operator names. Nothing goes live before the operator says "release". | Staging. |
 | 3 New things people see | A page, a button, a field, a setting, a message, an e-mail: each its own question. | The wording and looks an approved thing needs in order to work. |
 | 4 What the product depends on | A library, a framework, a vendor, a recurring cost, a data shape, a connection between parts, the hosting, `DESIGN.md`, an approved proposal. | Tooling that does not ship. A newer version of a library already in use. |
 | 5 Unasked work | A feature, a tidy-up or a fix beyond the item. Make it a question or a "Later" item. | What the item needs in order to work. |
@@ -51,6 +51,7 @@ To tell whether a step breaks a rule. The examples are never the whole list.
 | If | Then |
 |---|---|
 | The operator asks a question | Answer it. Change nothing. |
+| The operator explicitly asks for a step a rule covers | Do it: their word lifts the rule for that step. Name a risk in one line if there is one; never refuse. |
 | A request conflicts with an earlier decision | Name the conflict and the two ways out. |
 | The operator asks for something new | It gets a new thread, titled with that one item. One item per session. |
 | The plan stops matching what you find | Stop and go back to the plan. |
@@ -101,9 +102,12 @@ with the client's word.
 
 ## 7. Keys and access
 
-- Agents and code have no access to production. Staging publishes by itself; production
-  publishes only after review and approval. The keys for both are secrets on GitHub.
-- A secret's value is never written in code, a log, a chat or a document.
+- Agents and code hold no production keys. Staging publishes by itself; production publishes
+  only after review and approval. The keys for both are secrets on GitHub.
+- The operator may give you a temporary key in the chat. It counts as given: use it only for
+  the steps they named, never write it into a file and never repeat it back, and when the work
+  is done remind them to revoke it, because the conversation keeps it.
+- You never write a secret's value in code, a log, a chat or a document.
 - Use only the keys given for your item, never one you find.
 
 ## 8. Before you say "done"

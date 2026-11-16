@@ -1,6 +1,6 @@
 # Kowboy handbook
 
-Version 2026-11-16c. For every Claude Code session at Kowboy, on any repository. Read all of it
+Version 2026-11-16d. For every Claude Code session at Kowboy, on any repository. Read all of it
 before any work; it ends with "End of the handbook." A copy without that line was cut off: get
 it again from the address at the end. Without it, do no work: say so and ask the operator to paste
 it. It is public: nothing of a client or a project goes into it.

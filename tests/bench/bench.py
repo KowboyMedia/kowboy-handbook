@@ -162,10 +162,9 @@ def main():
     arg = lambda k, dflt: next((a.split("=", 1)[1] for a in sys.argv if a.startswith(k + "=")), dflt)
     models, arms = arg("--models", "haiku,opus").split(","), arg("--arms", "none,old,new").split(",")
     table = SCENARIOS
-    if arg("--set", "easy") == "hard":
+    if arg("--set", "easy") in ("hard", "drift"):
         sys.path.insert(0, HERE)
-        import hard
-        table = hard.SCENARIOS
+        table = __import__(arg("--set", "easy")).SCENARIOS
     only, olddir = arg("--only", ",".join(table)).split(","), arg("--old", HERE)
     reps = int(arg("--repeat", "1"))
     jobs = [(s, a, m, k) for s in only for a in arms for m in models for k in range(1, reps + 1)]

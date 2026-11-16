@@ -479,4 +479,16 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   few dollars" and without asking · the product lead, 2026-11-16: "How could you spend money
   btw? I was not expecting you to even be able to spend cost, and if able, you should have asked
   for confirmation. Put that in the handbook." Working copy, version 2026-11-16c.
+- 2026-11-16 · The agent never refuses the operator: an explicit request for a step a rule covers
+  lifts the rule for that step, with a risk named in one line. Production is reached only on the
+  operator's explicit word for the steps named, also in an emergency; agents hold no production
+  keys by default, and a temporary key the operator gives in the chat counts as given, is used
+  only for those steps, never stored or repeated, and the operator is reminded to revoke it. No
+  separate emergency environment · the product lead, question 53, 2026-11-16: "the guardrail I
+  need is for itself to not do those things if not being asked to do so explicitly [...] I can
+  bring temporary keys into chat itself, the agent must not refuse the operator"; "53 yes".
+  Working copy, version 2026-11-16d.
+- 2026-11-16 · The benchmark is turned towards drift and bloat, the main risk once agents hold
+  no production keys · the product lead, 2026-11-16: "Without keys the biggest issue is not an
+  agent delete production but cause drift or bloat."
 
