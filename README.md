@@ -1,7 +1,7 @@
 # Kowboy handbook
 
 `HANDBOOK.md` is how agents work with us, for every session someone at Kowboy starts, on any
-repository: ten rules and the shape of a reply, kept under 4,000 characters. `WORK.md` is its
+repository: nine rules and the shape of a reply, kept under 4,000 characters. `WORK.md` is its
 required second page: what each rule covers, when to ask and when to go, the question log and
 the repository's memory, code, security and done; a session reads it before any work in a
 repository. `PHASES.md` holds the steps of each phase, read when that phase starts. The history
@@ -17,19 +17,19 @@ that kind belongs in the project's own repository, which is private.
 ## How it reaches a session
 
 Through the Kowboy package, a Claude Code plugin kept in this repository (`.claude-plugin/`,
-`hooks/`, `skills/`, `agents/`). Each person adds it once to their claude.ai account, and it then
+`hooks/`, `skills/`). Each person adds it once to their claude.ai account, and it then
 updates by itself from this repository. In every session it:
 
 - gives `HANDBOOK.md` and `WORK.md` whole at the start and after the session's memory is
   compacted;
-- repeats the ten rules at every message;
+- repeats the nine rules at every message;
 - holds a dangerous action on the platform's permission prompt, naming the rule, until the
   operator allows it: deleting outside the working folder, overwriting or deleting on GitHub,
   dropping a database, logging in to a server or deploying, writing to a server or through a
   connected service, sending mail, starting agents as separate programs, editing agents' rule
   files, and here the handbook and the package themselves;
-- sends a reply back once when it lacks its state line, or waits for the operator without a
-  numbered question, and has the advisor (`agents/advisor.md`) check a reply's questions first;
+- sends a reply back once when it lacks its status line, or waits for the operator without a
+  numbered question;
 - loads each phase of `PHASES.md` as a skill when that phase starts.
 
 The hold is a net, not a wall: it reads commands as text and can miss one, such as a deletion
@@ -46,7 +46,7 @@ How each person sets it up is in `docs/setup-new-account.md`.
 ## Changing it
 
 Only here, in a session on this repository, when the owner asks for the change in plain words:
-never implicitly and never as an agent's choice (rule 8 of the handbook).
+never implicitly and never as an agent's choice (rule 5 of the handbook).
 Save it, and the next session anywhere has it. Each change gets a line in `docs/decisions.md` with
 the date and the owner's words; the rule itself stays short. A rule that holds in one repository
 only goes into that repository's `AGENTS.md`, not here. A question about the handbook that must

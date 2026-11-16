@@ -3,10 +3,10 @@
 
     kowboy.py session-start HANDBOOK.md | WORK.md
                               gives the session that page whole
-    kowboy.py rules           repeats the ten rules at every message
+    kowboy.py rules           repeats the rules at every message
     kowboy.py guard           holds a dangerous action for the operator's yes
-    kowboy.py reply           sends back a reply without its state line, and has
-                              the advisor check a reply that asks the operator
+    kowboy.py reply           sends back a reply without its status line, or one
+                              that waits for the operator without a numbered question
 
 Each reads the event as JSON on stdin and answers as JSON on stdout. The pages
 are read from this repository itself, so no copy of them exists.
@@ -61,7 +61,7 @@ def session_start(name):
     answer("SessionStart", additionalContext=page_text(name))
 
 
-def ten_rules():
+def the_rules():
     text = page("HANDBOOK.md")
     match = re.search(r"^## The rules\n(.*?)(?=^## )", text, re.S | re.M)
     if not match:
@@ -72,7 +72,7 @@ def ten_rules():
 def rules(_event):
     answer(
         "UserPromptSubmit",
-        additionalContext="The Kowboy rules, repeated at every message:\n\n" + ten_rules(),
+        additionalContext="The Kowboy rules, repeated at every message:\n\n" + the_rules(),
     )
 
 
@@ -81,8 +81,8 @@ def rules(_event):
 RULE = {
     1: "rule 1, never destroy anything you cannot bring back yourself",
     2: "rule 2, never change production",
-    6: "rule 6, never change the rules agents work by",
-    8: "rule 8, never change, send, spend or pay for anything outside the repository",
+    5: "rule 5, never change the rules agents work by",
+    7: "rule 7, never change, send, spend or pay for anything outside the repository",
 }
 
 # (rule, what it is, pattern) checked against each simple command, from its first word.
@@ -103,8 +103,8 @@ COMMANDS = [
     (2, "deploying", r"^wrangler\s+(pages\s+)?(deploy|publish)\b"),
     (2, "deploying", r"^gcloud\s+(app|run|functions)\s+deploy\b"),
     (2, "deploying", r"^(kubectl\s+apply|terraform\s+apply|helm\s+(install|upgrade)|cap\s+\S+\s+deploy)\b"),
-    (8, "sending mail", r"^(sendmail|mail|mailx)(\s|$)|^aws\s+sesv?2?\s+send"),
-    (8, "starting an agent as a separate program", r"^(claude|@anthropic-ai/claude-code)\b.*\s(-p|--print)(\s|$)"),
+    (7, "sending mail", r"^(sendmail|mail|mailx)(\s|$)|^aws\s+sesv?2?\s+send"),
+    (7, "starting an agent as a separate program", r"^(claude|@anthropic-ai/claude-code)\b.*\s(-p|--print)(\s|$)"),
 ]
 
 # Database clients: their arguments are read as database statements.
@@ -314,7 +314,7 @@ def bash_reason(command, cwd):
         name = Path(words[0]).name
         for target in written_files(words):
             if rule_file_reason(target, current):
-                return 6, rule_file_reason(target, current)
+                return 5, rule_file_reason(target, current)
         if name in ("cd", "pushd"):
             current = resolve(words[1], current) if len(words) > 1 else Path.home()
             continue
@@ -335,7 +335,7 @@ def bash_reason(command, cwd):
                 return 1, what
         what = hold_web_write(args)
         if what:
-            return 8, what
+            return 7, what
     return None
 
 
@@ -344,7 +344,7 @@ def mcp_reason(tool):
         return None
     words = set(re.split(r"[_\-]", tool.split("__", 2)[-1].lower()))
     if tool in GITHUB_HOLD_TOOLS or words & WRITE_WORDS or not words & READ_WORDS:
-        return 8, "writing through a connected service"
+        return 7, "writing through a connected service"
     return None
 
 
@@ -360,7 +360,7 @@ def guard_reason(event):
         return bash_reason(data.get("command", ""), cwd)
     if tool in ("Write", "Edit", "MultiEdit", "NotebookEdit"):
         what = rule_file_reason(data.get("file_path") or data.get("notebook_path") or "", cwd)
-        return (6, what) if what else None
+        return (5, what) if what else None
     if tool.startswith("mcp__"):
         return mcp_reason(tool)
     return None
@@ -384,7 +384,7 @@ def guard(event):
 
 # --- reply ------------------------------------------------------------------
 
-STATES = ("Working:", "Waiting for you:", "Waiting for something else:", "Done:")
+STATES = ("Working", "Waiting for you", "Waiting for something else", "Done")
 
 
 def first_line(text):
@@ -395,51 +395,18 @@ def first_line(text):
     return ""
 
 
-def asks_operator(text):
-    return bool(re.search(r"^\s*(\*\*|#+\s*)?Questions\b", text, re.M))
+def status(text):
+    """The state after 'Status:' on the first line, or None."""
+    match = re.match(r"Status:\s*(.*)", first_line(text))
+    if not match:
+        return None
+    rest = match.group(1)
+    return next((s for s in sorted(STATES, key=len, reverse=True) if rest.startswith(s)), None)
 
 
 def numbers(text):
-    return set(re.findall(r"\*\*(\d+)\*\*", text))
-
-
-def this_turn(transcript_path):
-    """The operator's last message, whether the advisor ran since, and the question
-    numbers in replies before it."""
-    try:
-        lines = Path(transcript_path).read_text(encoding="utf-8").splitlines()
-    except (OSError, TypeError):
-        return "", False, set()
-    entries = []
-    for line in lines:
-        try:
-            entries.append(json.loads(line))
-        except json.JSONDecodeError:
-            continue
-    prompt, advisor, seen = "", False, set()
-    for entry in reversed(entries):
-        content = (entry.get("message") or {}).get("content")
-        is_prompt = entry.get("type") == "user" and not entry.get("isMeta") and (
-            isinstance(content, str)
-            or isinstance(content, list)
-            and not any(isinstance(p, dict) and p.get("type") == "tool_result" for p in content)
-        )
-        if is_prompt and not prompt:
-            prompt = content if isinstance(content, str) else " ".join(
-                p.get("text", "") for p in content if isinstance(p, dict)
-            )
-            continue
-        if entry.get("type") != "assistant" or not isinstance(content, list):
-            continue
-        for part in content:
-            if not isinstance(part, dict):
-                continue
-            if not prompt and part.get("type") == "tool_use":
-                if str((part.get("input") or {}).get("subagent_type", "")).endswith("advisor"):
-                    advisor = True
-            if prompt and part.get("type") == "text":
-                seen |= numbers(part.get("text", ""))
-    return prompt, advisor, seen
+    """Question numbers: a line that starts with a number and a colon, as '64: Merge?'."""
+    return set(re.findall(r"(?m)^[\s>*_\-]*(?:\*\*)?(\d+):", text))
 
 
 def reply(event):
@@ -448,31 +415,21 @@ def reply(event):
     text = event.get("last_assistant_message")
     if not isinstance(text, str) or not text.strip():
         return
-    reasons = []
-    if not first_line(text).startswith(STATES):
-        reasons.append(
-            "Start the reply with the state line: 'Working:', 'Waiting for you:', "
-            "'Waiting for something else:' or 'Done:' (HANDBOOK.md, How to reply)."
+    state = status(text)
+    if state is None:
+        reason = (
+            "Start the reply with the status line: 'Status: Working', 'Status: Waiting for "
+            "you', 'Status: Waiting for something else' or 'Status: Done' (HANDBOOK.md, How to "
+            "reply)."
         )
-    elif first_line(text).startswith("Waiting for you:") and not numbers(text):
-        reasons.append(
-            "A reply that waits for the operator asks numbered questions: give each its "
-            "number from the question log, in bold."
+    elif state == "Waiting for you" and not numbers(text):
+        reason = (
+            "A reply that waits for the operator asks numbered questions, each written with "
+            "its number from the question log and a colon, as '64: Merge into main?'."
         )
-    if asks_operator(text):
-        prompt, advisor, seen = this_turn(event.get("transcript_path"))
-        new = numbers(text) - seen
-        status = prompt.strip().lower() == "status" or "kowboy:status" in prompt
-        if new and not advisor and not status:
-            reasons.append(
-                "Before you ask the operator new questions ("
-                + ", ".join(sorted(new, key=int))
-                + "), have the advisor check them: call the agent 'kowboy:advisor' with each "
-                f"question, the operator's words for the item, and the path {ROOT / 'WORK.md'}. "
-                "Follow its answer or keep the question."
-            )
-    if reasons:
-        print(json.dumps({"decision": "block", "reason": "Kowboy package: " + " ".join(reasons)}))
+    else:
+        return
+    print(json.dumps({"decision": "block", "reason": "Kowboy package: " + reason}))
 
 
 if __name__ == "__main__":

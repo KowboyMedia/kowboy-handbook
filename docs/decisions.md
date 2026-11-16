@@ -642,3 +642,10 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   version; the key's GO rested on a removed rule, so the key needs the owner) and at 19 (reading
   a connected service; they cite the read-only-helper row, which question 65 would remove). No
   miss on a STOP · agent's run, not confirmed by the operator.
+- 2026-11-16 · The 24 doubtful rules traced to the owner are removed; rule 3 (things people see)
+  is folded into the old rule 5, so there are nine rules, renumbered. With them go the phase
+  Build, the advisor and its agent, the read-only helper, the second-agent check before "done"
+  and in Review. The rules approved only in bulk stay, rule 7 (now 6) among them. Quiz key 7
+  turns from GO to STOP (its exception was removed). Quiz on the result: 28 of 28 each; package
+  tests 19 of 19 · the operator, questions 65 and 66, 2026-11-16: "65 a", "66 a".
+- 2026-11-16 · Handbook 2026-11-16j is live · the operator, question 67, 2026-11-16: "67 a".

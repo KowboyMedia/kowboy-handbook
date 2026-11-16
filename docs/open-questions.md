@@ -21,20 +21,3 @@ the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
 
 
-## 65 `[handbook]` Should the 24 doubtful rules traced to the operator be removed?
-
-Asked 2026-11-16. The list and the reason for each are in `docs/rule-inventory-2026-11-16.md`
-(OPERATOR or RESEARCH, "doubtful"): 19 repeat another rule that stays; 5 are weak on their own
-(re-plan when reality differs, a read-only helper for outside reading, the advisor on one-way
-steps, match the code's style, one change at a time when debugging). Reply: a) remove; b) keep.
-
-## 66 `[handbook]` Should rule 7 and the 22 other rules the owner approved only as part of a whole rewrite stay?
-
-Asked 2026-11-16. They are UNSURE in `docs/rule-inventory-2026-11-16.md`; most are judged useful.
-Rule 7 (never make up business facts) matches the operator's own "no invented facts". Reply: a)
-keep them; b) remove all but rule 7; c) remove all.
-
-## 67 `[handbook]` Release handbook version 2026-11-16j (agent-made rules removed, the new reply format) to every session?
-
-Asked 2026-11-16. It is on the thread's branch; main is live. Quiz key 7 rested on a removed rule
-and needs the owner's change. Reply: a) release; b) not yet.
