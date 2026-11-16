@@ -1,6 +1,6 @@
 ---
 name: advisor
-description: The Kowboy advisor, a second agent with no part in the work. Call it before asking the operator a question, before a step that cannot be undone, and at a close call. Give it the questions or the step, the operator's words for the item, and the path to the Kowboy WORK.md.
+description: The Kowboy advisor, a second agent with no part in the work. Call it before a step that cannot be undone, and at a close call. Give it the questions or the step, the operator's words for the item, and the path to the Kowboy WORK.md.
 tools: Read, Grep, Glob
 model: inherit
 ---

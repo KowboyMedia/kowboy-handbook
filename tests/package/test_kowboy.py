@@ -207,85 +207,40 @@ class Guard(unittest.TestCase):
 
 
 class Reply(unittest.TestCase):
-    def check(self, text, transcript=None, active=False):
-        event = {"last_assistant_message": text, "stop_hook_active": active}
-        if transcript is not None:
-            event["transcript_path"] = transcript
-        return run("reply", event)
+    def check(self, text, active=False):
+        return run("reply", {"last_assistant_message": text, "stop_hook_active": active})
 
-    def test_a_reply_with_its_state_passes(self):
-        self.assertIsNone(self.check("**Working:** building the guard; next message by 14:30."))
-        self.assertIsNone(self.check("Done: nothing left here."))
+    def test_a_reply_with_its_status_passes(self):
+        self.assertIsNone(self.check("- **Status:** Working, building the guard."))
+        self.assertIsNone(self.check("Status: Done\n- Next: item 11."))
 
-    def test_a_reply_without_its_state_is_sent_back(self):
-        out = self.check("Here is what I did.\n\n- Built the guard.")
-        self.assertEqual(out["decision"], "block")
-        self.assertIn("Waiting for you:", out["reason"])
+    def test_a_reply_without_its_status_is_sent_back(self):
+        for text in ("Here is what I did.\n\n- Built the guard.", "Working: the guard.",
+                     "Status: thinking about it"):
+            with self.subTest(text=text):
+                out = self.check(text)
+                self.assertEqual(out["decision"], "block")
+                self.assertIn("Status: Waiting for you", out["reason"])
 
     def test_waiting_without_a_numbered_question_is_sent_back(self):
-        out = self.check("Waiting for you: should I go on?")
+        out = self.check("- Status: Waiting for you\n- Should I go on?")
         self.assertEqual(out["decision"], "block")
-        self.assertIn("number", out["reason"])
+        self.assertIn("64:", out["reason"])
 
-    def test_questions_go_to_the_advisor_first(self):
-        text = "**Waiting for you:** question 56.\n\n**Questions**\n- **56** Which?\n  - Reply: a or b."
-        out = self.check(text)
-        self.assertIn("kowboy:advisor", out["reason"])
+    def test_waiting_with_a_numbered_question_passes(self):
+        text = "- Status: Waiting for you, 64\n- 64: Merge into main?\n  - a) yes (recommended)\n  - b) no"
+        self.assertIsNone(self.check(text))
+        self.assertIsNone(self.check(text.replace("- 64:", "- **64:**")))
 
-    def test_questions_pass_once_the_advisor_ran(self):
-        text = "**Waiting for you:** question 56.\n\n**Questions**\n- **56** Which?\n  - Reply: a or b."
-        call = {"type": "tool_use", "name": "Agent", "input": {"subagent_type": "kowboy:advisor"}}
-        lines = [
-            {"type": "user", "message": {"content": "go on"}},
-            {"type": "assistant", "message": {"content": [call]}},
-            {"type": "user", "message": {"content": [{"type": "tool_result", "content": "Go"}]}},
-        ]
-        with tempfile.NamedTemporaryFile("w", suffix=".jsonl", delete=False) as f:
-            f.write("\n".join(json.dumps(line) for line in lines))
-        self.assertIsNone(self.check(text, f.name))
-        Path(f.name).unlink()
-
-    def transcript(self, lines):
-        f = tempfile.NamedTemporaryFile("w", suffix=".jsonl", delete=False)
-        f.write("\n".join(json.dumps(line) for line in lines))
-        f.close()
-        self.addCleanup(Path(f.name).unlink)
-        return f.name
-
-    def test_a_repeated_question_needs_no_new_advice(self):
-        text = "**Waiting for you:** question 56.\n\n**Questions**\n- **56** Which?\n  - Reply: a or b."
-        earlier = {"type": "assistant", "message": {"content": [{"type": "text", "text": text}]}}
-        path = self.transcript([earlier, {"type": "user", "message": {"content": "later"}}])
-        self.assertIsNone(self.check(text, path))
-
-    def test_status_needs_no_advice(self):
-        text = "**Waiting for you:** 22 and 55 open.\n\n**Questions**\n- **22** Done?\n- **55** Which?"
-        path = self.transcript([{"type": "user", "message": {"content": "status"}}])
-        self.assertIsNone(self.check(text, path))
-
-    def test_status_by_skill_or_command_needs_no_advice(self):
-        text = "**Waiting for you:** 22 and 55 open.\n\n**Questions**\n- **22** Done?\n- **55** Which?"
-        skill = {"type": "user", "isMeta": True, "message": {"content": "Read the section Status"}}
-        for prompt in ("status", "<command-name>/kowboy:status</command-name>"):
-            with self.subTest(prompt=prompt):
-                path = self.transcript([{"type": "user", "message": {"content": prompt}}, skill])
-                self.assertIsNone(self.check(text, path))
-
-    def test_messages_after_the_advisor_do_not_hide_it(self):
-        text = "**Waiting for you:** question 56.\n\n**Questions**\n- **56** Which?"
-        call = {"type": "tool_use", "name": "Agent", "input": {"subagent_type": "kowboy:advisor"}}
-        path = self.transcript([
-            {"type": "user", "message": {"content": "go on"}},
-            {"type": "assistant", "message": {"content": [call]}},
-            {"type": "user", "isMeta": True, "message": {"content": "Stop hook feedback: commit"}},
-        ])
-        self.assertIsNone(self.check(text, path))
+    def test_a_bold_number_without_colon_is_not_a_question(self):
+        out = self.check("- Status: Waiting for you\n- **64** Merge?")
+        self.assertEqual(out["decision"], "block")
 
     def test_odd_input_is_ignored(self):
         self.assertIsNone(run("reply", {"last_assistant_message": 5}))
 
     def test_a_reply_is_sent_back_only_once(self):
-        self.assertIsNone(self.check("No state here.", active=True))
+        self.assertIsNone(self.check("No status here.", active=True))
 
 
 class Phases(unittest.TestCase):
