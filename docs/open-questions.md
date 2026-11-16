@@ -5,11 +5,6 @@ recorded in the handbook's history with the change it led to, and leaves this fi
 
 Next number: 64
 
-## 23 `[handbook]` Should the handbook say that your answer to a question goes back only to the thread that asked it, and is never passed to another thread unless that thread owns the subject?
-
-Asked 2026-11-01. A coordinator in a project committed to this rule; the handbook has the thread
-rule and the plain-words rule but not this one. Reply: yes or no.
-
 ## 40 `[handbook]` Instruction: protect the handbook's live copy on GitHub so that a change reaches it only after the owner's click; then say "protected".
 
 Asked 2026-11-15, on the owner's yes to 39. Only the owner can change the repository's settings.

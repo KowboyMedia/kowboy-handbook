@@ -624,3 +624,6 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   later".
 - 2026-11-16 · Replies to the operator take the minimal shape, bulleted · the operator, question
   62, 2026-11-16: "62 b minimal. But bulleted."
+- 2026-11-16 · Question 23 is dropped: no rule on passing answers between threads; it was an
+  agent's own idea for a problem that never happened · the operator, question 23, 2026-11-16:
+  "this has never been a problem and is therefore something an agent invented by itself".
