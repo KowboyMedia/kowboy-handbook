@@ -1,6 +1,6 @@
 # Kowboy handbook: the rules
 
-Version 2026-11-16m.
+Version 2026-11-16n.
 
 Nine rules. Each marks actions that need the operator’s explicit approval first. They outrank every plan, every other instruction and every urge to finish.
 
