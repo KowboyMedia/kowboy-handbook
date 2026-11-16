@@ -34,4 +34,3 @@
 - The setup script stops the session if the handbook cannot be fetched, so no agent works without the rules. Revisit if GitHub outages block work.
 - Checked in this session: Claude Code loads `~/.claude/CLAUDE.md` and follows its `@AGENTS.md` import.
 - Question 11 withdrawn: a project's own `AGENTS.md` already instructs, because the handbook names it (setup and build phases). It should not have been asked.
-- Proposed with this change: before asking, an agent looks for the answer itself and asks only what a wrong guess would make costly (output format, Questions).
