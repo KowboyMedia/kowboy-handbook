@@ -555,3 +555,7 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   prompt, its behaviour in auto mode is not stated; model-run hooks exist; files outside the
   package are not copied. The advisor answered Go on both choices · agent's choice, not
   confirmed by the operator.
+- 2026-11-16 · The operator's plan can add our own package: "Add" offers creating with Claude,
+  uploading and adding a marketplace, so item 9 is built and updates by itself from this
+  repository · the operator, question 55, 2026-11-16: "55 i can add or create with Claude,
+  upload, Marketplace".
