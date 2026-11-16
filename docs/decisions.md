@@ -543,3 +543,15 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   `WORK.md` and `PHASES.md` · the product lead, question 50, 2026-11-16: "Yes go live now,
   unless the above needs adjustment".
 
+- 2026-11-16 · The benchmark in `tests/bench/` is not run until the operator says so · the
+  operator, 2026-11-16: "Dont run the benchmarks yet until i say so".
+- 2026-11-16 · Plan for item 9: the package sits at the root of this repository and reads the
+  three pages themselves; a dangerous action is held on the platform's permission prompt, never
+  a hard block, which for the package supersedes the hard deny list of question 12, on question
+  53; the advisor runs by itself only when a reply asks the operator something, and never pushes
+  back a question about a step under one of the ten rules; the phases load as skills that read
+  `PHASES.md`. Where the agent looked: the platform's plugin documentation, read 2026-11-16 by a
+  reading agent: a package is added under Customize, Plugins, Add; "ask" shows the permission
+  prompt, its behaviour in auto mode is not stated; model-run hooks exist; files outside the
+  package are not copied. The advisor answered Go on both choices · agent's choice, not
+  confirmed by the operator.

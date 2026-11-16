@@ -5,10 +5,11 @@ not done, keep it current.
 
 ## Where to pick up
 
-Item 8 is done: the handbook is live as three pages, version 2026-11-16h (2026-11-16). The key
-clean-up (question 43) is booked with the product lead for 2026-11-20. Next is item 9, the
-Kowboy package, in a new thread with "resume next steps"; it includes running the benchmark in
-`tests/bench/` on every change. Then item 11 (the one-page map of each repository) and item 4.
+Item 9, the Kowboy package, is in progress since 2026-11-16: its plan is written below and it
+waits for the operator's look at the plan's settings (question 55) before anything is built.
+The benchmark in `tests/bench/` is not run until the operator says so (2026-11-16). The key
+clean-up (question 43) is booked with the product lead for 2026-11-20. After item 9: item 11
+(the one-page map of each repository), then item 4.
 
 ## Items
 
@@ -49,8 +50,38 @@ Kowboy package, in a new thread with "resume next steps"; it includes running th
    its questions, carries the phases to be loaded when a phase starts, and updates centrally.
    First step: the owner looks whether his plan offers adding a package (Customize, Plugins,
    Add); if not, back to the owner before anything is built. Then the preferences text and the
-   environment's setup script are replaced once, which closes 22. One to a few sessions. Ready
-   when item 8 is live.
+   environment's setup script are replaced once, which closes 22. One to a few sessions. In
+   progress 2026-11-16; waits for question 55.
+   - The one part: the package, kept at the root of this repository, so it reads `HANDBOOK.md`,
+     `WORK.md` and `PHASES.md` themselves and no copy of them exists.
+   - What changes for the product: every session on an account with the package:
+     1. is given `HANDBOOK.md` and `WORK.md` whole when it starts and again after its memory is
+        compacted, so neither the preferences download nor the environment's copy is needed;
+     2. is given the ten rules again at every message, read from `HANDBOOK.md`;
+     3. is held for the operator's yes, on the platform's own permission prompt naming the rule,
+        before: deleting outside the working folder, overwriting history on GitHub, dropping or
+        emptying a database, deploying or logging in to a server, writing through a connected
+        service (mail, chat, calendar, files, tasks), paid generation, starting agents as
+        separate programs, editing agents' rule files (`CLAUDE.md`, `AGENTS.md`, settings,
+        hooks). A prompt, never a hard block, because the operator's word lifts a rule
+        (question 53);
+     4. has a reply sent back once when its first line lacks the state, or when it waits for the
+        operator without a numbered question;
+     5. loads a phase's steps from `PHASES.md` when that phase starts;
+     6. has the advisor run by itself (question 33) only when a reply asks the operator
+        something: one model call checks the questions against "Ask or go" and sends the reply
+        back once when one is clearly not the operator's (tooling, one workable option, already
+        answered); never a question about a step under one of the ten rules, and the agent may
+        keep its question;
+     7. updates when this repository changes.
+   - What proves it: a script test for each check (a reply without its state is sent back, a
+     held action is held, a harmless one passes), run on every change; then the package added
+     to the account and seen working in a fresh cloud session. The benchmark waits for the
+     operator's word.
+   - Unknowns, each tried first: whether the permission prompt still reaches the operator in
+     auto mode (the documentation does not say; if not, back to the operator); a held action in
+     a session nobody watches waits until someone answers.
+   - Not in it: a repository's `AGENTS.md` read at the start (item 11); removing keys (43).
 10. `[handbook]` Keys to live systems out of the sessions that build (question 26, the owner
     2026-11-15): find out which keys can be limited or moved to a setting used only for a
     release, and come back with the steps only the owner can take. One session. After item 9.
