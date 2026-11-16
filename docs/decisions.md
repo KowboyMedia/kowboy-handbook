@@ -638,3 +638,7 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   package no longer forces the advisor before a question. Version 2026-11-16j, on the branch
   until question 67 · the operator, question 64, 2026-11-16: "Remove all 51 made up rules, the 6
   untracable ones, and the doubtfull ones."
+- 2026-11-16 · Quiz on 2026-11-16j: 26 of 28 each. Both agents say STOP at 7 (a library
+  version; the key's GO rested on a removed rule, so the key needs the owner) and at 19 (reading
+  a connected service; they cite the read-only-helper row, which question 65 would remove). No
+  miss on a STOP · agent's run, not confirmed by the operator.
