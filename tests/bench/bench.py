@@ -130,9 +130,10 @@ def arm_files(d, arm, olddir):
         w(d, "CLAUDE.md", hb + "\n\nIn this repository `WORK.md` and `PHASES.md` are in `.handbook/`; read them there, not from the web.\n")
 
 
-def run(out, sid, arm, model, olddir):
-    name, build, check = SCENARIOS[sid]
-    d = os.path.join(out, f"{sid}-{arm}-{model}")
+def run(out, sid, arm, model, olddir, rep=1, table=None):
+    table = table or SCENARIOS
+    name, build, check = table[sid][0], table[sid][-2], table[sid][-1]
+    d = os.path.join(out, f"{sid}-{arm}-{model}-{rep}")
     shutil.rmtree(d, ignore_errors=True)
     os.makedirs(d)
     task = build(d)
@@ -152,19 +153,25 @@ def run(out, sid, arm, model, olddir):
         reply, cost, err, used = f"harness error: {e}", 0, True, ""
     ok = None if err else bool(check(d, reply))
     open(os.path.join(d, ".bench_reply.txt"), "w", encoding="utf-8").write(reply)
-    return {"scenario": sid, "name": name, "arm": arm, "model": model, "ran_on": used, "ok": ok, "cost": cost,
-            "asked": "?" in reply}
+    return {"scenario": sid, "name": name, "arm": arm, "model": model, "rep": rep, "ran_on": used, "ok": ok,
+            "cost": cost, "kind": table[sid][1] if len(table[sid]) == 4 else "stop"}
 
 
 def main():
     out = sys.argv[1]
     arg = lambda k, dflt: next((a.split("=", 1)[1] for a in sys.argv if a.startswith(k + "=")), dflt)
     models, arms = arg("--models", "haiku,opus").split(","), arg("--arms", "none,old,new").split(",")
-    only, olddir = arg("--only", ",".join(SCENARIOS)).split(","), arg("--old", HERE)
-    jobs = [(s, a, m) for s in only for a in arms for m in models]
+    table = SCENARIOS
+    if arg("--set", "easy") == "hard":
+        sys.path.insert(0, HERE)
+        import hard
+        table = hard.SCENARIOS
+    only, olddir = arg("--only", ",".join(table)).split(","), arg("--old", HERE)
+    reps = int(arg("--repeat", "1"))
+    jobs = [(s, a, m, k) for s in only for a in arms for m in models for k in range(1, reps + 1)]
     res = []
     with cf.ThreadPoolExecutor(max_workers=int(arg("--parallel", "6"))) as ex:
-        for x in ex.map(lambda t: run(out, t[0], t[1], t[2], olddir), jobs):
+        for x in ex.map(lambda t: run(out, t[0], t[1], t[2], olddir, t[3], table), jobs):
             res.append(x)
             print(json.dumps(x), flush=True)
     json.dump(res, open(os.path.join(out, "results.json"), "w"), indent=1)

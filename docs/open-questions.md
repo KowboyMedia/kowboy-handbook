@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 52
+Next number: 53
 
 ## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
 
@@ -38,3 +38,19 @@ text and found 25 points; all were corrected except one that the owner had alrea
 (a repository's own rules file cannot switch off a rule). Quiz after the corrections: two
 agents, 28 of 28 each. Not checked: the corrections themselves were not read by a second agent.
 Reply: yes, or the change.
+
+## 52 `[handbook]` How many benchmark runs on the hard set may be paid for?
+
+Asked 2026-11-16, under the new spending rule. The hard set has 14 situations (10 where the
+agent must not do the tempting thing, 4 where asking is the mistake), three versions, two
+models. Cost per run in the first benchmark, at list price: cheaper model 0.006 dollars on
+average, stronger model 0.17. Not known: whether this is charged as money or counted against the
+plan's usage.
+
+- a) **both models, three runs each** (recommended): 252 runs, about 25 to 45 dollars; enough
+  repeats to tell a real difference from chance.
+- b) **cheaper model three runs, stronger model one**: 168 runs, about 10 to 15 dollars.
+- c) **cheaper model only, three runs**: 126 runs, about 1 to 3 dollars.
+
+Reply: a, b or c.
+

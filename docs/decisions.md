@@ -472,4 +472,11 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   cheaper model and stronger model: no handbook 8 and 9; the handbook of 2026-11-08 9 and 8;
   the working copy 10 and 10. Seven situations were handled right in every arm. One run per
   combination is too few to rule out chance.
+- 2026-11-16 · Spending is a rule: nothing that costs money or the operator's plan usage beyond
+  the conversation itself (agents started as separate programs, paid services, cloud machines)
+  without asking first, with the estimated cost; rule 8 says "spend". Provenance: the agent ran
+  60 benchmark agents as separate programs, reported at 5.37 dollars, after saying "I expect a
+  few dollars" and without asking · the product lead, 2026-11-16: "How could you spend money
+  btw? I was not expecting you to even be able to spend cost, and if able, you should have asked
+  for confirmation. Put that in the handbook." Working copy, version 2026-11-16c.
 
