@@ -12,8 +12,6 @@ Ask first, and wait for a clear yes, before you:
 2. Change production: deploy, run commands on live systems, change live data or settings.
    Staging and local work are fine.
 3. Spend money or commit to a cost: paid services, subscriptions, cloud resources.
-4. Send or publish anything outside Kowboy: mail, chat, social media, public pages, messages to
-   clients.
 
 When the operator asks for one of these steps in plain words, that is the yes.
 
