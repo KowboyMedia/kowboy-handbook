@@ -31,9 +31,10 @@ puts it in the shared copy; nothing changes for anyone until they add it.
 - b) **not yet**: nothing can be added; item 9 waits.
 - Reply: release, or not yet.
 
-## 57 `[handbook]` Instruction: add the Kowboy package to your account and replace the Claude Code part of your preferences; then say "added".
+## 57 `[handbook]` Instruction: add the Kowboy package to your account; then say "added".
 
-Asked 2026-11-16, for after the release (56). Replaces 22. The steps are in
-`docs/setup-new-account.md`, parts 1 and 2. A new thread with "resume next steps" then checks the
-package in a fresh session and removes the old handbook download from the environment on your
-approval card. The colleague gets the same steps when the owner says so.
+Asked 2026-11-16, for after the release (56). Replaces 22. Simplified the same day on the
+operator's "simplify for me": the preferences stay as they are for now (their download is
+harmless next to the package); the agent removes the environment's old copy on an approval card.
+Steps: claude.ai, Customize, Plugins, Add, Add marketplace; enter `KowboyMedia/kowboy-handbook`,
+confirm, turn on "Sync automatically"; install "kowboy".
