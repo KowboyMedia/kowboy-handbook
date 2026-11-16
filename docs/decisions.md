@@ -583,3 +583,9 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   written as `--delete` or `apps:destroy`, backticks, `curl -fsSLo`, `command -v ssh` held, the
   "status" reply after its skill loads). All nine are fixed, each with a test; 23 tests pass.
   They were not given a third review · agent's choice, not confirmed by the operator.
+- 2026-11-16 · Replies to the operator are as short as the operator's example; written into this
+  repository's `AGENTS.md` on the second correction (WORK.md, section 4); whether it goes into the
+  handbook for every repository is question 58 · the operator, 2026-11-16: "Idk summarize whats
+  going on, why is this so complex [...] simplify for me", then "Do you consider this reply
+  simple? [...] Simple is this: 'All set, need your confirmation to release - release? Then I'll
+  guide the install.'"
