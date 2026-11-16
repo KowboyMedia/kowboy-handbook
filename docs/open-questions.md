@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 61
+Next number: 62
 
 ## 23 `[handbook]` Should the handbook say that your answer to a question goes back only to the thread that asked it, and is never passed to another thread unless that thread owns the subject?
 
@@ -22,3 +22,8 @@ Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
+
+## 61 `[handbook]` Should this thread's work (the fresh-session check of item 9, questions 59 and 60) be merged into the shared copy on main?
+
+Asked 2026-11-16. It is saved on the thread's branch only; the question log belongs on main.
+Reply: a) merge; b) keep it on the branch.
