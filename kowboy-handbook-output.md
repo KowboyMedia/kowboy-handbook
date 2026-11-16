@@ -1,6 +1,6 @@
 # Kowboy handbook: output format
 
-Version 2026-11-16n.
+Version 2026-11-16o.
 
 Bottom line first, as bullets, at a high level: what it means for the product. Technical terms
 are fine; the inner workings stay out unless asked for. Send nothing while you work, and never
