@@ -9,7 +9,7 @@ Version 2026-11-16m. A workflow to follow with judgement, not rules: the nine ru
 - `kowboy-handbook-phase-build.md`: "Make a small change" when the change fits in one sentence, stays inside one part, and touches no connection, stored data, access check or anything that cannot be undone; "Plan an item" when a change is more than one sentence, or touches more than one part or a connection; "Build" when a planned item is built.
 - `kowboy-handbook-phase-review.md`: "Review" before anything is reported done.
 - `kowboy-handbook-phase-release.md`: "Release and operate" when the operator says "release", a health check is red, or something is wrong in production.
-- "Status" when the operator says "status": in the output format above.
+- "Status" when the operator says "status": in the output format (`kowboy-handbook-output.md`).
 
 ## Run a session
 

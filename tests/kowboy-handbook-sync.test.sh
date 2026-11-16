@@ -131,6 +131,69 @@ test_9_this_repository_is_current() {
     || fail 9 "run: bash kowboy-handbook-sync.sh . ."
 }
 
+snapshot() { (cd "$1" && find . -type f -exec sha256sum {} + | sort); }
+
+test_10_start_without_end_stops_and_changes_nothing() {
+  local hb p before; hb=$(handbook_copy); p=$(mktemp -d)
+  printf '%s\nhalf a block\n' "$start" > "$p/AGENTS.md"
+  before=$(snapshot "$p")
+  if bash "$sync" "$hb" "$p" >/dev/null 2>&1; then fail 10 "sync succeeded with a broken block"; return; fi
+  [ "$before" = "$(snapshot "$p")" ] \
+    && pass "10 a start marker without an end marker stops the sync and changes nothing" \
+    || fail 10 "project changed"
+}
+
+test_11_marker_in_later_text_is_kept() {
+  local hb p; hb=$(handbook_copy); p=$(mktemp -d)
+  bash "$sync" "$hb" "$p" >/dev/null
+  printf 'Notes\n%s\nquoted marker above, keep me\n' "$start" >> "$p/AGENTS.md"
+  bash "$sync" "$hb" "$p" >/dev/null || { fail 11 "sync exited non-zero"; return; }
+  grep -qxF 'quoted marker above, keep me' "$p/AGENTS.md" \
+    && pass "11 a marker quoted in the project's own text later on is kept, with the text after it" \
+    || fail 11 "project text after a quoted marker was lost"
+}
+
+test_12_windows_line_ends_replace_the_block() {
+  local hb p; hb=$(handbook_copy); p=$(mktemp -d)
+  printf 'Project notes\n' > "$p/AGENTS.md"
+  bash "$sync" "$hb" "$p" >/dev/null
+  sed -i 's/$/\r/' "$p/AGENTS.md"
+  bash "$sync" "$hb" "$p" >/dev/null || { fail 12 "sync exited non-zero"; return; }
+  [ "$(grep -c 'kowboy-handbook:start' "$p/AGENTS.md")" = 1 ] \
+    && grep -q '^Project notes' "$p/AGENTS.md" \
+    && pass "12 AGENTS.md with Windows line ends gets its block replaced, not a second one" \
+    || fail 12 "block duplicated or project text lost"
+}
+
+test_13_claude_md_linked_to_agents_md() {
+  local hb p; hb=$(handbook_copy); p=$(mktemp -d)
+  printf 'Project notes\n' > "$p/AGENTS.md"
+  ln -s AGENTS.md "$p/CLAUDE.md"
+  bash "$sync" "$hb" "$p" >/dev/null || { fail 13 "sync exited non-zero"; return; }
+  [ -L "$p/CLAUDE.md" ] && ! grep -qxF '@AGENTS.md' "$p/AGENTS.md" \
+    && pass "13 CLAUDE.md linked to AGENTS.md is left alone and AGENTS.md gets no import line" \
+    || fail 13 "link replaced or '@AGENTS.md' written into AGENTS.md"
+}
+
+test_14_no_trailing_newline_is_stable() {
+  local hb p before; hb=$(handbook_copy); p=$(mktemp -d)
+  printf 'Project notes without newline' > "$p/AGENTS.md"
+  bash "$sync" "$hb" "$p" >/dev/null
+  before=$(snapshot "$p")
+  bash "$sync" "$hb" "$p" >/dev/null || { fail 14 "sync exited non-zero"; return; }
+  [ "$before" = "$(snapshot "$p")" ] \
+    && pass "14 AGENTS.md without a final newline is stable from the first run" \
+    || fail 14 "second run changed files"
+}
+
+test_15_handbook_synced_onto_itself_keeps_phases() {
+  local hb; hb=$(handbook_copy)
+  bash "$sync" "$hb" "$hb" >/dev/null || { fail 15 "sync exited non-zero"; return; }
+  diff -r "$repo/kowboy-handbook-phases" "$hb/kowboy-handbook-phases" >/dev/null \
+    && pass "15 syncing the handbook onto itself keeps its phase files" \
+    || fail 15 "phase files changed or deleted"
+}
+
 test_1_new_project_gets_agents_md
 test_2_existing_agents_md_is_kept
 test_3_second_run_changes_nothing
@@ -140,5 +203,11 @@ test_6_index_matches_phase_files
 test_7_claude_md_loads_agents_md
 test_8_missing_handbook_file_stops_and_changes_nothing
 test_9_this_repository_is_current
+test_10_start_without_end_stops_and_changes_nothing
+test_11_marker_in_later_text_is_kept
+test_12_windows_line_ends_replace_the_block
+test_13_claude_md_linked_to_agents_md
+test_14_no_trailing_newline_is_stable
+test_15_handbook_synced_onto_itself_keeps_phases
 
 [ "$failed" = 0 ] && echo "all passed" || { echo "some failed"; exit 1; }

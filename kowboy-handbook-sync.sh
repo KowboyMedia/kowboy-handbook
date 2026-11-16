@@ -26,10 +26,21 @@ for f in kowboy-handbook-rules.md kowboy-handbook-output.md kowboy-handbook-phas
 done
 ls "$hb"/kowboy-handbook-phases/kowboy-handbook-phase-*.md >/dev/null 2>&1 \
   || stop "no phase files in $hb/kowboy-handbook-phases; nothing was changed"
+
+# Line numbers of the first start marker and the first end marker after it ("" when there is no
+# block). A line ending in \r (Windows line ends) still counts as the marker.
 agents="$proj/AGENTS.md"
-if [ -f "$agents" ] && grep -qxF "$start" "$agents" && ! grep -qxF "$end" "$agents"; then
-  stop "$agents has the start marker but not the end marker; fix it by hand, nothing was changed"
+block_lines=""
+if [ -f "$agents" ]; then
+  block_lines=$(awk -v s="$start" -v e="$end" '
+    { line = $0; sub(/\r$/, "", line) }
+    !first && line == s { first = NR; next }
+    first && line == e { print first, NR; found = 1; exit }
+    END { if (first && !found) print first, 0 }' "$agents")
 fi
+case "$block_lines" in
+  *" 0") stop "$agents has the start marker but no end marker after it; fix it by hand, nothing was changed" ;;
+esac
 
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
@@ -45,15 +56,22 @@ trap 'rm -rf "$tmp"' EXIT
   echo "$end"
 } > "$tmp/block"
 
-# AGENTS.md: replace the block, or put it on top. Writing with cat keeps the file's permissions.
-if [ -f "$agents" ] && grep -qxF "$start" "$agents"; then
-  awk -v s="$start" -v e="$end" -v b="$tmp/block" '
-    $0 == s { while ((getline line < b) > 0) print line; skip = 1; next }
-    skip && $0 == e { skip = 0; next }
-    !skip { print }' "$agents" > "$tmp/agents"
+# AGENTS.md: replace the first block, or put the block on top. Writing with cat keeps the file's
+# permissions and writes through a symbolic link.
+if [ -n "$block_lines" ]; then
+  read -r first last <<< "$block_lines"
+  awk -v first="$first" -v last="$last" -v b="$tmp/block" '
+    NR == first { while ((getline line < b) > 0) print line }
+    NR >= first && NR <= last { next }
+    { print }' "$agents" > "$tmp/agents"
   how="block replaced"
 elif [ -f "$agents" ]; then
-  { cat "$tmp/block"; echo; cat "$agents"; } > "$tmp/agents"
+  {
+    cat "$tmp/block"
+    echo
+    cat "$agents"
+    [ -z "$(tail -c1 "$agents")" ] || echo
+  } > "$tmp/agents"
   how="block added on top"
 else
   cp "$tmp/block" "$tmp/agents"
@@ -75,12 +93,14 @@ else
   say "phase files copied"
 fi
 
-# CLAUDE.md
+# CLAUDE.md. Skipped when it is the same file as AGENTS.md (a symbolic link either way).
 claude="$proj/CLAUDE.md"
-if [ ! -f "$claude" ]; then
+if [ -e "$claude" ] && [ "$claude" -ef "$agents" ]; then
+  say "CLAUDE.md is AGENTS.md itself, left as it is"
+elif [ ! -f "$claude" ]; then
   echo '@AGENTS.md' > "$claude"
   say "CLAUDE.md created"
-elif ! grep -qxF '@AGENTS.md' "$claude"; then
+elif ! grep -qxE $'@AGENTS\\.md\r?' "$claude"; then
   { echo '@AGENTS.md'; echo; cat "$claude"; } > "$tmp/claude"
   cat "$tmp/claude" > "$claude"
   say "CLAUDE.md now loads AGENTS.md"

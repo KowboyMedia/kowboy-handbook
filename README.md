@@ -14,10 +14,12 @@ The three always-read files are copied into a block at the top of each project's
 ## Add the handbook to a project
 
 1. Copy [`kowboy-handbook-sync.yml`](kowboy-handbook-sync.yml) to `.github/workflows/kowboy-handbook-sync.yml` in the project.
-2. In the project's settings on GitHub, under Actions → General → Workflow permissions, choose "Read and write permissions".
-3. In the project's Actions tab, run "kowboy-handbook-sync" once.
+2. In the project's Actions tab, run "kowboy-handbook-sync" once.
 
 From then on, the project picks up every change to `main` here once a day, at 04:17 UTC.
+
+- The workflow commits straight to the project's default branch. If that branch requires pull requests or passing checks, the push fails and the run shows it in red.
+- The workflow file itself is not synced: GitHub does not let a workflow change workflow files. When `kowboy-handbook-sync.yml` changes here, copy it into each project again.
 
 ## Change the handbook
 

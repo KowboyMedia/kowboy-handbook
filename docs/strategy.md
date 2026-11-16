@@ -47,6 +47,12 @@ Each is a test in `tests/kowboy-handbook-sync.test.sh` with the same number.
 7. `CLAUDE.md` loads `AGENTS.md`, once, and keeps its own text.
 8. A missing handbook file stops the sync with a message naming it, and the project is left unchanged.
 9. This repository's own `AGENTS.md` block matches the handbook text.
+10. A start marker without an end marker stops the sync, and the project is left unchanged.
+11. A marker quoted later in the project's own text is kept, with the text after it.
+12. `AGENTS.md` with Windows line ends gets its block replaced, not a second one.
+13. A `CLAUDE.md` linked to `AGENTS.md` is left alone.
+14. `AGENTS.md` without a final newline is stable from the first run.
+15. Syncing the handbook onto itself keeps its phase files.
 
 ## Out of scope
 
