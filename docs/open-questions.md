@@ -22,15 +22,6 @@ Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
-## 56 `[handbook]` Should the Kowboy package be released, so it can be added to accounts?
-
-Asked 2026-11-16. Item 9. The package is built and passes its 21 script tests and a second
-agent's review; it has not yet run in a real session, which only adding it allows. Releasing
-puts it in the shared copy; nothing changes for anyone until they add it.
-- a) **release** (recommended): it can be added today and is seen working in the next session.
-- b) **not yet**: nothing can be added; item 9 waits.
-- Reply: release, or not yet.
-
 ## 57 `[handbook]` Instruction: add the Kowboy package to your account; then say "added".
 
 Asked 2026-11-16, for after the release (56). Replaces 22. Simplified the same day on the

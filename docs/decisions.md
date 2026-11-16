@@ -589,3 +589,7 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   going on, why is this so complex [...] simplify for me", then "Do you consider this reply
   simple? [...] Simple is this: 'All set, need your confirmation to release - release? Then I'll
   guide the install.'"
+- 2026-11-16 · The Kowboy package is released: it is in the shared copy and can be added to
+  accounts; the handbook's three pages are unchanged; tests green (23) and the platform's plugin
+  check passed before the release · the operator, question 56, 2026-11-16: "Answer and then
+  release".
