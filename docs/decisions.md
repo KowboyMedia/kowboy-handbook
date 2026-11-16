@@ -14,7 +14,7 @@
 
 - **5b:** the Status bullet does not name the current phase; the output format stays as it is.
 - **6a:** this repository runs the tests on every pull request and every change to `main` (`.github/workflows/kowboy-handbook-tests.yml`).
-- **8a:** `main` is to be protected so that a merge needs a pull request with one approving review and the check "kowboy-handbook-tests" green. Admins can still merge without the review, so a sole operator is never locked out. Revisit when a second person can review. The agent could not set this (the session's GitHub access does not allow changing branch protection); the operator sets it in GitHub's settings.
+- **8a:** `main` is protected: a merge needs a pull request with one approving review and the check "kowboy-handbook-tests" green. Admins can still merge without the review, so a sole operator is never locked out. Revisit when a second person can review. The operator set it in GitHub's settings on 2026-11-16, since this session's GitHub access cannot change branch protection.
 - **Release (7a):** `claude/handbook-restructure` merged into `main` through a pull request with the tests green. It reaches a project at its next daily sync, once that project has the workflow. Undo: revert the merge on `main`; projects follow at their next sync.
 
 ## 2026-11-16: shorter replies (operator: "Your output is too verbose ... This needs to be solved")
