@@ -3,7 +3,7 @@
 
     kowboy.py session-start HANDBOOK.md | WORK.md
                               gives the session that page whole
-    kowboy.py rules           repeats the ten rules at every message
+    kowboy.py rules           repeats the rules at every message
     kowboy.py guard           holds a dangerous action for the operator's yes
     kowboy.py reply           sends back a reply without its status line, or one
                               that waits for the operator without a numbered question
@@ -61,7 +61,7 @@ def session_start(name):
     answer("SessionStart", additionalContext=page_text(name))
 
 
-def ten_rules():
+def the_rules():
     text = page("HANDBOOK.md")
     match = re.search(r"^## The rules\n(.*?)(?=^## )", text, re.S | re.M)
     if not match:
@@ -72,7 +72,7 @@ def ten_rules():
 def rules(_event):
     answer(
         "UserPromptSubmit",
-        additionalContext="The Kowboy rules, repeated at every message:\n\n" + ten_rules(),
+        additionalContext="The Kowboy rules, repeated at every message:\n\n" + the_rules(),
     )
 
 
@@ -81,8 +81,8 @@ def rules(_event):
 RULE = {
     1: "rule 1, never destroy anything you cannot bring back yourself",
     2: "rule 2, never change production",
-    6: "rule 6, never change the rules agents work by",
-    8: "rule 8, never change, send, spend or pay for anything outside the repository",
+    5: "rule 5, never change the rules agents work by",
+    7: "rule 7, never change, send, spend or pay for anything outside the repository",
 }
 
 # (rule, what it is, pattern) checked against each simple command, from its first word.
@@ -103,8 +103,8 @@ COMMANDS = [
     (2, "deploying", r"^wrangler\s+(pages\s+)?(deploy|publish)\b"),
     (2, "deploying", r"^gcloud\s+(app|run|functions)\s+deploy\b"),
     (2, "deploying", r"^(kubectl\s+apply|terraform\s+apply|helm\s+(install|upgrade)|cap\s+\S+\s+deploy)\b"),
-    (8, "sending mail", r"^(sendmail|mail|mailx)(\s|$)|^aws\s+sesv?2?\s+send"),
-    (8, "starting an agent as a separate program", r"^(claude|@anthropic-ai/claude-code)\b.*\s(-p|--print)(\s|$)"),
+    (7, "sending mail", r"^(sendmail|mail|mailx)(\s|$)|^aws\s+sesv?2?\s+send"),
+    (7, "starting an agent as a separate program", r"^(claude|@anthropic-ai/claude-code)\b.*\s(-p|--print)(\s|$)"),
 ]
 
 # Database clients: their arguments are read as database statements.
@@ -314,7 +314,7 @@ def bash_reason(command, cwd):
         name = Path(words[0]).name
         for target in written_files(words):
             if rule_file_reason(target, current):
-                return 6, rule_file_reason(target, current)
+                return 5, rule_file_reason(target, current)
         if name in ("cd", "pushd"):
             current = resolve(words[1], current) if len(words) > 1 else Path.home()
             continue
@@ -335,7 +335,7 @@ def bash_reason(command, cwd):
                 return 1, what
         what = hold_web_write(args)
         if what:
-            return 8, what
+            return 7, what
     return None
 
 
@@ -344,7 +344,7 @@ def mcp_reason(tool):
         return None
     words = set(re.split(r"[_\-]", tool.split("__", 2)[-1].lower()))
     if tool in GITHUB_HOLD_TOOLS or words & WRITE_WORDS or not words & READ_WORDS:
-        return 8, "writing through a connected service"
+        return 7, "writing through a connected service"
     return None
 
 
@@ -360,7 +360,7 @@ def guard_reason(event):
         return bash_reason(data.get("command", ""), cwd)
     if tool in ("Write", "Edit", "MultiEdit", "NotebookEdit"):
         what = rule_file_reason(data.get("file_path") or data.get("notebook_path") or "", cwd)
-        return (6, what) if what else None
+        return (5, what) if what else None
     if tool.startswith("mcp__"):
         return mcp_reason(tool)
     return None

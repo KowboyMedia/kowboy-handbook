@@ -11,8 +11,8 @@ at the start and the rules at every message; the hold for `ssh -V` reached the o
 prompt in auto mode (59); a reply without its state was sent back; the handbook download is out
 of "Worksuite 2.0" too (60). The installed copy is version 2026-11-16h, synced 14:38:58 UTC, 30 seconds before
 2026-11-16i reached main: until it updates, sessions still get the removed second-correction rule.
-Version 2026-11-16j (agent-made rules removed, new reply format) waits on the
-branch for questions 65 to 67. Next: a fresh thread with "resume next steps" checks the version
+Version 2026-11-16j is live (2026-11-16): agent-made and doubtful rules removed, nine rules,
+the new reply format. Next: a fresh thread with "resume next steps" checks the version
 the package delivers at its start (becomes a question if still h); if it is current, item 9 is
 done. The
 preferences stay as they are for now. The benchmark in `tests/bench/` is not run until the

@@ -45,9 +45,9 @@ class SessionStart(unittest.TestCase):
 
 
 class Rules(unittest.TestCase):
-    def test_all_ten_rules_at_every_message(self):
+    def test_all_nine_rules_at_every_message(self):
         text = run("rules")["hookSpecificOutput"]["additionalContext"]
-        for number in range(1, 11):
+        for number in range(1, 10):
             self.assertRegex(text, rf"(?m)^{number}\. Never ")
 
 

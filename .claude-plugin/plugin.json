@@ -1,6 +1,6 @@
 {
   "name": "kowboy",
-  "description": "The Kowboy handbook in every session: the rules at every message, dangerous actions held for the operator's yes, replies checked for their state line, the phases as skills, and the advisor.",
+  "description": "The Kowboy handbook in every session: the rules at every message, dangerous actions held for the operator's yes, replies checked for their status line, and the phases as skills.",
   "author": { "name": "Kowboy" },
   "homepage": "https://github.com/KowboyMedia/kowboy-handbook",
   "repository": "https://github.com/KowboyMedia/kowboy-handbook"
