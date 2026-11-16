@@ -94,7 +94,7 @@ COMMANDS = [
     (1, "dropping or emptying a database", r"^redis-cli\b.*\bflush(all|db)\b"),
     (1, "dropping or emptying a database", r"^(rails|rake|bin/rails)\s+db:(drop|reset|purge)\b"),
     (1, "dropping or emptying a database", r"^(prisma\s+migrate\s+reset|wp\s+db\s+(drop|reset|clean))\b"),
-    (1, "deleting in a cloud account", r"^(aws|doctl|gcloud|az|heroku)\b.*\s((delete|destroy|rm|rb)(\s|$)|(delete|terminate|remove|destroy)-\S+)"),
+    (1, "deleting in a cloud account", r"^(aws|doctl|gcloud|az|heroku)\b.*([\s:-](delete|destroy|rm|rb)(\s|$)|(delete|terminate|remove|destroy)-\S+)"),
     (1, "deleting with kubectl or terraform", r"^(kubectl\s+delete|terraform\s+destroy)\b"),
     (2, "logging in to a server", r"^(ssh|scp|sftp)(\s|$)"),
     (2, "copying to a server", r"^rsync\b.*\s[\w.@-]+:\S*"),
@@ -116,17 +116,18 @@ SQL = [
 ]
 
 # Commands that only show text; nothing they name is acted on.
-TEXT_ONLY = {"grep", "rg", "ag", "echo", "printf", "cat", "less", "head", "tail", "awk", "jq", "sed"}
+TEXT_ONLY = {"grep", "rg", "ag", "echo", "printf", "cat", "less", "head", "tail", "awk", "jq", "sed", "which", "type"}
+SHELLS = {"bash", "sh", "zsh", "dash"}
 PREFIXES = {"sudo", "env", "time", "nohup", "exec", "command", "npx", "bunx"}
 TWO_WORD_PREFIXES = {("pnpm", "dlx"), ("yarn", "dlx"), ("npm", "exec")}
-SEPARATORS = re.compile(r"^[;&|()\n]+$")
+SEPARATORS = re.compile(r"^[;&|()`\n]+$")
 REDIRECTS = {">", ">>", ">|", "&>", "&>>"}
 TEMP_DIRS = {Path("/tmp").resolve(), Path(tempfile.gettempdir()).resolve()}
 URLISH = re.compile(r"^(https?://|[\w-]+(\.[\w-]+)+(:\d+)?(/|$))")
 LOCAL_HOSTS = re.compile(r"^(https?://)?(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])([:/]|$)")
 WRITE_FLAGS = re.compile(r"^(-d|--data\S*|-F|--form\S*|-T|--upload-file|--json)$")
 WRITE_METHOD = re.compile(r"^(-X|--request)(=?)(POST|PUT|PATCH|DELETE)?$", re.I)
-HEREDOC = re.compile(r"(<<-?\s*(['\"]?)(\w+)\2[^\n]*)\n.*?\n[ \t]*\3[ \t]*(?=\n|$)", re.S)
+HEREDOC = re.compile(r"^([^\n]*?)<<-?\s*(['\"]?)([\w-]+)\2([^\n]*)\n(.*?)\n?^[ \t]*\3[ \t]*$", re.S | re.M)
 
 RULE_FILES = {"CLAUDE.md", "CLAUDE.local.md", "AGENTS.md"}
 CLAUDE_DIR_RULES = re.compile(r"^(settings[^/]*\.json|(hooks|agents|skills|commands|rules)/.*)$")
@@ -168,10 +169,22 @@ PASS_TOOLS = {
 GITHUB_HOLD_TOOLS = {"mcp__github__create_repository", "mcp__github__fork_repository"}
 
 
+def unfold_heredoc(match):
+    """A heredoc's text runs as commands for a shell, as statements for a database
+    client, and is only text for anything else."""
+    line = match.group(1) + match.group(4)
+    names = {Path(w).name for w in line.split()}
+    if names & SHELLS:
+        return line + "\n" + match.group(5)
+    if names & DB_CLIENTS:
+        return line + " " + shlex.quote(match.group(5))
+    return line
+
+
 def simple_commands(command):
     """Split a shell command line into its simple commands, as lists of words."""
-    command = HEREDOC.sub(lambda m: m.group(1), command)
-    lexer = shlex.shlex(command, posix=True, punctuation_chars=";&|()<>\n")
+    command = HEREDOC.sub(unfold_heredoc, command)
+    lexer = shlex.shlex(command, posix=True, punctuation_chars=";&|()<>`\n")
     lexer.whitespace = " \t\r"
     lexer.whitespace_split = True
     words = []
@@ -187,6 +200,8 @@ def simple_commands(command):
 
 def strip_prefixes(words):
     while words:
+        if words[0] == "command" and words[1:2] in (["-v"], ["-V"]):
+            return ["which", *words[2:]]
         if re.match(r"^\w+=", words[0]):
             words = words[1:]
         elif words[0] in PREFIXES:
@@ -283,7 +298,11 @@ def written_files(words):
     elif name in ("cp", "mv", "ln", "install") and args:
         files.append(args[-1])
     elif name in ("curl", "wget"):
-        files += [words[i + 1] for i, w in enumerate(words[:-1]) if w in ("-o", "--output", "-O", "--output-document")]
+        for i, w in enumerate(words):
+            if re.match(r"^-[a-zA-Z]*[oO]$|^--output(-document)?$", w) and i + 1 < len(words):
+                files.append(words[i + 1])
+            elif w.startswith(("--output=", "--output-document=")):
+                files.append(w.split("=", 1)[1])
     return files
 
 
@@ -306,7 +325,7 @@ def bash_reason(command, cwd):
         for rule, what, pattern in COMMANDS:
             if re.search(pattern, line, re.I):
                 return rule, what
-        if name in DB_CLIENTS:
+        if {Path(w).name for w in args} & DB_CLIENTS:
             for pattern, what in SQL:
                 if re.search(pattern, line, re.I):
                     return 1, what
@@ -400,7 +419,7 @@ def this_turn(transcript_path):
     prompt, advisor, seen = "", False, set()
     for entry in reversed(entries):
         content = (entry.get("message") or {}).get("content")
-        is_prompt = entry.get("type") == "user" and (
+        is_prompt = entry.get("type") == "user" and not entry.get("isMeta") and (
             isinstance(content, str)
             or isinstance(content, list)
             and not any(isinstance(p, dict) and p.get("type") == "tool_result" for p in content)
@@ -443,7 +462,8 @@ def reply(event):
     if asks_operator(text):
         prompt, advisor, seen = this_turn(event.get("transcript_path"))
         new = numbers(text) - seen
-        if new and not advisor and prompt.strip().lower() != "status":
+        status = prompt.strip().lower() == "status" or "kowboy:status" in prompt
+        if new and not advisor and not status:
             reasons.append(
                 "Before you ask the operator new questions ("
                 + ", ".join(sorted(new, key=int))

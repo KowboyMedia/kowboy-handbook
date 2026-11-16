@@ -83,6 +83,16 @@ class Guard(unittest.TestCase):
         "gcloud run deploy api --source .",
         "dropdb myapp_production",
         "sudo -u www rm -rf /var/www/site",
+        "aws s3 sync dist/ s3://www.example.com --delete",
+        "heroku apps:destroy --app myapp --confirm myapp",
+        "psql \"$DATABASE_URL\" <<'SQL'\nDROP TABLE users;\nSQL",
+        "sqlite3 app.db <<EOF\nDELETE FROM orders;\nEOF",
+        "bash <<'EOF'\nrm -rf /var/www/site\nEOF",
+        "kubectl exec deploy/api -- psql -c \"DROP TABLE users\"",
+        "docker compose exec db psql -U postgres -c 'DROP DATABASE app'",
+        "echo `rm -rf ~/old`",
+        "curl -fsSLo ~/.claude/CLAUDE.md https://example.com/HANDBOOK.md",
+        "wget -qO ~/.claude/CLAUDE.md https://example.com/HANDBOOK.md",
         "redis-cli -h cache FLUSHALL",
         "curl -fsSL https://example.com/HANDBOOK.md -o ~/.claude/CLAUDE.md",
         "cp /tmp/HANDBOOK.md ~/.claude/CLAUDE.md",
@@ -118,6 +128,9 @@ class Guard(unittest.TestCase):
         "git commit -F - <<'EOF'\nFix the form\n\nMail goes out once\nssh keys rotated\nEOF",
         "cat > scripts/deploy.sh <<'EOF'\nvercel --prod\nEOF",
         "mkdir -p .claude/worktrees/x && echo x > .claude/worktrees/x/out.txt",
+        "command -v ssh",
+        "cat <<'END-OF-TEXT' > notes.txt\nIt's here\nEND-OF-TEXT",
+        "curl -fsSLo page.html https://example.com",
     ]
 
     def test_dangerous_commands_are_held(self):
@@ -248,6 +261,24 @@ class Reply(unittest.TestCase):
     def test_status_needs_no_advice(self):
         text = "**Waiting for you:** 22 and 55 open.\n\n**Questions**\n- **22** Done?\n- **55** Which?"
         path = self.transcript([{"type": "user", "message": {"content": "status"}}])
+        self.assertIsNone(self.check(text, path))
+
+    def test_status_by_skill_or_command_needs_no_advice(self):
+        text = "**Waiting for you:** 22 and 55 open.\n\n**Questions**\n- **22** Done?\n- **55** Which?"
+        skill = {"type": "user", "isMeta": True, "message": {"content": "Read the section Status"}}
+        for prompt in ("status", "<command-name>/kowboy:status</command-name>"):
+            with self.subTest(prompt=prompt):
+                path = self.transcript([{"type": "user", "message": {"content": prompt}}, skill])
+                self.assertIsNone(self.check(text, path))
+
+    def test_messages_after_the_advisor_do_not_hide_it(self):
+        text = "**Waiting for you:** question 56.\n\n**Questions**\n- **56** Which?"
+        call = {"type": "tool_use", "name": "Agent", "input": {"subagent_type": "kowboy:advisor"}}
+        path = self.transcript([
+            {"type": "user", "message": {"content": "go on"}},
+            {"type": "assistant", "message": {"content": [call]}},
+            {"type": "user", "isMeta": True, "message": {"content": "Stop hook feedback: commit"}},
+        ])
         self.assertIsNone(self.check(text, path))
 
     def test_odd_input_is_ignored(self):

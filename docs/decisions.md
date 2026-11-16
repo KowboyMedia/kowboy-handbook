@@ -577,3 +577,9 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   asks new questions, and the advisor can read `docs/decisions.md`. Supersedes point 6 of the
   plan written earlier the same day · agent's choice on the review, not confirmed by the
   operator.
+- 2026-11-16 · Correction of the line above that says "All fixed and tested": the reviewer's
+  second pass found nine gaps left or opened by the fixes (heredocs fed to a shell or a database
+  client, database clients run through `kubectl exec` or `docker compose exec`, cloud deletions
+  written as `--delete` or `apps:destroy`, backticks, `curl -fsSLo`, `command -v ssh` held, the
+  "status" reply after its skill loads). All nine are fixed, each with a test; 23 tests pass.
+  They were not given a third review · agent's choice, not confirmed by the operator.
