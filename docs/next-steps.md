@@ -6,8 +6,8 @@ not done, keep it current.
 ## Where to pick up
 
 Item 9, the Kowboy package, is built and tested by script (2026-11-16) and waits for the
-operator: the release (question 56), then adding it to the account and replacing the
-preferences (57). Then a new thread with "resume next steps" finishes item 9: it checks in a
+operator: the release (question 56), then adding it to the account (57); the preferences
+stay as they are for now. Then a new thread with "resume next steps" finishes item 9: it checks in a
 fresh cloud session that the handbook arrives at the start, the rules at every message, a held
 action shows the permission prompt in auto mode (try `ssh -V`, harmless if allowed) and a reply
 without its state is sent back; then it removes the handbook lines from this environment's
