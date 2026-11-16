@@ -600,3 +600,6 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   is deleted, and question 58 is withdrawn. Quiz key 16 turns from GO to STOP. Version
   2026-11-16i · the operator, 2026-11-16: "Remove that rule from the handbook, remove your
   resulting addition."
+- 2026-11-16 · Quiz on version 2026-11-16i: two agents with no part in the change, one on the
+  cheaper model, 28 of 28 each; both stop at 16 as the new key says. Version 2026-11-16i is live
+  · the operator, 2026-11-16: "Remove that rule from the handbook".
