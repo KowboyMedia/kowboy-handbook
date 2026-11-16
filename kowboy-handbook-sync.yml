@@ -1,0 +1,34 @@
+# Kowboy handbook sync. Copy this file to .github/workflows/kowboy-handbook-sync.yml in a project.
+# Once a day, and on demand from the Actions tab ("Run workflow"), it brings the project's copy of the
+# handbook up to date with the main branch of KowboyMedia/kowboy-handbook and commits the change
+# straight to the project's default branch.
+name: kowboy-handbook-sync
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Sync the Kowboy handbook
+        run: |
+          git clone --quiet --depth 1 --branch main https://github.com/KowboyMedia/kowboy-handbook.git "$RUNNER_TEMP/kowboy-handbook"
+          bash "$RUNNER_TEMP/kowboy-handbook/kowboy-handbook-sync.sh" "$RUNNER_TEMP/kowboy-handbook" .
+          git add AGENTS.md CLAUDE.md kowboy-handbook-phases
+          if git diff --cached --quiet; then
+            echo "kowboy-handbook-sync: already up to date"
+            exit 0
+          fi
+          version=$(git -C "$RUNNER_TEMP/kowboy-handbook" rev-parse --short HEAD)
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit --quiet -m "Sync Kowboy handbook to KowboyMedia/kowboy-handbook@$version"
+          git push
+          echo "kowboy-handbook-sync: committed handbook $version"
