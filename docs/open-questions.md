@@ -38,11 +38,3 @@ text and found 25 points; all were corrected except one that the owner had alrea
 (a repository's own rules file cannot switch off a rule). Quiz after the corrections: two
 agents, 28 of 28 each. Not checked: the corrections themselves were not read by a second agent.
 Reply: yes, or the change.
-
-## 54 `[handbook]` May the corrected handbook be run through the drift set again?
-
-Asked 2026-11-16, under the spending rule. Only the new version on both models, three runs
-each: 102 runs, estimated 10 to 18 dollars at list price (the first drift run cost 25.69 for
-306 runs). It shows whether the two fixes remove the needless stops without losing what the
-handbook gained. Reply: yes or no.
-

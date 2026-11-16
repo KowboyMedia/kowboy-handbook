@@ -518,4 +518,7 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   second agent that cannot be started is said in Notes and never holds up the work · agent's
   choice on the benchmark, under the product lead's "pick your best option [...] align with it",
   2026-11-16; not separately confirmed.
+- 2026-11-16 · The corrected handbook (version f) is run through the drift set again: Haiku and
+  Opus, three runs each, 102 runs, estimated 10 to 18 dollars · the product lead, question 54,
+  2026-11-16: "Yes".
 
