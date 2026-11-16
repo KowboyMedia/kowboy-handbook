@@ -62,7 +62,8 @@ test_4_handbook_change_replaces_only_the_block() {
   printf 'Project notes\n' > "$p/AGENTS.md"
   bash "$sync" "$hb" "$p" >/dev/null
   printf 'Text after the block\n' >> "$p/AGENTS.md"
-  sed -i 's/Version 2026-11-16m\./Version TEST-NEW./' "$hb/kowboy-handbook-rules.md"
+  awk '{ sub(/^Version 2026-11-16m\.$/, "Version TEST-NEW."); print }' "$hb/kowboy-handbook-rules.md" > "$hb/x" \
+    && mv "$hb/x" "$hb/kowboy-handbook-rules.md"
   bash "$sync" "$hb" "$p" >/dev/null || { fail 4 "sync exited non-zero"; return; }
   grep -qF 'Version TEST-NEW.' "$p/AGENTS.md" \
     && [ "$(grep -cxF "$start" "$p/AGENTS.md")" = 1 ] \
@@ -157,7 +158,7 @@ test_12_windows_line_ends_replace_the_block() {
   local hb p; hb=$(handbook_copy); p=$(mktemp -d)
   printf 'Project notes\n' > "$p/AGENTS.md"
   bash "$sync" "$hb" "$p" >/dev/null
-  sed -i 's/$/\r/' "$p/AGENTS.md"
+  awk '{ printf "%s\r\n", $0 }' "$p/AGENTS.md" > "$p/x" && mv "$p/x" "$p/AGENTS.md"
   bash "$sync" "$hb" "$p" >/dev/null || { fail 12 "sync exited non-zero"; return; }
   [ "$(grep -c 'kowboy-handbook:start' "$p/AGENTS.md")" = 1 ] \
     && grep -q '^Project notes' "$p/AGENTS.md" \
@@ -194,6 +195,17 @@ test_15_handbook_synced_onto_itself_keeps_phases() {
     || fail 15 "phase files changed or deleted"
 }
 
+test_16_marker_with_trailing_spaces_is_found() {
+  local hb p; hb=$(handbook_copy); p=$(mktemp -d)
+  printf 'Project notes\n' > "$p/AGENTS.md"
+  bash "$sync" "$hb" "$p" >/dev/null
+  awk '{ if (index($0, "kowboy-handbook:")) $0 = $0 "  "; print }' "$p/AGENTS.md" > "$p/x" && mv "$p/x" "$p/AGENTS.md"
+  bash "$sync" "$hb" "$p" >/dev/null || { fail 16 "sync exited non-zero"; return; }
+  [ "$(grep -c 'kowboy-handbook:start' "$p/AGENTS.md")" = 1 ] \
+    && pass "16 markers with trailing spaces are still found, so no second block is added" \
+    || fail 16 "a second block was added"
+}
+
 test_1_new_project_gets_agents_md
 test_2_existing_agents_md_is_kept
 test_3_second_run_changes_nothing
@@ -209,5 +221,6 @@ test_12_windows_line_ends_replace_the_block
 test_13_claude_md_linked_to_agents_md
 test_14_no_trailing_newline_is_stable
 test_15_handbook_synced_onto_itself_keeps_phases
+test_16_marker_with_trailing_spaces_is_found
 
 [ "$failed" = 0 ] && echo "all passed" || { echo "some failed"; exit 1; }

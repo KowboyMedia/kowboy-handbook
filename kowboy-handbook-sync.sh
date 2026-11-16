@@ -28,12 +28,12 @@ ls "$hb"/kowboy-handbook-phases/kowboy-handbook-phase-*.md >/dev/null 2>&1 \
   || stop "no phase files in $hb/kowboy-handbook-phases; nothing was changed"
 
 # Line numbers of the first start marker and the first end marker after it ("" when there is no
-# block). A line ending in \r (Windows line ends) still counts as the marker.
+# block). A line with trailing spaces or a \r (Windows line ends) still counts as the marker.
 agents="$proj/AGENTS.md"
 block_lines=""
 if [ -f "$agents" ]; then
   block_lines=$(awk -v s="$start" -v e="$end" '
-    { line = $0; sub(/\r$/, "", line) }
+    { line = $0; sub(/[ \t\r]+$/, "", line) }
     !first && line == s { first = NR; next }
     first && line == e { print first, NR; found = 1; exit }
     END { if (first && !found) print first, 0 }' "$agents")

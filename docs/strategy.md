@@ -53,6 +53,7 @@ Each is a test in `tests/kowboy-handbook-sync.test.sh` with the same number.
 13. A `CLAUDE.md` linked to `AGENTS.md` is left alone.
 14. `AGENTS.md` without a final newline is stable from the first run.
 15. Syncing the handbook onto itself keeps its phase files.
+16. Markers with trailing spaces are still found, so no second block is added.
 
 ## Out of scope
 
