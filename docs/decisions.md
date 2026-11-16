@@ -438,4 +438,21 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   "Ok takes every default is in conflict with the rule agains implicitly inferring an answer.";
   "Don't limit questions to 3 or 5"; "It is formulated very illogically [...] a clear if this
   condition then behave like this".
+- 2026-11-16 · "The owner" in the handbook is the person running the session, who approves,
+  decides and answers for that work; only the product owner changes the handbook · the owner,
+  question 51 a), 2026-11-16: "51a". In the working copy, version 2026-11-16a.
+- 2026-11-16 · Baseline for the quiz, asked for by the owner, on agents that are given no
+  instruction file of their own. Without the handbook: the cheaper model 28 of 28, the stronger
+  model 26 of 28. With `HANDBOOK.md` and `WORK.md`: 27 of 28 each. So the quiz does not show
+  that the handbook changes anything: its situations are answered right by common sense when
+  put as a question. It catches contradictions in the text and nothing more. The misses: 16 (a
+  rule written into `AGENTS.md` on the second correction) and 19 (reading a client's mailbox),
+  where the handbook asks for something an agent would not do by itself. The earlier quiz runs
+  used agents that may also have had the account's own instruction file, the handbook of 8
+  November, in front of them, so their scores prove less than was said. Whether the two models
+  asked for were the ones that ran could not be checked from the session · the owner,
+  2026-11-16: "Run the quiz on stupid and smart agents without the handbook as baseline."
+- 2026-11-16 · A question keeps its number when its scope changes; 46 should not have become
+  50. 50 stays, to avoid a second change · the owner, 2026-11-16: "50 was previously 46 iirc,
+  which is unexpected."
 

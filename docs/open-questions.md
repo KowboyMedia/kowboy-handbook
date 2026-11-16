@@ -30,7 +30,7 @@ the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
 ## 50 `[handbook]` Should the small handbook go live?
 
-Asked 2026-11-15. Replaces 46. In the working copy, now version 2026-11-15l after the owner's audit notes: `HANDBOOK.md`, the
+Asked 2026-11-15. Replaces 46. In the working copy, now version 2026-11-16a after the owner's audit notes: `HANDBOOK.md`, the
 ten rules and the reply shape, 3,247 characters; `WORK.md`, new, read before any work in a
 repository, 7,340; `PHASES.md`, cut to its principles, 8,000. Together 18,600, from 49,900.
 Checked: a second agent with no part in the work compared the three pages with the original
@@ -38,18 +38,3 @@ text and found 25 points; all were corrected except one that the owner had alrea
 (a repository's own rules file cannot switch off a rule). Quiz after the corrections: two
 agents, 28 of 28 each. Not checked: the corrections themselves were not read by a second agent.
 Reply: yes, or the change.
-
-## 51 `[handbook]` Who may approve things and lift a rule in a session: only the product owner, or the developer in the chat?
-
-Asked 2026-11-15. The owner: "It says owner, is that accurate? Is a dev coding an owner?" The
-handbook says "the owner" everywhere; two or three developers start sessions.
-
-- a) **the developer in the chat, except for the handbook** (recommended): whoever runs the
-  session approves and decides for that work; only the product owner changes the handbook.
-- b) **only the product owner**: a developer's session stops at every rule and waits for the
-  product owner.
-- c) **the developer in the chat, for everything**: also changes to the handbook.
-
-Scored (work keeps moving for each developer · one hand on the handbook): a) yes · yes; b) no ·
-yes; c) yes · no. The smaller option: a). Reply: a, b or c.
-

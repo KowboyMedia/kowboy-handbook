@@ -1,6 +1,6 @@
 # Kowboy handbook: the phases
 
-Version 2026-11-15l. Read a phase's section when that phase starts. It ends with "End of the
+Version 2026-11-16a. Read a phase's section when that phase starts. It ends with "End of the
 phases."
 
 ## Start a repository
