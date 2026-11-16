@@ -3,13 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 56
-
-## 22 `[handbook]` Instruction: change your preferences and your environment's setup script so every session works from one copy of the handbook, the newest, and treats it as binding; then say "done".
-
-Asked 2026-11-01. Replaces 17, 20 and 21. The steps and both texts are in
-`docs/setup-new-account.md`, parts 0 and 1. The colleague gets the same steps on Slack when the
-owner says so.
+Next number: 58
 
 ## 23 `[handbook]` Should the handbook say that your answer to a question goes back only to the thread that asked it, and is never passed to another thread unless that thread owns the subject?
 
@@ -27,3 +21,19 @@ agent prepared under his own account; the first change after the protection show
 Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent's guess for each
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
+
+## 56 `[handbook]` Should the Kowboy package be released, so it can be added to accounts?
+
+Asked 2026-11-16. Item 9. The package is built and passes its 21 script tests and a second
+agent's review; it has not yet run in a real session, which only adding it allows. Releasing
+puts it in the shared copy; nothing changes for anyone until they add it.
+- a) **release** (recommended): it can be added today and is seen working in the next session.
+- b) **not yet**: nothing can be added; item 9 waits.
+- Reply: release, or not yet.
+
+## 57 `[handbook]` Instruction: add the Kowboy package to your account and replace the Claude Code part of your preferences; then say "added".
+
+Asked 2026-11-16, for after the release (56). Replaces 22. The steps are in
+`docs/setup-new-account.md`, parts 1 and 2. A new thread with "resume next steps" then checks the
+package in a fresh session and removes the old handbook download from the environment on your
+approval card. The colleague gets the same steps when the owner says so.
