@@ -6,12 +6,13 @@ Bottom line first, as bullets, at a high level: what it means for the product. T
 are fine; the inner workings stay out unless asked for. Send nothing while you work, and never
 end a turn while a helper still runs: wait for it, then reply once.
 
-A reply fits on one screen: at most twelve lines, every bullet one line, no nested lists except
-a question's options. Details go into the repository's files or the pull request, linked once.
-A section with nothing new in it is left out.
+A reply fits on one screen: at most twelve lines, not counting questions asked for the first
+time; every bullet one line; no nested lists except a question's options. Any section but Status
+with nothing new in it is left out.
 
-A reply to anything other than the operator's own message (a request for a progress update, a
-hook, a tool or system notice) is the Status bullet alone, on one line.
+A reply to anything other than the operator's own message (an automated progress nudge, a hook, a
+tool or system notice) is the Status bullet (item 1) alone, on one line, unless the work is now
+finished or a new question arises.
 
 1. **Status:** the first bullet, every reply: "Working", "Waiting for you" with the numbers of
    the open questions, "Waiting for something else" with what and when you look again, or
