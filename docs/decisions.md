@@ -491,4 +491,14 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-16 · The benchmark is turned towards drift and bloat, the main risk once agents hold
   no production keys · the product lead, 2026-11-16: "Without keys the biggest issue is not an
   agent delete production but cause drift or bloat."
+- 2026-11-16 · A bug an agent stumbles on is fixed when it is small and in the code being touched,
+  and said so; otherwise raised in the reply and written into `known-bugs.md`; never left
+  unmentioned. The aim of the handbook is to close the gap between an agent and a good human ·
+  the product lead, 2026-11-16: "Solving bugs it stumbles upon is not bad. At least raise it.
+  The handbook is trying to close the gap between an agent and a good human." Working copy,
+  version 2026-11-16e.
+- 2026-11-16 · Question 52 taken on its recommendation a): the drift set on Haiku and Opus, three
+  runs each, 306 runs, estimated 30 to 50 dollars · the product lead, 2026-11-16: "For the rest
+  pick your best option, no need to discuss more at this point, intentions are known, align
+  with it."
 

@@ -1,6 +1,6 @@
 # Kowboy handbook: the work
 
-Version 2026-11-16d. The required second page. Find your situation and do what it says. It ends
+Version 2026-11-16e. The required second page. Find your situation and do what it says. It ends
 with "End of the work."
 
 ## 1. When you start
@@ -39,7 +39,7 @@ To tell whether a step breaks a rule. The examples are never the whole list.
 | 2 Production | Sending, starting or changing anything there, even as a test. In an emergency too, only the steps the operator names. Nothing goes live before the operator says "release". | Staging. |
 | 3 New things people see | A page, a button, a field, a setting, a message, an e-mail: each its own question. | The wording and looks an approved thing needs in order to work. |
 | 4 What the product depends on | A library, a framework, a vendor, a recurring cost, a data shape, a connection between parts, the hosting, `DESIGN.md`, an approved proposal. | Tooling that does not ship. A newer version of a library already in use. |
-| 5 Unasked work | A feature, a tidy-up or a fix beyond the item. Make it a question or a "Later" item. | What the item needs in order to work. |
+| 5 Unasked work | A feature, a tidy-up or a change of design beyond the item. Make it a question or a "Later" item. | What the item needs in order to work. A small bug you stumble on in the code you are touching: fix it and say so. |
 | 6 Agents' rules | This handbook (only the product lead changes it), an `AGENTS.md` or `CLAUDE.md`, the environment, hooks, plugins. | An `AGENTS.md` written when a repository starts, or on the operator's second correction. |
 | 7 Made-up facts | A business rule, a price, a limit, a rounding, a field in a contract. | |
 | 8 Outside the repository | Another repository, a write through a connected service, a client's data moved out of the client's systems, a payment, a message to anyone outside Kowboy. Anything that costs money or the operator's plan usage beyond this conversation: agents started as separate programs, paid services, cloud machines. Ask first, with the estimated cost. | Reading. |
@@ -57,7 +57,7 @@ To tell whether a step breaks a rule. The examples are never the whole list.
 | The plan stops matching what you find | Stop and go back to the plan. |
 | A fix has failed twice | Stop. Write what you learned into the item and hand it to a fresh session. |
 | A test fails and then passes without a change | It is a bug. Write it into `docs/known-bugs.md`. Never run it again until it passes, never delete it. |
-| You find a bug you will not fix now | Write it into `docs/known-bugs.md`. |
+| You stumble on a bug | Small and in the code you are touching: fix it and say so in your reply. Otherwise raise it in your reply and write it into `docs/known-bugs.md`. Never leave it unmentioned. |
 | You must read something outside the repository | Have a second agent do it that can only read, and give it the question, never a secret or a client's data. |
 | A step cannot be undone, or a choice is close | Ask a second agent with no part in the work (the advisor): go or ask. Follow it, or ask. |
 | The operator corrects the same thing a second time | Write the rule: into the repository's `AGENTS.md` at once, into the handbook only when the operator says so. |

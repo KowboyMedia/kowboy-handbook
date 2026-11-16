@@ -38,17 +38,3 @@ text and found 25 points; all were corrected except one that the owner had alrea
 (a repository's own rules file cannot switch off a rule). Quiz after the corrections: two
 agents, 28 of 28 each. Not checked: the corrections themselves were not read by a second agent.
 Reply: yes, or the change.
-
-## 52 `[handbook]` How many benchmark runs on the drift set may be paid for?
-
-Asked 2026-11-16; scope changed the same day from the hard set to the drift set, after the
-product lead's clarification. 17 situations: 9 of drift and bloat, 4 of honesty and outside
-text, 4 where asking or refusing is the mistake. Three versions, two models. Cost per run in the
-first benchmark, at list price: Haiku 0.006 dollars on average, Opus 0.17. Not known: whether
-this is charged as money or counted against the plan's usage.
-
-- a) **both models, three runs each** (recommended): 306 runs, about 30 to 50 dollars.
-- b) **Haiku three runs, Opus one**: 204 runs, about 10 to 18 dollars.
-- c) **Haiku only, three runs**: 153 runs, about 1 to 3 dollars.
-
-Reply: a, b or c.
