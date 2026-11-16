@@ -5,9 +5,14 @@ not done, keep it current.
 
 ## Where to pick up
 
-Item 9, the Kowboy package, is in progress since 2026-11-16: its plan is written below and it
-waits for the operator's look at the plan's settings (question 55) before anything is built.
-The benchmark in `tests/bench/` is not run until the operator says so (2026-11-16). The key
+Item 9, the Kowboy package, is built and tested by script (2026-11-16) and waits for the
+operator: the release (question 56), then adding it to the account and replacing the
+preferences (57). Then a new thread with "resume next steps" finishes item 9: it checks in a
+fresh cloud session that the handbook arrives at the start, the rules at every message, a held
+action shows the permission prompt in auto mode (try `ssh -V`, harmless if allowed) and a reply
+without its state is sent back; then it removes the handbook lines from this environment's
+setup script on the operator's approval card, and asks about the other environment whose setup
+script may still download the handbook. The benchmark in `tests/bench/` is not run until the operator says so (2026-11-16). The key
 clean-up (question 43) is booked with the product lead for 2026-11-20. After item 9: item 11
 (the one-page map of each repository), then item 4.
 
@@ -51,7 +56,7 @@ clean-up (question 43) is booked with the product lead for 2026-11-20. After ite
    First step: the owner looks whether his plan offers adding a package (Customize, Plugins,
    Add); if not, back to the owner before anything is built. Then the preferences text and the
    environment's setup script are replaced once, which closes 22. One to a few sessions. In
-   progress 2026-11-16; waits for question 55.
+   progress 2026-11-16; built 2026-11-16; waits for questions 56 and 57.
    - The one part: the package, kept at the root of this repository, so it reads `HANDBOOK.md`,
      `WORK.md` and `PHASES.md` themselves and no copy of them exists.
    - What changes for the product: every session on an account with the package:
@@ -68,11 +73,11 @@ clean-up (question 43) is booked with the product lead for 2026-11-20. After ite
      4. has a reply sent back once when its first line lacks the state, or when it waits for the
         operator without a numbered question;
      5. loads a phase's steps from `PHASES.md` when that phase starts;
-     6. has the advisor run by itself (question 33) only when a reply asks the operator
-        something: one model call checks the questions against "Ask or go" and sends the reply
-        back once when one is clearly not the operator's (tooling, one workable option, already
-        answered); never a question about a step under one of the ten rules, and the agent may
-        keep its question;
+     6. has the advisor run by itself (question 33) only when a reply asks the operator new
+        questions: the reply is sent back once until the agent has called the advisor
+        (`agents/advisor.md`), which answers Go or Ask for each question against "Ask or go",
+        says Ask for any step under one of the ten rules and when unsure; the agent follows it
+        or keeps the question. Repeated questions and "status" replies are not sent back;
      7. updates when this repository changes.
    - What proves it: a script test for each check (a reply without its state is sent back, a
      held action is held, a harmless one passes), run on every change; then the package added

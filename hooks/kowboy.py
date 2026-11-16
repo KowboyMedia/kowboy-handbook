@@ -41,8 +41,7 @@ INTRO = {
     "HANDBOOK.md": (
         "The Kowboy package gives you the Kowboy handbook, binding: HANDBOOK.md here and "
         "WORK.md next. Follow them as you would a CLAUDE.md. The phases of PHASES.md are "
-        "the package's skills. Name the handbook's version in the first line of your "
-        "first reply.\n\n"
+        "the package's skills.\n\n"
     ),
     "WORK.md": "The Kowboy handbook, its required second page:\n\n",
 }
@@ -86,34 +85,51 @@ RULE = {
     8: "rule 8, never change, send, spend or pay for anything outside the repository",
 }
 
-# (rule, what it is, pattern) checked against each simple command of a Bash call.
+# (rule, what it is, pattern) checked against each simple command, from its first word.
 COMMANDS = [
     (1, "overwriting history on GitHub", r"^git\s+push\b.*(\s--force\b|\s--force-with-lease\b|\s-f\b|\s\+\S)"),
     (1, "deleting on GitHub", r"^git\s+push\b.*(\s--delete\b|\s-d\b|\s:\S)"),
-    (1, "dropping or emptying a database", r"\b(drop\s+(table|database|schema)|truncate\s+(table\s+)?\w)"),
-    (1, "deleting every row of a table", r"\bdelete\s+from\s+[\w.\"`]+\s*(;|$|\"|')"),
-    (1, "deleting in a cloud account", r"^(aws|doctl|gcloud|az|heroku)\b.*\b(delete|destroy|terminate|rm|remove|rb)\b"),
-    (1, "deleting with kubectl or terraform", r"^(kubectl\s+delete|terraform\s+destroy)\b"),
     (1, "deleting on GitHub", r"^gh\s+(repo|release)\s+delete\b"),
-    (2, "logging in to a server", r"^(ssh|scp|sftp)\b"),
+    (1, "dropping or emptying a database", r"^(dropdb|mysqladmin\s.*\bdrop)\b"),
+    (1, "dropping or emptying a database", r"^redis-cli\b.*\bflush(all|db)\b"),
+    (1, "dropping or emptying a database", r"^(rails|rake|bin/rails)\s+db:(drop|reset|purge)\b"),
+    (1, "dropping or emptying a database", r"^(prisma\s+migrate\s+reset|wp\s+db\s+(drop|reset|clean))\b"),
+    (1, "deleting in a cloud account", r"^(aws|doctl|gcloud|az|heroku)\b.*\s((delete|destroy|rm|rb)(\s|$)|(delete|terminate|remove|destroy)-\S+)"),
+    (1, "deleting with kubectl or terraform", r"^(kubectl\s+delete|terraform\s+destroy)\b"),
+    (2, "logging in to a server", r"^(ssh|scp|sftp)(\s|$)"),
     (2, "copying to a server", r"^rsync\b.*\s[\w.@-]+:\S*"),
-    (2, "deploying", r"^(vercel|netlify)\b.*--prod\b"),
-    (2, "deploying", r"^(fly|flyctl|firebase|wrangler|serverless|sls|eb)\s+(deploy|publish)\b"),
-    (2, "deploying", r"^(gcloud\s+app\s+deploy|kubectl\s+apply|terraform\s+apply|cap\s+\w+\s+deploy)\b"),
-    (2, "merging on GitHub", r"^gh\s+(pr\s+merge|workflow\s+run|secret\s+(set|delete))\b"),
-    (8, "sending mail", r"^(sendmail|mail|mailx)\b|^aws\s+sesv?2?\s+send"),
-    (8, "starting an agent as a separate program", r"^(npx\s+(-y\s+)?@anthropic-ai/claude-code|claude)\b.*\s(-p|--print)\b"),
+    (2, "deploying", r"^(vercel|netlify)\b.*\s--prod\b"),
+    (2, "deploying", r"^(fly|flyctl|firebase|serverless|sls|eb)\s+deploy\b"),
+    (2, "deploying", r"^wrangler\s+(pages\s+)?(deploy|publish)\b"),
+    (2, "deploying", r"^gcloud\s+(app|run|functions)\s+deploy\b"),
+    (2, "deploying", r"^(kubectl\s+apply|terraform\s+apply|helm\s+(install|upgrade)|cap\s+\S+\s+deploy)\b"),
+    (8, "sending mail", r"^(sendmail|mail|mailx)(\s|$)|^aws\s+sesv?2?\s+send"),
+    (8, "starting an agent as a separate program", r"^(claude|@anthropic-ai/claude-code)\b.*\s(-p|--print)(\s|$)"),
+]
+
+# Database clients: their arguments are read as database statements.
+DB_CLIENTS = {"psql", "mysql", "mariadb", "sqlite3", "mongosh", "mongo", "sqlcmd", "clickhouse-client"}
+SQL = [
+    (r"\b(drop\s+(table|database|schema|collection)|truncate\s+(table\s+)?\w)", "dropping or emptying a database"),
+    (r"\bdelete\s+from\s+[\w.\"`]+\s*(;|$)", "deleting every row of a table"),
+    (r"\.drop(database)?\(", "dropping or emptying a database"),
 ]
 
 # Commands that only show text; nothing they name is acted on.
-TEXT_ONLY = {"grep", "rg", "ag", "echo", "printf", "cat", "less", "head", "tail", "awk", "sed", "jq"}
+TEXT_ONLY = {"grep", "rg", "ag", "echo", "printf", "cat", "less", "head", "tail", "awk", "jq", "sed"}
+PREFIXES = {"sudo", "env", "time", "nohup", "exec", "command", "npx", "bunx"}
+TWO_WORD_PREFIXES = {("pnpm", "dlx"), ("yarn", "dlx"), ("npm", "exec")}
+SEPARATORS = re.compile(r"^[;&|()\n]+$")
+REDIRECTS = {">", ">>", ">|", "&>", "&>>"}
 TEMP_DIRS = {Path("/tmp").resolve(), Path(tempfile.gettempdir()).resolve()}
 URLISH = re.compile(r"^(https?://|[\w-]+(\.[\w-]+)+(:\d+)?(/|$))")
 LOCAL_HOSTS = re.compile(r"^(https?://)?(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])([:/]|$)")
 WRITE_FLAGS = re.compile(r"^(-d|--data\S*|-F|--form\S*|-T|--upload-file|--json)$")
 WRITE_METHOD = re.compile(r"^(-X|--request)(=?)(POST|PUT|PATCH|DELETE)?$", re.I)
+HEREDOC = re.compile(r"(<<-?\s*(['\"]?)(\w+)\2[^\n]*)\n.*?\n[ \t]*\3[ \t]*(?=\n|$)", re.S)
 
 RULE_FILES = {"CLAUDE.md", "CLAUDE.local.md", "AGENTS.md"}
+CLAUDE_DIR_RULES = re.compile(r"^(settings[^/]*\.json|(hooks|agents|skills|commands|rules)/.*)$")
 HANDBOOK_FILES = {"HANDBOOK.md", "WORK.md", "PHASES.md"}
 PACKAGE_DIRS = ("hooks/", "skills/", "agents/", ".claude-plugin/")
 
@@ -133,7 +149,7 @@ WRITE_WORDS = {
     "enable", "disable", "subscribe", "unsubscribe", "trigger", "run", "restore",
     "duplicate", "split", "participate", "request", "save", "apply",
 }
-# Writes the platform already asks about every time, or that are the repository's own work.
+# Writes the platform already asks about every time, or that are the session's own work.
 PASS_TOOLS = {
     "mcp__claude-code-remote__create_environment",
     "mcp__claude-code-remote__update_environment",
@@ -148,24 +164,43 @@ PASS_TOOLS = {
     "mcp__claude-code-remote__add_repo",
     "mcp__claude-code-remote__report_preview_port",
 }
-GITHUB_HOLD = {"merge", "delete", "fork", "enable", "trigger"}
-GITHUB_HOLD_TOOLS = {"mcp__github__create_repository", "mcp__github__actions_run_trigger"}
+# GitHub is where the repository's own work is saved; only writes beyond it are held.
+GITHUB_HOLD_TOOLS = {"mcp__github__create_repository", "mcp__github__fork_repository"}
 
 
 def simple_commands(command):
     """Split a shell command line into its simple commands, as lists of words."""
-    pieces = re.split(r"&&|\|\||;|\||\n|\$\(|`|\(|\)", command)
-    for piece in pieces:
-        try:
-            words = shlex.split(piece, posix=True)
-        except ValueError:
-            words = piece.split()
-        while words and re.match(r"^\w+=", words[0]):
+    command = HEREDOC.sub(lambda m: m.group(1), command)
+    lexer = shlex.shlex(command, posix=True, punctuation_chars=";&|()<>\n")
+    lexer.whitespace = " \t\r"
+    lexer.whitespace_split = True
+    words = []
+    for token in list(lexer) + [";"]:
+        if SEPARATORS.match(token) and token not in REDIRECTS:
+            words = strip_prefixes(words)
+            if words:
+                yield words
+            words = []
+        elif token != "$":
+            words.append(token)
+
+
+def strip_prefixes(words):
+    while words:
+        if re.match(r"^\w+=", words[0]):
             words = words[1:]
-        while words and words[0] in ("sudo", "env", "time", "nohup", "exec", "command"):
+        elif words[0] in PREFIXES:
             words = words[1:]
-        if words:
-            yield words
+            while words and words[0].startswith("-"):
+                takes_value = words[0] in ("-u", "-g", "-C", "-p")
+                words = words[2:] if takes_value else words[1:]
+        elif tuple(words[:2]) in TWO_WORD_PREFIXES:
+            words = words[2:]
+            while words and words[0].startswith("-"):
+                words = words[1:]
+        else:
+            return words
+    return words
 
 
 def inside(path, folder):
@@ -176,44 +211,57 @@ def inside(path, folder):
         return False
 
 
-def hold_rm(words, cwd):
-    flags = "".join(w[1:] for w in words[1:] if w.startswith("-") and not w.startswith("--"))
-    long_flags = {w for w in words[1:] if w.startswith("--")}
-    if "r" not in flags.lower() and "--recursive" not in long_flags:
+def resolve(target, current):
+    if target.startswith("~") or "$" in target:
+        return Path.home()
+    return (current / target).resolve()
+
+
+def hold_rm(args, current, cwd):
+    flags = "".join(w[1:] for w in args[1:] if w.startswith("-") and not w.startswith("--"))
+    if "r" not in flags.lower() and "--recursive" not in args:
         return None
-    for target in (w for w in words[1:] if not w.startswith("-")):
+    for target in (w for w in args[1:] if not w.startswith("-")):
         if target.startswith("~") or "$" in target:
             return "deleting outside the working folder"
-        resolved = (cwd / target).resolve()
-        in_temp = any(inside(resolved, folder) and resolved != folder for folder in TEMP_DIRS)
-        if not in_temp and (resolved == cwd or not inside(resolved, cwd)):
+        path = resolve(target, current)
+        in_temp = any(inside(path, folder) and path != folder for folder in TEMP_DIRS)
+        if not in_temp and (path == cwd or not inside(path, cwd)):
             return "deleting the working folder or something outside it"
     return None
 
 
-def hold_web_write(words):
-    if words[0] not in ("curl", "wget", "http", "https", "xh"):
+def hold_web_write(args):
+    if args[0] not in ("curl", "wget", "http", "https", "xh"):
         return None
-    urls = [w for w in words[1:] if URLISH.match(w) or LOCAL_HOSTS.match(w)]
+    urls = [w for w in args[1:] if URLISH.match(w) or LOCAL_HOSTS.match(w)]
     if urls and all(LOCAL_HOSTS.match(u) for u in urls):
         return None
-    for i, word in enumerate(words[1:], 1):
+    for i, word in enumerate(args[1:], 1):
         method = WRITE_METHOD.match(word)
         if method:
-            value = method.group(3) or (words[i + 1] if i + 1 < len(words) else "")
+            value = method.group(3) or (args[i + 1] if i + 1 < len(args) else "")
             if value.upper() in ("POST", "PUT", "PATCH", "DELETE"):
                 return "sending or changing data on a server"
         if WRITE_FLAGS.match(word) or word.startswith("--post-"):
             return "sending or changing data on a server"
-        if words[0] in ("http", "https", "xh") and word.upper() in ("POST", "PUT", "PATCH", "DELETE"):
+        if args[0] in ("http", "https", "xh") and word.upper() in ("POST", "PUT", "PATCH", "DELETE"):
             return "sending or changing data on a server"
     return None
 
 
-def rule_file_reason(path, cwd):
-    path = (cwd / path).resolve() if not Path(path).is_absolute() else Path(path)
-    if path.name in RULE_FILES or ".claude" in path.parts:
+def rule_file_reason(target, current):
+    if not isinstance(target, str):
+        raise TypeError("the file path is not text")
+    path = Path(os.path.expandvars(target)).expanduser()
+    path = (path if path.is_absolute() else current / path).resolve()
+    if path.name in RULE_FILES:
         return "editing agents' rule files"
+    parts = path.parts
+    if ".claude" in parts:
+        below = "/".join(parts[len(parts) - parts[::-1].index(".claude"):])
+        if CLAUDE_DIR_RULES.match(below):
+            return "editing agents' rule files"
     for folder in [path.parent, *path.parent.parents]:
         if (folder / ".claude-plugin" / "plugin.json").is_file():
             relative = path.relative_to(folder).as_posix()
@@ -223,69 +271,95 @@ def rule_file_reason(path, cwd):
     return None
 
 
+def written_files(words):
+    """The files a simple command writes to, as far as its words show."""
+    files = [words[i + 1] for i, w in enumerate(words[:-1]) if w in REDIRECTS]
+    name = Path(words[0]).name
+    args = [w for w in words[1:] if not w.startswith("-")]
+    if name == "tee":
+        files += args
+    elif name == "sed" and any(w.startswith("-i") or w == "--in-place" for w in words[1:]):
+        files += args[1:]
+    elif name in ("cp", "mv", "ln", "install") and args:
+        files.append(args[-1])
+    elif name in ("curl", "wget"):
+        files += [words[i + 1] for i, w in enumerate(words[:-1]) if w in ("-o", "--output", "-O", "--output-document")]
+    return files
+
+
 def bash_reason(command, cwd):
+    if not isinstance(command, str):
+        raise TypeError("the command is not text")
+    current = cwd
     for words in simple_commands(command):
-        if Path(words[0]).name in TEXT_ONLY:
+        name = Path(words[0]).name
+        for target in written_files(words):
+            if rule_file_reason(target, current):
+                return 6, rule_file_reason(target, current)
+        if name in ("cd", "pushd"):
+            current = resolve(words[1], current) if len(words) > 1 else Path.home()
             continue
-        line = " ".join(words)
+        if name in TEXT_ONLY:
+            continue
+        args = [w for i, w in enumerate(words) if w not in REDIRECTS and (i == 0 or words[i - 1] not in REDIRECTS)]
+        line = " ".join(args)
         for rule, what, pattern in COMMANDS:
             if re.search(pattern, line, re.I):
                 return rule, what
-        if words[0] == "rm":
-            what = hold_rm(words, cwd)
+        if name in DB_CLIENTS:
+            for pattern, what in SQL:
+                if re.search(pattern, line, re.I):
+                    return 1, what
+        if name == "rm":
+            what = hold_rm(args, current, cwd)
             if what:
                 return 1, what
-        what = hold_web_write(words)
+        what = hold_web_write(args)
         if what:
             return 8, what
-    redirect = re.search(r"(>>?|\btee\b(\s+-a)?)\s*([^\s;&|]+)", command)
-    if redirect and rule_file_reason(redirect.group(3), cwd):
-        return 6, "editing agents' rule files"
-    sed = re.search(r"\bsed\s+(-\w*i\w*|--in-place)\b.*?(\S*(CLAUDE|AGENTS)\.md|\S*\.claude/\S+)", command)
-    if sed:
-        return 6, "editing agents' rule files"
     return None
 
 
 def mcp_reason(tool):
-    if tool in PASS_TOOLS:
+    if tool in PASS_TOOLS or tool.startswith("mcp__github__") and tool not in GITHUB_HOLD_TOOLS:
         return None
-    if tool in GITHUB_HOLD_TOOLS:
-        return 8, "changing GitHub outside this work"
-    action = tool.split("__", 2)[-1]
-    words = set(re.split(r"[_\-]", action.lower()))
-    if tool.startswith("mcp__github__"):
-        if words & GITHUB_HOLD:
-            return 2, "merging, deleting or running on GitHub"
-        return None
-    if words & WRITE_WORDS or not words & READ_WORDS:
+    words = set(re.split(r"[_\-]", tool.split("__", 2)[-1].lower()))
+    if tool in GITHUB_HOLD_TOOLS or words & WRITE_WORDS or not words & READ_WORDS:
         return 8, "writing through a connected service"
     return None
 
 
-def guard(event):
+def guard_reason(event):
+    if "unreadable" in event:
+        raise ValueError("the platform's message was not readable")
     tool = event.get("tool_name", "")
     data = event.get("tool_input") or {}
+    if not isinstance(data, dict) or not isinstance(tool, str):
+        raise TypeError("the action's details are not readable")
     cwd = Path(event.get("cwd") or os.getcwd()).resolve()
-    found = None
     if tool == "Bash":
-        found = bash_reason(data.get("command", ""), cwd)
-    elif tool in ("Write", "Edit", "MultiEdit", "NotebookEdit"):
+        return bash_reason(data.get("command", ""), cwd)
+    if tool in ("Write", "Edit", "MultiEdit", "NotebookEdit"):
         what = rule_file_reason(data.get("file_path") or data.get("notebook_path") or "", cwd)
-        if what:
-            found = 6, what
-    elif tool.startswith("mcp__"):
-        found = mcp_reason(tool)
-    if not found:
-        return
-    rule, what = found
+        return (6, what) if what else None
+    if tool.startswith("mcp__"):
+        return mcp_reason(tool)
+    return None
+
+
+def guard(event):
+    try:
+        found = guard_reason(event)
+        if not found:
+            return
+        rule, what = found
+        why = f"{what} ({RULE[rule]})"
+    except Exception as error:  # an unreadable action is asked about, never let through
+        why = f"it could not read this action ({error})"
     answer(
         "PreToolUse",
         permissionDecision="ask",
-        permissionDecisionReason=(
-            f"Kowboy package: {what} ({RULE[rule]}). Allow only if the operator asked for "
-            "exactly this step."
-        ),
+        permissionDecisionReason=f"Kowboy package: {why}. Allow only if you asked for exactly this step.",
     )
 
 
@@ -306,38 +380,54 @@ def asks_operator(text):
     return bool(re.search(r"^\s*(\*\*|#+\s*)?Questions\b", text, re.M))
 
 
-def advisor_ran(transcript_path):
-    """True when the advisor was called since the operator's last message."""
+def numbers(text):
+    return set(re.findall(r"\*\*(\d+)\*\*", text))
+
+
+def this_turn(transcript_path):
+    """The operator's last message, whether the advisor ran since, and the question
+    numbers in replies before it."""
     try:
         lines = Path(transcript_path).read_text(encoding="utf-8").splitlines()
     except (OSError, TypeError):
-        return False
-    for line in reversed(lines):
+        return "", False, set()
+    entries = []
+    for line in lines:
         try:
-            entry = json.loads(line)
+            entries.append(json.loads(line))
         except json.JSONDecodeError:
             continue
+    prompt, advisor, seen = "", False, set()
+    for entry in reversed(entries):
         content = (entry.get("message") or {}).get("content")
-        if entry.get("type") == "user" and (
+        is_prompt = entry.get("type") == "user" and (
             isinstance(content, str)
             or isinstance(content, list)
-            and not any(part.get("type") == "tool_result" for part in content)
-        ):
-            return False
-        if entry.get("type") == "assistant" and isinstance(content, list):
-            for part in content:
-                if part.get("type") == "tool_use" and str(
-                    (part.get("input") or {}).get("subagent_type", "")
-                ).endswith("advisor"):
-                    return True
-    return False
+            and not any(isinstance(p, dict) and p.get("type") == "tool_result" for p in content)
+        )
+        if is_prompt and not prompt:
+            prompt = content if isinstance(content, str) else " ".join(
+                p.get("text", "") for p in content if isinstance(p, dict)
+            )
+            continue
+        if entry.get("type") != "assistant" or not isinstance(content, list):
+            continue
+        for part in content:
+            if not isinstance(part, dict):
+                continue
+            if not prompt and part.get("type") == "tool_use":
+                if str((part.get("input") or {}).get("subagent_type", "")).endswith("advisor"):
+                    advisor = True
+            if prompt and part.get("type") == "text":
+                seen |= numbers(part.get("text", ""))
+    return prompt, advisor, seen
 
 
 def reply(event):
-    if event.get("stop_hook_active"):
+    if not isinstance(event, dict) or event.get("stop_hook_active"):
         return
-    text = event.get("last_assistant_message") or ""
-    if not text.strip():
+    text = event.get("last_assistant_message")
+    if not isinstance(text, str) or not text.strip():
         return
     reasons = []
     if not first_line(text).startswith(STATES):
@@ -345,26 +435,36 @@ def reply(event):
             "Start the reply with the state line: 'Working:', 'Waiting for you:', "
             "'Waiting for something else:' or 'Done:' (HANDBOOK.md, How to reply)."
         )
-    elif first_line(text).startswith("Waiting for you:") and not re.search(r"\*\*\d+\*\*", text):
+    elif first_line(text).startswith("Waiting for you:") and not numbers(text):
         reasons.append(
             "A reply that waits for the operator asks numbered questions: give each its "
             "number from the question log, in bold."
         )
-    if asks_operator(text) and not advisor_ran(event.get("transcript_path")):
-        reasons.append(
-            "Before you ask the operator, have the advisor check your questions: call the "
-            "agent 'kowboy:advisor' with each question, the operator's words for the item, "
-            f"and the path {ROOT / 'WORK.md'}. Follow its answer or keep the question."
-        )
+    if asks_operator(text):
+        prompt, advisor, seen = this_turn(event.get("transcript_path"))
+        new = numbers(text) - seen
+        if new and not advisor and prompt.strip().lower() != "status":
+            reasons.append(
+                "Before you ask the operator new questions ("
+                + ", ".join(sorted(new, key=int))
+                + "), have the advisor check them: call the agent 'kowboy:advisor' with each "
+                f"question, the operator's words for the item, and the path {ROOT / 'WORK.md'}. "
+                "Follow its answer or keep the question."
+            )
     if reasons:
         print(json.dumps({"decision": "block", "reason": "Kowboy package: " + " ".join(reasons)}))
 
 
-ENTRIES = {"rules": rules, "guard": guard, "reply": reply}
-
 if __name__ == "__main__":
     raw = sys.stdin.read()
-    if sys.argv[1] == "session-start":
+    try:
+        incoming = json.loads(raw) if raw.strip() else {}
+    except json.JSONDecodeError:
+        incoming = {"unreadable": raw}
+    if not isinstance(incoming, dict):
+        incoming = {"unreadable": incoming}
+    entry = sys.argv[1]
+    if entry == "session-start":
         session_start(sys.argv[2])
     else:
-        ENTRIES[sys.argv[1]](json.loads(raw) if raw.strip() else {})
+        {"rules": rules, "guard": guard, "reply": reply}[entry](incoming)

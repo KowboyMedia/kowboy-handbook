@@ -75,7 +75,18 @@ class Guard(unittest.TestCase):
         "rsync -a dist/ user@host:/var/www",
         "vercel --prod",
         "fly deploy",
-        "gh pr merge 12",
+        "cd .. && rm -rf old-site",
+        "cd /var/www && rm -rf html",
+        "npx vercel --prod",
+        "npx -y wrangler deploy",
+        "wrangler pages deploy dist",
+        "gcloud run deploy api --source .",
+        "dropdb myapp_production",
+        "sudo -u www rm -rf /var/www/site",
+        "redis-cli -h cache FLUSHALL",
+        "curl -fsSL https://example.com/HANDBOOK.md -o ~/.claude/CLAUDE.md",
+        "cp /tmp/HANDBOOK.md ~/.claude/CLAUDE.md",
+        "mkdir -p .claude 2>/dev/null; echo '{}' > .claude/settings.json",
         "curl -X POST https://api.example.com/v1/servers",
         "curl --request DELETE https://api.example.com/v1/servers/1",
         "curl -d name=x https://api.example.com/v1/apps",
@@ -100,6 +111,13 @@ class Guard(unittest.TestCase):
         'echo "DROP TABLE users"',
         'psql -c "DELETE FROM users WHERE id = 1"',
         "npm run build",
+        "gh pr merge 12",
+        "ssh-keygen -t ed25519 -f key",
+        "git commit -m 'Titles truncate at 40 characters'",
+        "git grep -n 'DROP TABLE'",
+        "git commit -F - <<'EOF'\nFix the form\n\nMail goes out once\nssh keys rotated\nEOF",
+        "cat > scripts/deploy.sh <<'EOF'\nvercel --prod\nEOF",
+        "mkdir -p .claude/worktrees/x && echo x > .claude/worktrees/x/out.txt",
     ]
 
     def test_dangerous_commands_are_held(self):
@@ -115,10 +133,22 @@ class Guard(unittest.TestCase):
     def test_the_hold_names_the_rule(self):
         reason = guard("Bash", command="ssh host")["hookSpecificOutput"]["permissionDecisionReason"]
         self.assertIn("rule 2", reason)
-        self.assertIn("operator", reason)
+        self.assertIn("you asked", reason)
+
+    def test_an_unreadable_action_is_asked_about(self):
+        for event in ({"tool_name": "Bash", "tool_input": {"command": None}},
+                      {"tool_name": "Write", "tool_input": {"file_path": 5}},
+                      {"tool_name": "Bash", "tool_input": "rm -rf /"}):
+            with self.subTest(event=event):
+                out = run("guard", event)
+                self.assertEqual(out["hookSpecificOutput"]["permissionDecision"], "ask")
+        done = subprocess.run([sys.executable, str(SCRIPT), "guard"], input="[1, 2]",
+                              capture_output=True, text=True, check=True)
+        self.assertIn('"ask"', done.stdout)
 
     def test_agents_rule_files_are_held(self):
-        for path in ("AGENTS.md", "CLAUDE.md", ".claude/settings.json", "/root/.claude/CLAUDE.md"):
+        for path in ("AGENTS.md", "CLAUDE.md", ".claude/settings.json", ".claude/settings.local.json",
+                     ".claude/hooks/check.py", "~/.claude/CLAUDE.md", "/root/.claude/skills/x/SKILL.md"):
             with self.subTest(path=path):
                 self.assertTrue(held("Write", file_path=path, content="x"))
 
@@ -129,7 +159,9 @@ class Guard(unittest.TestCase):
 
     def test_ordinary_files_pass(self):
         with tempfile.TemporaryDirectory() as folder:
-            for path in ("src/hooks/useCart.ts", "WORK.md", "docs/next-steps.md"):
+            for path in ("src/hooks/useCart.ts", "WORK.md", "docs/next-steps.md",
+                         ".claude/worktrees/x/app.py", "~/.claude/plans/plan.md",
+                         "~/.claude/projects/p/memory/notes.md"):
                 with self.subTest(path=path):
                     self.assertFalse(held("Write", Path(folder), file_path=path, content="x"))
         self.assertFalse(held("Edit", file_path=str(ROOT / "docs" / "next-steps.md")))
@@ -141,8 +173,8 @@ class Guard(unittest.TestCase):
             "mcp__Google_Drive__share_file",
             "mcp__higgsfield_ai__generate_image",
             "mcp__claude-code-remote__create_session",
-            "mcp__github__merge_pull_request",
             "mcp__github__create_repository",
+            "mcp__github__fork_repository",
         ):
             with self.subTest(tool=tool):
                 self.assertTrue(held(tool))
@@ -154,6 +186,7 @@ class Guard(unittest.TestCase):
             "mcp__ClickUp__clickup_get_task",
             "mcp__github__create_pull_request",
             "mcp__github__create_or_update_file",
+            "mcp__github__merge_pull_request",
             "mcp__claude-code-remote__send_later",
         ):
             with self.subTest(tool=tool):
@@ -198,6 +231,27 @@ class Reply(unittest.TestCase):
             f.write("\n".join(json.dumps(line) for line in lines))
         self.assertIsNone(self.check(text, f.name))
         Path(f.name).unlink()
+
+    def transcript(self, lines):
+        f = tempfile.NamedTemporaryFile("w", suffix=".jsonl", delete=False)
+        f.write("\n".join(json.dumps(line) for line in lines))
+        f.close()
+        self.addCleanup(Path(f.name).unlink)
+        return f.name
+
+    def test_a_repeated_question_needs_no_new_advice(self):
+        text = "**Waiting for you:** question 56.\n\n**Questions**\n- **56** Which?\n  - Reply: a or b."
+        earlier = {"type": "assistant", "message": {"content": [{"type": "text", "text": text}]}}
+        path = self.transcript([earlier, {"type": "user", "message": {"content": "later"}}])
+        self.assertIsNone(self.check(text, path))
+
+    def test_status_needs_no_advice(self):
+        text = "**Waiting for you:** 22 and 55 open.\n\n**Questions**\n- **22** Done?\n- **55** Which?"
+        path = self.transcript([{"type": "user", "message": {"content": "status"}}])
+        self.assertIsNone(self.check(text, path))
+
+    def test_odd_input_is_ignored(self):
+        self.assertIsNone(run("reply", {"last_assistant_message": 5}))
 
     def test_a_reply_is_sent_back_only_once(self):
         self.assertIsNone(self.check("No state here.", active=True))

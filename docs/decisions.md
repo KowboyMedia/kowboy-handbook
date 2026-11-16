@@ -559,3 +559,21 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   uploading and adding a marketplace, so item 9 is built and updates by itself from this
   repository · the operator, question 55, 2026-11-16: "55 i can add or create with Claude,
   upload, Marketplace".
+- 2026-11-16 · The Kowboy package is built: hooks, phase skills, the advisor, the two manifest
+  files, 21 script tests, and the setup steps rewritten. A second agent with no part in the work
+  reviewed it and found 13 failures: missed dangerous commands (a change of folder before a
+  deletion, deploys through `npx`, `dropdb`, rule files written by `curl -o` or `cp`), harmless
+  work held (`ssh-keygen`, commit messages, files under `.claude/worktrees`), crashes that let an
+  action through, an unasked instruction to name the version, and texts. All fixed and tested;
+  where the checks read commands as text they remain a net, not a wall · agent's choice, not
+  confirmed by the operator.
+- 2026-11-16 · Merges, workflow runs and secret changes on GitHub are not held by the package; on
+  GitHub only creating or forking a repository is. The plan did not list them, saving work to
+  GitHub is everyday work, and in product repositories publishing to production already waits
+  for review and approval on GitHub (the access model, question 44) · agent's choice on the
+  review, not confirmed by the operator.
+- 2026-11-16 · The advisor runs on the package's demand, not as a model call inside the check: a
+  model-run check would run at every reply with no condition, while this runs only when a reply
+  asks new questions, and the advisor can read `docs/decisions.md`. Supersedes point 6 of the
+  plan written earlier the same day · agent's choice on the review, not confirmed by the
+  operator.

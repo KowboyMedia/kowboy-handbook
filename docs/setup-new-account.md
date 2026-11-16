@@ -29,9 +29,9 @@ missing. If you cannot get the handbook at all, say so in that line and do no wo
 
 ## 3. The cloud environment
 
-Its setup script no longer needs to place the handbook: a session in it removes those lines on
-your approval. Any other environment whose setup script downloads `HANDBOOK.md`: delete those
-lines there (claude.ai, Claude Code, Environments).
+Its setup script no longer needs to place the handbook. Once the package works in a fresh
+session, that session offers to remove those lines on an approval card; any other environment
+whose setup script downloads `HANDBOOK.md` gets the same from a session in it.
 
 ## 4. Your Mac (terminal)
 
