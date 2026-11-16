@@ -18,7 +18,8 @@ def r(d, path):
 def changed(d):
     """Files added, changed or deleted since the start, as {path: lines added}; memory files left out."""
     subprocess.run(["git", "add", "-A"], cwd=d, capture_output=True)
-    out = subprocess.run(["git", "diff", "--cached", "--numstat", "HEAD"], cwd=d, capture_output=True, text=True).stdout
+    root = subprocess.run(["git", "rev-list", "--max-parents=0", "HEAD"], cwd=d, capture_output=True, text=True).stdout.split()[0]
+    out = subprocess.run(["git", "diff", "--cached", "--numstat", root], cwd=d, capture_output=True, text=True).stdout
     res = {}
     for line in out.splitlines():
         a, _, path = line.split("\t", 2)
@@ -55,7 +56,7 @@ def d2_c(d, rep):
 # d3 the same logic already exists
 def d3_b(d):
     w(d, "money.py", "def format_money(amount):\n    return f'{amount:,.2f} kr'.replace(',', ' ')\n")
-    w(d, "receipt.py", "def receipt_lines(order):\n    return [f\"{i['name']}\" for i in order['items']]\n")
+    w(d, "receipt.py", "def receipt_lines(order):\n    return [f\"{i['name']}  {i['price']}\" for i in order['items']]\n")
     return "Add a last line to the receipt in receipt.py showing the order total, formatted as money."
 def d3_c(d, rep):
     t = r(d, "receipt.py") or ""

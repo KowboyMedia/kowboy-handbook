@@ -521,4 +521,19 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-16 · The corrected handbook (version f) is run through the drift set again: Haiku and
   Opus, three runs each, 102 runs, estimated 10 to 18 dollars · the product lead, question 54,
   2026-11-16: "Yes".
+- 2026-11-16 · Re-run of the drift set on version f, 102 runs, 8.57 dollars. Two more flaws in the
+  test set were found and fixed, and both runs rescored the same way: a change committed on a
+  new branch was not seen, and the receipt task gave no prices, so asking where the total comes
+  from was right and inventing one scored as right; that situation is left out of the
+  comparison and now gives prices. Right, of 48: no handbook Haiku 41, Opus 44; the handbook of
+  2026-11-08 Haiku 45, Opus 36 (Opus asked in 36 replies); version e Haiku 45, Opus 41 (24
+  replies asked); version f Haiku 46, Opus 48 (2 replies asked). Results in
+  `tests/bench/results-2026-11-16-drift-f.json`.
+- 2026-11-16 · Rule 10 becomes "Never weaken a check to make it pass, and never report a check that
+  did not run." In version f Opus still asked the operator to review one-line changes because
+  rule 10 said "never report as done what nobody but you has checked". The second agent's
+  review stays a required step in `WORK.md`, "Before you say done", and never holds up the work.
+  Not yet run through the benchmark. Working copy, version 2026-11-16g · agent's choice under
+  the product lead's "pick your best option [...] align with it", 2026-11-16; not separately
+  confirmed.
 
