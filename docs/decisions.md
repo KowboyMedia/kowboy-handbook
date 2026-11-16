@@ -16,3 +16,10 @@
 - **6a:** this repository runs the tests on every pull request and every change to `main` (`.github/workflows/kowboy-handbook-tests.yml`).
 - **8a:** `main` is to be protected so that a merge needs a pull request with one approving review and the check "kowboy-handbook-tests" green. Admins can still merge without the review, so a sole operator is never locked out. Revisit when a second person can review. The agent could not set this (the session's GitHub access does not allow changing branch protection); the operator sets it in GitHub's settings.
 - **Release (7a):** `claude/handbook-restructure` merged into `main` through a pull request with the tests green. It reaches a project at its next daily sync, once that project has the workflow. Undo: revert the merge on `main`; projects follow at their next sync.
+
+## 2026-11-16: shorter replies (operator: "Your output is too verbose ... This needs to be solved")
+
+- Replies are capped at twelve lines with one-line bullets; Done and Notes hold at most three bullets each; empty sections are left out.
+- A reply to anything other than the operator's own message (a progress request, a hook, a notice) is the Status bullet alone.
+- A waiting question is written in full once; later replies name only its number. This replaces question 9.
+- Proposed as a pull request, since the output format is part of the rules agents work by (rule 5); it takes effect when the operator merges it.

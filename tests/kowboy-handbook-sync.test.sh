@@ -62,7 +62,7 @@ test_4_handbook_change_replaces_only_the_block() {
   printf 'Project notes\n' > "$p/AGENTS.md"
   bash "$sync" "$hb" "$p" >/dev/null
   printf 'Text after the block\n' >> "$p/AGENTS.md"
-  awk '{ sub(/^Version 2026-11-16m\.$/, "Version TEST-NEW."); print }' "$hb/kowboy-handbook-rules.md" > "$hb/x" \
+  awk '{ sub(/^Version .*\.$/, "Version TEST-NEW."); print }' "$hb/kowboy-handbook-rules.md" > "$hb/x" \
     && mv "$hb/x" "$hb/kowboy-handbook-rules.md"
   bash "$sync" "$hb" "$p" >/dev/null || { fail 4 "sync exited non-zero"; return; }
   grep -qF 'Version TEST-NEW.' "$p/AGENTS.md" \
