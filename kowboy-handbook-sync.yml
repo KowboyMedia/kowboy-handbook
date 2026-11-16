@@ -57,9 +57,20 @@ jobs:
           [ CLAUDE.md -ef AGENTS.md ] || cat "$RUNNER_TEMP/out/CLAUDE.md" > CLAUDE.md
           rm -rf kowboy-handbook-phases
           cp -R "$RUNNER_TEMP/out/kowboy-handbook-phases" kowboy-handbook-phases
-          # Also stage what AGENTS.md and CLAUDE.md point to when they are symbolic links.
-          git add AGENTS.md CLAUDE.md kowboy-handbook-phases \
-            "$(realpath --relative-to=. AGENTS.md)" "$(realpath --relative-to=. CLAUDE.md)"
+          git add AGENTS.md CLAUDE.md kowboy-handbook-phases
+          # When AGENTS.md or CLAUDE.md is a symbolic link, stage what it points to as well, unless
+          # that lies outside the repository or is ignored by git; then say so and go on.
+          for f in AGENTS.md CLAUDE.md; do
+            t=$(realpath --relative-to=. "$f")
+            case "$t" in
+              ../* | /*) echo "kowboy-handbook-sync: $f points outside the repository, its change is not committed" ;;
+              *) if git check-ignore -q -- "$t"; then
+                   echo "kowboy-handbook-sync: $f points to $t, which git ignores, its change is not committed"
+                 else
+                   git add -- "$t"
+                 fi ;;
+            esac
+          done
           if git diff --cached --quiet; then
             echo "kowboy-handbook-sync: already up to date with handbook $VERSION"
             exit 0
