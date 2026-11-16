@@ -1,6 +1,6 @@
 # Kowboy handbook: the phases
 
-Version 2026-11-16a. Read a phase's section when that phase starts. It ends with "End of the
+Version 2026-11-16b. Read a phase's section when that phase starts. It ends with "End of the
 phases."
 
 ## Start a repository
@@ -10,21 +10,21 @@ When: a repository is new, or lacks a strategy, acceptance criteria or the memor
 - `AGENTS.md` with only what is true there: the parts of the product and their tags, the
   commands an agent cannot guess, the repository's own rules and checks, and "Design: none" or
   `DESIGN.md`. The four memory files.
-- What the owner has (a concept, reference sites, data, old documents) goes under
+- What the operator has (a concept, reference sites, data, old documents) goes under
   `docs/inputs/`, unchanged.
 - Discover, then write `docs/strategy.md` from the answers: the features; the purpose in three
   sentences; the parts and the connections between them; the data and which part owns each
   piece; the technology, each choice the widely used one with one clause why; the hosting and
   how a change reaches staging and live; the acceptance criteria, numbered, each testable
   without a person; what is out of scope.
-- The owner approves the strategy, as at most five decisions.
+- The operator approves the strategy, as at most five decisions.
 - Then the skeleton: one folder per part; automatic checks (build, types, tests with none
   skipped, no secrets); staging published from the shared copy; every acceptance criterion
   mapped to a named test.
 
 ## Discover
 
-When: a project starts, a feature is larger than one item, or the owner describes a wish.
+When: a project starts, a feature is larger than one item, or the operator describes a wish.
 
 - Read everything given. Ask nothing yet.
 - List the features: each in one sentence of value to the user, marked now or later, and what
@@ -59,25 +59,25 @@ says "Design: none".
 - Size first. None (existing patterns): build, one picture on desktop and one on mobile,
   compare with a neighbouring page. Light (inside a pattern, adding something): build against
   `DESIGN.md` and check yourself once. Full (a new page or look): the loop.
-- `DESIGN.md`, once per repository, written by an agent from references the owner names:
+- `DESIGN.md`, once per repository, written by an agent from references the operator names:
   colours, type, spacing, rules for components, tone, and what to avoid. Real content from the
   start.
 - The loop: build one section at a time; a second agent looks at desktop and mobile and scores
   order, contrast, spacing, every state and keyboard use; at most three passes. For a new look,
-  two or three finished candidates side by side, and the owner picks.
+  two or three finished candidates side by side, and the operator picks.
 
 ## Decide architecture
 
 When: before a choice later work builds on.
 
-- Repeat the owner's aim back first; design only after the owner's yes.
-- Design for the goal and scale the owner stated, never for today's data. Assumptions are
-  written at the top, and one that changes the design is the owner's decision.
-- A fresh agent checks the design against the owner's words before the owner sees it.
+- Repeat the operator's aim back first; design only after the operator's yes.
+- Design for the goal and scale the operator stated, never for today's data. Assumptions are
+  written at the top, and one that changes the design is the operator's decision.
+- A fresh agent checks the design against the operator's words before the operator sees it.
 - Name the parts and the connections first. A part knows nothing beyond its connections.
 - Boring and widely used, with as few moving parts as possible: nothing without a need that
   exists now.
-- One shape and one owner per piece of data; raw input is kept; changes add, never break.
+- One shape and one operator per piece of data; raw input is kept; changes add, never break.
 - Between two workable options, the one that can be undone wins.
 - Every design meets this: every entry point checks who is calling and every key has the least
   access; personal data only where needed and never in logs; backups exist and a restore was
@@ -124,12 +124,12 @@ lines. In this order:
 
 ## Release and operate
 
-When: the owner says "release", a health check is red, or something is wrong in
+When: the operator says "release", a health check is red, or something is wrong in
 production.
 
 1. Every check is green on staging.
 2. Say what changes for the people who use it, in their words.
-3. The owner says "release". Nothing goes live before.
+3. The operator says "release". Nothing goes live before.
 4. The approved publish runs by itself, as "Security" says. Watch the health check until it is
    green, keep the previous version ready and say in one line how it comes back.
 5. Write the release into `docs/decisions.md`.
@@ -138,13 +138,13 @@ The first go-live adds: the address and its certificates answer; backups run and
 rehearsed; the alerts were seen firing once; the undo is known; personal data and keys are only
 where the design says; who is told, and in which words, is written beforehand.
 
-When something is wrong in production: every action there is the owner's decision. First make
+When something is wrong in production: every action there is the operator's decision. First make
 it safe, then find the cause, then fix it through staging. The cause goes into
 `docs/known-bugs.md`. Libraries are updated once a month, as one item, with every test green.
 
 ## Status
 
-When: the owner says "status".
+When: the operator says "status".
 
 Read-only. The reply shape, without its limits on length, and nothing else: the first line is the session's state and "Where to
 pick up" from `docs/next-steps.md`; **Questions**, every open entry of `docs/open-questions.md`,

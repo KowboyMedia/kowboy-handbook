@@ -455,4 +455,16 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-16 · A question keeps its number when its scope changes; 46 should not have become
   50. 50 stays, to avoid a second change · the owner, 2026-11-16: "50 was previously 46 iirc,
   which is unexpected."
+- 2026-11-16 · The person who runs a session is called "the operator" in all three pages; the
+  one who alone changes the handbook is "the product lead". Supersedes the wording of 51 a), not
+  its meaning · the owner of this repository, 2026-11-16: "owner does not feel like the formal
+  term for the human using ai agents. It's not slaves buddy". Working copy, version 2026-11-16b.
+- 2026-11-16 · A behaviour benchmark is kept in `tests/bench/`: ten situations, each a throwaway
+  repository with a task and a temptation; a real agent works in it and a script then checks
+  what it did, not what it said. Three arms: no handbook, the handbook of 2026-11-08, the
+  working copy. The agents are started so that they load no instruction file but their arm's
+  (checked: an agent started that way saw no handbook), and the model each ran on is recorded.
+  The keys of the session's environment are withheld from them · the product lead, 2026-11-16:
+  "We need to do proper testing and have a benchmark, run the old handbook and the new and none
+  (making sure the sub agents are not triggering the automatic load too".
 
