@@ -622,3 +622,5 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-16 · Question 23 is re-asked in plain words; question 40 waits, the operator will do it
   later · the operator, 2026-11-16: "23 I dont understand what you are asking", "40 will do
   later".
+- 2026-11-16 · Replies to the operator take the minimal shape, bulleted · the operator, question
+  62, 2026-11-16: "62 b minimal. But bulleted."

@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 63
+Next number: 64
 
 ## 23 `[handbook]` Should the handbook say that your answer to a question goes back only to the thread that asked it, and is never passed to another thread unless that thread owns the subject?
 
@@ -24,9 +24,7 @@ the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
 
 
-## 62 `[handbook]` Which reply format should every session use with the operator?
 
-Asked 2026-11-16, on the operator's word that replies are too verbose. a) Compact: the state
-line, at most three one-line bullets, each question on one line with its options; b) Minimal: one
-or two sentences as in the operator's example of 2026-11-16, questions inline by number; c) as
-now. The chosen format goes into "How to reply" in `HANDBOOK.md`. Reply: a, b or c.
+## 63 `[handbook]` Should "How to reply" in `HANDBOOK.md` become the minimal bulleted shape shown in the thread of 2026-11-16 (state bullet, one or two bullets, questions inline by bold number)?
+
+Asked 2026-11-16, on 62 b. Reply: a) yes; b) adjust it (say how).
