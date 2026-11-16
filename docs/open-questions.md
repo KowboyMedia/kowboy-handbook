@@ -22,13 +22,3 @@ Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
-## 59 `[handbook]` When the agent ran `ssh -V` in the thread of 2026-11-16 (the fresh-session check of item 9), did a permission prompt naming the Kowboy package appear for you?
-
-Asked 2026-11-16. The guard answers "ask" for it; from inside the session it cannot be seen
-whether the prompt reached the operator in auto mode. Reply: a) yes, allowed; b) no prompt; c) a
-prompt, declined.
-
-## 60 `[handbook]` Instruction: look at the setup script of the environment "Worksuite 2.0" and remove any lines that download the handbook; then say "removed" or "none".
-
-Asked 2026-11-16. The package now delivers the handbook; only the operator can read or edit that
-script (Settings, environments). Reply: a) "removed"; b) "none"; c) keep it.

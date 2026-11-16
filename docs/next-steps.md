@@ -7,12 +7,12 @@ not done, keep it current.
 
 Item 9, the Kowboy package, is released (2026-11-16), installs from GitHub and is added to the
 operator's account (57). The fresh-session check (2026-11-16, second thread): the handbook arrived
-at the start and the rules at every message; the guard answers "ask" for `ssh -V`, and whether the
-operator saw the prompt in auto mode waits for question 59; the reply check is tried at the end of
-that thread. The installed copy is version 2026-11-16h, synced 14:38:58 UTC, 30 seconds before
+at the start and the rules at every message; the hold for `ssh -V` reached the operator as a permission
+prompt in auto mode (59); a reply without its state was sent back; the handbook download is out
+of "Worksuite 2.0" too (60). The installed copy is version 2026-11-16h, synced 14:38:58 UTC, 30 seconds before
 2026-11-16i reached main: until it updates, sessions still get the removed second-correction rule.
 Next: a fresh thread with "resume next steps" checks the version the package delivers at its start
-(becomes a question if still h), and acts on 59 and 60 (the setup script of "Worksuite 2.0"). The
+(becomes a question if still h); if it is i, item 9 is done. The
 preferences stay as they are for now. The benchmark in `tests/bench/` is not run until the
 operator says so (2026-11-16). The key clean-up (question 43) is booked with the product lead
 for 2026-11-20. After item 9: item 11 (the one-page map of each repository), then item 4.

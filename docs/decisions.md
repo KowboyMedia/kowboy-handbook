@@ -613,3 +613,7 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-16 · The Kowboy package is added to the operator's account; question 22 closes with
   it, the preferences staying as they are for now · the operator, question 57, 2026-11-16: "It's
   added".
+- 2026-11-16 · The package's hold reaches the operator in auto mode: the permission prompt for
+  `ssh -V` appeared and was allowed · the operator, question 59, 2026-11-16: "59 a".
+- 2026-11-16 · The handbook download is removed from the setup script of the environment
+  "Worksuite 2.0", as the package now delivers it · the operator, question 60, 2026-11-16: "60 a".
