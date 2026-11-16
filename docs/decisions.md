@@ -610,3 +610,6 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   throwaway setup, version by commit, and every check runs from the installed copy · the
   operator, 2026-11-16: "verify everything is working now", "then next steps"; removal approved
   on the platform's card.
+- 2026-11-16 · The Kowboy package is added to the operator's account; question 22 closes with
+  it, the preferences staying as they are for now · the operator, question 57, 2026-11-16: "It's
+  added".

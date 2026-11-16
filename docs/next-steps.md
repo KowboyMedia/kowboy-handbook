@@ -7,8 +7,8 @@ not done, keep it current.
 
 Item 9, the Kowboy package, is released (2026-11-16) and proven to install from GitHub, with
 every check working from the installed copy; the old handbook download is gone from the setup
-script of the environment "Core, Plugin and WordPress" (2026-11-16). It waits for the operator
-to add it to the account (57). Then a new thread with "resume next steps" finishes item 9: in
+script of the environment "Core, Plugin and WordPress" (2026-11-16). It is added to the
+operator's account (57, 2026-11-16). Next, a new thread with "resume next steps" finishes item 9: in
 that fresh session it checks that the handbook arrives at the start, the rules at every
 message, a held action shows the permission prompt in auto mode (try `ssh -V`, harmless if
 allowed) and a reply without its state is sent back; and it asks whether the environment

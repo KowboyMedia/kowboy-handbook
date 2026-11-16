@@ -21,11 +21,3 @@ agent prepared under his own account; the first change after the protection show
 Asked 2026-11-15, on the owner's yes to 42. The list of key names with the agent's guess for each
 is in the thread of that day and not here, because this repository is public. The owner corrects
 the list, then approves the removal on a card. Reply: ok, or the names to keep.
-
-## 57 `[handbook]` Instruction: add the Kowboy package to your account; then say "added".
-
-Asked 2026-11-16, for after the release (56). Replaces 22. Simplified the same day on the
-operator's "simplify for me": the preferences stay as they are for now (their download is
-harmless next to the package); the agent removes the environment's old copy on an approval card.
-Steps: claude.ai, Customize, Plugins, Add, Add marketplace; enter `KowboyMedia/kowboy-handbook`,
-confirm, turn on "Sync automatically"; install "kowboy".
