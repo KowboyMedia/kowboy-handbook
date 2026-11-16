@@ -617,3 +617,8 @@ Append only; a changed decision is a new line that says what it supersedes. The 
   `ssh -V` appeared and was allowed · the operator, question 59, 2026-11-16: "59 a".
 - 2026-11-16 · The handbook download is removed from the setup script of the environment
   "Worksuite 2.0", as the package now delivers it · the operator, question 60, 2026-11-16: "60 a".
+- 2026-11-16 · This thread's work (the fresh-session check of item 9, 59 and 60) is merged into
+  main · the operator, question 61, 2026-11-16: "61 a".
+- 2026-11-16 · Question 23 is re-asked in plain words; question 40 waits, the operator will do it
+  later · the operator, 2026-11-16: "23 I dont understand what you are asking", "40 will do
+  later".
