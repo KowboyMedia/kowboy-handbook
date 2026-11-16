@@ -627,3 +627,14 @@ Append only; a changed decision is a new line that says what it supersedes. The 
 - 2026-11-16 · Question 23 is dropped: no rule on passing answers between threads; it was an
   agent's own idea for a problem that never happened · the operator, question 23, 2026-11-16:
   "this has never been a problem and is therefore something an agent invented by itself".
+- 2026-11-16 · Replies: compact, a "Status:" first bullet and a "Next:" line, questions as
+  "64:" with their options nested; nothing sent while working · the operator, question 63,
+  2026-11-16: "63 compact, but questions are nested lists with its options, and colon after
+  number like 54: . Status: and Next: titles likewise. Also no need to output intermediate
+  messsages"; "is it possible to just have an indicator that you are working".
+- 2026-11-16 · Every rule an agent made up is removed (61 in a sentence-by-sentence count,
+  `docs/rule-inventory-2026-11-16.md`), with the five untraceable ones named in the thread; rule
+  7 is kept until question 66. The phases Discover, Design and Status are gone with them, and the
+  package no longer forces the advisor before a question. Version 2026-11-16j, on the branch
+  until question 67 · the operator, question 64, 2026-11-16: "Remove all 51 made up rules, the 6
+  untracable ones, and the doubtfull ones."

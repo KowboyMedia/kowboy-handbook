@@ -3,7 +3,7 @@
 Every question asked of the owner about the handbook, numbered for good. An answered question is
 recorded in the handbook's history with the change it led to, and leaves this file.
 
-Next number: 65
+Next number: 68
 
 ## 40 `[handbook]` Instruction: protect the handbook's live copy on GitHub so that a change reaches it only after the owner's click; then say "protected".
 
@@ -20,13 +20,21 @@ the list, then approves the removal on a card. Reply: ok, or the names to keep.
 
 
 
-## 63 `[handbook]` Should "How to reply" in `HANDBOOK.md` become the minimal bulleted shape shown in the thread of 2026-11-16 (state bullet, one or two bullets, questions inline by bold number)?
 
-Asked 2026-11-16, on 62 b. Reply: a) yes; b) adjust it (say how).
+## 65 `[handbook]` Should the 24 doubtful rules traced to the operator be removed?
 
-## 64 `[handbook]` Should the handbook rules that agents made up and that look doubtful or useless (the list in the thread of 2026-11-16) be cut?
+Asked 2026-11-16. The list and the reason for each are in `docs/rule-inventory-2026-11-16.md`
+(OPERATOR or RESEARCH, "doubtful"): 19 repeat another rule that stays; 5 are weak on their own
+(re-plan when reality differs, a read-only helper for outside reading, the advisor on one-way
+steps, match the code's style, one change at a time when debugging). Reply: a) remove; b) keep.
 
-Asked 2026-11-16, on the operator's question which rules an agent invented by itself. A trace of
-every rule against `decisions.md` found about 137 rules: about 77 from the operator, 3 from the
-research, about 51 made by agents with no request or problem behind them, 6 unclear. Reply: a)
-cut the fifteen on the list; b) go through them one by one; c) keep all.
+## 66 `[handbook]` Should rule 7 and the 22 other rules the owner approved only as part of a whole rewrite stay?
+
+Asked 2026-11-16. They are UNSURE in `docs/rule-inventory-2026-11-16.md`; most are judged useful.
+Rule 7 (never make up business facts) matches the operator's own "no invented facts". Reply: a)
+keep them; b) remove all but rule 7; c) remove all.
+
+## 67 `[handbook]` Release handbook version 2026-11-16j (agent-made rules removed, the new reply format) to every session?
+
+Asked 2026-11-16. It is on the thread's branch; main is live. Quiz key 7 rested on a removed rule
+and needs the owner's change. Reply: a) release; b) not yet.
