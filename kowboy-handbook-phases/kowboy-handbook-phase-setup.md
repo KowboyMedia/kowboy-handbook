@@ -1,6 +1,6 @@
 # Kowboy handbook: phase "Setup"
 
-Version 2026-11-16q.
+Version 2026-11-17a.
 
 ## Start a repository
 

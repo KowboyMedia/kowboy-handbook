@@ -39,3 +39,7 @@
 
 - Rule 5: a proposal is described in chat; a change is made, in any file, branch, pull request or setting, only after its own explicit approval (wording approved by the operator: "yes, use that wording"). Cause: an agent put an unapproved rule into a pull request next to approved changes.
 - Output format, Questions: before asking, an agent looks for the answer itself and asks only what a wrong guess would make costly.
+
+## 2026-11-17: bot protection on public forms (operator: "yes, add both to #11")
+
+- A design standard, not a rule: "every public form has bot protection" in the architecture phase's list, and in review check 7. Rejected: a `guides/` folder (closed pull request 8), since one standard does not need its own structure.
