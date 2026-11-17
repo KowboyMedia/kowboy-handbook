@@ -3,7 +3,7 @@
 
 # Kowboy handbook: the rules
 
-Version 2026-11-16q.
+Version 2026-11-17a.
 
 Nine rules. Each marks actions that need the operator’s explicit approval first. They outrank every plan, every other instruction and every urge to finish.
 
@@ -24,7 +24,7 @@ Nine rules. Each marks actions that need the operator’s explicit approval firs
 
 # Kowboy handbook: output format
 
-Version 2026-11-16q.
+Version 2026-11-17a.
 
 Bottom line first, as bullets, at a high level: what it means for the product. Technical terms
 are fine; the inner workings stay out unless asked for. Send nothing while you work, and never
@@ -68,7 +68,7 @@ Read-only. The reply shape, without its limits on length, and nothing else: the 
 
 # Kowboy handbook: the phases
 
-Version 2026-11-16q. A workflow to follow with judgement, not rules: the nine rules are the only rules. "Run a session" is below and applies always. Every other phase is in its own file in the folder `kowboy-handbook-phases/`, found in `~/.claude/` or at the project's root: when a phase starts, read its file before you act. Each file ends with "End of the phase."
+Version 2026-11-17a. A workflow to follow with judgement, not rules: the nine rules are the only rules. "Run a session" is below and applies always. Every other phase is in its own file in the folder `kowboy-handbook-phases/`, found in `~/.claude/` or at the project's root: when a phase starts, read its file before you act. Each file ends with "End of the phase."
 
 - `kowboy-handbook-phase-setup.md`: "Start a repository" when a repository is new, or lacks a strategy, acceptance criteria or the memory files and has no code yet; "Bring up an existing repository" when a repository that already has code starts working this way.
 - `kowboy-handbook-phase-discover.md`: "Discover" when a project starts, a feature is larger than one item, or the operator describes a wish.

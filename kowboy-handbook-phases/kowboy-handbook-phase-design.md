@@ -1,6 +1,6 @@
 # Kowboy handbook: phase "Design"
 
-Version 2026-11-16q.
+Version 2026-11-17a.
 
 ## Design
 
