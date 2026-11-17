@@ -37,5 +37,5 @@
 
 ## 2026-11-16: proposals and questions (operator: "Add that to rule 5, also add the rule in question")
 
-- Rule 5: a proposal is described in chat; a change goes into a file or pull request only after its own explicit approval. Cause: an agent put an unapproved rule into a pull request next to approved changes.
+- Rule 5: a proposal is described in chat; a change is made, in any file, branch, pull request or setting, only after its own explicit approval (wording approved by the operator: "yes, use that wording"). Cause: an agent put an unapproved rule into a pull request next to approved changes.
 - Output format, Questions: before asking, an agent looks for the answer itself and asks only what a wrong guess would make costly.
