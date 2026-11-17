@@ -1,6 +1,6 @@
 # Kowboy handbook: phase "Decide architecture"
 
-Version 2026-11-16p.
+Version 2026-11-16q.
 
 ## Decide architecture
 

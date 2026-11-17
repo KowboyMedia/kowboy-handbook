@@ -1,6 +1,6 @@
 # Kowboy handbook: phase "Review"
 
-Version 2026-11-16p.
+Version 2026-11-16q.
 
 ## Review
 
