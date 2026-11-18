@@ -1,6 +1,6 @@
 # Kowboy handbook: phase "Discover"
 
-Version 2026-11-17a.
+Version 2026-11-18a.
 
 ## Discover
 

@@ -1,6 +1,6 @@
 # Kowboy handbook: phase "Build"
 
-Version 2026-11-17a.
+Version 2026-11-18a.
 
 ## Make a small change
 

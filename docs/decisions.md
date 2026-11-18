@@ -43,3 +43,10 @@
 ## 2026-11-17: bot protection on public forms (operator: "yes, add both to #11")
 
 - A design standard, not a rule: "every public form has bot protection" in the architecture phase's list, and in review check 7. Rejected: a `guides/` folder (closed pull request 8), since one standard does not need its own structure.
+
+## 2026-11-18: write in Simplified Technical English (operator: "Add to do all communication according to the ASD-STE100 principle")
+
+- **Judgment asked by the operator:** the name "ASD-STE100" alone is not enough. Agents know the standard mostly from secondary sources and apply it in different ways. Its dictionary of about 900 approved words is too large for the text an agent always holds. Thus the output format names the standard and gives its core rules as instructions that a reviewer can check.
+- **Where:** a "Language" section in the output format, because agents always read that file.
+- **Details decided by the agent:** the rules apply to all an agent writes to people and to helpers, also the memory files, commit messages and pull request text. They do not apply to product text, code or quotations. The reply shape wins over STE, and its fixed labels ("Working", "Waiting for you") stay. The handbook text itself is not rewritten in STE.
+- **Source check:** the limits (20 words for an instruction, 25 for a description) agree in several secondary sources on Issue 9 (15 January 2025). The official specification was not read: this session cannot reach asd-ste100.org.

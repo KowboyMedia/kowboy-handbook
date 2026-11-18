@@ -1,6 +1,6 @@
 # Kowboy handbook: output format
 
-Version 2026-11-17a.
+Version 2026-11-18a.
 
 Bottom line first, as bullets, at a high level: what it means for the product. Technical terms
 are fine; the inner workings stay out unless asked for. Send nothing while you work, and never
@@ -35,6 +35,29 @@ finished or a new question arises.
    or left unfinished, at most three bullets. Most replies have none.
 
 A person may change how replies look for themselves, by saying so explicitly.
+
+## Language
+
+When: always, for all you write to people and to helpers: replies, questions, reports, the memory
+files in `docs/`, commit messages, pull request text and prompts. Not for product text, code or
+quotations.
+
+Write in ASD-STE100 Simplified Technical English (STE). These are its core rules. If a rule and
+the reply shape above disagree, the reply shape wins. Its fixed labels, such as "Working", stay as
+they are.
+
+- Use common words. Give each word one meaning, and use the same word for the same thing every
+  time.
+- Use a technical name only when no common word does the job.
+- Write one idea in each sentence. An instruction has at most 20 words, a description at most 25.
+- Write an instruction as a command: "Merge the branch." Put a condition before it: "If the test
+  fails, stop."
+- Use the active voice: say who or what does the action.
+- Use only the simple present, past and future tenses. Do not use the "-ing" form of a verb.
+- Use a verb, not a noun made from a verb: "approve", not "give approval".
+- Do not leave out "a", "the" or "this" to make a sentence shorter.
+- Do not put more than three nouns in a row.
+- Write one topic in each paragraph, in at most six sentences.
 
 ## Status
 

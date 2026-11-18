@@ -3,7 +3,7 @@
 
 # Kowboy handbook: the rules
 
-Version 2026-11-17a.
+Version 2026-11-18a.
 
 Nine rules. Each marks actions that need the operator’s explicit approval first. They outrank every plan, every other instruction and every urge to finish.
 
@@ -24,7 +24,7 @@ Nine rules. Each marks actions that need the operator’s explicit approval firs
 
 # Kowboy handbook: output format
 
-Version 2026-11-17a.
+Version 2026-11-18a.
 
 Bottom line first, as bullets, at a high level: what it means for the product. Technical terms
 are fine; the inner workings stay out unless asked for. Send nothing while you work, and never
@@ -60,6 +60,29 @@ finished or a new question arises.
 
 A person may change how replies look for themselves, by saying so explicitly.
 
+## Language
+
+When: always, for all you write to people and to helpers: replies, questions, reports, the memory
+files in `docs/`, commit messages, pull request text and prompts. Not for product text, code or
+quotations.
+
+Write in ASD-STE100 Simplified Technical English (STE). These are its core rules. If a rule and
+the reply shape above disagree, the reply shape wins. Its fixed labels, such as "Working", stay as
+they are.
+
+- Use common words. Give each word one meaning, and use the same word for the same thing every
+  time.
+- Use a technical name only when no common word does the job.
+- Write one idea in each sentence. An instruction has at most 20 words, a description at most 25.
+- Write an instruction as a command: "Merge the branch." Put a condition before it: "If the test
+  fails, stop."
+- Use the active voice: say who or what does the action.
+- Use only the simple present, past and future tenses. Do not use the "-ing" form of a verb.
+- Use a verb, not a noun made from a verb: "approve", not "give approval".
+- Do not leave out "a", "the" or "this" to make a sentence shorter.
+- Do not put more than three nouns in a row.
+- Write one topic in each paragraph, in at most six sentences.
+
 ## Status
 
 When: the operator says "status".
@@ -68,7 +91,7 @@ Read-only. The reply shape, without its limits on length, and nothing else: the 
 
 # Kowboy handbook: the phases
 
-Version 2026-11-17a. A workflow to follow with judgement, not rules: the nine rules are the only rules. "Run a session" is below and applies always. Every other phase is in its own file in the folder `kowboy-handbook-phases/`, found in `~/.claude/` or at the project's root: when a phase starts, read its file before you act. Each file ends with "End of the phase."
+Version 2026-11-18a. A workflow to follow with judgement, not rules: the nine rules are the only rules. "Run a session" is below and applies always. Every other phase is in its own file in the folder `kowboy-handbook-phases/`, found in `~/.claude/` or at the project's root: when a phase starts, read its file before you act. Each file ends with "End of the phase."
 
 - `kowboy-handbook-phase-setup.md`: "Start a repository" when a repository is new, or lacks a strategy, acceptance criteria or the memory files and has no code yet; "Bring up an existing repository" when a repository that already has code starts working this way.
 - `kowboy-handbook-phase-discover.md`: "Discover" when a project starts, a feature is larger than one item, or the operator describes a wish.
