@@ -48,12 +48,13 @@ they are.
 
 - Use common words. Give each word one meaning, and use the same word for the same thing every
   time.
-- Use a technical name only when no common word does the job.
+- Use a technical name or a technical verb only when no common word does the job.
 - Write one idea in each sentence. An instruction has at most 20 words, a description at most 25.
 - Write an instruction as a command: "Merge the branch." Put a condition before it: "If the test
   fails, stop."
-- Use the active voice: say who or what does the action.
-- Use only the simple present, past and future tenses. Do not use the "-ing" form of a verb.
+- Use the active voice as much as possible: say who or what does the action.
+- Use only the simple present, past and future tenses. Do not use the "-ing" form of a verb,
+  except in a technical name such as "staging".
 - Use a verb, not a noun made from a verb: "approve", not "give approval".
 - Do not leave out "a", "the" or "this" to make a sentence shorter.
 - Do not put more than three nouns in a row.
